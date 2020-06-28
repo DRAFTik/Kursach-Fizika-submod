@@ -1,0 +1,78 @@
+spriteTypes = {	
+
+	spriteType = {
+		name = "GFX_idea_briks"
+		texturefile = "gfx/interface/ideas/briks.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_britts_system"
+		texturefile = "gfx/interface/ideas/britts_system.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_clear_forest1"
+		texturefile = "gfx/interface/ideas/clear_forest1.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_clear_forest2"
+		texturefile = "gfx/interface/ideas/clear_forest2.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_clear_forest3"
+		texturefile = "gfx/interface/ideas/clear_forest3.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_export_tea_and_tabacco"
+		texturefile = "gfx/interface/ideas/export_tea_and_tabacco.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_win_corruprion"
+		texturefile = "gfx/interface/ideas/win_corruprion.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_gurhk_batalions"
+		texturefile = "gfx/interface/ideas/NEP/gurhk_batalions.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_gurkh_for_money"
+		texturefile = "gfx/interface/ideas/NEP/gurkh_for_money.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_king_tribuhan"
+		texturefile = "gfx/interface/ideas/NEP/king_tribuhan.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_nepal_army_support"
+		texturefile = "gfx/interface/ideas/NEP/nepal_army_support.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_Nepal_bank"
+		texturefile = "gfx/interface/ideas/NEP/Nepal_bank.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_nepal_rebelion"
+		texturefile = "gfx/interface/ideas/NEP/nepal_rebelion.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_tibet_pay"
+		texturefile = "gfx/interface/ideas/NEP/tibet_pay.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_tribuhan_support"
+		texturefile = "gfx/interface/ideas/NEP/tribuhan_support.dds"
+	}
+
+}

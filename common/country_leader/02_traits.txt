@@ -1,0 +1,17 @@
+leader_traits = {
+	power_monarch = {
+		random = no
+		political_power_factor = 0.1
+		stability_factor = 0.1
+	}
+	ambitious_of_power = {
+		random = no
+		political_power_factor = 0.1
+		stability_factor = 0.1
+	}
+	aututorian_dynasty = {
+		random = no
+		neutrality_drift = 0.05
+		stability_factor = -0.05
+	}
+}

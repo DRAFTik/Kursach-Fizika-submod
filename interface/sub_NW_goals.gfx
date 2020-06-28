@@ -1,0 +1,63 @@
+spriteTypes = {	
+
+	spriteType = {
+		name = "GFX_z_goal_mister_Rana"
+		texturefile = "gfx/interface/goals/z_goal_mister_Rana.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_z_goal_take_all_from_Rana"
+		texturefile = "gfx/interface/goals/z_goal_take_all_from_Rana.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_z_goal_hight_sudeb"
+		texturefile = "gfx/interface/goals/z_goal_hight_sudeb.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_z_goal_industrial_soviet"
+		texturefile = "gfx/interface/goals/z_goal_industrial_soviet.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_z_goal_mountain_warriors"
+		texturefile = "gfx/interface/goals/z_goal_mountain_warriors.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_z_goal_cotton_mill"
+		texturefile = "gfx/interface/goals/z_goal_cotton_mill.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_z_goal_fight_for_money"
+		texturefile = "gfx/interface/goals/z_goal_fight_for_money.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_z_goal_lose_democracy"
+		texturefile = "gfx/interface/goals/z_goal_lose_democracy.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_z_goal_win_nepal_democracy"
+		texturefile = "gfx/interface/goals/z_goal_win_nepal_democracy.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_z_goal_close_land_aristo"
+		texturefile = "gfx/interface/goals/z_goal_close_land_aristo.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_z_goal_industrial_ref"
+		texturefile = "gfx/interface/goals/z_goal_industrial_ref.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_z_goal_tribuhan_support"
+		texturefile = "gfx/interface/goals/z_goal_tribuhan_support.dds"
+	}
+	
+}

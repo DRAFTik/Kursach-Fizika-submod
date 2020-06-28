@@ -1,0 +1,40 @@
+NEP_create_coalition = {
+	icon = usa_congress
+	available = { 
+		has_completed_focus = NEP_collusion_old_and_younger
+	}
+	visible = {
+		has_completed_focus = NEP_collusion_old_and_younger
+		original_tag = NEP
+	}
+}
+NEP_preparation_to_civil_war = {
+	icon = eng_organize_the_blackshirts
+	available = { 
+		has_completed_focus = NEP_nepalese_national_assembly
+	}
+	visible = {
+		has_completed_focus = NEP_nepalese_national_assembly
+		original_tag = NEP
+	}
+}
+NEP_suppression_of_civil_uprising = {
+	icon = eng_move_to_secure_the_dominions
+	available = { 
+		has_completed_focus = NEP_fighting_with_nna
+	}
+	visible = {
+		has_completed_focus = NEP_fighting_with_nna
+		original_tag = NEP
+	}
+}
+NEP_wood_develop_category = {
+	icon = eng_move_to_secure_the_dominions
+	available = { 
+		has_completed_focus = NEP_wood_develop
+	}
+	visible = {
+		has_completed_focus = NEP_wood_develop
+		original_tag = NEP
+	}
+}

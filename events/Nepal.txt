@@ -1,0 +1,584 @@
+﻿add_namespace = nepal
+country_event = {
+	id = nepal.0
+	title = nepal.0.t
+	picture = GFX_report_event_indian_parade
+	desc = {
+		text = nepal.0.d
+	}
+	
+	fire_only_once = yes
+	
+	trigger = {
+		date < 1937.3.8
+	}
+	
+	option = {
+		name = nepal.0.a
+		add_popularity = {
+			ideology = monarchy
+			popularity = 0.05
+		}
+	}
+}
+country_event = {
+	id = nepal.1
+	title = nepal.1.t
+	picture = GFX_report_event_eth_take_no_prisoners
+	desc = {
+		text = nepal.1.d
+	}
+	
+	is_triggered_only = yes
+
+	option = {
+		name = nepal.1.a
+		add_stability = 0.01
+	}
+}
+country_event = {
+	id = nepal.2
+	title = nepal.2.t
+	picture = GFX_report_event_usa_pearl_harbor_airphoto
+	desc = {
+		text = nepal.2.d
+	}
+	is_triggered_only = yes
+
+	option = {
+		name = nepal.2.a
+		add_stability = -0.01
+		add_political_power = -10
+	}
+}
+country_event = {
+	id = nepal.3
+	title = nepal.3.t
+	picture = GFX_report_event_lka_day_mak
+	desc = {
+		text = nepal.3.d
+	}
+	
+	is_triggered_only = yes
+
+	option = {
+	name = nepal.3.a
+		add_stability = -0.03
+		add_political_power = -25
+	}
+}
+country_event = {
+	id = nepal.4
+	title = nepal.4.t
+	picture = GFX_report_event_manchukuo_army_2
+	desc = {
+		text = nepal.4.d
+	}
+	
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = nepal.4.a
+		add_stability = 0.01
+		add_command_power = 10
+	}
+}
+country_event = {
+	id = nepal.5
+	title = nepal.5.t
+	picture = GFX_report_event_china_ledo_road
+	desc = {
+		text = nepal.5.d
+	}
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = nepal.5.a
+		add_political_power = -10
+	}
+}
+country_event = {
+	id = nepal.6
+	title = nepal.6.t
+	picture = GFX_report_event_ger_civil_war
+	desc = {
+		text = nepal.6.d
+	}
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = nepal.6.a
+		add_popularity = { ideology = monarchy popularity = 0.4 }
+		set_politics = { ruling_party = monarchy }
+		remove_ideas = NEP_britts_system
+		remove_ideas = NEP_tribhuwan_nepal
+	}
+}
+news_event = {
+	id = nepal.7
+	title = nepal.7.t
+	picture = GFX_news_event_chinese_soldiers_city_ruin
+	major = yes
+	desc = {
+		text = nepal.7.d
+	}
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+
+	option = {
+		name = nepal.7.a
+	}
+}
+country_event = {
+	id = nepal.8
+	title = nepal.8.t
+	picture = GFX_report_event_vienna_award_negotiations
+	desc = {
+		text = nepal.8.d
+	}
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = nepal.8.a
+		add_ideas = NEP_prime_minister_from_basnet
+	}
+	option = {
+		name = nepal.8.b
+		add_ideas = NEP_prime_minister_from_pande
+	}
+	option = {
+		name = nepal.8.c
+		add_ideas = NEP_prime_minister_from_tapa
+	}
+}
+country_event = {
+	id = nepal.9
+	title = nepal.9.t
+	picture = GFX_report_event_vienna_award_negotiations
+	desc = {
+		text = nepal.9.d
+	}
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = nepal.9.a
+		trigger = { has_idea = NEP_prime_minister_from_tapa }
+		remove_ideas = NEP_prime_minister_from_tapa
+		if = {
+			limit = {
+				NOT = {
+					has_idea = NEP_prime_minister_from_basnet
+				}
+				OR = {
+					has_idea = NEP_prime_minister_from_pande
+					has_idea = NEP_prime_minister_from_tapa
+				}
+			}
+			add_ideas = NEP_prime_minister_from_basnet
+		}
+	}
+	option = {
+		name = nepal.9.b
+		trigger = { has_idea = NEP_prime_minister_from_basnet }
+		remove_ideas = NEP_prime_minister_from_basnet
+		if = {
+			limit = {
+				NOT = {
+					has_idea = NEP_prime_minister_from_pande
+				}
+				OR = {
+					has_idea = NEP_prime_minister_from_basnet
+					has_idea = NEP_prime_minister_from_tapa
+				}
+			}
+			add_ideas = NEP_prime_minister_from_pande
+		}
+	}
+	option = {
+		name = nepal.9.c
+		trigger = { has_idea = NEP_prime_minister_from_pande }
+		remove_ideas = NEP_prime_minister_from_pande
+		if = {
+			limit = {
+				NOT = {
+					has_idea = NEP_prime_minister_from_tapa
+				}
+				OR = {
+					has_idea = NEP_prime_minister_from_basnet
+					has_idea = NEP_prime_minister_from_pande
+				}
+			}
+			add_ideas = NEP_prime_minister_from_tapa
+		}
+	}
+}
+country_event = {
+	id = nepal.10
+	title = nepal.10.t
+	picture = GFX_report_event_soviet_invasion_map
+	desc = {
+		text = nepal.10.d
+	}
+
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = nepal.10.a
+		NEP = {
+			country_event = {
+				id = nepal.11
+				days = 1
+			}
+		}
+	}
+	option = {
+		name = nepal.10.b
+		NEP = {
+			country_event = {
+				id = nepal.12
+				days = 1
+			}
+		}
+	}
+}
+country_event = {
+	id = nepal.11
+	title = nepal.11.t
+	picture = GFX_report_event_vienna_award_hungary
+	desc = {
+		text = nepal.11.d
+	}
+
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+
+	option = {
+		name = nepal.11.a
+		transfer_state = 844
+		transfer_state = 1104
+		add_state_core = 844
+		add_state_core = 1104
+	}
+}
+country_event = {
+	id = nepal.12
+	title = nepal.12.t
+	picture = GFX_report_event_british_artillery
+	desc = {
+		text = nepal.12.d
+	}
+
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+	
+	option = {
+		name = nepal.12.a
+		add_state_core = 844
+		add_state_core = 1104
+		create_wargoal = {
+			type = take_core_state
+			target = RAJ
+		}
+	}
+	option = {
+		name = nepal.12.b
+		add_political_power = -100
+		add_stability = -0.05
+	}
+}
+country_event = {
+	id = nepal.13
+	title = nepal.13.t
+	picture = GFX_report_event_eng_royal_family
+	desc = {
+		text = nepal.13.d
+	}
+
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+
+	option = {
+		name = nepal.13.a
+		GER = { country_event = generic.2 }
+	}
+	option = {
+		name = nepal.13.b
+		ENG = { country_event = generic.2 }
+	}
+	option = {
+		name = nepal.13.c
+		FRA = { country_event = generic.2 }
+	}
+	option = {
+		name = nepal.13.e
+		TUR = { country_event = generic.2 }
+	}
+	option = {
+		name = nepal.13.f
+		HUN = { country_event = generic.2 }
+	}
+}
+country_event = {
+	id = nepal.14
+	title = nepal.14.t
+	picture = GFX_report_event_generic_riot
+	desc = {
+		text = nepal.14.d
+	}
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = nepal.14.a
+		trigger = {
+			OR = {
+				NOT = { has_country_flag = NEP_financy_from_india_flag }
+				NOT = { has_country_flag = NEP_support_from_king_flag }
+				NOT = { has_country_flag = NEP_propaganda_fight_flag }
+			}
+		}
+		start_civil_war = {
+			ruling_party = democratic
+			ideology = neutrality
+			size = 0.9
+		}
+		remove_ideas = NEP_democratic_rebelliom
+		set_country_flag = NEP_civil_war_flag
+	}
+	option = {
+		trigger = {
+				has_country_flag = NEP_financy_from_india_flag
+				NOT = { has_country_flag = NEP_support_from_king_flag }
+				NOT = { has_country_flag = NEP_propaganda_fight_flag }
+		}
+		name = nepal.14.b
+		start_civil_war = {
+			ruling_party = democratic
+			ideology = neutrality
+			size = 0.7
+		}
+		remove_ideas = NEP_democratic_rebelliom
+		set_country_flag = NEP_civil_war_flag
+	}
+	option = {
+		trigger = {
+			has_country_flag = NEP_support_from_king_flag
+			NOT = { has_country_flag = NEP_propaganda_fight_flag }
+		}
+		name = nepal.14.c
+		start_civil_war = {
+			ruling_party = democratic
+			ideology = neutrality
+			size = 0.5
+		}
+		remove_ideas = NEP_democratic_rebelliom
+		set_country_flag = NEP_civil_war_flag
+	}
+	
+	option = {
+		trigger = {
+				has_country_flag = NEP_support_from_king_flag
+		}
+		name = nepal.14.e
+		start_civil_war = {
+			ruling_party = democratic
+			ideology = neutrality
+			size = 0.3
+		}
+		remove_ideas = NEP_democratic_rebelliom
+		set_country_flag = NEP_propaganda_fight_flag
+	}
+}
+news_event = {
+	id = nepal.15
+	title = nepal.15.t
+	picture = GFX_news_event_050
+	major = yes
+	desc = {
+		text = nepal.15.d
+	}
+	
+	trigger = {
+		NEP = {
+			has_country_flag = NEP_civil_war_flag
+			has_government = neutrality
+			NOT = {
+				has_civil_war = yes
+			}
+		}
+	}
+	
+	fire_only_once = yes
+	
+	mean_time_to_happen =  { days = 7 }
+	
+	option = {
+		name = nepal.15.a
+	}
+}
+news_event = {
+	id = nepal.16
+	title = nepal.16.t
+	picture = GFX_news_event_soldiers_marching
+	major = yes
+	desc = {
+		text = nepal.16.d
+	}
+	
+	trigger = {
+		NEP = {
+			has_country_flag = NEP_civil_war_flag
+			has_government = neutrality
+			NOT = {
+				has_civil_war = yes
+			}
+		}
+	}
+	
+	fire_only_once = yes
+	
+	mean_time_to_happen =  { days = 7 }
+
+	option = {
+		name = nepal.16.a
+	}
+}
+country_event = {
+	id = nepal.17
+	title = nepal.17.t
+	picture = GFX_report_event_generic_read_write
+	desc = {
+		text = nepal.17.d
+	}
+	
+	trigger = {
+		focus_progress = {
+			focus = NEP_prepare_a_constitution
+			progress < 2.3
+		}
+	}
+	
+	fire_only_once = yes
+
+	option = {
+		name = nepal.17.a
+		add_ideas = NEP_monarchy_constitution
+	}
+	option = {
+		name = nepal.17.b
+		add_ideas = NEP_burjua_democratic_constitution
+		remove_ideas = NEP_tribhuwan_nepal
+	}
+	option = {
+		name = nepal.17.c
+		add_ideas = NEP_peasant_constitution
+		every_owned_state = {
+			limit = {
+				is_core_of = NEP
+			}
+			add_extra_state_shared_building_slots = 1
+		}
+	}
+}
+country_event = {
+	id = nepal.18
+	title = nepal.18.t
+	picture = GFX_report_event_generic_riot
+	desc = {
+		text = nepal.18.d
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		trigger = {
+			OR = {
+				NOT = { has_country_flag = NEP_flag_isolation_king }
+				NOT = { has_country_flag = NEP_destroy_rebel }
+			}
+		}
+		name = nepal.18.a
+		start_civil_war = {
+			ruling_party = neutrality
+			ideology = democratic
+			size = 0.7
+		}
+	}
+	
+	option = {
+		name = nepal.18.b
+		trigger = { has_country_flag = NEP_flag_isolation_king }
+		start_civil_war = {
+			ruling_party = neutrality
+			ideology = democratic
+			size = 0.5
+		}
+	}
+	
+	option = {
+		name = nepal.18.c
+		trigger = { has_country_flag = NEP_destroy_rebel }
+		start_civil_war = {
+			ruling_party = neutrality
+			ideology = democratic
+			size = 0.3
+		}
+	}
+}
+country_event = {
+	id = nepal.19
+	title = nepal.19.t
+	picture = GFX_report_event_eth_bloody_return
+	desc = {
+		text = nepal.19.d
+	}
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+
+	option = {
+		name = nepal.19.a
+		add_stability = 0.05
+	}
+}
+
+country_event = {
+	id = nepal.20
+	title = nepal.20.t
+	picture = GFX_report_event_eth_bloody_return
+	desc = {
+		text = nepal.20.d
+	}
+	
+	is_triggered_only = yes
+	
+	fire_only_once = yes
+
+	option = {
+		name = nepal.20.a
+		add_stability = -0.05
+		add_ideas = NEP_democratic_rebelliom
+	}
+}
