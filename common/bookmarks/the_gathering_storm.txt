@@ -810,6 +810,24 @@ bookmarks = {
 			}
 		}
 		
+		"SAF"={
+			minor = yes
+			history = "NEP_SCENARIO_DESC"
+			ideology = neutrality
+			ideas = {
+				SAF_idea_3
+				SAF_idea_1
+				SAF_idea_5
+				SAF_idea_2
+			}
+			focuses = {
+				NEP_dictator_rama
+				NEP_avenge_blood_massacre_of_kathmandu
+				NEP_victory_popular_movement
+				NEP_mountanion_thugs
+			}
+		}
+		
 		effect = {
 			randomize_weather = 22345 # <- Obligatory in every bookmark !
 			#123 = { rain_light = yes }

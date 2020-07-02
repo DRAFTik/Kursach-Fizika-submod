@@ -74,5 +74,25 @@ spriteTypes = {
 		name = "GFX_idea_tribuhan_support"
 		texturefile = "gfx/interface/ideas/NEP/tribuhan_support.dds"
 	}
+	
+	spriteType = {
+		name = "GFX_idea_anglo_bur_war"
+		texturefile = "gfx/interface/ideas/SAF/anglo_bur_war.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_anglo-afro_conflict"
+		texturefile = "gfx/interface/ideas/anglo-afro_conflict.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_hight_social"
+		texturefile = "gfx/interface/ideas/hight_social.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_jews_exile"
+		texturefile = "gfx/interface/ideas/jews_exile.dds"
+	}
 
 }

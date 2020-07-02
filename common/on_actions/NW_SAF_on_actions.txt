@@ -1,0 +1,19 @@
+on_actions = {
+	on_startup = {
+	effect = { 
+			if = {
+				limit = { tag = SAF }
+				country_event = { id = south_afrika.56 }
+			}
+		} 
+	}
+	on_monthly_NMB  = {
+	effect = { 
+			if = {
+				limit = { original_tag = NMB has_completed_focus = NMB_39 }
+				country_event = { id = namibian.23 }
+			}
+		} 
+	}
+}
+

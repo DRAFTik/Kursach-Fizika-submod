@@ -136,7 +136,7 @@ create_field_marshal = {
 	logistics_skill = 1
 }
 
-create_field_marshal = {
+create_corps_commander = {
 	name = "Mohan Shumsher Jang Bahadur Rana"
 	portrait_path = "gfx/leaders/NEP/Portrait_Mohan_Shumsher_Jang_Bahadur_Rana.dds"
 	traits = {  }
