@@ -277,9 +277,9 @@ focus = { # Централизация Южной Африки
 	}
 
 	
-focus = { # Присоединение Мозамбика 
+focus = { # Купить Мозамбика
 		id = AUS_XAJWUPha
-		icon = GFX_goal_generic_military_deal
+		icon = GFX_z_goal_buy_mozambik
 		x = 6
 		y = 5
 		cost = 10
@@ -374,7 +374,7 @@ focus = { # Внедриться в Южную Родезию
 	
 focus = { # Вопрос о нейтралитете 
 		id = AUS_JPMvjnrI
-		icon = GFX_goal_generic_neutrality_focus
+		icon = GFX_z_goal_neutrality_question
 		x = 13
 		y = 0
 		cost = 5
@@ -517,8 +517,8 @@ focus = { # Потребовать передать контроль над пр
 	
 focus = { # Пригласить Мозамбик 
 		id = AUS_kicqtCJp
-		icon = GFX_goal_generic_major_alliance
-		x = 7
+		icon = GFX_z_goal_pretor_mozambik
+		x = 8
 		y = 11
 		cost = 10
         available = {
@@ -552,8 +552,8 @@ focus = { # Пригласить Мозамбик
 	
 focus = { # Интервенция в Либерию 
 		id = AUS_QSiDIusz
-		icon = GFX_goal_generic_more_territorial_claims
-		x = 8
+		icon = GFX_z_goal_liberia_intervention
+		x = 9
 		y = 10
 		cost = 10
         available = { LIB = { has_government = fascism } }
@@ -713,12 +713,8 @@ focus = { # Вступить в Ось
 		}
 		available_if_capitulated = yes
 		prerequisite = { focus = AUS_cnzxSQNy }
-		mutually_exclusive = { 
-			focus = AUS_rJWPBCYE 
-		}
-		mutually_exclusive = { 
-			focus = AUS_ZhmqQgsW 
-		}
+		mutually_exclusive = { focus = AUS_ZhmqQgsW }
+		mutually_exclusive = { focus = AUS_rJWPBCYE }
         bypass = {
 			is_in_faction_with = GER
 		}
@@ -733,8 +729,8 @@ focus = { # Вступить в Ось
 	
 focus = { # Интервенция в Эфиопию 
 		id = AUS_ERtuqsHN 
-		icon = GFX_z_goal_partisans_ethiopia
-		x = 6
+		icon = GFX_z_goal_pretor_ethiop
+		x = 16
 		y = 10
 		cost = 10
         available = { ETH = { exists = yes } }
@@ -1345,8 +1341,8 @@ focus = { # Провозгласить чёрный национализм
 	
 focus = { # Пригласить Анголу 
 		id = AUS_BHIjXQaR
-		icon = GFX_goal_generic_improve_relations
-		x = 9
+		icon = GFX_z_goal_pretor_angola
+		x = 10
 		y = 11
 		cost = 10
         available = {
@@ -1381,7 +1377,7 @@ focus = { # Пригласить Анголу
 focus = { # Подготовиться к обороне 
 		id = AUS_joTMeYyn
 		icon = GFX_z_goal_generic_defensive_strategy
-		x = 4
+		x = 7
 		y = 10
 		cost = 10
 		available_if_capitulated = yes
@@ -1553,13 +1549,14 @@ focus = { # Совместные научные исследования
 	
 focus = { # Преторийский договор 
 		id = AUS_rJWPBCYE
-		icon = GFX_focus_generic_treaty
+		icon = GFX_z_goal_pretor
 		x = 17
 		y = 9
 		cost = 10
 		available_if_capitulated = yes
 		prerequisite = { focus = AUS_cnzxSQNy }
 		mutually_exclusive = { focus = AUS_pDcxiZgw }
+		mutually_exclusive = { focus = AUS_ZhmqQgsW }
 		ai_will_do = {
 			factor = 1
 		}
@@ -1618,7 +1615,7 @@ focus = { # Присоединение Мадагаскара
 	
 focus = { # Интервенция в Конго 
 		id = AUS_EfUeQbGY
-		icon = GFX_z_goal_invite_kongo
+		icon = GFX_z_goal_pretor_kongo
 		x = 17
 		y = 11
 		cost = 10
@@ -1641,7 +1638,7 @@ focus = { # Интервенция в Конго
 	
 focus = { # Пригласить Конго 
 		id = AUS_LosOrezx
-		icon = GFX_z_goal_invite_kongo
+		icon = GFX_z_goal_pretor_kongo2
 		x = 15
 		y = 11
 		cost = 10
@@ -1692,7 +1689,7 @@ focus = { # Укрепление связей с Родезией
 focus = { # Установить националистическое правительство в Южной Родезии 
 		id = AUS_Uhasiwpr
 		icon = GFX_z_goal_invite_rodezia
-		x = 10
+		x = 11
 		y = 10
 		cost = 10
 		available_if_capitulated = yes
@@ -1772,7 +1769,7 @@ focus = { # Внедрить новые локомотивы
 focus = { # Начать использование троллейбусов в Кейптауне 
 		id = AUS_RBxZIDNc
 		icon = GFX_z_goal_city_road_cei
-		x = 24
+		x = 26
 		y = 0
 		cost = 10
         available = { controls_state = 1108 }
@@ -2032,7 +2029,7 @@ focus = { # Совместная программа лётной подгото�
 	
 focus = { # Совет по науке и промышленности 
 		id = AUS_LMifATOh
-		icon = GFX_z_goal_technocracy
+		icon = GFX_z_goal_industrial_soviet
 		x = 10
 		y = 5
 		cost = 10
@@ -2226,7 +2223,7 @@ focus = { # Преторийские законы
 	
 focus = { # Кабинет Яна Смэтса 
 		id = AUS_GiSnNgCW
-		icon = GFX_z_goal_generic_papers
+		icon = GFX_z_goal_cabinet_smets
 		x = 4
 		y = 1
 		cost = 5
@@ -2247,7 +2244,7 @@ focus = { # Кабинет Яна Смэтса
 	
 focus = { # Поддержать Израиль 
 		id = AUS_CcPToOfJ
-		icon = GFX_goal_generic_improve_relations
+		icon = GFX_z_goal_support_israel
 		x = 4
 		y = 2
 		cost = 5
@@ -2285,12 +2282,12 @@ focus = { # Объединение Родезии
 	
 focus = { # Пойти на поводу у националистов 
 		id = AUS_LgrdsjiO
-		icon = GFX_goal_generic_support_fascism
+		icon = GFX_z_goal_fashiki
 		x = 6
 		y = 4
 		cost = 10
         available = {
-        OR = { neutrality > 25 fascism > 25 }
+        OR = { neutrality > 0.25 fascism > 0.25 }
         }
 		available_if_capitulated = yes
 		prerequisite = { focus = AUS_GiSnNgCW }
@@ -2546,7 +2543,7 @@ focus = { # Принять законы о защите расы
 focus = { # Построить новые железные дороги 
 		id = AUS_jypgPfQC
 		icon = GFX_focus_generic_africa_infrastructure
-		x = 24
+		x = 25
 		y = 2
 		cost = 10
 		available_if_capitulated = yes
@@ -2675,13 +2672,14 @@ focus = { # Пригласить Южную Родезию
 focus = { # Нейтральная внешняя политика 
 		id = AUS_ZhmqQgsW
 		icon = GFX_z_goal_neutrality
-		x = 4
+		x = 7
 		y = 9
 		cost = 10
         available = { has_war = no }
 		available_if_capitulated = yes
 		prerequisite = { focus = AUS_cnzxSQNy }
 		mutually_exclusive = { focus = AUS_pDcxiZgw }
+		mutually_exclusive = { focus = AUS_rJWPBCYE }
 		ai_will_do = {
 			factor = 1
 		}
