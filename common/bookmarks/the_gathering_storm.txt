@@ -211,21 +211,6 @@ bookmarks = {
 				NZL_maori_volunteers
 			}
 		}
-		"SAF"={
-			minor = yes
-			history = "SAF_GATHERING_STORM_DESC"
-			ideology = democratic
-			ideas = {
-				SAF_ossewabrandwag
-				SAF_history_of_segregation
-			}
-			focuses = {
-				SAF_support_the_policy_of_appeasement
-				SAF_secure_interests_in_africa
-				SAF_support_the_german_coup
-				SAF_anti_colonialist_crusade
-			}
-		}
 		"RAJ"={
 			minor = yes
 			history = "RAJ_GATHERING_STORM_DESC"
@@ -825,6 +810,23 @@ bookmarks = {
 				AUS_fwcXxplv
 				AUS_rJWPBCYE
 				AUS_EsrbxCit
+			}
+		}
+		
+		"TAN"={
+			minor = yes
+			history = "TAN_GATHERING_STORM_DESC"
+			ideology = neutrality
+			ideas = {
+				TAN_bedi_so_stroitelstvom
+				TAN_X_SOV
+				TAN_collectivism
+			}
+			focuses = {
+				TAN_i_have_a_dream
+				TAN_arat_socialism
+				TAN_raskol
+				TAN_indepence
 			}
 		}
 		
