@@ -552,7 +552,7 @@ focus = { # Пригласить Мозамбик
 	
 focus = { # Интервенция в Либерию 
 		id = AUS_QSiDIusz
-		icon = GFX_z_goal_liberia_intervention
+		icon = GFX_z_goal_pretor_liberia
 		x = 9
 		y = 10
 		cost = 10
@@ -652,7 +652,7 @@ focus = { # Вступить в Ось
 	
 focus = { # Бремя белого человека 
 		id = AUS_cnzxSQNy
-		icon = GFX_focus_focus_fra_revolution_upmost
+		icon = GFX_z_goal_white_resi_SAF
 		x = 19
 		y = 8
 		cost = 10
@@ -805,7 +805,7 @@ focus = { # Отметить столетие Великого трека
 	
 focus = { # Восстание чёрного населения 
 		id = AUS_gJmvdOxK
-		icon = GFX_z_goal_black_activists
+		icon = GFX_z_goal_black_rise_FAF
 		x = 23
 		y = 8
 		cost = 10
@@ -1674,7 +1674,7 @@ focus = { # Пригласить Конго
 	
 focus = { # Укрепление связей с Родезией 
 		id = AUS_HjGscQei
-		icon = GFX_z_goal_invite_rodezia
+		icon = GFX_z_goal_pretor_rodezia3
 		x = 13
 		y = 11
 		cost = 10
@@ -1688,7 +1688,7 @@ focus = { # Укрепление связей с Родезией
 	
 focus = { # Установить националистическое правительство в Южной Родезии 
 		id = AUS_Uhasiwpr
-		icon = GFX_z_goal_invite_rodezia
+		icon = GFX_z_goal_pretor_rodezia
 		x = 11
 		y = 10
 		cost = 10
@@ -1747,7 +1747,7 @@ focus = { # Отказать в проведении имперской выст
 	
 focus = { # Внедрить новые локомотивы 
 		id = AUS_uOzHIorJ
-		icon = GFX_z_goal_city_road_cei
+		icon = GFX_z_goal_new_trains
 		x = 24
 		y = 1
 		cost = 10
@@ -1768,7 +1768,7 @@ focus = { # Внедрить новые локомотивы
 	
 focus = { # Начать использование троллейбусов в Кейптауне 
 		id = AUS_RBxZIDNc
-		icon = GFX_z_goal_city_road_cei
+		icon = GFX_z_goal_electrotrain
 		x = 26
 		y = 0
 		cost = 10
@@ -1845,7 +1845,7 @@ focus = { # Начать политику апартеида
 	
 focus = { # Правительство радикалов 
 		id = AUS_pqzYoTbK
-		icon = GFX_z_goal_power_fascist_council
+		icon = GFX_goal_tfv_saf_support_ossebrandwag
 		x = 20
 		y = 5
 		cost = 10
@@ -1883,7 +1883,7 @@ focus = { # Принять поддержку от Реддингсдаадбо�
 	
 focus = { # Объявить о создании республики 
 		id = AUS_DScNQdRU
-		icon = GFX_goal_generic_support_democracy
+		icon = GFX_z_goal_create_SAF_respublic
 		x = 20
 		y = 3
 		cost = 5
@@ -2141,7 +2141,7 @@ focus = { # Объявить о независимости от Британии
 	
 focus = { # Нацистская диктатура 
 		id = AUS_gdoCHKbE
-		icon = GFX_goal_tfv_saf_support_ossebrandwag
+		icon = GFX_z_goal_power_fascist_council
 		x = 1
 		y = 0
 		cost = 10
@@ -2509,7 +2509,7 @@ focus = { # Протекционистская политика в сельск�
 	
 focus = { # Победа Очищенной национальной партии 
 		id = AUS_fwcXxplv
-		icon = GFX_z_goal_government_2
+		icon = GFX_z_goal_nac_clear_party
 		x = 22
 		y = 5
 		cost = 5
@@ -2528,7 +2528,7 @@ focus = { # Победа Очищенной национальной парти�
 	
 focus = { # Принять законы о защите расы 
 		id = AUS_qNxpkQPD
-		icon = GFX_goal_unknown
+		icon = GFX_z_goal_race_defend
 		x = 21
 		y = 7
 		cost = 10
@@ -2615,7 +2615,7 @@ focus = { # Расширить автономию Юго-Западной Афр
 	
 focus = { # Дешёвая негритянская сила 
 		id = AUS_RrbQhHlk
-		icon = GFX_focus_cze_german_puppet
+		icon = GFX_z_goal_black_workers
 		x = 25
 		y = 4
 		cost = 10
@@ -2636,7 +2636,7 @@ focus = { # Дешёвая негритянская сила
 	
 focus = { # Пригласить Южную Родезию 
 		id = AUS_zUDFVsQd
-		icon = GFX_z_goal_invite_rodezia
+		icon = GFX_z_goal_pretor_rodezia2
 		x = 13
 		y = 10
 		cost = 10
@@ -2820,7 +2820,7 @@ focus = { # Военный коммунизм в африканских усло
 	
 focus = { # Освободить Анголу и Мозамбик 
 		id = AUS_dMcDfKCL
-		icon = GFX_z_goal_council_communism
+		icon = GFX_z_goal_PanAfricaFocus
 		x = 22
 		y = 13
 		cost = 10
