@@ -2,7 +2,7 @@
 country_event = {
 	id = nepal.0
 	title = nepal.0.t
-	picture = GFX_report_event_indian_parade
+	picture = GFX_report_event_nep_0
 	desc = {
 		text = nepal.0.d
 	}
@@ -24,7 +24,7 @@ country_event = {
 country_event = {
 	id = nepal.1
 	title = nepal.1.t
-	picture = GFX_report_event_eth_take_no_prisoners
+	picture = GFX_report_event_nep_1
 	desc = {
 		text = nepal.1.d
 	}
@@ -39,7 +39,7 @@ country_event = {
 country_event = {
 	id = nepal.2
 	title = nepal.2.t
-	picture = GFX_report_event_usa_pearl_harbor_airphoto
+	picture = GFX_report_event_nep_2
 	desc = {
 		text = nepal.2.d
 	}
@@ -54,7 +54,7 @@ country_event = {
 country_event = {
 	id = nepal.3
 	title = nepal.3.t
-	picture = GFX_report_event_lka_day_mak
+	picture = GFX_report_event_nep_3
 	desc = {
 		text = nepal.3.d
 	}
@@ -70,7 +70,7 @@ country_event = {
 country_event = {
 	id = nepal.4
 	title = nepal.4.t
-	picture = GFX_report_event_manchukuo_army_2
+	picture = GFX_report_event_nep_4
 	desc = {
 		text = nepal.4.d
 	}
@@ -88,7 +88,7 @@ country_event = {
 country_event = {
 	id = nepal.5
 	title = nepal.5.t
-	picture = GFX_report_event_china_ledo_road
+	picture = GFX_report_event_nep_5
 	desc = {
 		text = nepal.5.d
 	}
@@ -105,7 +105,7 @@ country_event = {
 country_event = {
 	id = nepal.6
 	title = nepal.6.t
-	picture = GFX_report_event_ger_civil_war
+	picture = GFX_report_event_nep_6
 	desc = {
 		text = nepal.6.d
 	}
@@ -142,7 +142,7 @@ news_event = {
 country_event = {
 	id = nepal.8
 	title = nepal.8.t
-	picture = GFX_report_event_vienna_award_negotiations
+	picture = GFX_report_event_nep_8_9
 	desc = {
 		text = nepal.8.d
 	}
@@ -167,7 +167,7 @@ country_event = {
 country_event = {
 	id = nepal.9
 	title = nepal.9.t
-	picture = GFX_report_event_vienna_award_negotiations
+	picture = GFX_report_event_nep_8_9
 	desc = {
 		text = nepal.9.d
 	}
@@ -229,7 +229,7 @@ country_event = {
 country_event = {
 	id = nepal.10
 	title = nepal.10.t
-	picture = GFX_report_event_soviet_invasion_map
+	picture = GFX_report_event_nep_10_11_12
 	desc = {
 		text = nepal.10.d
 	}
@@ -260,7 +260,7 @@ country_event = {
 country_event = {
 	id = nepal.11
 	title = nepal.11.t
-	picture = GFX_report_event_vienna_award_hungary
+	picture = GFX_report_event_nep_10_11_12
 	desc = {
 		text = nepal.11.d
 	}
@@ -280,7 +280,7 @@ country_event = {
 country_event = {
 	id = nepal.12
 	title = nepal.12.t
-	picture = GFX_report_event_british_artillery
+	picture = GFX_report_event_nep_10_11_12
 	desc = {
 		text = nepal.12.d
 	}
@@ -307,7 +307,7 @@ country_event = {
 country_event = {
 	id = nepal.13
 	title = nepal.13.t
-	picture = GFX_report_event_eng_royal_family
+	picture = GFX_report_event_nep_13
 	desc = {
 		text = nepal.13.d
 	}
@@ -340,7 +340,7 @@ country_event = {
 country_event = {
 	id = nepal.14
 	title = nepal.14.t
-	picture = GFX_report_event_generic_riot
+	picture = GFX_report_event_nep_14_15_16_19_20
 	desc = {
 		text = nepal.14.d
 	}
@@ -413,7 +413,7 @@ country_event = {
 news_event = {
 	id = nepal.15
 	title = nepal.15.t
-	picture = GFX_news_event_050
+	picture = GFX_report_event_nep_15
 	major = yes
 	desc = {
 		text = nepal.15.d
@@ -440,7 +440,7 @@ news_event = {
 news_event = {
 	id = nepal.16
 	title = nepal.16.t
-	picture = GFX_news_event_soldiers_marching
+	picture = GFX_report_event_nep_14_15_16_19_20
 	major = yes
 	desc = {
 		text = nepal.16.d
@@ -467,7 +467,7 @@ news_event = {
 country_event = {
 	id = nepal.17
 	title = nepal.17.t
-	picture = GFX_report_event_generic_read_write
+	picture = GFX_report_event_nep_17
 	desc = {
 		text = nepal.17.d
 	}
@@ -504,7 +504,7 @@ country_event = {
 country_event = {
 	id = nepal.18
 	title = nepal.18.t
-	picture = GFX_report_event_generic_riot
+	picture = GFX_report_event_nep_14_15_16_19_20
 	desc = {
 		text = nepal.18.d
 	}
@@ -549,7 +549,7 @@ country_event = {
 country_event = {
 	id = nepal.19
 	title = nepal.19.t
-	picture = GFX_report_event_eth_bloody_return
+	picture = GFX_report_event_nep_14_15_16_19_20
 	desc = {
 		text = nepal.19.d
 	}
@@ -567,7 +567,7 @@ country_event = {
 country_event = {
 	id = nepal.20
 	title = nepal.20.t
-	picture = GFX_report_event_eth_bloody_return
+	picture = GFX_report_event_nep_14_15_16_19_20
 	desc = {
 		text = nepal.20.d
 	}

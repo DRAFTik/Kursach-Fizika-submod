@@ -39,7 +39,7 @@ focus_tree = {
 		id = NEP_dictator_rama
 		icon = GFX_z_goal_mister_Rana
 		cost = 10
-		x = 30
+		x = 26
 		y = 0
 
 		completion_reward = {
@@ -882,8 +882,9 @@ focus_tree = {
 		prerequisite = {
 			focus = NEP_dictator_rama
 		}
-		x = 28
+		x = -2
 		y = 1
+		relative_position_id = NEP_dictator_rama
 
 		completion_reward = {
 			add_stability = -0.05
@@ -901,8 +902,9 @@ focus_tree = {
 			focus = NEP_nepalese_national_assembly
 			focus = NEP_fighting_with_nna
 		}
-		x = 22
+		x = -8
 		y = 2
+		relative_position_id = NEP_dictator_rama
 
 		completion_reward = {
 			unlock_decision_category_tooltip = NEP_create_coalition
@@ -910,7 +912,7 @@ focus_tree = {
 	}
 	focus = {
 		id = NEP_avenge_blood_massacre_of_kathmandu
-		icon = GFX_goal_generic_military_deal
+		icon = GFX_z_goal_blood_katmandu
 		cost = 10
 		available = {
 			has_country_flag = NEP_support_family_basnet_flag
@@ -921,8 +923,9 @@ focus_tree = {
 		prerequisite = {
 			focus = NEP_collusion_old_and_younger
 		}
-		x = 22
-		y = 3
+		x = 0
+		y = 1
+		relative_position_id = NEP_collusion_old_and_younger
 
 		completion_reward = {
 			country_event = {
@@ -948,8 +951,9 @@ focus_tree = {
 		prerequisite = {
 			focus = NEP_avenge_blood_massacre_of_kathmandu
 		}
-		x = 22
-		y = 4
+		x = 0
+		y = 2
+		relative_position_id = NEP_collusion_old_and_younger
 
 		completion_reward = {
 			add_ideas = NEP_support_people_and_army
@@ -962,8 +966,9 @@ focus_tree = {
 		prerequisite = {
 			focus = NEP_support_of_the_army
 		}
-		x = 20
-		y = 5
+		x = -2
+		y = 3
+		relative_position_id = NEP_collusion_old_and_younger
 
 		completion_reward = {
 			add_ideas = NEP_absoluty_support_from_shah
@@ -976,8 +981,9 @@ focus_tree = {
 		prerequisite = {
 			focus = NEP_support_of_the_army
 		}
-		x = 22
-		y = 5
+		x = 0
+		y = 3
+		relative_position_id = NEP_collusion_old_and_younger
 
 		completion_reward = {
 			add_war_support = 0.1
@@ -1009,8 +1015,9 @@ focus_tree = {
 				}
 			}
 		}
-		x = 22
-		y = 6
+		x = 0
+		y = 4
+		relative_position_id = NEP_collusion_old_and_younger
 
 		completion_reward = {
 			create_wargoal = {
@@ -1026,8 +1033,9 @@ focus_tree = {
 		prerequisite = {
 			focus = NEP_dictator_rama
 		}
-		x = 30
+		x = 0
 		y = 1
+		relative_position_id = NEP_dictator_rama
 
 		completion_reward = {
 			add_ideas = NEP_industrial_council_and_laws_idea
@@ -1044,8 +1052,9 @@ focus_tree = {
 			focus = NEP_collusion_old_and_younger
 			focus = NEP_fighting_with_nna
 		}
-		x = 30
+		x = 0
 		y = 2
+		relative_position_id = NEP_dictator_rama
 
 		completion_reward = {
 			unlock_decision_category_tooltip = NEP_preparation_to_civil_war
@@ -1064,8 +1073,9 @@ focus_tree = {
 			NOT = { has_civil_war = yes }
 			has_government = democratic
 		}
-		x = 30
-		y = 3
+		x = 0
+		y = 1
+		relative_position_id = NEP_nepalese_national_assembly
 
 		completion_reward = {
 			add_political_power = 100
@@ -1074,7 +1084,7 @@ focus_tree = {
 	}
 	focus = {
 		id = NEP_end_isolation
-		icon = GFX_z_goal_break_chain
+		icon = GFX_z_goal_end_isolation
 		cost = 10
 		prerequisite = {
 			focus = NEP_avenge_blood_massacre_of_kathmandu
@@ -1086,8 +1096,9 @@ focus_tree = {
 				has_government = democratic
 			}
 		}
-		x = 26
-		y = 4
+		x = 3
+		y = 2
+		relative_position_id = NEP_collusion_old_and_younger
 
 		completion_reward = {
 			remove_ideas = NEP_closed_country
@@ -1100,8 +1111,9 @@ focus_tree = {
 		prerequisite = {
 			focus = NEP_victory_popular_movement
 		}
-		x = 28
-		y = 4
+		x = -2
+		y = 2
+		relative_position_id = NEP_nepalese_national_assembly
 
 		completion_reward = {
 			remove_ideas = NEP_britts_system
@@ -1114,8 +1126,9 @@ focus_tree = {
 		prerequisite = {
 			focus = NEP_victory_popular_movement
 		}
-		x = 30
-		y = 4
+		x = 0
+		y = 2
+		relative_position_id = NEP_nepalese_national_assembly
 
 		completion_reward = {
 			add_ideas = NEP_nepali_peoples_weekly
@@ -1128,8 +1141,9 @@ focus_tree = {
 		prerequisite = {
 			focus = NEP_victory_popular_movement
 		}
-		x = 32
-		y = 4
+		x = 2
+		y = 2
+		relative_position_id = NEP_nepalese_national_assembly
 
 		completion_reward = {
 			custom_effect_tooltip = NEP_tt1
@@ -1145,8 +1159,9 @@ focus_tree = {
 		prerequisite = {
 			focus = NEP_prepare_a_constitution
 		}
-		x = 31
-		y = 5
+		x = 1
+		y = 3
+		relative_position_id = NEP_nepalese_national_assembly
 
 		completion_reward = {
 			add_ideas = NEP_shastri_social_reform
@@ -1159,8 +1174,9 @@ focus_tree = {
 		prerequisite = {
 			focus = NEP_dictator_rama
 		}
-		x = 32
+		x = 2
 		y = 1
+		relative_position_id = NEP_dictator_rama
 
 		completion_reward = {
 			add_stability = 0.1
@@ -1178,8 +1194,9 @@ focus_tree = {
 			focus = NEP_collusion_old_and_younger
 		}
 		ai_will_do = { modifier = { is_historical_focus_on = yes } }
-		x = 38
+		x = 6
 		y = 2
+		relative_position_id = NEP_dictator_rama
 
 		completion_reward = {
 			unlock_decision_category_tooltip = NEP_suppression_of_civil_uprising
@@ -1194,8 +1211,9 @@ focus_tree = {
 		prerequisite = {
 			focus = NEP_fighting_with_nna
 		}
-		x = 38
-		y = 3
+		x = 0
+		y = 1
+		relative_position_id = NEP_fighting_with_nna
 
 		completion_reward = {
 			add_stability = 0.05
@@ -1210,8 +1228,9 @@ focus_tree = {
 			focus = NEP_cultural_heritage
 			focus = NEP_victory_popular_movement
 		}
-		x = 34
-		y = 5
+		x = -3
+		y = 3
+		relative_position_id = NEP_fighting_with_nna
 
 		completion_reward = {
 			add_ideas = NEP_military_vacations_idea
@@ -1224,8 +1243,9 @@ focus_tree = {
 		prerequisite = {
 			focus = NEP_cultural_heritage
 		}
-		x = 36
-		y = 4
+		x = -1
+		y = 2
+		relative_position_id = NEP_fighting_with_nna
 		available = {
 			OR = { has_idea = NEP_deforestation_forest1 has_idea = NEP_deforestation_forest2 has_idea = NEP_deforestation_forest3 }
 		}
@@ -1271,8 +1291,9 @@ focus_tree = {
 		prerequisite = {
 			focus = NEP_cultural_heritage
 		}
-		x = 38
-		y = 4
+		x = 1
+		y = 2
+		relative_position_id = NEP_fighting_with_nna
 
 		completion_reward = {
 			add_ideas = NEP_propaganda_power_rana
@@ -1285,8 +1306,9 @@ focus_tree = {
 		prerequisite = {
 			focus = NEP_create_domestic_propaganda_base
 		}
-		x = 38
-		y = 5
+		x = 1
+		y = 3
+		relative_position_id = NEP_fighting_with_nna
 		available = {
 			OR = { has_idea = NEP_deforestation_forest1 has_idea = NEP_deforestation_forest2 has_idea = NEP_deforestation_forest3 }
 		}
@@ -1469,8 +1491,9 @@ focus_tree = {
 				}
 			}
 		}
-		x = 22
-		y = 7
+		x = 0
+		y = 5
+		relative_position_id = NEP_collusion_old_and_younger
 
 		completion_reward = {
 			create_wargoal = {
@@ -1486,8 +1509,9 @@ focus_tree = {
 		prerequisite = {
 			focus = NEP_recall_past_claims
 		}
-		x = 20
-		y = 6
+		x = -2
+		y = 4
+		relative_position_id = NEP_collusion_old_and_younger
 
 		completion_reward = {
 			if = {
@@ -1555,8 +1579,9 @@ focus_tree = {
 				HUN = { has_government = monarchy }
 			}
 		}
-		x = 24
-		y = 6
+		x = 2
+		y = 4
+		relative_position_id = NEP_collusion_old_and_younger
 
 		completion_reward = {
 			country_event = {
@@ -1572,8 +1597,9 @@ focus_tree = {
 		prerequisite = {
 			focus = NEP_alliance_with_kings_revenge
 		}
-		x = 24
-		y = 7
+		x = 2
+		y = 5
+		relative_position_id = NEP_collusion_old_and_younger
 
 		completion_reward = {
 			random_owned_controlled_state = {
@@ -1605,8 +1631,9 @@ focus_tree = {
 		available = {
 			has_government = monarchy
 		}
-		x = 26
-		y = 6
+		x = 4
+		y = 4
+		relative_position_id = NEP_collusion_old_and_younger
 
 		completion_reward = {
 			set_rule = {
@@ -1628,8 +1655,9 @@ focus_tree = {
 			focus = NEP_neutral_in_the_war
 			focus = NEP_support_british_war_with_ger
 		}
-		x = 28
-		y = 6
+		x = 6
+		y = 4
+		relative_position_id = NEP_collusion_old_and_younger
 
 		completion_reward = {
 			add_opinion_modifier = {
@@ -1652,8 +1680,9 @@ focus_tree = {
 		prerequisite = {
 			focus = NEP_save_old_british_treaties
 		}
-		x = 28
-		y = 7
+		x = 6
+		y = 5
+		relative_position_id = NEP_collusion_old_and_younger
 
 		completion_reward = {
 			random_owned_controlled_state = {
@@ -1674,8 +1703,9 @@ focus_tree = {
 		prerequisite = {
 			focus = NEP_end_isolation
 		}
-		x = 26
-		y = 5
+		x = 3
+		y = 3
+		relative_position_id = NEP_collusion_old_and_younger
 
 		completion_reward = {
 			add_opinion_modifier = {
@@ -1747,8 +1777,9 @@ focus_tree = {
 		prerequisite = {
 			focus = NEP_close_system_britts
 		}
-		x = 28
-		y = 5
+		x = -2
+		y = 3
+		relative_position_id = NEP_nepalese_national_assembly
 
 		completion_reward = {
 			random_owned_controlled_state = {
@@ -1771,8 +1802,9 @@ focus_tree = {
 			focus = NEP_alliance_with_kings_revenge
 			focus = NEP_own_coalition
 		}
-		x = 34
-		y = 6
+		x = -5
+		y = 4
+		relative_position_id = NEP_fighting_with_nna
 
 		completion_reward = {
 			add_ideas = neutrality_idea
@@ -1795,8 +1827,9 @@ focus_tree = {
 			focus = NEP_own_coalition
 			focus = NEP_alliance_with_kings_revenge
 		}
-		x = 36
-		y = 6
+		x = -1
+		y = 4
+		relative_position_id = NEP_fighting_with_nna
 
 		completion_reward = {
 			ENG = {
@@ -1815,8 +1848,9 @@ focus_tree = {
 		prerequisite = {
 			focus = NEP_own_production_of_guns
 		}
-		x = 36
-		y = 5
+		x = -1
+		y = 3
+		relative_position_id = NEP_fighting_with_nna
 
 		completion_reward = {
 			add_ideas = NEP_reform_policia_idea
@@ -1832,8 +1866,9 @@ focus_tree = {
 		prerequisite = {
 			focus = NEP_create_domestic_propaganda_base
 		}
-		x = 40
-		y = 5
+		x = 3
+		y = 3
+		relative_position_id = NEP_fighting_with_nna
 
 		completion_reward = {
 			add_political_power = 100
@@ -1846,8 +1881,9 @@ focus_tree = {
 		prerequisite = {
 			focus = NEP_cultural_heritage
 		}
-		x = 40
-		y = 4
+		x = 3
+		y = 2
+		relative_position_id = NEP_fighting_with_nna
 
 		completion_reward = {
 			833 = {

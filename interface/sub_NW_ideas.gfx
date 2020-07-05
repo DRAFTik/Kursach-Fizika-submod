@@ -76,6 +76,11 @@ spriteTypes = {
 	}
 	
 	spriteType = {
+		name = "GFX_idea_closed_nepal"
+		texturefile = "gfx/interface/ideas/NEP/closed_nepal.dds"
+	}
+	
+	spriteType = {
 		name = "GFX_idea_anglo_bur_war"
 		texturefile = "gfx/interface/ideas/SAF/anglo_bur_war.dds"
 	}

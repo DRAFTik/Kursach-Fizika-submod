@@ -812,7 +812,7 @@ bookmarks = {
 		
 		"SAF"={
 			minor = yes
-			history = "NEP_SCENARIO_DESC"
+			history = "SAF_GATHERING_STORM_DESC"
 			ideology = neutrality
 			ideas = {
 				SAF_idea_3
@@ -821,10 +821,10 @@ bookmarks = {
 				SAF_idea_2
 			}
 			focuses = {
-				NEP_dictator_rama
-				NEP_avenge_blood_massacre_of_kathmandu
-				NEP_victory_popular_movement
-				NEP_mountanion_thugs
+				AUS_GiSnNgCW
+				AUS_fwcXxplv
+				AUS_rJWPBCYE
+				AUS_EsrbxCit
 			}
 		}
 		
