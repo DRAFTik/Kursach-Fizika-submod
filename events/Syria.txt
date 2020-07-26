@@ -1,0 +1,2204 @@
+﻿add_namespace = syria
+country_event = {
+	id = syria.0
+	title = syria.0.t
+	desc = syria.0.d
+	picture = GFX_report_event_hol_cabinet_gerbrandy
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = syria.0.a
+		
+		custom_effect_tooltip = syria.0.a_tt
+		SYR = {
+			country_event = {
+				id = syria.1
+				days = 1
+			}
+		}
+		add_political_power = -50
+		ai_chance = {
+			base = 0
+			modifier = {
+				OR = {
+					is_historical_focus_on = yes
+					has_government = fascism
+				}
+				add = 100
+			}
+		}
+	}
+	option = {
+		name = syria.0.b
+		
+		custom_effect_tooltip = syria.0.b_tt
+		custom_effect_tooltip = syria.0.b_tt1
+		country_event = {
+			id = syria.2
+			days = 10
+		}
+		ai_chance = {
+			base = 0
+			modifier = {
+				NOT = {
+					is_historical_focus_on = yes
+					OR = {
+						has_government = fascism
+						has_government = neutrality
+					}
+				}
+				add = 75
+			}
+			modifier = {
+				has_government = neutrality
+				add = 25
+			}
+		}
+	}
+}
+country_event = {
+	id = syria.1
+	title = syria.1.t
+	desc = syria.1.d
+	picture = GFX_report_event_finnish_letter
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = syria.1.a
+	}
+}
+country_event = {
+	id = syria.2
+	title = syria.2.t
+	desc = syria.2.d
+	picture = GFX_report_event_canada_patriation
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = syria.2.a
+		
+		custom_effect_tooltip = syria.2.a_tt
+		add_political_power = -75
+		hidden_effect = {
+			country_event = {
+				id = syria.3
+				days = 10
+			}
+		}
+	}
+	option = {
+		name = syria.2.b
+		
+		custom_effect_tooltip = syria.2.b_tt
+		set_country_flag = syria.2.b_flag
+		hidden_effect = {
+			country_event = {
+				id = syria.3
+				days = 10
+			}
+		}
+	}
+	option = {
+		name = syria.2.c
+		
+		custom_effect_tooltip = syria.2.c_tt
+		hidden_effect = {
+			country_event = {
+				id = syria.3
+				days = 10
+			}
+		}
+	}
+}
+country_event = {
+	id = syria.3
+	title = syria.3.t
+	desc = syria.3.d
+	picture = GFX_report_event_felix_eboue
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = syria.3.a
+		
+		custom_effect_tooltip = syria.3.a_tt
+		set_country_flag = syria.3.a_flag
+		hidden_effect = {
+			country_event = {
+				id = syria.4
+				days = 10
+			}
+		}
+	}
+	option = {
+		name = syria.3.b
+		
+		custom_effect_tooltip = syria.3.b_tt
+		set_country_flag = syria.3.b_flag
+		SYR = {
+			add_state_core = 1101
+		}
+		hidden_effect = {
+			country_event = {
+				id = syria.4
+				days = 10
+			}
+		}
+	}
+}
+country_event = {
+	id = syria.4
+	title = syria.4.t
+	desc = syria.4.d
+	picture = GFX_report_event_hol_cabinet_de_geer
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = syria.4.a
+		
+		custom_effect_tooltip = syria.4.a_tt
+		set_country_flag = syria.4.a_flag
+		hidden_effect = {
+			country_event = {
+				id = syria.5
+				days = 10
+			}
+		}
+	}
+	option = {
+		name = syria.4.b
+		
+		custom_effect_tooltip = syria.4.b_tt
+		set_country_flag = syria.4.b_flag
+		SYR = {
+			add_state_core = 1100
+		}
+		hidden_effect = {
+			country_event = {
+				id = syria.5
+				days = 10
+			}
+		}
+	}
+}
+country_event = {
+	id = syria.5
+	title = syria.5.t
+	desc = syria.5.d
+	picture = GFX_report_event_saf
+	trigger = {
+		NOT = {
+			OR = {
+				country_exists = HAT
+				TUR = {
+					controls_state = 945
+				}
+			}
+			has_war_with = TUR
+		}
+	}
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = syria.5.a
+		
+		custom_effect_tooltip = syria.5.a_tt
+		set_country_flag = syria.5.a_flag
+		TUR = {
+			add_opinion_modifier = {
+				target = FRA
+				modifier = SYR_event05_a_op
+			}
+		}
+		hidden_effect = {
+			country_event = {
+				id = syria.6
+				days = 10
+			}
+		}
+	}
+	option = {
+		name = syria.5.b
+		
+		TUR = {
+			add_opinion_modifier = {
+				target = FRA
+				modifier = SYR_event05_b_op
+			}
+		}
+		hidden_effect = {
+			country_event = {
+				id = syria.6
+				days = 10
+			}
+		}
+	}
+}
+country_event = {
+	id = syria.6
+	title = syria.6.t
+	desc = syria.6.d
+	picture = GFX_report_event_egy_9
+	trigger = {
+		country_exists = KRD
+		KRD = {
+			OR = {
+				is_subject = no
+				compare_autonomy_state > autonomy_colony
+			}
+		}
+	}
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = syria.6.a
+		
+		custom_effect_tooltip = syria.6.a_tt
+		KRD = {
+			add_opinion_modifier = {
+				target = FRA
+				modifier = SYR_event06_a_op
+			}
+		}
+		set_country_flag = syria.6.a_flag
+		hidden_effect = {
+			country_event = {
+				id = syria.7
+				days = 10
+			}
+		}
+	}
+	option = {
+		name = syria.6.b
+		
+		KRD = {
+			add_opinion_modifier = {
+				target = FRA
+				modifier = SYR_event06_b_op
+			}
+		}
+		hidden_effect = {
+			country_event = {
+				id = syria.7
+				days = 10
+			}
+		}
+	}
+}
+country_event = {
+	id = syria.7
+	title = syria.7.t
+	desc = syria.7.d
+	picture = GFX_report_event_generic_read_write
+	trigger = {
+		country_exists = KRD
+		KRD = {
+			OR = {
+				is_subject = no
+				compare_autonomy_state > autonomy_colony
+			}
+		}
+	}
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = syria.7.a
+		
+		SYR = {
+			add_timed_idea = {
+				idea = SYR_france_syrian_agreement
+				days = 500
+			}
+		}
+		if = {
+			limit = {
+				SYR = {
+					NOT = {
+						OR = {
+							has_autonomy_state = autonomous_mandatory_territory
+							has_autonomy_state = associated_state
+						}
+					}
+				}
+			}
+			add_autonomy_ratio = {
+				value = 1
+				localization = syria.7.t
+			}
+		}
+		JDS = {
+			add_state_core = 1101
+		}
+		ALW = {
+			add_state_core = 1100
+		}
+		LEB = {
+			add_state_core = 553
+		}
+		SYR = {
+			remove_state_core = 1101
+			remove_state_core = 1100
+			remove_state_core = 553
+			set_country_flag = syria.7_flag
+			if = {
+				limit = {
+					has_country_flag = syria.3.b_flag
+				}
+				add_state_core = 1101
+			}
+			if = {
+				limit = {
+					has_country_flag = syria.4.b_flag
+				}
+				add_state_core = 1100
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = syria.2.b_flag
+			}
+			release_autonomy = {
+				target = LEB
+				autonomy_state = associated_state
+				freedom_level = 0.5
+			}
+			LEB = {
+				set_political_party = {
+					ideology = democratic
+					popularity = 100
+				}
+				capital_scope = {
+					create_unit = {
+						division = "name = \"3. Lebanon Infantry Division\" division_template = \"Libyan Infantry Division\" start_experience_factor = 0.5 start_equipment_factor = 0.5" 
+						owner = LEB
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = syria.3.a_flag
+			}
+			release_autonomy = {
+				target = JDS
+				autonomy_state = associated_state
+				freedom_level = 0.5
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = syria.4.a_flag
+			}
+			release_autonomy = {
+				target = ALW
+				autonomy_state = associated_state
+				freedom_level = 0.5
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = syria.5.a_flag
+			}
+			TUR = {
+				transfer_state = 945
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = syria.6.a_flag
+			}
+			KRD = {
+				transfer_state = 961
+			}
+		}
+		hidden_effect = {
+			SYR = {
+				country_event = {
+					id = syria.10
+					days = 7
+				}
+			}
+		}
+	}
+	option = {
+		name = syria.7.b
+		trigger = {
+			NOT = { is_ai = yes }
+		}
+		
+		SYR = {
+			add_timed_idea = {
+				idea = SYR_france_syrian_agreement
+				days = 500
+			}
+		}
+		if = {
+			limit = {
+				SYR = {
+					NOT = {
+						OR = {
+							has_autonomy_state = autonomous_mandatory_territory
+							has_autonomy_state = associated_state
+						}
+					}
+				}
+			}
+			add_autonomy_ratio = {
+				value = 1
+				localization = syria.7.t
+			}
+		}
+		JDS = {
+			add_state_core = 1101
+		}
+		ALW = {
+			add_state_core = 1100
+		}
+		LEB = {
+			add_state_core = 553
+		}
+		SYR = {
+			remove_state_core = 1101
+			remove_state_core = 1100
+			remove_state_core = 553
+			set_country_flag = syria.7_flag
+			if = {
+				limit = {
+					has_country_flag = syria.3.b_flag
+				}
+				add_state_core = 1101
+			}
+			if = {
+				limit = {
+					has_country_flag = syria.4.b_flag
+				}
+				add_state_core = 1100
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = syria.2.b_flag
+			}
+			release_autonomy = {
+				target = LEB
+				autonomy_state = associated_state
+				freedom_level = 0.5
+			}
+			LEB = {
+				set_political_party = {
+					ideology = democratic
+					popularity = 100
+				}
+				capital_scope = {
+					create_unit = {
+						division = "name = \"3. Lebanon Infantry Division\" division_template = \"Libyan Infantry Division\" start_experience_factor = 0.5 start_equipment_factor = 0.5" 
+						owner = LEB
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = syria.3.a_flag
+			}
+			release_autonomy = {
+				target = JDS
+				autonomy_state = associated_state
+				freedom_level = 0.5
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = syria.4.a_flag
+			}
+			release_autonomy = {
+				target = ALW
+				autonomy_state = associated_state
+				freedom_level = 0.5
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = syria.5.a_flag
+			}
+			TUR = {
+				transfer_state = 945
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = syria.6.a_flag
+			}
+			KRD = {
+				transfer_state = 961
+			}
+		}
+		hidden_effect = {
+			SYR = {
+				country_event = {
+					id = syria.10
+					days = 7
+				}
+			}
+		}
+		change_tag_from = SYR
+	}
+}
+country_event = {
+	id = syria.8
+	title = syria.8.t
+	desc = syria.8.d
+	picture = GFX_report_event_generic_parliament
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = syria.8.a
+		
+		add_stability = -0.2
+		add_war_support = 0.1
+		
+	}
+	option = {
+		name = syria.8.b
+		
+		if = {
+			limit = {
+				NOT = {
+					553 = {
+						is_core_of = LEB
+					}
+				}
+			}
+			LEB = { add_state_core = 553 }
+		}
+		release = LEB
+		LEB = {
+			add_opinion_modifier = {
+				target = SYR
+				modifier = SYR_freedom_for_lebanon_op
+			}
+		}
+	}
+	option = {
+		name = syria.8.c
+		trigger = {
+			NOT = { is_ai = yes }
+		}
+		
+		if = {
+			limit = {
+				NOT = {
+					553 = {
+						is_core_of = LEB
+					}
+				}
+			}
+			LEB = { add_state_core = 553 }
+		}
+		release = LEB
+		LEB = {
+			add_opinion_modifier = {
+				target = SYR
+				modifier = SYR_freedom_for_lebanon_op
+			}
+		}
+		change_tag_from = SYR
+	}
+}
+country_event = {
+	id = syria.9
+	title = syria.9.t
+	desc = syria.9.d
+	picture = GFX_report_event_vienna_award_negotiations
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = syria.9.a
+		
+		set_politics = {
+			ruling_party = democratic
+		}
+	}
+	option = {
+		name = syria.9.b
+		
+		set_politics = {
+			ruling_party = monarchy
+		}
+		add_popularity = {
+			ideology = monarchy
+			popularity = 0.1
+		}
+		add_political_power = -20
+	}
+}
+country_event = {
+	id = syria.10
+	title = syria.10.t
+	desc = syria.10.d
+	picture = GFX_report_event_generic_factory
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = syria.10.a
+		
+		FRA = {
+			country_event = {
+				id = syria.11
+				days = 1
+			}
+		}
+	}
+	option = {
+		name = syria.10.b
+	}
+}
+country_event = {
+	id = syria.11
+	title = syria.11.t
+	desc = syria.11.d
+	picture = GFX_report_event_hitler_handshake
+	trigger = {
+		SYR = {
+			is_subject_of = FRA
+		}
+	}
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = syria.11.a
+		
+		capital_scope = {
+			remove_building = {
+				type = industrial_complex
+				level = 2
+			}
+		}
+		add_timed_idea = {
+			idea = SYR_sirian_credit
+			days = 300
+		}
+		SYR = {
+			capital_scope = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			add_timed_idea = {
+				idea = SYR_sirian_credit_from_france
+				days = 300
+			}
+		}
+	}
+	option = {
+		name = syria.11.b
+		
+		SYR = {
+			country_event = {
+				id = syria.12
+				days = 1
+			}
+		}
+	}
+}
+country_event = {
+	id = syria.12
+	title = syria.12.t
+	desc = syria.12.d
+	picture = GFX_report_event_bose
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = syria.12.a
+		
+		add_opinion_modifier = {
+			target = FRA
+			modifier = SYR_france_denial_op
+		}
+	}
+}
+country_event = {
+	id = syria.13
+	title = syria.13.t
+	desc = syria.13.d
+	picture = GFX_report_event_spain_civil_war_volunteers_02
+	trigger = {
+		FRA = {
+			OR = {
+				civilwar_target = FRC
+				civilwar_target = FRF
+			}
+		}
+		SYR = { is_subject_of = FRA }
+	}
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = syria.13.a
+		
+		if = {
+			limit = {
+				country_exists = FRC
+			}
+			add_opinion_modifier = {
+				target = FRC
+				modifier = SYR_frc_frf_opinion_op
+			}
+			FRC = {
+				add_opinion_modifier = {
+					target = SYR
+					modifier = SYR_frc_frf_opinion_op
+				}
+			}
+		}
+		if = {
+			limit = {
+				country_exists = FRF
+			}
+			add_opinion_modifier = {
+				target = FRF
+				modifier = SYR_frc_frf_opinion_op
+			}
+			FRF = {
+				add_opinion_modifier = {
+					target = SYR
+					modifier = SYR_frc_frf_opinion_op
+				}
+			}
+		}
+	}
+	option = {
+		name = syria.13.b
+		trigger = {
+			FRA = {
+				has_war_with = FRC
+			}
+		}
+		
+		FRC = {
+			puppet = SYR
+		}
+		FRA = {
+			add_opinion_modifier = {
+				target = SYR
+				modifier = SYR_traitor_for_france_op
+			}
+		}
+	}
+	option = {
+		name = syria.13.c
+		trigger = {
+			FRA = {
+				has_war_with = FRF
+			}
+		}
+		
+		FRF = {
+			puppet = SYR
+		}
+		FRA = {
+			add_opinion_modifier = {
+				target = SYR
+				modifier = SYR_traitor_for_france_op
+			}
+		}
+	}
+	option = {
+		name = syria.13.e
+		trigger = {
+			has_completed_focus = SYR_transfer_control_to_civilian_gov
+			has_autonomy_state = associated_state
+		}
+		ai_chance = {
+			base = 0
+			modifier = {
+				is_ai = yes
+				add = -100
+			}
+		}
+		
+		release = SYR
+		add_opinion_modifier = {
+			target = FRA
+			modifier = SYR_traitor_for_france_small_op
+		}
+	}
+}
+country_event = {
+	id = syria.14
+	title = syria.14.t
+	desc = syria.14.d
+	picture = GFX_report_event_poland_rejects
+	trigger = {
+		has_completed_focus = SYR_save_the_mandath
+		date > 1938.9.21
+	}
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = syria.14.a
+		
+		create_country_leader = {
+			name = "Gabriel Puaux"
+			desc = "POLITICS_GABRIEL_PUAUX_DESC"
+			picture = "Portrait_Syria_Gabriel_Puaux.dds"
+			expire = "1965.1.1"
+			ideology = moderatism
+			traits = {
+				
+			}
+		}
+	}
+}
+country_event = {
+	id = syria.15
+	title = syria.15.t
+	desc = syria.15.d
+	picture = GFX_report_event_gathering_protest
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = syria.15.a
+		
+		add_political_power = -50
+	}
+	option = {
+		name = syria.15.b
+		
+		add_stability = 0.05
+	}
+}
+country_event = {
+	id = syria.16
+	title = syria.16.t
+	desc = syria.16.d
+	picture = GFX_report_event_gathering_protest
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = syria.16.a
+		
+	}
+	option = {
+		name = syria.16.b
+		
+		add_opinion_modifier = {
+			target = FRA
+			modifier = SYR_not_support_in_war_indepedence_op
+		}
+	}
+	option = {
+		name = syria.16.c
+		
+		add_opinion_modifier = {
+			target = FRA
+			modifier = SYR_support_in_war_indepedence_op
+		}
+	}
+	option = {
+		name = syria.16.e
+		
+		add_ideas = SYR_intervent_to_syrian_war_for_indepedence
+		add_opinion_modifier = {
+			target = FRA
+			modifier = SYR_not_support_in_war_indepedence_op
+		}
+		add_ai_strategy = {
+			type = send_volunteers_desire
+			id = SYR
+			value = 200
+		}
+		add_ai_strategy = {
+			type = befriend
+			id = SYR
+			value = 200
+		}
+	}
+}
+country_event = {
+	id = syria.17
+	title = syria.17.t
+	desc = syria.17.d
+	picture = GFX_report_event_generic_riot
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = syria.17.a
+		
+		transfer_state = 945
+		SYR = {
+			country_event = {
+				id = syria.18
+				days = 1
+			}
+		}
+		FRA = {
+			country_event = {
+				id = syria.19
+				days = 1
+			}
+		}
+		custom_effect_tooltip = syria.17_tt
+	}
+	option = {
+		name = syria.17.b
+		
+	}
+}
+country_event = {
+	id = syria.18
+	title = syria.18.t
+	desc = syria.18.d
+	picture = GFX_report_event_german_inspect_troops
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = syria.18.a
+		
+		declare_war_on = {
+			target = TUR
+			type = take_claimed_state
+		}
+		if = {
+			limit = {
+				NOT = {
+					945 = {
+						is_core_of = SYR
+					}
+				}
+			}
+			add_state_claim = 945
+		}
+		set_country_flag = SYR_begin_war_with_france_flag1
+	}
+	option = {
+		name = syria.18.b
+		
+		if = {
+			limit = {
+				NOT = {
+					945 = {
+						is_core_of = SYR
+					}
+				}
+			}
+			add_state_claim = 945
+		}
+	}
+}
+country_event = {
+	id = syria.19
+	title = syria.19.t
+	desc = syria.19.d
+	picture = GFX_report_event_german_inspect_troops
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = syria.19.a
+		ai_chance = {
+			base = 0
+			modifier = {
+				OR = {
+					has_war_with = majors
+					has_government = democratic
+					is_in_faction_with = TUR
+					has_opinion = {
+						target = TUR
+						value > 59
+					}
+				}
+				add = -100
+			}
+		}
+		
+		declare_war_on = {
+			target = TUR
+			type = take_claimed_state
+		}
+		add_state_claim = 945
+		if = {
+			limit = {
+				TUR = {
+					is_in_faction_with = FRA
+					FRA = {
+						is_faction_leader = yes
+					}
+				}
+			}
+			leave_faction = yes
+		}
+	}
+	option = {
+		name = syria.19.b
+		
+		TUR = {
+			add_opinion_modifier = {
+				target = FRA
+				modifier = SYR_not_angry_annex_hatay_op
+			}
+		}
+	}
+}
+country_event = {
+	id = syria.20
+	title = syria.20.t
+	desc = syria.20.d
+	picture = GFX_report_event_generic_read_write
+	is_triggered_only = yes
+	
+	option = {
+		name = syria.20.a
+		
+		white_peace = SYR
+		set_truce = {
+			target = SYR
+			days = 90
+		}
+		FRA = {
+			1100 = {
+				if = {
+					limit = {
+						is_owned_by = FRA
+					}
+					SYR = {
+						transfer_state = 1100
+					}
+				}
+			}
+			553 = {
+				if = {
+					limit = {
+						is_owned_by = FRA
+					}
+					SYR = {
+						transfer_state = 553
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = syria.20.b
+		
+		add_war_support = -0.03
+		SYR = {
+			country_event = {
+				id = syria.45
+				days = 1
+			}
+		}
+	}
+}
+country_event = {
+	id = syria.21
+	title = syria.21.t
+	desc = syria.21.d
+	picture = GFX_report_event_generic_sign_treaty2
+	is_triggered_only = yes
+	
+	option = {
+		name = syria.21.a
+		
+		SYR = {
+			transfer_state = 945
+			if = {
+				limit = {
+					has_completed_focus = SYR_port_adana
+					controls_state = 352
+					controls_state = 350
+					controls_state = 344
+				}
+				transfer_state = 352
+				transfer_state = 350
+				transfer_state = 344
+			}
+		}
+		white_peace = SYR
+		set_truce = {
+			target = SYR
+			days = 90
+		}
+	}
+	option = {
+		name = syria.21.b
+		
+		SYR = {
+			country_event = {
+				id = syria.46
+				days = 1
+			}
+		}
+	}
+}
+country_event = {
+	id = syria.22
+	title = syria.22.t
+	desc = syria.22.d
+	picture = GFX_report_event_bose_meeting
+	is_triggered_only = yes
+	
+	option = {
+		name = syria.22.a
+		ai_chance = {
+			base = 0
+			modifier = {
+				ENG = {
+					has_government = fascism
+				}
+				add = 100
+			}
+		}
+		
+		SYR = {
+			country_event = {
+				id = syria.23
+				days = 1
+			}
+		}
+	}
+	option = {
+		name = syria.22.b
+		
+		SYR = {
+			country_event = {
+				id = syria.24
+				days = 1
+			}
+		}
+	}
+}
+country_event = {
+	id = syria.23
+	title = syria.23.t
+	desc = syria.23.d
+	picture = GFX_report_event_german_advisors_remain
+	is_triggered_only = yes
+	
+	option = {
+		name = syria.23.a
+		
+		create_wargoal = {
+			type = annex_everything
+			target = ENG
+		}
+		add_opinion_modifier = {
+			target = ENG
+			modifier = SYR_refuse_demand_transjordan_op
+		}
+		add_ai_strategy = {
+			type = prepare_for_war
+			id = ENG
+			value = 200
+		}
+	}
+}
+country_event = {
+	id = syria.24
+	title = syria.24.t
+	desc = syria.24.d
+	picture = GFX_report_event_german_politician_speech
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = syria.24.a
+		
+		transfer_state = 455
+		transfer_state = 1053
+		transfer_state = 1054
+		diplomatic_relation = {
+			country = ENG
+			relation = non_aggression_pact
+			active = yes
+		}
+	}
+	option = {
+		name = syria.24.b
+		
+		create_wargoal = {
+			type = annex_everything
+			target = ENG
+		}
+		ENG = {
+			country_event = {
+				id = syria.25
+				days = 1
+			}
+		}
+	}
+}
+country_event = {
+	id = syria.25
+	title = syria.25.t
+	desc = syria.25.d
+	picture = GFX_report_event_imperial_conference
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = syria.25.a
+		
+		add_ai_strategy = {
+			type = prepare_for_war
+			id = SYR
+			value = 200
+		}
+	}
+}
+country_event = {
+	id = syria.26
+	title = syria.26.t
+	desc = syria.26.d
+	picture = GFX_report_event_soviet_invasion_map
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = syria.26.a
+		
+		SYR = {
+			transfer_state = 991
+			transfer_state = 679
+		}
+		ENG = {
+			add_ai_strategy = {
+				type = protect
+				id = SAU
+				value = 200
+			}
+		}
+		TUR = {
+			if = {
+				limit = {
+					has_country_leader = {
+						name = "Mustafa Kemal Atatürk"
+						ruling_only = yes
+					}
+				}
+				add_ai_strategy = {
+					type = protect
+					id = SAU
+					value = 200
+				}
+			}
+		}
+	}
+	option = {
+		name = syria.26.b
+		
+		SYR = {
+			country_event = {
+				id = syria.27
+				days = 1
+			}
+		}
+	}
+}
+country_event = {
+	id = syria.27
+	title = syria.27.t
+	desc = syria.27.d
+	picture = GFX_report_event_military_planning
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = syria.27.a
+		
+		create_wargoal = {
+			type = annex_everything
+			target = SAU
+		}
+	}
+}
+country_event = {
+	id = syria.28
+	title = syria.28.t
+	desc = syria.28.d
+	picture = GFX_report_event_generic_peaceful_annexation
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = syria.28.a
+		
+		SYR = {
+			puppet = IRQ
+			set_autonomy = {
+				target = IRQ
+				autonomy_state = autonomy_dominion
+			}
+			add_ideas = SYR_unite_hashimits
+		}
+		add_ideas = SYR_unite_hashimits
+	}
+	option = {
+		name = syria.28.b
+		
+		SYR = {
+			country_event = {
+				id = syria.29
+				days = 1
+			}
+		}
+	}
+}
+country_event = {
+	id = syria.29
+	title = syria.29.t
+	desc = syria.29.d
+	picture = GFX_report_event_lithuania_army
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = syria.29.a
+		
+		create_wargoal = {
+			type = annex_everything
+			target = IRQ
+		}
+	}
+	option = {
+		name = syria.29.b
+		
+	}
+}
+country_event = {
+	id = syria.30
+	title = syria.30.t
+	desc = syria.30.d
+	picture = GFX_report_event_communist_leader
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = syria.30.a
+		
+		if = {
+			limit = {
+				ENG = {
+					OR = {
+						controls_state = 656
+						all_allied_country = {
+							if = {
+								limit = {
+									is_subject_of = ENG
+								}
+								controls_state = 656
+							}
+						}
+					}
+				}
+			}
+			IRQ = {
+				transfer_state = 656
+				add_state_core = 656
+			}
+		}
+		if = {
+			limit = {
+				KUW = {
+					controls_state = 656
+					is_subject = yes
+					compare_autonomy_state > autonomy_colony
+				}
+			}
+			KUW = {
+				country_event = {
+					id = syria.31
+					days = 1
+				}
+			}
+		}
+	}
+	option = {
+		name = syria.30.b
+		
+		SYR = {
+			country_event = {
+				id = syria.32
+				days = 1
+			}
+		}
+	}
+}
+country_event = {
+	id = syria.31
+	title = syria.31.t
+	desc = syria.31.d
+	picture = GFX_report_event_RCMP
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = syria.31.a
+		
+		SYR = {
+			puppet = KUW
+			set_autonomy = {
+				target = KUW
+				autonomy_state = autonomy_dominion
+			}
+		}
+	}
+	option = {
+		name = syria.31.b
+		
+		declare_war_on = {
+			target = SYR
+			type = take_core_state
+		}
+	}
+}
+country_event = {
+	id = syria.32
+	title = syria.32.t
+	desc = syria.32.d
+	picture = GFX_report_event_generic_sign_treaty3
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = syria.32.a
+		
+		add_state_claim = 656
+	}
+}
+country_event = {
+	id = syria.33
+	title = syria.33.t
+	desc = syria.33.d
+	picture = GFX_report_event_election_vote
+	trigger = {
+		focus_progress = {
+			focus = SYR_hold_early_elections
+			progress > 0.06
+		}
+	}
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = syria.33.a
+		
+		set_party_name = { 
+			ideology = democratic 
+			long_name = SYR_democratic_party_people_long 
+			name = SYR_democratic_party_people
+		}
+		custom_effect_tooltip = syria.33_tt
+		hidden_effect = {
+			set_variable = {
+				var = SYR_popularity_people_party
+				value = 0
+			}
+			set_variable = {
+				var = SYR_popularity_national_party
+				value = 1
+			}
+		}
+	}
+}
+country_event = {
+	id = syria.34
+	title = syria.34.t
+	desc = syria.34.d
+	picture = GFX_report_event_king_speech
+	trigger = {
+		focus_progress = {
+			focus = SYR_hold_early_elections
+			progress > 0.20
+		}
+	}
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = syria.34.a
+		
+	}
+	option = {
+		name = syria.34.b
+		
+		hidden_effect = {
+			add_to_variable = {
+				var = SYR_popularity_people_party
+				value = 1
+			}
+		}
+	}
+}
+country_event = {
+	id = syria.35
+	title = syria.35.t
+	desc = syria.35.d
+	picture = GFX_report_event_finnish_letter
+	trigger = {
+		focus_progress = {
+			focus = SYR_hold_early_elections
+			progress > 0.34
+		}
+	}
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = syria.35.a
+		
+		add_opinion_modifier = {
+			target = FRA
+			modifier = SYR_bad_first_president_op
+		}
+		hidden_effect = {
+			add_to_variable = {
+				var = SYR_popularity_people_party
+				value = 1
+			}
+		}
+	}
+	option = {
+		name = syria.35.b
+		
+		add_opinion_modifier = {
+			target = FRA
+			modifier = SYR_good_first_president_op
+		}
+		hidden_effect = {
+			add_to_variable = {
+				var = SYR_popularity_people_party
+				value = -1
+			}
+		}
+	}
+}
+country_event = {
+	id = syria.36
+	title = syria.36.t
+	desc = syria.36.d
+	picture = GFX_report_event_election_vote
+	trigger = {
+		has_completed_focus = SYR_hold_early_elections
+		check_variable = { SYR_popularity_people_party > SYR_popularity_national_party }
+	}
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = syria.36.a
+		
+		add_political_power = 50
+	}
+}
+country_event = {
+	id = syria.37
+	title = syria.37.t
+	desc = syria.37.d
+	picture = GFX_report_event_election_vote
+	trigger = {
+		has_completed_focus = SYR_hold_early_elections
+		check_variable = { SYR_popularity_people_party < SYR_popularity_national_party }
+	}
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = syria.37.a
+		
+		add_political_power = 50
+		set_party_name = { 
+			ideology = democratic 
+			long_name = SYR_democratic_party_national_long
+			name = SYR_democratic_party_national
+		}
+		create_country_leader = {
+			name = "Shukri al-Quwatli"
+			desc = "POLITICS_SHUKRI_AL-QUWATLI_DESC"
+			picture = "Portrait_Syria_Shukri_al-Quwatli.dds"
+			expire = "1965.1.1"
+			ideology = national_liberals
+			traits = {
+				
+			}
+		}
+	}
+}
+country_event = {
+	id = syria.38
+	title = syria.38.t
+	desc = syria.38.d
+	picture = GFX_report_event_communists_cheer
+	trigger = {
+		communism > 0.39
+		has_decision = SYR_more_rights_for_trade_unions
+	}
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = syria.38.a
+		
+		unlock_national_focus = SYR_communism_goverment
+	}
+}
+country_event = {
+	id = syria.39
+	title = syria.39.t
+	desc = syria.39.d
+	picture = GFX_report_event_fascists_posing
+	trigger = {
+		fascism > 0.39
+		has_decision = SYR_accept_torchlight_processions
+	}
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = syria.39.a
+		
+		unlock_national_focus = SYR_national_socialism_goverment
+	}
+}
+country_event = {
+	id = syria.40
+	title = syria.40.t
+	desc = syria.40.d
+	picture = GFX_report_event_fascists_posing
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = syria.40.a
+		
+		add_stability = -0.1
+		start_civil_war = {
+			ruling_party = fascism
+		}
+	}
+}
+country_event = {
+	id = syria.41
+	title = syria.41.t
+	desc = syria.41.d
+	picture = GFX_report_event_communists_cheer
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = syria.41.a
+		
+		add_stability = -0.1
+		start_civil_war = {
+			ruling_party = communism
+		}
+	}
+}
+country_event = {
+	id = syria.42
+	title = syria.42.t
+	desc = syria.42.d
+	picture = GFX_report_event_soviet_japanese_pact
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = syria.42.a
+		
+		puppet = SYR
+		set_autonomy = {
+			target = SYR
+			autonomy_state = autonomy_dominion
+		}
+		random_owned_state = {
+			remove_building = {
+				type = industrial_complex
+				level = 3
+			}
+		}
+		SYR = {
+			country_event = {
+				id = syria.43
+				days = 1
+			}
+		}
+	}
+	option = {
+		name = syria.42.b
+		ai_chance = {
+			base = 0
+			modifier = {
+				is_ai = yes
+				add = -100
+			}
+		}
+		
+		SYR = {
+			country_event = {
+				id = syria.44
+				days = 1
+			}
+		}
+	}
+}
+country_event = {
+	id = syria.43
+	title = syria.43.t
+	desc = syria.43.d
+	picture = GFX_report_event_stalin_meeting
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = syria.43.a
+		
+		random_owned_state = {
+			add_building_construction = {
+				type = industrial_complex
+				level = 3
+				instant_build = yes
+			}
+		}
+	}
+}
+country_event = {
+	id = syria.44
+	title = syria.44.t
+	desc = syria.44.d
+	picture = GFX_report_event_stalin_01
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = syria.44.a
+		
+		add_opinion_modifier = {
+			target = SOV
+			modifier = SYR_refuse_economic_aid_op
+		}
+	}
+}
+country_event = {
+	id = syria.45
+	title = syria.45.t
+	desc = syria.45.d
+	picture = GFX_report_event_france_victory_syria
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = syria.45.a
+		
+	}
+}
+country_event = {
+	id = syria.46
+	title = syria.46.t
+	desc = syria.46.d
+	picture = GFX_report_event_france_parade
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = syria.46.a
+		
+	}
+}
+country_event = {
+	id = syria.47
+	title = syria.47.t
+	desc = syria.47.d
+	picture = GFX_report_event_fascist_militia
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = syria.47.a
+		
+		release = ALW
+		ALW = {
+			division_template = {
+				name = "Alawites Cavalry Division"
+				regiments = {
+					cavalry = { x = 0 y = 0 }
+					cavalry = { x = 0 y = 1 }
+					cavalry = { x = 0 y = 2 }
+					cavalry = { x = 0 y = 3 }
+				}
+			}
+		}
+		capital_scope = {
+			create_unit = {
+				division = "name = \"1. Alawites Cavalry Division\" division_template = \"Alawites Cavalry Division\" start_experience_factor = 0.5 start_equipment_factor = 0.5"
+				owner = ALW
+			}
+			create_unit = {
+				division = "name = \"2. Alawites Cavalry Division\" division_template = \"Alawites Cavalry Division\" start_experience_factor = 0.5 start_equipment_factor = 0.5"
+				owner = ALW
+			}
+		}
+		remove_state_core = 1100
+		add_ai_strategy = {
+			type = contain
+			id = SYR
+			value = 200
+		}
+	}
+	option = {
+		name = syria.47.b
+		
+		release = ALW
+		ALW = {
+			division_template = {
+				name = "Alawites Cavalry Division"
+				regiments = {
+					cavalry = { x = 0 y = 0 }
+					cavalry = { x = 0 y = 1 }
+					cavalry = { x = 0 y = 2 }
+					cavalry = { x = 0 y = 3 }
+				}
+			}
+		}
+		capital_scope = {
+			create_unit = {
+				division = "name = \"1. Alawites Cavalry Division\" division_template = \"Alawites Cavalry Division\" start_experience_factor = 0.5 start_equipment_factor = 0.5"
+				owner = ALW
+			}
+			create_unit = {
+				division = "name = \"2. Alawites Cavalry Division\" division_template = \"Alawites Cavalry Division\" start_experience_factor = 0.5 start_equipment_factor = 0.5"
+				owner = ALW
+			}
+		}
+		remove_state_core = 1100
+		declare_war_on = {
+			target = ALW
+			type = annex_everything
+		}
+	}
+}
+country_event = {
+	id = syria.48
+	title = syria.48.t
+	desc = syria.48.d
+	picture = GFX_report_event_generic_strike
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = syria.48.a
+		
+		release = JDS
+		JDS = {
+			division_template = {
+				name = "Druze Cavalry Division"
+				regiments = {
+					cavalry = { x = 0 y = 0 }
+					cavalry = { x = 0 y = 1 }
+				}
+			}
+		}
+		capital_scope = {
+			create_unit = {
+				division = "name = \"1. Druze Cavalry Division\" division_template = \"Druze Cavalry Division\" start_experience_factor = 0.5 start_equipment_factor = 0.5"
+				owner = JDS
+			}
+		}
+		remove_state_core = 1101
+		add_ai_strategy = {
+			type = contain
+			id = SYR
+			value = 200
+		}
+	}
+	option = {
+		name = syria.48.b
+		
+		release = JDS
+		JDS = {
+			division_template = {
+				name = "Druze Cavalry Division"
+				regiments = {
+					cavalry = { x = 0 y = 0 }
+					cavalry = { x = 0 y = 1 }
+				}
+			}
+		}
+		capital_scope = {
+			create_unit = {
+				division = "name = \"1. Druze Cavalry Division\" division_template = \"Druze Cavalry Division\" start_experience_factor = 0.5 start_equipment_factor = 0.5"
+				owner = JDS
+			}
+		}
+		remove_state_core = 1101
+		declare_war_on = {
+			target = JDS
+			type = annex_everything
+		}
+	}
+}
+country_event = {
+	id = syria.49
+	title = syria.49.t
+	desc = syria.49.d
+	picture = GFX_report_event_india_protests
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = syria.49.a
+		
+		release = LEB
+		capital_scope = {
+			create_unit = {
+				division = "name = \"4. Libyan Infantry Division\" division_template = \"Libyan Infantry Division\" start_experience_factor = 0.5 start_equipment_factor = 0.5"
+				owner = LEB
+			}
+			create_unit = {
+				division = "name = \"5. Libyan Infantry Division\" division_template = \"Libyan Infantry Division\" start_experience_factor = 0.5 start_equipment_factor = 0.5"
+				owner = LEB
+			}
+			create_unit = {
+				division = "name = \"6. Libyan Infantry Division\" division_template = \"Libyan Infantry Division\" start_experience_factor = 0.5 start_equipment_factor = 0.5"
+				owner = LEB
+			}
+		}
+		remove_state_core = 553
+		add_ai_strategy = {
+			type = contain
+			id = SYR
+			value = 200
+		}
+	}
+	option = {
+		name = syria.49.b
+		
+		release = LEB
+		capital_scope = {
+			create_unit = {
+				division = "name = \"4. Libyan Infantry Division\" division_template = \"Libyan Infantry Division\" start_experience_factor = 0.5 start_equipment_factor = 0.5"
+				owner = LEB
+			}
+			create_unit = {
+				division = "name = \"5. Libyan Infantry Division\" division_template = \"Libyan Infantry Division\" start_experience_factor = 0.5 start_equipment_factor = 0.5"
+				owner = LEB
+			}
+			create_unit = {
+				division = "name = \"6. Libyan Infantry Division\" division_template = \"Libyan Infantry Division\" start_experience_factor = 0.5 start_equipment_factor = 0.5"
+				owner = LEB
+			}
+		}
+		remove_state_core = 1100
+		declare_war_on = {
+			target = LEB
+			type = annex_everything
+		}
+	}
+}
+country_event = {
+	id = syria.50
+	title = syria.50.t
+	desc = syria.50.d
+	picture = GFX_report_event_soviet_invasion_map
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = syria.50.a
+		ai_chance = {
+			base = 0
+			modifier = {
+				has_government = democratic
+				add = 100
+			}
+		}
+		
+		SYR = {
+			country_event = {
+				id = syria.51
+				days = 1
+			}
+		}
+	}
+	option = {
+		name = syria.50.b
+		
+		if = {
+			limit = {
+				SYR = {
+					controls_state = 995
+				}
+			}
+			SYR = {
+				transfer_state = 413
+			}
+			else = {
+				SYR = {
+					set_autonomy = {
+						target = KHU
+						autonomy_state = autonomy_integrated_puppet
+					}
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = syria.51
+	title = syria.51.t
+	desc = syria.51.d
+	picture = GFX_report_event_soldiers_marching
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = syria.51.a
+		
+		create_wargoal = {
+			type = annex_everything
+			target = PER
+		}
+	}
+}
+country_event = {
+	id = syria.52
+	title = syria.52.t
+	desc = syria.52.d
+	picture = GFX_report_event_spr_army_of_africa
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = syria.52.a
+		
+		SYR = {
+			country_event = {
+				id = syria.53
+				days = 1
+			}
+		}
+	}
+	option = {
+		name = syria.52.b
+		
+		if = {
+			limit = {
+				TUR = { controls_state = 345 }
+			}
+			SYR = { transfer_state = 345 }
+		}
+		if = {
+			limit = {
+				TUR = { controls_state = 344 }
+			}
+			SYR = { transfer_state = 344 }
+		}
+		if = {
+			limit = {
+				TUR = { controls_state = 350 }
+			}
+			SYR = { transfer_state = 350 }
+		}
+		if = {
+			limit = {
+				TUR = { controls_state = 352 }
+			}
+			SYR = { transfer_state = 352 }
+		}
+		if = {
+			limit = {
+				TUR = { controls_state = 945 }
+			}
+			SYR = { transfer_state = 945 }
+		}
+	}
+}
+country_event = {
+	id = syria.53
+	title = syria.53.t
+	desc = syria.53.d
+	picture = GFX_report_event_south_africa_patrol
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = syria.53.a
+		
+		add_opinion_modifier = {
+			target = TUR
+			modifier = SYR_refuse_demand_adana_op
+		}
+		add_ai_strategy = {
+			type = prepare_for_war
+			id = TUR
+			value = 200
+		}
+	}
+}
+country_event = {
+	id = syria.54
+	title = syria.54.t
+	desc = syria.54.d
+	picture = GFX_report_event_japan_army_mountainside
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = syria.54.a
+		
+		SYR = {
+			transfer_state = 1116
+		}
+	}
+	option = {
+		name = syria.54.b
+		
+		SYR = {
+			country_event = {
+				id = syria.55
+				days = 1
+			}
+		}
+	}
+}
+country_event = {
+	id = syria.55
+	title = syria.55.t
+	desc = syria.55.d
+	picture = GFX_report_event_military_planning
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = syria.55.a
+		
+		add_opinion_modifier = {
+			target = SAU
+			modifier = SYR_refuse_demand_sakaka_op
+		}
+		add_ai_strategy = {
+			type = prepare_for_war
+			id = SAU
+			value = 200
+		}
+	}
+}
