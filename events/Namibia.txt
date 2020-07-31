@@ -1119,6 +1119,8 @@ country_event = { # Формирование СВАНУ
 	
 	fire_only_once = yes
 	
+	is_triggered_only = yes
+	
 	trigger = {
 		trozkism > 0.12
 	}
@@ -1191,6 +1193,7 @@ country_event = { # Агитация СВАПО в поселениях бант
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event namibian.55" }
 	
 	is_triggered_only = yes
+	
 
 	option = { # Банту слишком необразованные, чтобы понять, что такое «нация»» 
 		name = namibian.55.a
