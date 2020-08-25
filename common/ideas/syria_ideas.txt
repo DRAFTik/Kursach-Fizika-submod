@@ -17,7 +17,7 @@ ideas = {
 			modifier = {
 				political_power_gain = -0.5
 				stability_factor = 0.1
-				weekly_manpower = -344
+				conscription = 0.01
 				production_speed_buildings_factor = -0.05
 				industrial_capacity_factory = -0.05
 			}
@@ -47,6 +47,10 @@ ideas = {
 			allowed = {
 				always = no
 			}
+			
+			available = {
+				is_subject = yes
+			}
 
 			allowed_civil_war = {
 				always = yes
@@ -64,6 +68,10 @@ ideas = {
 			
 			allowed = {
 				always = no
+			}
+			
+			available = {
+				is_subject = yes
 			}
 
 			allowed_civil_war = {
@@ -83,6 +91,10 @@ ideas = {
 			allowed = {
 				always = no
 			}
+			
+			available = {
+				is_subject = yes
+			}
 
 			allowed_civil_war = {
 				always = yes
@@ -91,7 +103,7 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				autonomy_gain = 6
+				autonomy_gain = 4
 			}
 		}
 		SYR_involve_local_producers_ter_manage_idea = {
@@ -175,6 +187,10 @@ ideas = {
 			allowed = {
 				always = no
 			}
+			
+			available = {
+				is_subject = yes
+			}
 
 			allowed_civil_war = {
 				always = yes
@@ -191,9 +207,18 @@ ideas = {
 			picture = can_patriation
 			
 			allowed = {
+				always = no
+			}
+			
+			available = {
 				FRA = {
-					has_civil_war = yes
+					OR = {
+						has_civil_war = yes
+						has_war_with = FRC
+						has_war_with = FRF
+					}
 				}
+				is_subject = yes
 			}
 
 			allowed_civil_war = {
@@ -249,6 +274,10 @@ ideas = {
 			allowed = {
 				always = no
 			}
+			
+			available = {
+				is_subject = yes
+			}
 
 			allowed_civil_war = {
 				always = yes
@@ -266,6 +295,14 @@ ideas = {
 			
 			allowed = {
 				always = no
+			}
+			
+			available = {
+				OR = {
+					country_exists = FRA
+					country_exists = FRC
+					country_exists = FRF
+				}
 			}
 
 			allowed_civil_war = {
@@ -313,7 +350,7 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				industrial_capacity_factory = 0.05
+				industrial_capacity_factory = 0.06
 			}
 		}
 		SYR_nationalism_idea = {
@@ -322,6 +359,10 @@ ideas = {
 			
 			allowed = {
 				always = no
+			}
+			
+			available = {
+				is_subject = yes
 			}
 
 			allowed_civil_war = {
@@ -432,7 +473,15 @@ ideas = {
 			allowed = {
 				always = no
 			}
-
+			
+			available = {
+				AND = {
+					NOT = { has_country_flag = SYR_begin_build_capitalism_1 }
+					NOT = { has_country_flag = SYR_begin_build_capitalism_2 }
+					NOT = { has_country_flag = SYR_begin_build_capitalism_3 }
+				}
+			}
+			
 			allowed_civil_war = {
 				always = yes
 			}
@@ -478,7 +527,7 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				industrial_capacity_factory = 0.05
+				industrial_capacity_factory = 0.075
 			}
 		}
 		SYR_indepedence_economy_idea = {
@@ -497,6 +546,12 @@ ideas = {
 			
 			rule = {
 				can_create_factions = yes
+			}
+			
+			modifier = {
+				consumer_goods_factor = -0.03
+				production_factory_max_efficiency_factor = 0.075
+				industrial_capacity_factory = 0.1
 			}
 			
 		}
@@ -540,7 +595,7 @@ ideas = {
 			modifier = {
 				send_volunteer_size = 3
 				send_volunteers_tension = -0.5
-				join_faction_tension = -0.2
+				join_faction_tension = -0.25
 			}
 		}
 		SYR_invite_soviet_engineers_idea = {
@@ -549,6 +604,10 @@ ideas = {
 			
 			allowed = {
 				always = no
+			}
+			
+			available = {
+				NOT = { has_war_with = SOV }
 			}
 
 			allowed_civil_war = {
@@ -615,8 +674,8 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				weekly_manpower = 688
-				training_time_factor = -0.1
+				conscription = 0.02
+				training_time_army_factor = -0.1
 			}
 		}
 		SYR_call_tribes_for_army_service_idea = {
@@ -634,7 +693,7 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				weekly_manpower = 688
+				conscription = 0.02
 				cavalry_attack_factor = 0.1
 				cavalry_defence_factor = 0.1
 			}
@@ -701,7 +760,7 @@ ideas = {
 			
 			modifier = {
 				justify_war_goal_time = -0.2
-				training_time_factor = -0.1
+				training_time_army_factor = -0.1
 				experience_gain_army = 0.25
 			}
 		}
@@ -720,8 +779,8 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
-				non_core_manpower = 0.01
-				justify_war_goal_time = -0.2
+				non_core_manpower = 0.02
+				justify_war_goal_time = -0.25
 				compliance_gain = 0.2
 			}
 		}
@@ -760,24 +819,6 @@ ideas = {
 			
 			modifier = {
 				research_speed_factor = 0.05
-			}
-		}
-		SYR_claim_cyprpis_idea = {
-			
-			picture = cze_planning_bonus
-			
-			allowed = {
-				always = no
-			}
-
-			allowed_civil_war = {
-				always = yes
-			}
-
-			removal_cost = -1
-			
-			modifier = {
-				
 			}
 		}
 		SYR_begin_work_unstability_in_france_factoryes_idea = {
@@ -843,7 +884,7 @@ ideas = {
 				always = no
 			}
 			
-			available = { has_war = no }
+			available = { has_war = yes }
 
 			allowed_civil_war = {
 				always = yes
@@ -887,6 +928,10 @@ ideas = {
 			allowed = {
 				always = no
 			}
+			
+			available = {
+				is_subject = yes
+			}
 
 			allowed_civil_war = {
 				always = yes
@@ -896,7 +941,7 @@ ideas = {
 			
 			modifier = {
 				autonomy_gain = 2
-				political_power_gain = 0.5
+				political_power_factor = 0.5
 			}
 		}
 		SYR_sirian_credit = {
@@ -924,6 +969,10 @@ ideas = {
 			allowed = {
 				always = no
 			}
+			
+			available = {
+				is_subject = yes
+			}
 
 			allowed_civil_war = {
 				always = yes
@@ -944,6 +993,10 @@ ideas = {
 			allowed = {
 				always = no
 			}
+			
+			available = {
+				SYR = { has_war_with = FRA }
+			}
 
 			allowed_civil_war = {
 				always = yes
@@ -952,6 +1005,8 @@ ideas = {
 			removal_cost = -1
 			
 			modifier = {
+				send_volunteers_tension = -1
+				send_volunteer_divisions_required = -1
 				send_volunteer_size = 3
 			}
 		}

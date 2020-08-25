@@ -13,57 +13,51 @@ political_actions = {
 		}
 	}	
 }
+
+
 SYR_proclaim_greater_syria_category = {
 	SYR_proclaim_greater_syria_decision = {
 		icon = eng_puppet_usa
 		available = {
-			all_owned_state = {
-				is_owned_and_controlled_by = SYR
+			NOT = {
+				any_state = {
+					is_core_of = ROOT
+					NOT = { is_controlled_by = ROOT }
+				}
 			}
 			controls_state = 980
-			OR = {
-				NOT = {
-					is_subject = yes
+			if = {
+				limit = { is_subject = yes }
+				OR = {
+					has_autonomy_state = autonomy_dominion
+					has_autonomy_state = autonomy_satellite
+					has_autonomy_state = autonomy_condominium
 				}
-				compare_autonomy_state > autonomy_dominion
 			}
+			else = { is_subject = no }
 		}
+		
 		complete_effect = {
-			IRQ = {
-				every_owned_state = {
-					if = {
-						limit = {
+			every_state = {
+				if = {
+					limit = {
+						OR = {
 							is_core_of = IRQ
-						}
-						add_core_of = SYR
-					}
-				}
-			}
-			BPL = {
-				every_owned_state = {
-					if = {
-						limit = {
 							is_core_of = BPL
-						}
-						add_core_of = SYR
-					}
-				}
-			}
-			JOR = {
-				every_state = {
-					if = {
-						limit = {
 							is_core_of = JOR
+							state = 344
 						}
-						add_core_of = SYR
 					}
 				}
+				add_core_of = ROOT
 			}
-			add_state_core = 344
 			set_cosmetic_tag = Greater_Syria
+			set_global_flag = SYR_proclaim_greater_syria_decision_flag
 		}
 	}
 }
+
+
 SYR_end_with_france_decision_category = {
 	SYR_accept_new_gov_symbol = {
 		icon = generic_nationalism
@@ -121,7 +115,7 @@ SYR_end_with_france_decision_category = {
 		modifier = {
 			autonomy_gain = 2
 			communism_drift = 0.1
-			stability_factor = -0.5
+			stability_weekly = -0.005
 		}
 	}
 	SYR_transfer_contolled_france_land_to_people = {
@@ -132,7 +126,7 @@ SYR_end_with_france_decision_category = {
 		complete_effect = {
 			add_popularity = {
 				ideology = communism
-				popularity = 0.1
+				popularity = 0.05
 			}
 			add_autonomy_score = {
 				value = 200
@@ -195,7 +189,6 @@ SYR_end_with_france_decision_category = {
 			fascism_drift = 0.1
 			stability_factor = 0.5
 		}
-		
 	}
 	SYR_begin_fights_in_france_embassy = {
 		icon = generic_ignite_civil_war
@@ -230,6 +223,8 @@ SYR_end_with_france_decision_category = {
 		}
 	}
 }
+
+
 SYR_begin_build_capitalism_decision_category = {
 	SYR_allocate_funds_for_privates_factoryes = {
 		icon = hol_attract_foreign_investors
@@ -240,6 +235,7 @@ SYR_begin_build_capitalism_decision_category = {
 				idea = SYR_allocate_funds_for_privates_factoryes_idea
 				days = 180
 			}
+			set_country_flag = SYR_begin_build_capitalism_1
 		}
 	}
 	SYR_begin_privatisation_small_gov_factoryes = {
@@ -253,14 +249,21 @@ SYR_begin_build_capitalism_decision_category = {
 		}
 		remove_effect = {
 			random_owned_controlled_state = {
+				limit = { 
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = industrial_complex
 					level = 1
 					instant_build = yes
 				}
-				add_extra_state_shared_building_slots = 1
 			}
-			remove_ideas = SYR_begin_build_capitalism_idea
+			set_country_flag = SYR_begin_build_capitalism_2
 		}
 	}
 	SYR_give_access_western_bourg_concessions_salt = {
@@ -269,16 +272,26 @@ SYR_begin_build_capitalism_decision_category = {
 		fire_only_once = yes
 		complete_effect = {
 			random_owned_controlled_state = {
+				limit = { 
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = industrial_complex
 					level = 1
 					instant_build = yes
 				}
-				add_extra_state_shared_building_slots = 1
 			}
+			set_country_flag = SYR_begin_build_capitalism_3
 		}
 	}
 }
+
+
 SYR_preparing_for_war_independence_decision_category = {
 	SYR_begin_war_with_france = {
 		icon = generic_prepare_civil_war
@@ -349,12 +362,7 @@ SYR_preparing_for_war_independence_decision_category = {
 							}
 						}
 					}
-					IRQ = {
-						country_event = {
-							id = syria.16
-							days = 10
-						}
-					}
+					IRQ = { country_event = { id = syria.16 days = 10 } }
 				}
 				if = {
 					limit = {
@@ -365,12 +373,7 @@ SYR_preparing_for_war_independence_decision_category = {
 							}
 						}
 					}
-					EGY = {
-						country_event = {
-							id = syria.16
-							days = 10
-						}
-					}
+					EGY = { country_event = { id = syria.16 days = 10 } }
 				}
 				if = {
 					limit = {
@@ -381,12 +384,7 @@ SYR_preparing_for_war_independence_decision_category = {
 							}
 						}
 					}
-					JOR = {
-						country_event = {
-							id = syria.16
-							days = 10
-						}
-					}
+					JOR = { country_event = { id = syria.16 days = 10 } }
 				}
 				if = {
 					limit = {
@@ -398,29 +396,15 @@ SYR_preparing_for_war_independence_decision_category = {
 							}
 						}
 					}
-					BPL = {
-						country_event = {
-							id = syria.16
-							days = 10
-						}
-					}
+					BPL = { country_event = { id = syria.16 days = 10 } }
 				}
 			}
 			if = {
 				limit = {
-					945 = {
-						is_core_of = TUR
-					}
-					SYR = {
-						owns_state = 945
-					}
+					945 = { is_core_of = TUR }
+					SYR = { owns_state = 945 }
 				}
-				TUR = {
-					country_event = {
-						id = syria.17
-						days = 1
-					}
-				}
+				TUR = { country_event = { id = syria.17 days = 1 } }
 			}
 		}
 	}
@@ -433,25 +417,25 @@ SYR_preparing_for_war_independence_decision_category = {
 		}
 		days_remove = 40
 		modifier = {
-			stability_factor = -0.5
+			stability_weekly = -0.01
 		}
 		remove_effect = {
 			capital_scope = {
 				create_unit = {
 					division = "name = \"1. Militia cavalry unit\" division_template = \"Syrian Cavalry Division\" start_experience_factor = 0.5 start_equipment_factor = 0.5" 
-					owner = SYR
+					owner = ROOT
 				}
 				create_unit = {
 					division = "name = \"2. Militia cavalry unit\" division_template = \"Syrian Cavalry Division\" start_experience_factor = 0.5 start_equipment_factor = 0.5" 
-					owner = SYR
+					owner = ROOT
 				}
 				create_unit = {
 					division = "name = \"3. Militia cavalry unit\" division_template = \"Syrian Cavalry Division\" start_experience_factor = 0.5 start_equipment_factor = 0.5" 
-					owner = SYR
+					owner = ROOT
 				}
 				create_unit = {
 					division = "name = \"4. Militia cavalry unit\" division_template = \"Syrian Cavalry Division\" start_experience_factor = 0.5 start_equipment_factor = 0.5" 
-					owner = SYR
+					owner = ROOT
 				}
 			}
 		}
@@ -465,17 +449,17 @@ SYR_preparing_for_war_independence_decision_category = {
 		}
 		days_remove = 40
 		modifier = {
-			stability_factor = -0.5
+			stability_weekly = -0.01
 		}
 		remove_effect = {
 			capital_scope = {
 				create_unit = {
 					division = "name = \"1. Militia motorized unit\" division_template = \"Syrian Motorized Division\" start_experience_factor = 0.5 start_equipment_factor = 0.5" 
-					owner = SYR
+					owner = ROOT
 				}
 				create_unit = {
 					division = "name = \"1. Militia infantry unit\" division_template = \"Syrian Infantry Division\" start_experience_factor = 0.5 start_equipment_factor = 0.5" 
-					owner = SYR
+					owner = ROOT
 				}
 			}
 		}
@@ -486,7 +470,7 @@ SYR_preparing_for_war_independence_decision_category = {
 		fire_only_once = yes
 		days_remove = 80
 		modifier = {
-			war_support_factor = 0.5
+			war_support_weekly = 0.01
 		}
 		remove_effect = {
 			add_timed_idea = {
@@ -498,8 +482,11 @@ SYR_preparing_for_war_independence_decision_category = {
 	SYR_peace_with_france = {
 		icon = eng_trade_unions_support
 		available = {
-			all_controlled_state = {
-				is_fully_controlled_by = SYR
+			NOT = {
+				any_state = {
+					is_core_of = ROOT
+					NOT = { is_controlled_by = ROOT }
+				}
 			}
 			FRA = {
 				NOT = {
@@ -511,34 +498,29 @@ SYR_preparing_for_war_independence_decision_category = {
 				flag = SYR_begin_war_with_france_flag
 				days > 61
 			}
-			is_in_faction = no
 		}
 		days_re_enable = 61
 		complete_effect = {
-			FRA = {
-				country_event = {
-					id = syria.20
-					days = 1
-				}
-			}
+			FRA = { country_event = { id = syria.20 days = 1 } }
 		}
 	}
 	SYR_peace_with_turkey = {
 		icon = eng_trade_unions_support
 		visible = {
 			TUR = {
-				has_war_with = SYR
+				has_war_with = ROOT
 			}
 		}
 		available = {
-			all_controlled_state = {
-				is_fully_controlled_by = SYR
+			NOT = {
+				any_state = {
+					is_core_of = ROOT
+					NOT = { is_controlled_by = ROOT }
+				}
 			}
 			TUR = {
-				NOT = {
-					controls_state = 945
-					has_capitulated = yes
-				}
+				NOT = { controls_state = 945 }
+				has_capitulated = no
 			}
 			has_country_flag = {
 				flag = SYR_begin_war_with_france_flag1
@@ -548,12 +530,7 @@ SYR_preparing_for_war_independence_decision_category = {
 		}
 		days_re_enable = 61
 		complete_effect = {
-			TUR = {
-				country_event = {
-					id = syria.21
-					days = 1
-				}
-			}
+			TUR = { country_event = { id = syria.21 days = 1 } }
 		}
 	}
 }

@@ -635,8 +635,13 @@ bookmarks = {
 			history = "SYR_GATHERING_STORM_DESC"
 			ideology = democratic
 			ideas = {
+				SYR_syrian_nationalists
 			}
 			focuses = {
+				SYR_weaken_colonial_institutions
+				SYR_delegation_to_paris
+				SYR_great_syria
+				SYR_hashemite_arabia
 			}
 		}
 

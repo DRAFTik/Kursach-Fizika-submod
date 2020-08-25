@@ -8,6 +8,8 @@ focus_tree = {
 		}
 	}
 	default = no
+	
+	
 	focus = {
 		id = SYR_army_create_act
 		icon = GFX_goal_generic_army_doctrines
@@ -15,6 +17,10 @@ focus_tree = {
 		x = 6
 		y = 0
 		
+		ai_will_do = {
+			factor = 10
+		}
+
 		completion_reward = {
 			capital_scope = {
 				create_unit = {
@@ -32,6 +38,7 @@ focus_tree = {
 			}
 		}
 	}
+	
 	focus = {
 		id = SYR_upgrade_pex_civil_gov
 		icon = GFX_z_goal_voluntary_creation_of_collective
@@ -40,11 +47,13 @@ focus_tree = {
 		y = 0
 		
 		available = {
-			NOT = {
-				SYR = { has_completed_focus = SYR_delegation_to_paris }
-			}
+			NOT = { has_completed_focus = SYR_delegation_to_paris }
 		}
 		
+		ai_will_do = {
+			factor = 10
+		}
+	
 		completion_reward = {
 			add_political_power = 50
 			add_ideas = SYR_upgrade_pex_civil_gov_idea
@@ -56,6 +65,10 @@ focus_tree = {
 		cost = 10
 		x = 27
 		y = 0
+		
+		ai_will_do = {
+			factor = 10
+		}
 
 		completion_reward = {
 			capital_scope = {
@@ -95,29 +108,27 @@ focus_tree = {
 		x = 53
 		y = 0
 		
-		ai_will_do = {
-			base = 0
-			modifier = {
-				is_historical_focus_on = yes
-				add = 100
-			}
-		}
-		
 		available = {
 			FRA = {
-				NOT = {
-					has_civil_war = yes
-				}
+				has_civil_war = no
+				NOT = { has_war_with = FRC }
+			}
+		}
+
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				is_historical_focus_on = yes
+				add = 500
 			}
 		}
 
 		completion_reward = {
-			FRA = {
-				country_event = {
-					id = syria.0
-					days = 1
+			custom_effect_tooltip = SYR_delegation_to_paris_tt
+			hidden_effect = {
+				event_target:NW_france_scope = {
+					country_event = { id = syria.0 days = 1 }
 				}
-				custom_effect_tooltip = SYR_delegation_to_paris_tt
 			}
 		}
 	}
@@ -131,11 +142,19 @@ focus_tree = {
 		x = 39
 		y = 0
 
+		ai_will_do = {
+			factor = 10
+		}
+
 		completion_reward = {
 			if = {
 				limit = {
 					FRA = {
-						has_civil_war = yes
+						OR = {
+							has_civil_war = yes
+							has_war_with = FRC
+							has_war_with = FRF
+						}
 					}
 				}
 				add_timed_idea = {
@@ -163,6 +182,10 @@ focus_tree = {
 		y = 1
 		relative_position_id = SYR_army_create_act
 
+		ai_will_do = {
+			factor = 10
+		}
+
 		completion_reward = {
 			navy_experience = 10
 			add_tech_bonus = {
@@ -188,6 +211,10 @@ focus_tree = {
 			1100 = {
 				is_owned_and_controlled_by = SYR
 			}
+		}
+
+		ai_will_do = {
+			factor = 10
 		}
 
 		completion_reward = {
@@ -223,6 +250,10 @@ focus_tree = {
 			}
 		}
 
+		ai_will_do = {
+			factor = 10
+		}
+
 		completion_reward = {
 			553 = {
 				add_building_construction = {
@@ -246,6 +277,10 @@ focus_tree = {
 		y = 1
 		relative_position_id = SYR_build_port_in_beirut
 
+		ai_will_do = {
+			factor = 10
+		}
+
 		completion_reward = {
 			add_tech_bonus = {
 				bonus = 1
@@ -268,6 +303,10 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = SYR_army_create_act
+
+		ai_will_do = {
+			factor = 10
+		}
 
 		completion_reward = {
 			army_experience = 25
@@ -294,6 +333,10 @@ focus_tree = {
 		y = 1
 		relative_position_id = SYR_invite_french_instructors
 
+		ai_will_do = {
+			factor = 10
+		}
+
 		completion_reward = {
 			add_tech_bonus = {
 				bonus = 1
@@ -317,6 +360,10 @@ focus_tree = {
 		y = 1
 		relative_position_id = SYR_army_create_act
 
+		ai_will_do = {
+			factor = 10
+		}
+
 		completion_reward = {
 			army_experience = 10
 			add_tech_bonus = {
@@ -339,6 +386,10 @@ focus_tree = {
 		y = 1
 		relative_position_id = SYR_invite_french_instructors
 
+		ai_will_do = {
+			factor = 10
+		}
+
 		completion_reward = {
 			add_tech_bonus = {
 				bonus = 1
@@ -355,9 +406,14 @@ focus_tree = {
 		prerequisite = {
 			focus = SYR_accept_new_equiment
 		}
+		mutually_exclusive = { focus = SYR_accept_france_example_weapons }
 		x = -2
 		y = 1
 		relative_position_id = SYR_accept_new_equiment
+
+		ai_will_do = {
+			factor = 10
+		}
 
 		completion_reward = {
 			add_tech_bonus = {
@@ -375,9 +431,14 @@ focus_tree = {
 		prerequisite = {
 			focus = SYR_accept_new_equiment
 		}
+		mutually_exclusive = { focus = SYR_independent_weapons_development }
 		x = 0
 		y = 1
 		relative_position_id = SYR_accept_new_equiment
+
+		ai_will_do = {
+			factor = 10
+		}
 
 		completion_reward = {
 			add_equipment_to_stockpile = {
@@ -402,6 +463,10 @@ focus_tree = {
 		y = 1
 		relative_position_id = SYR_accept_new_equiment
 
+		ai_will_do = {
+			factor = 10
+		}
+
 		completion_reward = {
 			add_tech_bonus = {
 				bonus = 1
@@ -424,6 +489,10 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = SYR_introduce_in_army_artillery
+
+		ai_will_do = {
+			factor = 10
+		}
 
 		completion_reward = {
 			add_tech_bonus = {
@@ -454,6 +523,10 @@ focus_tree = {
 		y = 1
 		relative_position_id = SYR_recall_war_exp_with_france
 
+		ai_will_do = {
+			factor = 10
+		}
+
 		completion_reward = {
 			add_ideas = SYR_expand_circassian_cavalry_idea
 			capital_scope = {
@@ -478,6 +551,10 @@ focus_tree = {
 		y = 1
 		relative_position_id = SYR_introduce_in_army_artillery
 
+		ai_will_do = {
+			factor = 10
+		}
+
 		completion_reward = {
 			add_tech_bonus = {
 				bonus = 1
@@ -493,13 +570,15 @@ focus_tree = {
 		cost = 10
 		prerequisite = {
 			focus = SYR_use_france_transports
-		}
-		prerequisite = {
 			focus = SYR_circassian_motomechanical_squadron
 		}
 		x = 1
 		y = 1
 		relative_position_id = SYR_use_france_transports
+
+		ai_will_do = {
+			factor = 10
+		}
 
 		completion_reward = {
 			add_tech_bonus = {
@@ -521,6 +600,10 @@ focus_tree = {
 		y = 1
 		relative_position_id = SYR_army_create_act
 
+		ai_will_do = {
+			factor = 10
+		}
+
 		completion_reward = {
 			air_experience = 10
 			add_tech_bonus = {
@@ -538,9 +621,13 @@ focus_tree = {
 		prerequisite = {
 			focus = SYR_create_air_force
 		}
-		x = 1
+		x = 0
 		y = 1
 		relative_position_id = SYR_create_air_force
+
+		ai_will_do = {
+			factor = 10
+		}
 
 		completion_reward = {
 			554 = {
@@ -562,9 +649,13 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = SYR_create_own_figherts
 		}
-		x = -1
+		x = 1
 		y = 1
 		relative_position_id = SYR_expand_airport_in_damascus
+
+		ai_will_do = {
+			factor = 10
+		}
 
 		completion_reward = {
 			add_tech_bonus = {
@@ -598,6 +689,10 @@ focus_tree = {
 		y = 2
 		relative_position_id = SYR_expand_airport_in_damascus
 
+		ai_will_do = {
+			factor = 10
+		}
+
 		completion_reward = {
 			add_tech_bonus = {
 				bonus = 1
@@ -626,9 +721,13 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = SYR_use_france_fighters
 		}
-		x = 1
+		x = 3
 		y = 1
 		relative_position_id = SYR_expand_airport_in_damascus
+
+		ai_will_do = {
+			factor = 10
+		}
 
 		completion_reward = {
 			add_tech_bonus = {
@@ -653,6 +752,10 @@ focus_tree = {
 		y = 2
 		relative_position_id = SYR_expand_airport_in_damascus
 
+		ai_will_do = {
+			factor = 10
+		}
+
 		completion_reward = {
 			add_tech_bonus = {
 				bonus = 1
@@ -672,9 +775,13 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = SYR_create_own_bombers
 		}
-		x = 4
+		x = 6
 		y = 2
 		relative_position_id = SYR_expand_airport_in_damascus
+
+		ai_will_do = {
+			factor = 10
+		}
 
 		completion_reward = {
 			add_tech_bonus = {
@@ -704,9 +811,13 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = SYR_use_france_bombers
 		}
-		x = 5
-		y = 3
+		x = 4
+		y = 2
 		relative_position_id = SYR_expand_airport_in_damascus
+
+		ai_will_do = {
+			factor = 10
+		}
 
 		completion_reward = {
 			add_tech_bonus = {
@@ -728,11 +839,15 @@ focus_tree = {
 		y = 1
 		relative_position_id = SYR_upgrade_pex_civil_gov
 
+		ai_will_do = {
+			factor = 10
+		}
+
 		completion_reward = {
 			capital_scope = {
 				create_unit = {
 					division = "name = \"2. Syrian Cavalry Division\" division_template = \"Syrian Cavalry Division\" start_experience_factor = 0.5 start_equipment_factor = 0.5" 
-					owner = SYR
+					owner = ROOT
 				}
 			}
 			add_ideas = SYR_create_people_militia_idea
@@ -748,6 +863,10 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = SYR_upgrade_pex_civil_gov
+
+		ai_will_do = {
+			factor = 10
+		}
 
 		completion_reward = {
 			swap_ideas = {
@@ -768,11 +887,15 @@ focus_tree = {
 			focus = SYR_new_pex_for_president
 		}
 		x = 0
-		y = 3
+		y = 1
 		relative_position_id = SYR_new_pex_for_president
 		
 		available = {
-			compare_autonomy_state > autonomous_mandatory_territory
+			compare_autonomy_state > mandatory_territory
+		}
+
+		ai_will_do = {
+			factor = 10
 		}
 
 		completion_reward = {
@@ -782,6 +905,7 @@ focus_tree = {
 			}
 			set_politics = {
 				ruling_party = democratic
+				elections_allowed = yes
 			}
 			add_popularity = {
 				ideology = democratic
@@ -803,6 +927,10 @@ focus_tree = {
 		y = 1
 		relative_position_id = SYR_upgrade_pex_civil_gov
 
+		ai_will_do = {
+			factor = 10
+		}
+
 		completion_reward = {
 			add_ideas = SYR_involve_local_producers_ter_manage_idea
 		}
@@ -817,6 +945,10 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = SYR_involve_local_producers_ter_manage
+
+		ai_will_do = {
+			factor = 10
+		}
 
 		completion_reward = {
 			swap_ideas = {
@@ -835,6 +967,10 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = SYR_upgrade_ir_damascus_beirut
+
+		ai_will_do = {
+			factor = 10
+		}
 
 		completion_reward = {
 			capital_scope = {
@@ -859,6 +995,10 @@ focus_tree = {
 		y = 1
 		relative_position_id = SYR_develop_phosphorites
 
+		ai_will_do = {
+			factor = 10
+		}
+
 		completion_reward = {
 			add_research_slot = 1
 		}
@@ -877,6 +1017,10 @@ focus_tree = {
 		y = 4
 		relative_position_id = SYR_expand_access_to_rural_edu
 
+		ai_will_do = {
+			factor = 10
+		}
+
 		completion_reward = {
 			add_research_slot = 1
 		}
@@ -891,6 +1035,10 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = SYR_upgrade_ir_damascus_beirut
+
+		ai_will_do = {
+			factor = 10
+		}
 
 		completion_reward = {
 			capital_scope = {
@@ -917,6 +1065,10 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = SYR_upgrade_development_table_salt
+
+		ai_will_do = {
+			factor = 10
+		}
 
 		completion_reward = {
 			capital_scope = {
@@ -958,6 +1110,10 @@ focus_tree = {
 			num_of_factories > 25
 		}
 
+		ai_will_do = {
+			factor = 10
+		}
+
 		completion_reward = {
 			add_research_slot = 1
 		}
@@ -973,14 +1129,25 @@ focus_tree = {
 		y = 1
 		relative_position_id = SYR_build_new_iron_roads
 
+		ai_will_do = {
+			factor = 10
+		}
+
 		completion_reward = {
 			random_owned_controlled_state = {
+				limit = { 
+					free_building_slots = {
+						building = arms_factory
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = arms_factory
 					level = 2
 					instant_build = yes
 				}
-				add_extra_state_shared_building_slots = 2
 			}
 		}
 	}
@@ -1008,6 +1175,10 @@ focus_tree = {
 			553 = { is_core_of = SYR }
 		}
 
+		ai_will_do = {
+			factor = 10
+		}
+
 		completion_reward = {
 			add_state_core = 553
 		}
@@ -1022,7 +1193,7 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = SYR_intergration_lebanon
 		}
-		x = 4
+		x = 5
 		y = 1
 		relative_position_id = SYR_upgrade_ir_damascus_beirut
 		
@@ -1030,6 +1201,10 @@ focus_tree = {
 			553 = {
 				is_owned_and_controlled_by = SYR
 			}
+		}
+
+		ai_will_do = {
+			factor = 10
 		}
 
 		completion_reward = {
@@ -1078,10 +1253,12 @@ focus_tree = {
 		available = {
 			OR = {
 				compare_autonomy_state > autonomous_mandatory_territory
-				NOT = {
-					is_subject = yes
-				}
+				is_subject = no
 			}
+		}
+
+		ai_will_do = {
+			factor = 10
 		}
 
 		completion_reward = {
@@ -1094,20 +1271,10 @@ focus_tree = {
 			drop_cosmetic_tag = yes
 			set_capital = 554
 			if = {
-				limit = {
-					553 = {
-						is_owned_and_controlled_by = SYR
-					}
-				}
-				country_event = {
-					id = syria.8
-					days = 1
-				}
+				limit = { owns_state = 553 }
+				country_event = { id = syria.8 days = 1 }
 			}
-			country_event = {
-				id = syria.9
-				days = 1
-			}
+			country_event = { id = syria.9 days = 1 }
 		}
 	}
 	focus = {
@@ -1127,17 +1294,34 @@ focus_tree = {
 		available = {
 			has_government = democratic
 			OR = {
-				compare_autonomy_state > autonomous_mandatory_territory
-				NOT = {
-					is_subject = yes
-				}
+				compare_autonomy_state > mandatory_territory
+				is_subject = no
 			}
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+		
+		select_effect = {
+			country_event = { id = syria.33 days = 10 }
+			country_event = { id = syria.34 days = 30 }
+			country_event = { id = syria.35 days = 50 }
 		}
 
 		completion_reward = {
 			custom_effect_tooltip = SYR_hold_early_elections_tt
+			hidden_effect = {
+				if = {
+					limit = { check_variable = { SYR_popularity_people_party > SYR_popularity_national_party } }
+					country_event = { id = syria.36 days = 1 }
+				}
+				else = { country_event = { id = syria.37 days = 1 } }
+			}
 		}
 	}
+	
+	
 	focus = {
 		id = SYR_setting_the_pro_french_regime
 		icon = GFX_focus_fra_french_union
@@ -1153,10 +1337,15 @@ focus_tree = {
 		relative_position_id = SYR_hold_early_elections
 		
 		available = {
+			is_subject_of = FRA
 			has_country_leader = {
 				name = "Hashim al-Atassi"
 				ruling_only = yes
 			}
+		}
+
+		ai_will_do = {
+			factor = 10
 		}
 
 		completion_reward = {
@@ -1166,7 +1355,7 @@ focus_tree = {
 			}
 			FRA = {
 				add_opinion_modifier = {
-					target = SYR
+					target = ROOT
 					modifier = SYR_setting_the_pro_french_regime_op
 				}
 			}
@@ -1187,16 +1376,23 @@ focus_tree = {
 		y = 3
 		relative_position_id = SYR_give_lebanon_autonomy
 
+		ai_will_do = {
+			factor = 10
+		}
+
 		completion_reward = {
 			553 = {
+				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = industrial_complex
 					level = 1
 					instant_build = yes
 				}
-				add_extra_state_shared_building_slots = 1
 			}
-			add_ideas = SYR_culture_trade_lebanon_with_france_idea
+			add_timed_idea = {
+				idea = SYR_culture_trade_lebanon_with_france_idea
+				days = 200
+			}
 		}
 	}
 	focus = {
@@ -1210,10 +1406,20 @@ focus_tree = {
 		y = 1
 		relative_position_id = SYR_setting_the_pro_french_regime
 
+		ai_will_do = {
+			factor = 10
+		}
+		
+		available = {
+			country_exists = FRA
+			NOT = { has_war_with = FRA }
+		}
+
 		completion_reward = {
 			add_ideas = SYR_france_advisors_idea
 		}
 	}
+	
 	focus = {
 		id = SYR_nationalism
 		icon = GFX_goal_generic_demand_territory
@@ -1228,9 +1434,19 @@ focus_tree = {
 		y = 1
 		relative_position_id = SYR_hold_early_elections
 
+		ai_will_do = {
+			factor = 10
+		}
+
 		completion_reward = {
 			add_political_power = 200
-			add_ideas = SYR_nationalism_idea
+			if = {
+				limit = { is_subject = yes }
+				add_timed_idea = {
+					idea = SYR_nationalism_idea
+					days = 500
+				}
+			}
 		}
 	}
 	focus = {
@@ -1243,6 +1459,14 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = SYR_nationalism
+
+		ai_will_do = {
+			factor = 10
+		}
+		
+		bypass = {
+			is_subject = no
+		}
 
 		completion_reward = {
 			unlock_decision_category_tooltip = SYR_end_with_france_decision_category
@@ -1266,12 +1490,24 @@ focus_tree = {
 		available = {
 			has_country_flag = SYR_national_socialism_goverment_flag
 		}
+		
+		bypass = {
+			has_government = fascism
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
 
 		completion_reward = {
 			set_politics = {
 				ruling_party = fascism
+				elections_allowed = no
 			}
-			add_ideas = SYR_national_socialism_goverment_idea
+			add_timed_idea = {
+				idea = SYR_national_socialism_goverment_idea
+				days = 180
+			}
 		}
 	}
 	focus = {
@@ -1293,26 +1529,27 @@ focus_tree = {
 			is_subject = no
 		}
 
+		ai_will_do = {
+			factor = 10
+		}
+
 		completion_reward = {
-			add_ideas = SYR_syrian_indepedence_democraty_idea
+			add_timed_idea = {
+				idea = SYR_syrian_indepedence_democraty_idea
+				days = 180
+			}
 			add_political_power = 200
 			if = {
 				limit = {
-					fascism > 0.39
+					fascism > 0.399
 				}
-				country_event = {
-					id = syria.40
-					days = 1
-				}
+				country_event = { id = syria.40 days = 1 }
 			}
-			if = {
+			else_if = {
 				limit = {
-					communism > 0.39
+					communism > 0.399
 				}
-				country_event = {
-					id = syria.41
-					days = 1
-				}
+				country_event = { id = syria.41 days = 1 }
 			}
 		}
 	}
@@ -1326,6 +1563,10 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = SYR_syrian_indepedence_democraty
+
+		ai_will_do = {
+			factor = 10
+		}
 
 		completion_reward = {
 			add_opinion_modifier = {
@@ -1352,14 +1593,25 @@ focus_tree = {
 		y = 1
 		relative_position_id = SYR_friend_with_usa
 
+		ai_will_do = {
+			factor = 10
+		}
+
 		completion_reward = {
 			random_owned_controlled_state = {
+				limit = { 
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = industrial_complex
 					level = 2
 					instant_build = yes
 				}
-				add_extra_state_shared_building_slots = 2
 			}
 		}
 	}
@@ -1374,14 +1626,25 @@ focus_tree = {
 		y = 1
 		relative_position_id = SYR_friend_with_usa
 		
+		ai_will_do = {
+			factor = 10
+		}
+
 		completion_reward = {
 			random_owned_controlled_state = {
+				limit = { 
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = industrial_complex
 					level = 2
 					instant_build = yes
 				}
-				add_extra_state_shared_building_slots = 2
 			}
 			add_tech_bonus = {
 				bonus = 1
@@ -1405,6 +1668,10 @@ focus_tree = {
 		y = 1
 		relative_position_id = SYR_invite_investors
 
+		ai_will_do = {
+			factor = 10
+		}
+
 		completion_reward = {
 			add_research_slot = 1
 		}
@@ -1423,6 +1690,10 @@ focus_tree = {
 		y = 1
 		relative_position_id = SYR_science_coop_with_west
 
+		ai_will_do = {
+			factor = 10
+		}
+
 		completion_reward = {
 			add_ideas = neutrality_idea
 		}
@@ -1437,6 +1708,10 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = SYR_neutrality
+
+		ai_will_do = {
+			factor = 10
+		}
 
 		completion_reward = {
 			add_ideas = SYR_defence_goverment_secret_idea
@@ -1461,11 +1736,23 @@ focus_tree = {
 			has_country_flag = SYR_communism_goverment_flag
 		}
 		
+		bypass = {
+			has_government = communism
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+
 		completion_reward = {
 			set_politics = {
 				ruling_party = communism
+				elections_allowed = no
 			}
-			add_ideas = SYR_communism_goverment_idea
+			add_timed_idea = {
+				idea = SYR_communism_goverment_idea
+				days = 180
+			}
 		}
 	}
 	focus = {
@@ -1479,16 +1766,24 @@ focus_tree = {
 		y = 1
 		relative_position_id = SYR_communism_goverment
 
+		ai_will_do = {
+			factor = 10
+		}
+
 		completion_reward = {
-			KRD = {
-				every_state = {
-					if = {
-						limit = {
-							is_core_of = KRD
-						}
-						add_core_of = SYR
-					}
+			every_state = {
+				limit = {
+					is_core_of = KRD
+					owner = { NOT = { tag = ROOT } }
+					has_resistance = yes
 				}
+				add_resistance = 20
+			}
+			every_state = {
+				limit = {
+					is_core_of = KRD
+				}
+				add_core_of = ROOT
 			}
 		}
 	}
@@ -1507,47 +1802,68 @@ focus_tree = {
 		y = 1
 		relative_position_id = SYR_neutrality
 
+		ai_will_do = {
+			factor = 10
+		}
+		
+		available = {
+			OR = {
+				has_full_control_of_state = 680
+				has_full_control_of_state = 998
+				has_full_control_of_state = 961
+			}
+		}
+
 		completion_reward = {
-			680 = {
-				add_building_construction = {
-					type = bunker
-					level = 3
-					instant_build = yes
-					province = 10383
-				}
-				add_building_construction = {
-					type = bunker
-					level = 3
-					instant_build = yes
-					province = 12316
-				}
-				add_building_construction = {
-					type = bunker
-					level = 3
-					instant_build = yes
-					province = 2012
-				}
-			}
-			998 = {
-				add_building_construction = {
-					type = bunker
-					level = 3
-					instant_build = yes
-					province = 901
-				}
-				add_building_construction = {
-					type = bunker
-					level = 3
-					instant_build = yes
-					province = 10882
+			if = {
+				limit = { has_full_control_of_state = 680 }
+				680 = {
+					add_building_construction = {
+						type = bunker
+						level = 3
+						instant_build = yes
+						province = 10383
+					}
+					add_building_construction = {
+						type = bunker
+						level = 3
+						instant_build = yes
+						province = 12316
+					}
+					add_building_construction = {
+						type = bunker
+						level = 3
+						instant_build = yes
+						province = 2012
+					}
 				}
 			}
-			961 = {
-				add_building_construction = {
-					type = bunker
-					level = 3
-					instant_build = yes
-					province = 1549
+			if = {
+				limit = { has_full_control_of_state = 998 }
+				998 = {
+					add_building_construction = {
+						type = bunker
+						level = 3
+						instant_build = yes
+						province = 901
+					}
+					add_building_construction = {
+						type = bunker
+						level = 3
+						instant_build = yes
+						province = 10882
+					}
+				}
+			}
+			if = {
+				limit = { has_full_control_of_state = 680 }
+				961 = {
+					add_building_construction = {
+						type = bunker
+						level = 3
+						instant_build = yes
+						province = 1549
+					}
 				}
 			}
 		}
@@ -1562,6 +1878,10 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = SYR_communism_goverment
+
+		ai_will_do = {
+			factor = 10
+		}
 
 		completion_reward = {
 			add_ideas = SYR_begin_build_capitalism_idea
@@ -1585,10 +1905,21 @@ focus_tree = {
 			}
 		}
 
+		ai_will_do = {
+			factor = 10
+		}
+
 		completion_reward = {
 			add_timed_idea = {
 				idea = SYR_begin_build_socialism_idea
 				days = 1600
+			}
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = industry
+				category = electronics
+				name = SYR_begin_build_socialism
 			}
 		}
 	}
@@ -1603,15 +1934,26 @@ focus_tree = {
 		y = 1
 		relative_position_id = SYR_begin_build_socialism
 
+		ai_will_do = {
+			factor = 10
+		}
+
 		completion_reward = {
 			add_ideas = SYR_create_work_camps_in_east_idea
 			random_owned_controlled_state = {
+				limit = { 
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = industrial_complex
 					level = 1
 					instant_build = yes
 				}
-				add_extra_state_shared_building_slots = 1
 			}
 		}
 	}
@@ -1630,49 +1972,74 @@ focus_tree = {
 		y = 1
 		relative_position_id = SYR_neutrality
 
+		ai_will_do = {
+			factor = 10
+		}
+		
+		available = {
+			OR = {
+				has_full_control_of_state = 945
+				has_full_control_of_state = 677
+				has_full_control_of_state = 998
+				has_full_control_of_state = 961
+			}
+		}
+
 		completion_reward = {
-			945 = {
-				add_building_construction = {
-					type = bunker
-					level = 3
-					instant_build = yes
-					province = 12029
+			if = {
+				limit = { has_full_control_of_state = 945 }
+				945 = {
+					add_building_construction = {
+						type = bunker
+						level = 3
+						instant_build = yes
+						province = 12029
+					}
 				}
 			}
-			677 = {
-				add_building_construction = {
-					type = bunker
-					level = 3
-					instant_build = yes
-					province = 13812
-				}
-				add_building_construction = {
-					type = bunker
-					level = 3
-					instant_build = yes
-					province = 7671
-				}
-			}
-			998 = {
-				add_building_construction = {
-					type = bunker
-					level = 3
-					instant_build = yes
-					province = 6883
-				}
-				add_building_construction = {
-					type = bunker
-					level = 3
-					instant_build = yes
-					province = 1634
+			if = {
+				limit = { has_full_control_of_state = 677 }
+				677 = {
+					add_building_construction = {
+						type = bunker
+						level = 3
+						instant_build = yes
+						province = 13812
+					}
+					add_building_construction = {
+						type = bunker
+						level = 3
+						instant_build = yes
+						province = 7671
+					}
 				}
 			}
-			961 = {
-				add_building_construction = {
-					type = bunker
-					level = 3
-					instant_build = yes
-					province = 1578
+			if = {
+				limit = { has_full_control_of_state = 998 }
+				998 = {
+					add_building_construction = {
+						type = bunker
+						level = 3
+						instant_build = yes
+						province = 6883
+					}
+					add_building_construction = {
+						type = bunker
+						level = 3
+						instant_build = yes
+						province = 1634
+					}
+				}
+			}
+			if = {
+				limit = { has_full_control_of_state = 961 }
+				961 = {
+					add_building_construction = {
+						type = bunker
+						level = 3
+						instant_build = yes
+						province = 1578
+					}
 				}
 			}
 		}
@@ -1688,25 +2055,28 @@ focus_tree = {
 		y = 1
 		relative_position_id = SYR_begin_build_socialism
 
+		ai_will_do = {
+			factor = 10
+		}
+
 		completion_reward = {
 			capital_scope = {
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = industrial_complex
 					level = 1
 					instant_build = yes
 				}
-				add_extra_state_shared_building_slots = 2
 			}
 			every_owned_state = {
-				if = {
-					limit = {
-						is_core_of = SYR
-					}
-					add_building_construction = {
-						type = infrastructure
-						level = 1
-						instant_build = yes
-					}
+				limit = {
+					is_controlled_by = ROOT
+					is_core_of = ROOT
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
 				}
 			}
 		}
@@ -1724,6 +2094,10 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = SYR_communism_goverment
+
+		ai_will_do = {
+			factor = 10
+		}
 
 		completion_reward = {
 			add_ideas = SYR_indepedence_economy_idea
@@ -1745,23 +2119,21 @@ focus_tree = {
 		relative_position_id = SYR_communism_goverment
 		
 		available = {
-			NOT = {
-				has_war_with = SOV
-				has_war = yes
-			}
+			country_exists = SOV
 			SOV = {
 				has_government = communism
+				NOT = { has_war_with = ROOT }
 			}
+			has_war = no
+		}
+
+		ai_will_do = {
+			factor = 10
 		}
 
 		completion_reward = {
 			custom_effect_tooltip = SYR_soviet_economy_is_own_tt
-			SOV = {
-				country_event = {
-					id = syria.42
-					days = 1
-				}
-			}
+			SOV = { country_event = { id = syria.42 days = 1 } }
 		}
 	}
 	focus = {
@@ -1777,27 +2149,34 @@ focus_tree = {
 		relative_position_id = SYR_indepedence_economy
 		
 		available = {
-			NOT = {
-				IRQ = {
-					controls_state = 676
-				}
-				SYR = {
-					is_subject = yes
-				}
-			}
+			NOT = { 676 = { owner = { is_in_faction_with = ROOT } } }
+			is_subject = no
+		}
+
+		ai_will_do = {
+			factor = 10
 		}
 
 		completion_reward = {
 			add_state_claim = 676
-			if = {
-				limit = {
-					676 = {
-						is_controlled_by = IRQ
+			676 = {
+				owner = {
+					ROOT = {
+						create_wargoal = {
+							type = annex_everything
+							target = PREV
+						}
+						add_ai_strategy = {
+							type = antagonize
+							id = PREV
+							value = 200
+						}
+						add_ai_strategy = {
+							type = conquer
+							id = PREV
+							value = 200
+						}
 					}
-				}
-				create_wargoal = {
-					type = annex_everything
-					target = IRQ
 				}
 			}
 		}
@@ -1817,41 +2196,62 @@ focus_tree = {
 		y = 1
 		relative_position_id = SYR_neutrality
 
+		ai_will_do = {
+			factor = 10
+		}
+		
+		available = {
+			OR = {
+				has_full_control_of_state = 553
+				has_full_control_of_state = 554
+				has_full_control_of_state = 1101
+			}
+		}
+
 		completion_reward = {
-			553 = {
-				add_building_construction = {
-					type = bunker
-					level = 3
-					instant_build = yes
-					province = 11919
+			if = {
+				limit = { has_full_control_of_state = 553 }
+				553 = {
+					add_building_construction = {
+						type = bunker
+						level = 3
+						instant_build = yes
+						province = 11919
+					}
 				}
 			}
-			554 = {
-				add_building_construction = {
-					type = bunker
-					level = 3
-					instant_build = yes
-					province = 1074
-				}
-				add_building_construction = {
-					type = bunker
-					level = 3
-					instant_build = yes
-					province = 13814
-				}
-				add_building_construction = {
-					type = bunker
-					level = 3
-					instant_build = yes
-					province = 14184
+			if = {
+				limit = { has_full_control_of_state = 554 }
+				554 = {
+					add_building_construction = {
+						type = bunker
+						level = 3
+						instant_build = yes
+						province = 1074
+					}
+					add_building_construction = {
+						type = bunker
+						level = 3
+						instant_build = yes
+						province = 13814
+					}
+					add_building_construction = {
+						type = bunker
+						level = 3
+						instant_build = yes
+						province = 14184
+					}
 				}
 			}
-			1101 = {
-				add_building_construction = {
-					type = bunker
-					level = 3
-					instant_build = yes
-					province = 4484
+			if = {
+				limit = { has_full_control_of_state = 1101 }
+				1101 = {
+					add_building_construction = {
+						type = bunker
+						level = 3
+						instant_build = yes
+						province = 4484
+					}
 				}
 			}
 		}
@@ -1869,6 +2269,14 @@ focus_tree = {
 		x = 12
 		y = 1
 		relative_position_id = SYR_transfer_control_to_civilian_gov
+		
+		available = {
+			has_government = monarchy
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
 
 		completion_reward = {
 			add_timed_idea = { 
@@ -1876,9 +2284,14 @@ focus_tree = {
 				days = 180
 			}
 			add_ai_strategy = {
+				type = befriend
+				id = IRQ
+				value = 100
+			}
+			add_ai_strategy = {
 				type = alliance
 				id = IRQ
-				value = 200
+				value = 75
 			}
 		}
 	}
@@ -1893,13 +2306,27 @@ focus_tree = {
 		y = 1
 		relative_position_id = SYR_second_kingdom_reborn
 
+		ai_will_do = {
+			factor = 10
+		}
+
 		completion_reward = {
 			add_war_support = 0.1
 			custom_effect_tooltip = SYR_preparing_for_war_independence_tt
 			unlock_decision_category_tooltip = SYR_preparing_for_war_independence_decision_category
+			add_ai_strategy = {
+				type = prepare_for_war
+				id = FRA
+				value = 75
+			}
 			FRA = {
 				add_ai_strategy = {
 					type = prepare_for_war
+					id = SYR
+					value = 75
+				}
+				add_ai_strategy = {
+					type = antagonize
 					id = SYR
 					value = 200
 				}
@@ -1917,15 +2344,18 @@ focus_tree = {
 		y = 1
 		relative_position_id = SYR_second_kingdom_reborn
 
+		ai_will_do = {
+			factor = 10
+		}
+
 		completion_reward = {
 			create_country_leader = {
 				name = "Zeid bin Hussein"
 				desc = "POLITICS_ZEID_BIN_HUSSEIN_DESC"
-				picture = "Portrait_Syria_Zeid_bin_Hussein.dds"
+				picture = "gfx/leaders/SYR/portrait_syria_zeid_bin_hussein.dds"
 				expire = "1965.1.1"
-				ideology = monarchy_ideology
+				ideology = absolute_monarchy
 				traits = {
-					
 				}
 			}
 			add_ideas = SYR_invite_sayyid_bin_hussein_to_throne_idea
@@ -1943,29 +2373,35 @@ focus_tree = {
 		relative_position_id = SYR_invite_sayyid_bin_hussein_to_throne
 		
 		available = {
-			NOT = {
-				SYR = { is_subject = yes }
-			}
+			is_subject = no
+		}
+
+		ai_will_do = {
+			factor = 10
 		}
 
 		completion_reward = {
 			if = {
+				limit = { NOT = { country_exists = IRQ } }
+				every_state = {
+					limit = { is_core_of = IRQ }
+					add_claim_by = ROOT
+				}
+			}
+			else_if = {
 				limit = {
 					OR = {
-						NOT = {
-							IRQ = {
-								AND = {
+						IRQ = {
+							OR = {
+								NOT = {
 									has_government = democratic
 									has_government = neutrality
 									has_government = fascism
 									has_government = monarchy
 								}
+								is_subject = yes
+								NOT = { has_war_with = SYR }
 							}
-							country_exists = IRQ
-						}
-						IRQ = {
-							is_subject = yes
-							has_war_with = SYR
 						}
 					}
 				}
@@ -1974,21 +2410,12 @@ focus_tree = {
 					target = IRQ
 				}
 				every_state = {
-					if = {
-						limit = {
-							is_core_of = IRQ
-						}
-						add_claim_by = SYR
-					}
+					limit = { is_core_of = IRQ }
+					add_claim_by = ROOT
 				}
-				else = {
-					IRQ = {
-						country_event = {
-							id = syria.28
-							days = 1
-						}
-					}
-				}
+			}
+			else = {
+				IRQ = { country_event = { id = syria.28 days = 1 } }
 			}
 		}
 	}
@@ -2004,9 +2431,11 @@ focus_tree = {
 		relative_position_id = SYR_invite_sayyid_bin_hussein_to_throne
 		
 		available = {
-			NOT = {
-				SYR = { is_subject = yes }
-			}
+			is_subject = no
+		}
+
+		ai_will_do = {
+			factor = 10
 		}
 
 		completion_reward = {
@@ -2026,32 +2455,26 @@ focus_tree = {
 		relative_position_id = SYR_union_with_iraq
 		
 		available = {
-			NOT = {
-				SYR = { is_subject = yes }
-			}
+			is_subject = no
+		}
+
+		ai_will_do = {
+			factor = 10
 		}
 
 		completion_reward = {
 			if = {
 				limit = {
-					OR = {
-						656 = {
-							is_owned_and_controlled_by = ENG
-						}
-						any_allied_country = {
-							is_subject_of = ENG
-							656 = {
-								is_owned_and_controlled_by = THIS
+					656 = {
+						owner = {
+							OR = {
+								tag = ENG
+								is_subject_of = ENG
 							}
 						}
 					}
 				}
-				ENG = {
-					country_event = {
-						id = syria.30
-						days = 1
-					}
-				}
+				ENG = { country_event = { id = syria.30 days = 1 } }
 			}
 		}
 	}
@@ -2068,6 +2491,10 @@ focus_tree = {
 
 		available = {
 			is_in_faction_with = SOV
+		}
+
+		ai_will_do = {
+			factor = 10
 		}
 
 		completion_reward = {
@@ -2088,6 +2515,10 @@ focus_tree = {
 		y = 1
 		relative_position_id = SYR_communism_goverment
 
+		ai_will_do = {
+			factor = 10
+		}
+
 		completion_reward = {
 			add_ideas = SYR_intervention_to_civil_wars_idea
 		}
@@ -2104,9 +2535,11 @@ focus_tree = {
 		relative_position_id = SYR_invite_sayyid_bin_hussein_to_throne
 		
 		available = {
-			NOT = {
-				SYR = { is_subject = yes }
-			}
+			is_subject = no
+		}
+
+		ai_will_do = {
+			factor = 10
 		}
 
 		completion_reward = {
@@ -2126,21 +2559,20 @@ focus_tree = {
 		relative_position_id = SYR_invite_sayyid_bin_hussein_to_throne
 		
 		available = {
-			NOT = {
-				SYR = { is_subject = yes }
-			}
+			is_subject = no
+		}
+
+		ai_will_do = {
+			factor = 10
 		}
 
 		completion_reward = {
-			add_state_claim = 455
-			add_state_claim = 1053
-			add_state_claim = 1054
+			every_state = {
+				limit = { is_core_of = JOR }
+				add_claim_by = ROOT
+			}
 			if = {
-				limit = {
-					JOR = {
-						NOT = { is_subject = yes }
-					}
-				}
+				limit = { JOR = { is_subject = no } }
 				create_wargoal = {
 					type = annex_everything
 					target = JOR
@@ -2148,43 +2580,21 @@ focus_tree = {
 			}
 			if = {
 				limit = {
-					ENG = {
-						OR = {
-							controls_state = 455
-							any_allied_country = {
+					any_state = {
+						is_core_of = JOR
+						owner = {
+							OR = {
+								tag = ENG
 								is_subject_of = ENG
-								compare_autonomy_state > autonomy_integrated_puppet
-								controls_state = 455
 							}
-						}
-					}
-					ENG = {
-						OR = {
-							controls_state = 1053
-							any_allied_country = {
-								is_subject_of = ENG
+							if = {
+								limit = { is_subject = yes }
 								compare_autonomy_state > autonomy_integrated_puppet
-								controls_state = 1053
-							}
-						}
-					}
-					ENG = {
-						OR = {
-							controls_state = 1054
-							any_allied_country = {
-								is_subject_of = ENG
-								compare_autonomy_state > autonomy_integrated_puppet
-								controls_state = 1054
 							}
 						}
 					}
 				}
-				ENG = {
-					country_event = {
-						id = syria.22
-						days = 1
-					}
-				}
+				ENG = { country_event = { id = syria.22 days = 1 } }
 			}
 		}
 	}
@@ -2200,9 +2610,11 @@ focus_tree = {
 		relative_position_id = SYR_return_transjordan
 		
 		available = {
-			NOT = {
-				SYR = { is_subject = yes }
-			}
+			is_subject = no
+		}
+
+		ai_will_do = {
+			factor = 10
 		}
 
 		completion_reward = {
@@ -2211,19 +2623,12 @@ focus_tree = {
 			unlock_decision_tooltip = SYR_demand_hijaz_decision
 			if = {
 				limit = {
-					991 = {
-						is_owned_and_controlled_by = SAU
-					}
-					679 = {
-						is_owned_and_controlled_by = SAU
+					SAU = {
+						owns_state = 991
+						owns_state = 679
 					}
 				}
-				SAU = {
-					country_event = {
-						id = syria.26
-						days = 1
-					}
-				}
+				SAU = { country_event = { id = syria.26 days = 1 } }
 			}
 		}
 	}
@@ -2242,9 +2647,11 @@ focus_tree = {
 		relative_position_id = SYR_demand_hijaz
 		
 		available = {
-			NOT = {
-				SYR = { is_subject = yes }
-			}
+			is_subject = no
+		}
+
+		ai_will_do = {
+			factor = 10
 		}
 
 		completion_reward = {
@@ -2282,7 +2689,7 @@ focus_tree = {
 					}
 				}
 			}
-			set_cosmetic_tag = Hash
+			set_cosmetic_tag = IRQ_hash
 			add_stability = 0.1
 			add_war_support = 0.1
 		}
@@ -2307,6 +2714,10 @@ focus_tree = {
 			}
 		}
 
+		ai_will_do = {
+			factor = 10
+		}
+
 		completion_reward = {
 			add_political_power = 100
 			add_ideas = SYR_save_the_mandath_idea
@@ -2326,26 +2737,27 @@ focus_tree = {
 		bypass = {
 			NOT = {
 				1100 = {
-					is_owned_by = SYR
+					is_owned_by = ROOT
 				}
 			}
+		}
+
+		ai_will_do = {
+			factor = 10
 		}
 
 		completion_reward = {
 			1100 = { add_extra_state_shared_building_slots = 1 }
 			add_political_power = 50
 			add_stability = 0.05
-			if = {
-				limit = {
-					1100 = {
-						is_owned_and_controlled_by = SYR
+			hidden_effect = {
+				if = {
+					limit = {
+						1100 = {
+							is_owned_and_controlled_by = ROOT
+						}
 					}
-				}
-				hidden_effect = {
-					country_event = {
-						id = syria.15
-						days = 1095
-					}
+					country_event = { id = syria.1500 days = 1095 }
 				}
 			}
 		}
@@ -2364,9 +2776,13 @@ focus_tree = {
 		bypass = {
 			NOT = {
 				1101 = {
-					is_owned_by = SYR
+					is_owned_by = ROOT
 				}
 			}
+		}
+
+		ai_will_do = {
+			factor = 10
 		}
 
 		completion_reward = {
@@ -2389,6 +2805,10 @@ focus_tree = {
 		y = 1
 		relative_position_id = SYR_join_alavit_country_to_syria
 
+		ai_will_do = {
+			factor = 10
+		}
+
 		completion_reward = {
 			add_political_power = 100
 			remove_ideas = SYR_syrian_nationalists
@@ -2404,6 +2824,10 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = SYR_setup_loyal_officials
+
+		ai_will_do = {
+			factor = 10
+		}
 
 		completion_reward = {
 			add_ideas = SYR_spread_french_culture_idea
@@ -2424,6 +2848,10 @@ focus_tree = {
 			num_of_factories > 75
 		}
 
+		ai_will_do = {
+			factor = 10
+		}
+
 		completion_reward = {
 			add_research_slot = 1
 		}
@@ -2439,14 +2867,30 @@ focus_tree = {
 		y = 1
 		relative_position_id = SYR_setting_the_pro_french_regime
 
+		ai_will_do = {
+			factor = 10
+		}
+		
+		available = {
+			country_exists = FRA
+			NOT = { has_war_with = FRA }
+		}
+
 		completion_reward = {
 			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = industrial_complex
 					level = 2
 					instant_build = yes
 				}
-				add_extra_state_shared_building_slots = 2
 			}
 			add_ideas = SYR_dividends_from_france_idea
 		}
@@ -2465,6 +2909,15 @@ focus_tree = {
 		y = 1
 		relative_position_id = SYR_dividends_from_france
 
+		ai_will_do = {
+			factor = 10
+		}
+		
+		available = {
+			country_exists = FRA
+			NOT = { has_war_with = FRA }
+		}
+
 		completion_reward = {
 			add_tech_bonus = {
 				bonus = 1
@@ -2473,9 +2926,7 @@ focus_tree = {
 				name = SYR_science_coop_with_france
 			}
 			add_to_tech_sharing_group = SYR_science_coop_with_france_group
-			FRA = {
-				add_to_tech_sharing_group = SYR_science_coop_with_france_group
-			}
+			FRA = { add_to_tech_sharing_group = SYR_science_coop_with_france_group }
 			add_research_slot = 1
 		}
 	}
@@ -2492,8 +2943,12 @@ focus_tree = {
 		
 		available = {
 			945 = {
-				is_owned_and_controlled_by = SYR
+				is_owned_and_controlled_by = ROOT
 			}
+		}
+
+		ai_will_do = {
+			factor = 10
 		}
 
 		completion_reward = {
@@ -2506,6 +2961,25 @@ focus_tree = {
 					province = 12029
 				}
 			}
+		}
+	}
+	focus = {
+		id = SYR_civil_to_factory
+		icon = GFX_z_goal_generic_industrial_worker
+		cost = 10
+		prerequisite = {
+			focus = SYR_national_socialism_goverment
+		}
+		x = 0
+		y = 1
+		relative_position_id = SYR_national_socialism_goverment
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		completion_reward = {
+			add_ideas = SYR_civil_to_factory_idea
 		}
 	}
 	focus = {
@@ -2522,6 +2996,10 @@ focus_tree = {
 		y = 1
 		relative_position_id = SYR_civil_to_factory
 
+		ai_will_do = {
+			factor = 10
+		}
+
 		completion_reward = {
 			add_stability = 0.15
 			add_war_support = 0.15
@@ -2532,7 +3010,7 @@ focus_tree = {
 			}
 			SAU = {
 				add_opinion_modifier = {
-					target = SYR
+					target = ROOT
 					modifier = SYR_islam_government_religion_op
 				}
 			}
@@ -2540,36 +3018,21 @@ focus_tree = {
 			hidden_effect = {
 				if = {
 					limit = {
-						SYR = {
-							controls_state = 1100
-						}
+						controls_state = 1100
 					}
-					country_event = {
-						id = syria.47
-						days = 1
-					}
+					country_event = { id = syria.47 days = 1 }
 				}
 				if = {
 					limit = {
-						SYR = {
-							controls_state = 1101
-						}
+						controls_state = 1101
 					}
-					country_event = {
-						id = syria.48
-						days = 1
-					}
+					country_event = { id = syria.48 days = 1 }
 				}
 				if = {
 					limit = {
-						SYR = {
-							controls_state = 553
-						}
+						controls_state = 553
 					}
-					country_event = {
-						id = syria.49
-						days = 1
-					}
+					country_event = { id = syria.49 days = 1 }
 				}
 			}
 		}
@@ -2588,6 +3051,10 @@ focus_tree = {
 		y = 1
 		relative_position_id = SYR_civil_to_factory
 
+		ai_will_do = {
+			factor = 10
+		}
+
 		completion_reward = {
 			add_stability = 0.05
 			add_ideas = SYR_fight_with_religion_fan_idea
@@ -2603,6 +3070,10 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = SYR_civil_to_factory
+
+		ai_will_do = {
+			factor = 10
+		}
 
 		completion_reward = {
 			add_war_support = 0.15
@@ -2621,7 +3092,12 @@ focus_tree = {
 		y = 1
 		relative_position_id = SYR_islam_government_religion
 
+		ai_will_do = {
+			factor = 10
+		}
+
 		completion_reward = {
+			add_war_support = 0.05
 			add_ideas = SYR_syrian_nationalism_act_idea
 		}
 	}
@@ -2636,6 +3112,10 @@ focus_tree = {
 		y = 1
 		relative_position_id = SYR_create_boyscouts_organizations
 
+		ai_will_do = {
+			factor = 10
+		}
+
 		completion_reward = {
 			if = {
 				limit = {
@@ -2644,12 +3124,19 @@ focus_tree = {
 				add_ideas = low_economic_mobilisation
 			}
 			random_owned_controlled_state = {
+				limit = { 
+					free_building_slots = {
+						building = arms_factory
+						size > 1
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = arms_factory
 					level = 2
 					instant_build = yes
 				}
-				add_extra_state_shared_building_slots = 2
 			}
 		}
 	}
@@ -2667,16 +3154,20 @@ focus_tree = {
 		y = 1
 		relative_position_id = SYR_militarisation_economy
 
+		ai_will_do = {
+			factor = 10
+		}
+
 		completion_reward = {
 			add_ideas = SYR_call_tribes_for_army_service_idea
 			capital_scope = {
 				create_unit = {
 					division = "name = \"3. Syrian Cavalry Division\" division_template = \"Syrian Cavalry Division\" start_experience_factor = 0.5 start_equipment_factor = 0.5" 
-					owner = SYR
+					owner = ROOT
 				}
 				create_unit = {
 					division = "name = \"4. Syrian Cavalry Division\" division_template = \"Syrian Cavalry Division\" start_experience_factor = 0.5 start_equipment_factor = 0.5" 
-					owner = SYR
+					owner = ROOT
 				}
 			}
 		}
@@ -2692,34 +3183,49 @@ focus_tree = {
 		y = 1
 		relative_position_id = SYR_syrian_nationalism_act
 
+		ai_will_do = {
+			factor = 10
+		}
+
 		completion_reward = {
-			BPL = {
-				every_owned_state = {
-					if = {
-						limit = {
-							is_owned_and_controlled_by = BPL
-						}
-						add_claim_by = SYR
+			every_state = {
+				limit = {
+					OR = {
+						is_owned_by = BPL
+						is_owned_by = JOR
 					}
+					NOT = { is_owned_by = ROOT }
 				}
+				add_claim_by = ROOT
 			}
+		
 			create_wargoal = {
 				type = annex_everything
 				target = BPL
 			}
-			JOR = {
-				every_owned_state = {
-					if = {
-						limit = {
-							is_owned_and_controlled_by = JOR
-						}
-						add_claim_by = SYR
-					}
-				}
+			add_ai_strategy = {
+				type = antagonize
+				id = BPL
+				value = 200
+			}
+			add_ai_strategy = {
+				type = conquer
+				id = BPL
+				value = 200
 			}
 			create_wargoal = {
 				type = annex_everything
 				target = JOR
+			}
+			add_ai_strategy = {
+				type = antagonize
+				id = JOR
+				value = 200
+			}
+			add_ai_strategy = {
+				type = conquer
+				id = JOR
+				value = 200
 			}
 		}
 	}
@@ -2735,25 +3241,23 @@ focus_tree = {
 		relative_position_id = SYR_syrian_nationalism_act
 		
 		available = {
-			has_army_manpower = { size > 499999 }
+			has_army_manpower = { size > 49999 }
 		}
 		
 		bypass = {
-			IRQ = {
-				is_in_faction_with = SYR
-			}
+			is_in_faction_with = IRQ
+		}
+
+		ai_will_do = {
+			factor = 10
 		}
 
 		completion_reward = {
-			IRQ = {
-				every_owned_state = {
-					if = {
-						limit = {
-							is_core_of = IRQ
-						}
-						add_claim_by = SYR
-					}
+			every_state = {
+				limit = {
+					is_core_of = IRQ
 				}
+				add_claim_by = ROOT
 			}
 			create_wargoal = {
 				type = annex_everything
@@ -2773,39 +3277,29 @@ focus_tree = {
 		relative_position_id = SYR_invasion_to_iraq
 		
 		bypass = {
-			OR = {
-				any_allied_country = {
-					1116 = { is_owned_by = PREV }
-				}
-				1116 = { 
-					is_owned_by = SYR
-				}
-				any_allied_country = {
-					1116 = { is_owned_by = PREV }
-					is_subject_of = SYR
+			1116 = {
+				owner = {
+					OR = {
+						tag = ROOT
+						is_subject_of = ROOT
+						is_in_faction_with = ROOT
+					}
 				}
 			}
+		}
+
+		ai_will_do = {
+			factor = 10
 		}
 
 		completion_reward = {
 			add_state_claim = 1116
 			if = {
 				limit = {
-					1116 = {
-						is_owned_by = SAU
-					}
-					SAU = {
-						NOT = {
-							has_war_with = SYR
-						}
-					}
+					1116 = { is_owned_by = SAU }
+					SAU = { NOT = { has_war_with = ROOT } }
 				}
-				SAU = {
-					country_event = {
-						id = syria.54
-						days = 1
-					}
-				}
+				SAU = { country_event = { id = syria.54 days = 1 } }
 			}
 		}
 	}
@@ -2820,6 +3314,10 @@ focus_tree = {
 		y = 1
 		relative_position_id = SYR_invasion_to_iraq
 
+		ai_will_do = {
+			factor = 10
+		}
+
 		completion_reward = {
 			if = {
 				limit = {
@@ -2829,31 +3327,30 @@ focus_tree = {
 						}
 					}
 				}
-				every_country = {
-					if = {
-						limit = {
-							413 = {
-								is_owned_by = THIS
+				413 = {
+					owner = {
+						ROOT = {
+							create_wargoal = {
+								type = annex_everything
+								target = PREV
+							}
+							add_ai_strategy = {
+								type = antagonize
+								id = PREV
+								value = 200
+							}
+							add_ai_strategy = {
+								type = conquer
+								id = PREV
+								value = 200
 							}
 						}
-						create_wargoal = {
-							type = annex_everything
-							target = THIS
-						}
 					}
-				}
+				}		
 			}
-			if = {
-				limit = {
-					413 = {
-						is_owned_by = PER
-					}
-				}
+			else = {
 				PER = {
-					country_event = {
-						id = syria.50
-						days = 1
-					}
+					country_event = { id = syria.50 days = 1 }
 				}
 			}
 		}
@@ -2872,14 +3369,18 @@ focus_tree = {
 		bypass = {
 			TUR = {
 				OR = {
-					is_in_faction_with = SYR
-					is_subject_of = SYR
+					is_in_faction_with = ROOT
+					is_subject_of = ROOT
 				}
 			}
 		}
 		
 		available = {
 			has_army_manpower = { size > 199999 }
+		}
+
+		ai_will_do = {
+			factor = 10
 		}
 
 		completion_reward = {
@@ -2891,18 +3392,13 @@ focus_tree = {
 				limit = {
 					NOT = {
 						945 = {
-							is_core_of = SYR
+							is_core_of = ROOT
 						}
 					}
 				}
 				add_state_core = 945
 			}
-			TUR = {
-				country_event = {
-					id = syria.52
-					days = 1
-				}
-			}
+			TUR = { country_event = { id = syria.52 days = 1 } }
 		}
 	}
 	focus = {
@@ -2919,27 +3415,58 @@ focus_tree = {
 		y = 2
 		relative_position_id = SYR_palestina_liberation
 
-		completion_reward = {
-			set_cosmetic_tag = More_Greater_Syria
-			add_state_core = 413
-			add_state_core = 1116
-			IRQ = {
-				every_owned_state = {
-					if = {
-						limit = {
-							is_core_of = IRQ
-						}
-						add_core_of = SYR
+		ai_will_do = {
+			factor = 10
+		}
+		
+		available = {
+			NOT = {
+				any_state = {
+					is_core_of = ROOT
+					NOT = { is_controlled_by = ROOT }
+				}
+			}
+			has_global_flag = SYR_proclaim_greater_syria_decision_flag
+			291 = {
+				owner = {
+					OR = {
+						tag = ROOT
+						is_subject_of = ROOT
 					}
 				}
 			}
-			add_state_core = 345
-			add_state_core = 350
-			add_state_core = 352
-			add_state_core = 453
-			add_state_core = 183
-			add_state_core = 772
-			add_state_core = 656
+			676 = {
+				owner = {
+					OR = {
+						tag = ROOT
+						is_subject_of = ROOT
+					}
+				}
+			}
+		}
+
+		completion_reward = {
+			add_political_power = 100
+			add_war_support = 0.1
+			add_stability = 0.1
+			set_cosmetic_tag = More_Greater_Syria
+			every_state = {
+				limit = {
+					OR = {
+						state = 413
+						state = 1116
+						is_core_of = IRQ
+						state = 345
+						state = 350
+						state = 352
+						state = 453
+						state = 183
+						state = 772
+						state = 656
+					}
+				}
+				add_core_of = ROOT
+			}
 		}
 	}
 	focus = {
@@ -2956,33 +3483,32 @@ focus_tree = {
 		available = {
 			183 = {
 				NOT = {
-					is_controlled_by = SYR
+					is_controlled_by = ROOT
 				}
 			}
 			772 = {
 				NOT = {
-					is_controlled_by = SYR
+					is_controlled_by = ROOT
 				}
 			}
 		}
 
-		completion_reward = {
-			add_ideas = SYR_claim_cyprpis_idea
+		ai_will_do = {
+			factor = 10
 		}
-	}
-	focus = {
-		id = SYR_civil_to_factory
-		icon = GFX_z_goal_generic_industrial_worker
-		cost = 10
-		prerequisite = {
-			focus = SYR_national_socialism_goverment
-		}
-		x = 0
-		y = 1
-		relative_position_id = SYR_national_socialism_goverment
 
 		completion_reward = {
-			add_ideas = SYR_civil_to_factory_idea
+			every_state = {
+				limit = {
+					OR = {
+						state = 183
+						state = 772
+					}
+					has_resistance = yes
+				}
+				add_resistance = 20
+				add_compliance = -50
+			}
 		}
 	}
 	focus = {
@@ -2999,6 +3525,10 @@ focus_tree = {
 		y = 1
 		relative_position_id = SYR_science_coop_with_west
 
+		ai_will_do = {
+			factor = 10
+		}
+
 		completion_reward = {
 			add_political_power = 200
 			add_ideas = SYR_middle_east_diplomacy_idea
@@ -3014,6 +3544,10 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = SYR_middle_east_diplomacy
+
+		ai_will_do = {
+			factor = 10
+		}
 
 		completion_reward = {
 			add_opinion_modifier = {
@@ -3091,7 +3625,11 @@ focus_tree = {
 		
 		available = {
 			is_subject_of = SOV
-			compare_autonomy_state > autonomy_dominion
+			has_autonomy_state = autonomy_dominion
+		}
+
+		ai_will_do = {
+			factor = 10
 		}
 
 		completion_reward = {
@@ -3108,6 +3646,10 @@ focus_tree = {
 		x = 4
 		y = 1
 		relative_position_id = SYR_save_the_mandath
+
+		ai_will_do = {
+			factor = 10
+		}
 
 		completion_reward = {
 			add_ideas = SYR_suppress_kurds_tribes_idea
