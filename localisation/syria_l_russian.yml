@@ -76,7 +76,7 @@
  SYR_science_coop_with_west:0 "Научное сотрудничество с Западом"
  SYR_middle_east_diplomacy:0 "Ближневосточная политика"
  SYR_friends_with_neighbors:0 "Развитие отношений с соседями"
- SYR_neutrality:0 "Нейтральная внешняя политика"
+ SYR_neutrality_focus:0 "Нейтральная внешняя политика"
  SYR_reinforce_borders_with_iraq:0 "Обезопасить границу с Ираком"
  SYR_reinforce_borders_with_turkey:0 "Обезопасить границу с Турцией"
  SYR_reinforce_borders_with_palestina:0 "Обезопасить границу с Палестиной"

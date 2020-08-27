@@ -233,7 +233,7 @@ ideas = {
 		}
 		SYR_save_the_mandath_idea = {
 			
-			picture = fra_undividable
+			picture = FRA_undividable
 			
 			allowed = {
 				always = no
@@ -805,7 +805,7 @@ ideas = {
 		}
 		SYR_spread_french_culture_idea = {
 			
-			picture = сsend_attache
+			picture = received_attache
 			
 			allowed = {
 				always = no

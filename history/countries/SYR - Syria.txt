@@ -1,6 +1,7 @@
-﻿capital = 553
+﻿capital = 554
 
-set_stability = 0.7
+set_stability = 0.3
+set_war_support = 0.1
 
 oob = "SYR_1936"
 # Starting tech
@@ -25,17 +26,6 @@ set_country_flag = mandatory_country
 1939.1.1 = {
 
 	add_political_power = 1198
-	
-	#generic focuses
-	complete_national_focus = army_effort
-	complete_national_focus = equipment_effort
-	complete_national_focus = motorization_effort
-	complete_national_focus = aviation_effort
-	complete_national_focus = naval_effort
-	complete_national_focus = large_navy
-	complete_national_focus = industrial_effort
-	complete_national_focus = construction_effort
-	complete_national_focus = production_effort
 	
 	set_technology = {
 		tech_support = 1
@@ -155,6 +145,7 @@ create_country_leader = {
 		civilian_economy
 		ai_aggression_ultra_idea
 	}
+	remove_ideas = SYR_syrian_nationalists
 	set_political_power = 0
 	set_stability = 0.5
 	set_war_support = 0.5
