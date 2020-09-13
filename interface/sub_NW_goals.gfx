@@ -185,6 +185,21 @@ spriteTypes = {
 		texturefile = "gfx/interface/goals/z_goal_end_isolation.dds"
 	}
 	
+	spriteType = {
+		name = "GFX_z_goal_rocket_mail"
+		texturefile = "gfx/interface/goals/z_goal_rocket_mail.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_z_goal_nepal_army"
+		texturefile = "gfx/interface/goals/z_goal_nepal_army.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_z_goal_generic_save_the_monarchy"
+		texturefile = "gfx/interface/goals/z_goal_generic_save_the_monarchy.dds"
+	}
+	
 	frameAnimatedSpriteType = {
 		name = "GFX_z_goal_mountain_warriors"
 		texturefile = "gfx/interface/goals/z_goal_mountain_warriors.dds"

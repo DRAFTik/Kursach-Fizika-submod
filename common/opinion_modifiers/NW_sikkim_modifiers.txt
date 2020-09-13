@@ -1,0 +1,30 @@
+opinion_modifiers = {
+	SKM_TIB_relation = {
+		value = 60
+	}
+	SKM_TIB_relation_trade = {
+		trade = yes
+		value = 60
+	}
+	SKM_friendship_trade = {
+		trade = yes
+		value = 60
+	}
+	SKM_friendship = {
+		value = 60
+	}
+	SKM_trading_RAJ = {
+		trade = yes
+		value = 100 
+	}
+	SKM_friend_brit_trade = {
+		trade = yes
+		value = 70
+	}
+	SKM_friend_brit = {
+		value = 70
+	}
+	SKM_good_neighbour = {
+		value = 60 
+	}
+}
