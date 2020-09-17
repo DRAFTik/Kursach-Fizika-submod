@@ -103,7 +103,7 @@ focus_tree = {
 		id = SKM_tibet
 		x = -1
 		y = 1
-		icon = GFX_z_goal_voluntariness
+		icon = GFX_z_goal_tibet_ally
 		relative_position_id = SKM_stop_arenda 
 		cost = 10
 		available = {
@@ -147,7 +147,7 @@ focus_tree = {
 		id = SKM_kazi_tikadori
 		x = 0
 		y = 1
-		icon = GFX_z_goal_contract_slavery
+		icon = GFX_z_goal_kazi
 		relative_position_id = SKM_tibet
 		cost = 10
 		prerequisite = { focus = SKM_tibet }
@@ -163,7 +163,7 @@ focus_tree = {
 		id = SKM_TIB_road
 		x = 0
 		y = 1
-		icon = GFX_z_goal_city_road_cei
+		icon = GFX_z_goal_tibet_road
 		relative_position_id = SKM_kazi_tikadori
 		cost = 10
 		prerequisite = { focus = SKM_kazi_tikadori }
@@ -237,7 +237,7 @@ focus_tree = {
 		}
 		x = -4
 		y = 1
-		icon = GFX_z_goal_national_council
+		icon = GFX_z_goal_elections_monarchy
 		relative_position_id = SKM_elections
 		cost = 10
 		prerequisite = { focus = SKM_elections }
@@ -258,7 +258,7 @@ focus_tree = {
 		}
 		x = 3
 		y = 1
-		icon = GFX_z_goal_authoritarian_democracy_focus
+		icon = GFX_z_goal_elections_congress
 		relative_position_id = SKM_elections
 		cost = 10
 		prerequisite = { focus = SKM_elections }
@@ -279,7 +279,7 @@ focus_tree = {
 		}
 		x = 10
 		y = 1
-		icon = GFX_z_goal_troz_federation
+		icon = GFX_z_goal_elections_marxism
 		relative_position_id = SKM_elections
 		cost = 10
 		prerequisite = { focus = SKM_elections }
@@ -306,7 +306,7 @@ focus_tree = {
 		}		
 		x = -3
 		y = 1
-		icon = GFX_focus_RAJ_all_india_forward_bloc
+		icon = GFX_z_goal_raj_gb_ally
 		relative_position_id = SKM_monarchy_won
 		prerequisite = { focus = SKM_monarchy_won OR = SKM_calcutta_univesity }
 		cost = 10
@@ -543,7 +543,7 @@ focus_tree = {
 		}
 		x = 2
 		y = 1
-		icon = GFX_z_goal_mountain_rifle_artillery
+		icon = GFX_z_goal_gimalai_diplomacy
 		cost = 10
 		relative_position_id = SKM_international
 		prerequisite = { focus = SKM_international }
@@ -598,7 +598,7 @@ focus_tree = {
 		id = SKM_strength_chogyal
 		x = 2
 		y = 0
-		icon = GFX_z_goal_generic_king_power
+		icon = GFX_z_goal_chohal_power
 		relative_position_id = SKM_1861
 		prerequisite = { focus = SKM_monarchy_won } 
 		cost = 10
@@ -768,7 +768,7 @@ focus_tree = {
 		id = SKM_inc
 		x = 2
 		y = 0
-		icon = GFX_z_goal_generic_laws
+		icon = GFX_z_goal_raj_dem_ally
 		relative_position_id = SKM_Kanchenjunga
 		prerequisite = { focus = SKM_democratic_won }
 		cost = 10
@@ -799,7 +799,7 @@ focus_tree = {
 				
 		x = 0
 		y = 1
-		icon = GFX_goal_SKM_dzumsa
+		icon = GFX_z_goal_with_raj
 		relative_position_id = SKM_inc 
 		prerequisite = { focus = SKM_inc }
 		cost = 10
@@ -831,7 +831,7 @@ focus_tree = {
 		id = SKM_farm_militia
 		x = 1
 		y = 1
-		icon = GFX_z_goal_red_army
+		icon = GFX_z_goal_peasents_soldiers
 		relative_position_id = SKM_trozkism_won
 		prerequisite = { focus = SKM_trozkism_won }
 		cost = 10
@@ -1044,7 +1044,7 @@ focus_tree = {
 		}
 		x = -5
 		y = 1
-		icon = GFX_goal_generic_major_war
+		icon = GFX_z_goal_butan_revenge
 		relative_position_id = SKM_camelponta
 		prerequisite = { focus = SKM_tearup_1861 OR = SKM_international }
 		cost = 10
@@ -1073,7 +1073,7 @@ focus_tree = {
 		}
 		x = 2
 		y = 0
-		icon = GFX_goal_generic_major_war
+		icon = GFX_z_goal_revenge_tibet
 		relative_position_id = SKM_revenge_butan
 		prerequisite = { focus = SKM_tearup_1861 OR = SKM_international }
 		cost = 10
@@ -1102,7 +1102,7 @@ focus_tree = {
 		}
 		x = 2
 		y = 0
-		icon = GFX_goal_generic_major_war
+		icon = GFX_z_goal_nepal_revenge
 		relative_position_id = SKM_revenge_tibet
 		mutually_exclusive = { focus = SKM_ask_help_nepal }
 		prerequisite = { focus = SKM_tearup_1861 OR = SKM_international }
@@ -1128,7 +1128,7 @@ focus_tree = {
 		}
 		x = 2
 		y = 0
-		icon = GFX_goal_SKM_dzumsa
+		icon = GFX_z_goal_nep_ally
 		relative_position_id = SKM_revenge_nepal
 		prerequisite = { focus = SKM_tearup_1861 }
 		mutually_exclusive = { focus = SKM_revenge_nepal }
@@ -1205,7 +1205,7 @@ focus_tree = {
 		id = SKM_cardamon
 		x = -1
 		y = 1
-		icon = GFX_z_goal_cotton_plantation
+		icon = GFX_z_goal_cardamon
 		relative_position_id = SKM_village_hospitals
 		cost = 10
 		prerequisite = { focus = SKM_village_hospitals OR = SKM_rocket_post }
@@ -1231,7 +1231,7 @@ focus_tree = {
 		id = SKM_leather
 		x = 2
 		y = 0
-		icon = GFX_z_goal_vai
+		icon = GFX_z_goal_lather_factory
 		relative_position_id = SKM_rice 
 		prerequisite = { focus = SKM_village_hospitals OR = SKM_rocket_post }
 		cost = 10
@@ -1365,7 +1365,7 @@ focus_tree = {
 		id = SKM_uniform
 		x = 0
 		y = 1
-		icon = GFX_z_goal_political_commissars
+		icon = GFX_z_goal_sikkim_form
 		relative_position_id = SKM_modernize_eqp
 		prerequisite = { focus = SKM_modernize_eqp }
 		cost = 10

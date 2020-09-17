@@ -799,7 +799,38 @@ bookmarks = {
 				NEP_mountanion_thugs
 			}
 		}
-		
+
+		"SKM"={
+			minor = yes
+			history = "SKM_SCENARIO_DESC"
+			ideology = monarchy
+			ideas = {
+				SKM_hard_farmers
+				SKM_conservative_nobles
+			}
+			focuses = {
+				SKM_kaz_mucht
+				SKM_national_reform
+				SKM_trozkism_won
+				SKM_rocket_post
+			}
+		}
+
+		"SYR"={
+			minor = yes
+			history = "SYR_GATHERING_STORM_DESC"
+			ideology = neutrality
+			ideas = {
+				SYR_syrian_nationalists
+			}
+			focuses = {
+				SYR_setting_the_pro_french_regime
+				SYR_national_socialism_goverment
+				SYR_communism_goverment
+				SYR_second_kingdom_reborn
+			}
+		}
+
 		"SAF"={
 			minor = yes
 			history = "SAF_GATHERING_STORM_DESC"
@@ -817,7 +848,7 @@ bookmarks = {
 				AUS_EsrbxCit
 			}
 		}
-		
+
 		"TAN"={
 			minor = yes
 			history = "TAN_GATHERING_STORM_DESC"
