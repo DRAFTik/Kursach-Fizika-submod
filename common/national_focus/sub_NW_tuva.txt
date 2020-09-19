@@ -76,7 +76,7 @@ focus_tree = {
 		available_if_capitulated = yes
 		
 		completion_reward = {
-		country_event = { hours = 12 id = NWtuva.8 }
+			country_event = { hours = 12 id = NWtuva.8 }
 		}
 	}
 	
@@ -211,13 +211,12 @@ focus_tree = {
 		completion_reward = {
 		add_ideas = TAN_rabota_tnrp
 		if = {
-        limit = { has_country_leader = { name = "Adig-Tyulyush Hemchik-ool" } }
-		 country_event = { days = 3 id = NWtuva.16 } 
+			limit = { has_country_leader = { name = "Adig-Tyulyush Hemchik-ool" } }
+			country_event = { days = 3 id = NWtuva.16 } 
 		}
-		
 		if = {
-        limit = { NOT = { has_country_leader = { name = "Adig-Tyulyush Hemchik-ool" } } }
-		 country_event = { days = 15 id = NWtuva.18 } 
+			limit = { NOT = { has_country_leader = { name = "Adig-Tyulyush Hemchik-ool" } } }
+			country_event = { days = 15 id = NWtuva.18 } 
 		}
 		
 		
@@ -236,12 +235,12 @@ focus_tree = {
 			factor = 1
 		}
 		
-		available = { has_country_leader = { name = "Salchak Toka" } }	
+		available = { has_country_leader = { name = "Salchak Toka" } }
 		bypass = { }
 		available_if_capitulated = yes
 		
 		completion_reward = {
-	    TAN = { country_event = { days = 1 id = NWtuva.42 } }
+			TAN = { country_event = { days = 1 id = NWtuva.42 } }
 		}
 	}
 	
@@ -258,22 +257,21 @@ focus_tree = {
 		}
 		
 		available = { 
-		TAN = { is_puppet_of = SOV }
-		has_country_leader = { name = "Salchak Toka" }
+			is_subject_of = SOV
+			has_country_leader = { name = "Salchak Toka" }
 		}	
 		bypass = { }
 		available_if_capitulated = yes
 		
 		completion_reward = {
-		add_stability = 0.1
-		if = {
-		limit = { has_dlc = "Together for Victory" }		
-			add_autonomy_ratio = {
-				value = -0.5
-				localization = TAN_azbuka
+			add_stability = 0.1
+			if = {
+				limit = { has_dlc = "Together for Victory" }		
+				add_autonomy_ratio = {
+					value = -0.5
+					localization = TAN_azbuka
+				}
 			}
-		}
-		
 		}
 	}
 	
@@ -290,22 +288,22 @@ focus_tree = {
 		}
 		
 		available = {
-		TAN = { is_puppet_of = SOV } 
-		has_country_leader = { name = "Salchak Toka" }
+			is_subject_of = SOV 
+			has_country_leader = { name = "Salchak Toka" }
 		}
 		
 		bypass = { }
 		available_if_capitulated = yes
 		
 		completion_reward = {
-		###у меня нет флагов
-		if = {
-		limit = { has_dlc = "Together for Victory" }		
-			add_autonomy_ratio = {
-				value = -0.25
-				localization = TAN_sovet_flag
+			###у меня нет флагов
+			if = {
+				limit = { has_dlc = "Together for Victory" }		
+				add_autonomy_ratio = {
+					value = -0.25
+					localization = TAN_sovet_flag
+				}
 			}
-		}
 		}
 	}
 	
@@ -326,7 +324,7 @@ focus_tree = {
 		available_if_capitulated = yes
 		
 		completion_reward = {
-		add_ideas = TAN_gazeta
+			add_ideas = TAN_gazeta
 		}
 	}
 	
@@ -344,18 +342,16 @@ focus_tree = {
 			factor = 1
 		}
 		
-		available = { 
-		has_country_leader = { name = "Salchak Toka" }
-	    date > 1944.1.1
-		TAN = {
-		is_puppet_of = SOV
+		available = {
+			has_country_leader = { name = "Salchak Toka" }
+			date > 1944.1.1
+			is_subject_of = SOV
 		}
-		}		
 		bypass = { }
 		available_if_capitulated = yes
 		
 		completion_reward = {
-		custom_effect_tooltip = mi_smozhem_poprostsa_v_sssr
+			custom_effect_tooltip = mi_smozhem_poprostsa_v_sssr
 		}
 	}
 	
@@ -1494,8 +1490,8 @@ create_country_leader = {
 		available_if_capitulated = yes
 		
 		completion_reward = {
-		army_experience = 25
-		add_command_power = 40
+			army_experience = 25
+			add_command_power = 40
 		}
 	}
 	
@@ -1510,20 +1506,16 @@ create_country_leader = {
 		ai_will_do = {
 			factor = 1
 		}		
-		available = { 
-        TAN = { is_in_faction_with = SOV }
+		available = {
+			is_in_faction_with = SOV
 		}		
-		bypass = { 
-		NOT = {
-		TAN = { is_in_faction_with = SOV }
-		}
-		}
+		bypass = { NOT = { is_in_faction_with = SOV } }
 		available_if_capitulated = yes
 		
 		completion_reward = {
-		custom_effect_tooltip = available_political_advisor
-		show_ideas_tooltip = TAN_guy_eleven
-		set_country_flag = TAN_guy_eleven_open
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = TAN_guy_eleven
+			set_country_flag = TAN_guy_eleven_open
 		}
 	}
 	
@@ -1543,7 +1535,7 @@ create_country_leader = {
 		available_if_capitulated = yes
 		
 		completion_reward = {
-		add_ideas = TAN_komissari_univer
+			add_ideas = TAN_komissari_univer
 		}
 	}
 	
@@ -1563,7 +1555,7 @@ create_country_leader = {
 		available_if_capitulated = yes
 		
 		completion_reward = {
-		add_tech_bonus = {
+			add_tech_bonus = {
 				name = land_doc_bonus
 				bonus = 1.0
 				uses = 1
@@ -1613,7 +1605,7 @@ create_country_leader = {
 		available_if_capitulated = yes
 		
 		completion_reward = {
-		add_ideas = TAN_chernaya_smert_loshadok
+			add_ideas = TAN_chernaya_smert_loshadok
 		}
 	}
 	
@@ -1628,16 +1620,16 @@ create_country_leader = {
 		ai_will_do = {
 			factor = 1
 		}		
-		available = { 
-		TAN = { is_in_faction_with = SOV }
-		SOV = { has_war = yes }
+		available = {
+			is_in_faction_with = SOV
+			SOV = { has_war = yes }
 		}		
 		bypass = { }
 		available_if_capitulated = yes
 		
 		completion_reward = {
-		set_country_flag = tuva_pomozhet_sovetam #Поэтому советы и затащили
-		custom_effect_tooltip = tuva_pomozhet_sovetam_tooltip
+			set_country_flag = tuva_pomozhet_sovetam #Поэтому советы и затащили
+			custom_effect_tooltip = tuva_pomozhet_sovetam_tooltip
 		}
 	}
 	

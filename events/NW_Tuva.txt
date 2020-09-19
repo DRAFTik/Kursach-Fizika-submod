@@ -73,13 +73,19 @@ country_event = {
 	
 	option = {
 		name = NWtuva.3.a
-		ai_chance = { factor = 90 }
+		ai_chance = { factor = 75 }
 		SOV = { country_event = { hours = 12 id = NWtuva.4 } }
 	}
 		
 	option = {
 		name = NWtuva.3.b
-		ai_chance = { factor = 10 }
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
 		set_country_flag = syezd_partii
 	}
 }
@@ -95,13 +101,19 @@ country_event = {
 	
 	option = {
 		name = NWtuva.4.a
-		ai_chance = { factor = 10 }		
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
 		TAN = { country_event = { hours = 12 id = NWtuva.5 } }
 	}
 		
 	option = {
 		name = NWtuva.4.b
-		ai_chance = { factor = 90 }
+		ai_chance = { factor = 75 }
 		TAN = { country_event = { hours = 12 id = NWtuva.6 } }
 		set_country_flag = KGFSB_snova_v_dele
 	}
@@ -156,15 +168,13 @@ country_event = {
 	}
 
 	mean_time_to_happen = {
-		days = 1
+		days = 5
 	}
 
 	option = {
 		name = NWtuva.7.a
 		set_country_flag = vragi_naroda
-		TAN = {
-		set_country_flag = vragi_naroda_tan
-		}
+		TAN = { set_country_flag = vragi_naroda_tan }
 	}
 	
 }
@@ -906,6 +916,12 @@ country_event = {
 		name = NWtuva.42.a
 		ai_chance = {
 			factor = 50
+			modifier = {
+				factor = 0
+				date < 1944.1.1
+				TAN = { is_ai = yes }
+				is_historical_focus_on = yes
+			}
 		}
 	    TAN = { country_event = { days = 1 id = NWtuva.44 } }
 	}
@@ -913,10 +929,17 @@ country_event = {
 	option = {
 		name = NWtuva.42.b
 		ai_chance = {
-			factor = 0
+			factor = 50
 			modifier = {
-				factor = 100
+				factor = 2
 				date > 1942.1.1
+				is_historical_focus_on = no
+			}
+			modifier = {
+				factor = 0
+				date < 1944.1.1
+				TAN = { is_ai = yes }
+				is_historical_focus_on = yes
 			}
 		}
 	    TAN = { country_event = { days = 1 id = NWtuva.45 } }
@@ -925,11 +948,11 @@ country_event = {
 	option = {
 		name = NWtuva.42.c
 		ai_chance = {
-			factor = 0
+			factor = 50
 			modifier = {
-				factor = 100
+				factor = 2
 				date < 1942.1.1
-				TAN = { is_ai = yes }
+				is_historical_focus_on = no
 			}
 		}
 	    TAN = { country_event = { days = 1 id = NWtuva.46 } }
@@ -999,7 +1022,7 @@ country_event = {
 			ideology = anarchism
 			size = 0.5
 			capital = 329
-			states = { 329  }
+			states = { 329 }
 		}
 	   SOV = { country_event = { days = 1 id = NWtuva.50 } }
 	}

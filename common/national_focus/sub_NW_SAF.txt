@@ -2091,7 +2091,7 @@ focus = { # Капская гарнизонная артиллерия
 	}
 
 	
-focus = { # Сотрудничество с Британией 
+	focus = { # Сотрудничество с Британией 
 		id = AUS_RJApeuma
 		icon = GFX_focus_chi_british_cooperation
 		x = 8
@@ -2106,17 +2106,17 @@ focus = { # Сотрудничество с Британией
 		ai_will_do = {
 			factor = 1
 		}
-        completion_reward = { 
-        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus AUS_RJApeuma"
-        add_ideas = SAF_idea_61
-        army_experience = 10
-        add_tech_bonus = {
+        completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus AUS_RJApeuma"
+			add_ideas = SAF_idea_61
+			army_experience = 10
+			add_tech_bonus = {
 				name = land_doc_bonus
 				bonus = 1
 				uses = 2
 				category = land_doctrine
 			}
-         ENG = { add_opinion_modifier = { target = SAF modifier = SAF_opinion_modifiers_10 } }
+			ENG = { add_opinion_modifier = { target = SAF modifier = SAF_opinion_modifiers_10 } }
         }
 	}
 
@@ -2140,7 +2140,7 @@ focus = { # Объявить о независимости от Британии
 	}
 
 	
-focus = { # Нацистская диктатура 
+	focus = { # Нацистская диктатура 
 		id = AUS_gdoCHKbE
 		icon = GFX_z_goal_power_fascist_council
 		x = 1
@@ -2151,6 +2151,10 @@ focus = { # Нацистская диктатура
 		mutually_exclusive = { focus = AUS_JPMvjnrI }
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
 		}
         completion_reward = { 
         add_political_power = 50
@@ -2281,20 +2285,24 @@ focus = { # Объединение Родезии
 	}
 
 	
-focus = { # Пойти на поводу у националистов 
+	focus = { # Пойти на поводу у националистов 
 		id = AUS_LgrdsjiO
 		icon = GFX_z_goal_fashiki
 		x = 6
 		y = 4
 		cost = 10
         available = {
-        OR = { neutrality > 0.25 fascism > 0.25 }
+			OR = { neutrality > 0.25 fascism > 0.25 }
         }
 		available_if_capitulated = yes
 		prerequisite = { focus = AUS_GiSnNgCW }
 		mutually_exclusive = { focus = AUS_RJApeuma }
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
 		}
         completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus AUS_LgrdsjiO"   
@@ -2449,7 +2457,7 @@ focus = { # Избавиться от колониального государ�
 	}
 
 	
-focus = { # Распустить парламент 
+	focus = { # Распустить парламент 
 		id = AUS_WLbUSFyZ
 		icon = GFX_z_goal_generic_political_correctness
 		x = 20
@@ -2460,17 +2468,20 @@ focus = { # Распустить парламент
 		mutually_exclusive = { focus = AUS_GiSnNgCW }
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
 		}
         bypass = {
 			has_country_flag = SAF_flag_11
 		}
-        completion_reward = { 
-        add_political_power = 100
-        add_autonomy_ratio = { value = 0.1 }
-        add_popularity = { ideology = democratic popularity = -0.2 }
-        hidden_effect = { if = { limit = { monarchy > 0.05 } ENG = { country_event = { id = south_afrika.40 } } } }
-        hidden_effect = { if = { limit = { anarchism > 0.1 NOT = { has_completed_focus = AUS_keLFamxQ } } country_event = { id = south_afrika.42 } } }
-
+        completion_reward = {
+			add_political_power = 100
+			add_autonomy_ratio = { value = 0.1 }
+			add_popularity = { ideology = democratic popularity = -0.2 }
+			hidden_effect = { if = { limit = { monarchy > 0.05 } ENG = { country_event = { id = south_afrika.40 } } } }
+			hidden_effect = { if = { limit = { anarchism > 0.1 NOT = { has_completed_focus = AUS_keLFamxQ } } country_event = { id = south_afrika.42 } } }
         }
 	}
 
