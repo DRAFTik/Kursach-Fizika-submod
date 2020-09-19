@@ -12,7 +12,7 @@ focus_tree = {
 	
 	focus = {
 		id = SYR_army_create_act
-		icon = GFX_goal_generic_army_doctrines
+		icon = GFX_z_goal_syr_army
 		cost = 10
 		x = 6
 		y = 0
@@ -43,7 +43,7 @@ focus_tree = {
 		id = SYR_upgrade_pex_civil_gov
 		icon = GFX_z_goal_voluntary_creation_of_collective
 		cost = 10
-		x = 22
+		x = 17
 		y = 0
 		
 		available = {
@@ -63,7 +63,7 @@ focus_tree = {
 		id = SYR_upgrade_ir_damascus_beirut
 		icon = GFX_goal_generic_construct_infrastructure
 		cost = 10
-		x = 27
+		x = 22
 		y = 0
 		
 		ai_will_do = {
@@ -98,12 +98,12 @@ focus_tree = {
 	}
 	focus = {
 		id = SYR_delegation_to_paris
-		icon = GFX_goal_generic_major_alliance
+		icon = GFX_z_goal_syr_delegate
 		cost = 11.7
 		mutually_exclusive = {
 			focus = SYR_weaken_colonial_institutions
 		}
-		x = 53
+		x = 45
 		y = 0
 		
 		available = {
@@ -137,7 +137,7 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = SYR_delegation_to_paris
 		}
-		x = 39
+		x = 41
 		y = 0
 
 		ai_will_do = {
@@ -171,7 +171,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SYR_create_sea_fleet
-		icon = GFX_goal_generic_build_navy
+		icon = GFX_z_goal_syr_vmf
 		cost = 10
 		prerequisite = {
 			focus = SYR_army_create_act
@@ -325,9 +325,9 @@ focus_tree = {
 		icon = GFX_goal_generic_small_arms
 		cost = 10
 		prerequisite = {
-			focus = SYR_invite_french_instructors
+			focus = SYR_recall_war_exp_with_france
 		}
-		x = -1
+		x = 3
 		y = 1
 		relative_position_id = SYR_invite_french_instructors
 
@@ -515,9 +515,9 @@ focus_tree = {
 		icon = GFX_goal_generic_cavalry
 		cost = 10
 		prerequisite = {
-			focus = SYR_recall_war_exp_with_france
+			focus = SYR_invite_french_instructors
 		}
-		x = 1
+		x = -3
 		y = 1
 		relative_position_id = SYR_recall_war_exp_with_france
 
@@ -589,7 +589,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SYR_create_air_force
-		icon = GFX_goal_generic_build_airforce
+		icon = GFX_z_goal_syr_vvs
 		cost = 10
 		prerequisite = {
 			focus = SYR_army_create_act
@@ -859,7 +859,7 @@ focus_tree = {
 			focus = SYR_upgrade_pex_civil_gov
 		}
 		x = 0
-		y = 2
+		y = 1
 		relative_position_id = SYR_upgrade_pex_civil_gov
 
 		ai_will_do = {
@@ -1149,7 +1149,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SYR_intergration_lebanon
-		icon = GFX_goal_generic_forceful_treaty
+		icon = GFX_z_goal_livan_integate
 		cost = 10
 		prerequisite = {
 			focus = SYR_upgrade_ir_damascus_beirut
@@ -1181,7 +1181,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SYR_give_lebanon_autonomy
-		icon = GFX_z_goal_give_democracy
+		icon = GFX_z_goal_livan_auto
 		cost = 10
 		prerequisite = {
 			focus = SYR_upgrade_ir_damascus_beirut
@@ -1242,7 +1242,7 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = SYR_save_the_mandath
 		}
-		x = 2
+		x = -6
 		y = 1
 		relative_position_id = SYR_weaken_colonial_institutions
 		
@@ -1275,7 +1275,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SYR_hold_early_elections
-		icon = GFX_z_goal_elections
+		icon = GFX_z_goal_goverment_elections
 		cost = 10
 		prerequisite = {
 			focus = SYR_transfer_control_to_civilian_gov
@@ -1320,7 +1320,7 @@ focus_tree = {
 	
 	focus = {
 		id = SYR_setting_the_pro_french_regime
-		icon = GFX_focus_fra_french_union
+		icon = GFX_z_goal_chose_french
 		cost = 10
 		prerequisite = {
 			focus = SYR_hold_early_elections
@@ -1368,7 +1368,7 @@ focus_tree = {
 		prerequisite = {
 			focus = SYR_give_lebanon_autonomy
 		}
-		x = 1
+		x = 0
 		y = 3
 		relative_position_id = SYR_give_lebanon_autonomy
 
@@ -1418,7 +1418,7 @@ focus_tree = {
 	
 	focus = {
 		id = SYR_nationalism
-		icon = GFX_goal_generic_demand_territory
+		icon = GFX_z_goal_chose_naci
 		cost = 10
 		prerequisite = {
 			focus = SYR_hold_early_elections
@@ -1470,7 +1470,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SYR_national_socialism_goverment
-		icon = GFX_goal_support_fascism
+		icon = GFX_z_goal_syr_nac-syndy
 		cost = 5
 		prerequisite = {
 			focus = SYR_end_with_france
@@ -1508,7 +1508,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SYR_syrian_indepedence_democraty
-		icon = GFX_goal_support_democracy
+		icon = GFX_z_goal_syr_dem
 		cost = 5
 		prerequisite = {
 			focus = SYR_end_with_france
@@ -1715,7 +1715,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SYR_communism_goverment
-		icon = GFX_goal_support_communism
+		icon = GFX_z_goal_syr_commi
 		cost = 10
 		prerequisite = {
 			focus = SYR_end_with_france
@@ -2262,7 +2262,7 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = SYR_hold_early_elections
 		}
-		x = 12
+		x = 11
 		y = 1
 		relative_position_id = SYR_transfer_control_to_civilian_gov
 		
@@ -2331,7 +2331,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SYR_invite_sayyid_bin_hussein_to_throne
-		icon = GFX_goal_tfv_strengthen_commonwealth_ties
+		icon = GFX_z_goal_invite_hussein
 		cost = 10
 		prerequisite = {
 			focus = SYR_second_kingdom_reborn
@@ -2364,7 +2364,7 @@ focus_tree = {
 		prerequisite = {
 			focus = SYR_invite_sayyid_bin_hussein_to_throne
 		}
-		x = -2
+		x = 0
 		y = 1
 		relative_position_id = SYR_invite_sayyid_bin_hussein_to_throne
 		
@@ -2446,7 +2446,7 @@ focus_tree = {
 		prerequisite = {
 			focus = SYR_union_with_iraq
 		}
-		x = -1
+		x = 0
 		y = 1
 		relative_position_id = SYR_union_with_iraq
 		
@@ -2481,7 +2481,7 @@ focus_tree = {
 		prerequisite = {
 			focus = SYR_communism_goverment
 		}
-		x = 6
+		x = 3
 		y = 3
 		relative_position_id = SYR_communism_goverment
 
@@ -2507,7 +2507,7 @@ focus_tree = {
 		prerequisite = {
 			focus = SYR_communism_goverment
 		}
-		x = 7
+		x = 6
 		y = 1
 		relative_position_id = SYR_communism_goverment
 
@@ -2526,7 +2526,7 @@ focus_tree = {
 		prerequisite = {
 			focus = SYR_invite_sayyid_bin_hussein_to_throne
 		}
-		x = 0
+		x = -2
 		y = 1
 		relative_position_id = SYR_invite_sayyid_bin_hussein_to_throne
 		
@@ -2550,7 +2550,7 @@ focus_tree = {
 		prerequisite = {
 			focus = SYR_invite_sayyid_bin_hussein_to_throne
 		}
-		x = 3
+		x = 2
 		y = 1
 		relative_position_id = SYR_invite_sayyid_bin_hussein_to_throne
 		
@@ -2639,7 +2639,7 @@ focus_tree = {
 			focus = SYR_union_with_iraq
 		}
 		x = -1
-		y = 2
+		y = 1
 		relative_position_id = SYR_demand_hijaz
 		
 		available = {
@@ -3596,7 +3596,7 @@ focus_tree = {
 		prerequisite = {
 			focus = SYR_soviet_economy_is_own
 		}
-		x = 1
+		x = 0
 		y = 1
 		relative_position_id = SYR_soviet_economy_is_own
 		
@@ -3620,7 +3620,7 @@ focus_tree = {
 		prerequisite = {
 			focus = SYR_save_the_mandath
 		}
-		x = 4
+		x = -2
 		y = 1
 		relative_position_id = SYR_save_the_mandath
 
