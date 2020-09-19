@@ -372,7 +372,7 @@ focus = { # Внедриться в Южную Родезию
 	}
 
 	
-focus = { # Вопрос о нейтралитете 
+	focus = { # Вопрос о нейтралитете 
 		id = AUS_JPMvjnrI
 		icon = GFX_z_goal_neutrality_question
 		x = 13
@@ -384,12 +384,12 @@ focus = { # Вопрос о нейтралитете
 		ai_will_do = {
 			factor = 1
 		}
-        completion_reward = { 
-        log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus AUS_JPMvjnrI"        
-        custom_effect_tooltip = SAF_tooltip_11
-        if = { limit = { has_country_leader = { name = "J. B. M. Hertzog" ruling_only = yes } } custom_effect_tooltip = SAF_tooltip_12 }
-        if = { limit = { OR = { democratic > 0.2 ALL = { threat < 0.2 ENG = { has_government = democratic } } } } country_event = { id = south_afrika.70 } }
-        if = { limit = { OR = { democratic < 0.2 ALL = { threat > 0.2 ENG = { NOT = { has_government = democratic } } } } } country_event = { id = south_afrika.71 } }
+        completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus AUS_JPMvjnrI"        
+			custom_effect_tooltip = SAF_tooltip_11
+			if = { limit = { has_country_leader = { name = "J. B. M. Hertzog" ruling_only = yes } } custom_effect_tooltip = SAF_tooltip_12 }
+			if = { limit = { OR = { democratic > 0.2 threat < 0.2 ENG = { has_government = democratic } } } country_event = { id = south_afrika.70 } }
+			if = { limit = { OR = { democratic < 0.2 threat > 0.2 ENG = { NOT = { has_government = democratic } } } } country_event = { id = south_afrika.71 } }
         }
 	}
 
@@ -2928,6 +2928,7 @@ focus = { # Расширить сеть школ для чёрных
 		}
         completion_reward = { add_research_slot = 1 }
 	}
+	
 	############################
 	####### ARMY SECTION #######
 	############################

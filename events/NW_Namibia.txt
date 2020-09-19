@@ -302,11 +302,13 @@ country_event = { # Германия напоминает о долге пере
 	option = { # Дипломаты должны потянуть время…
 		name = namibian.16.a
 		add_timed_idea = { idea = NMB_idea_14 days = 240 }
-		FROM = { country_event = { days = 240 id = namibian.17 } } 
+		hidden_effect = {
+			FROM = { country_event = { days = 240 id = namibian.17 } }
+		}
 	}
 }
 
-country_event = { # Они нас предали
+country_event = { # Они нас предали // GER
 	id = namibian.17
 	title = namibian.17.t
 	desc = namibian.17.d
@@ -318,14 +320,41 @@ country_event = { # Они нас предали
 	
 	option = { # Вернем нашу законную колонию!
 		name = namibian.17.a
+		ai_chance = { factor = 5 }
 		create_wargoal = { type = annex_everything target = FROM }
 	}
+	
 	option = { # Призовем наш экспедиционный корпус
 		name = namibian.17.b
 		trigger = { FROM = { has_completed_focus = NMB_9 } }
-		ai_chance = { factor = 1  }
+		ai_chance = { factor = 5 }
 		declare_war_on = { target = FROM type = annex_everything }
-		transfer_troops = { target = FROM }
+		set_state_controller = 1111
+		hidden_effect = {
+			if = {
+				limit = { NOT = { has_template = "Expeditionary Force" } }
+				division_template = {
+					name = "Expeditionary Force"
+					is_locked = no
+					regiments = {
+						infantry = { x = 0 y = 0 }
+						infantry = { x = 0 y = 1 }
+						infantry = { x = 0 y = 2 }
+						infantry = { x = 1 y = 0 }
+						infantry = { x = 1 y = 1 }
+						infantry = { x = 1 y = 2 }
+					}
+				}
+			}
+		}
+		1111 = {
+			create_unit = {
+				division = "division_template = \"Expeditionary Force\"	start_experience_factor = 0	start_equipment_factor = 1"
+				owner = ROOT
+				allow_spawning_on_enemy_provs = yes
+				count = 2
+			}
+		}
 	}
 }
 
@@ -911,7 +940,7 @@ country_event = { # Военная помощь ЮЗА
 		name = namibian.37.a
 		ai_chance = { factor = 1 }
 		FROM = { country_event = { id = namibian.43 } }
-		add_equipment_to_stockpile = { type = infantry_equipment_1 amount = -5000 producer = ROOT }
+		add_equipment_to_stockpile = { type = infantry_equipment_1 amount = -5000 }
 		add_offsite_building = { type = industrial_complex level = 1 }
 		
 	}
@@ -967,10 +996,10 @@ country_event = { # Чёрные коммунисты из Юго-Западно
 		name = namibian.45.a
 		ai_chance = { factor = 10 }
 		FROM = { country_event = { id = namibian.46 } }
-		add_equipment_to_stockpile = { type = infantry_equipment_1 amount = -5000 producer = ROOT }
-		add_equipment_to_stockpile = { type = artillery_equipment_2 amount = -300 producer = ROOT }
-		add_equipment_to_stockpile = { type = light_tank_equipment_2 amount = -200 producer = ROOT }
-		add_equipment_to_stockpile = { type = fighter_equipment_1 amount = -20 producer = ROOT }
+		add_equipment_to_stockpile = { type = infantry_equipment_1 amount = -5000 }
+		add_equipment_to_stockpile = { type = artillery_equipment_2 amount = -300 }
+		add_equipment_to_stockpile = { type = light_tank_equipment_2 amount = -200 }
+		add_equipment_to_stockpile = { type = fighter_equipment_1 amount = -20 }
 	}
 	option = { # Отказать
 		name = namibian.45.b
@@ -1898,10 +1927,10 @@ country_event = { # Результаты выборов в Законодате�
 		name = namibian.87.a
 		ai_chance = { factor = 1 }
         trigger = {
-			OR = { 
+			OR = {
 				has_country_flag = NMB_flag_13
 				NOT = { has_country_flag = NMB_flag_10 has_country_flag = NMB_flag_11 has_country_flag = NMB_flag_12 }
-				ALL = { NOT = { has_country_flag = NMB_flag_10 has_country_flag = NMB_flag_11 } has_country_flag = NMB_flag_12 } 
+				NOT = { has_country_flag = NMB_flag_10 has_country_flag = NMB_flag_11 } has_country_flag = NMB_flag_12
 			}
 		}
 		set_country_flag = NMB_flag_14
@@ -1911,23 +1940,31 @@ country_event = { # Результаты выборов в Законодате�
 		name = namibian.87.b
 		ai_chance = { factor = 1 }
         trigger = {
-		OR = { 
-	    ALL = { has_country_flag = NMB_flag_10 NOT = { has_country_flag = NMB_flag_11 has_country_flag = NMB_flag_12 } }
-		ALL = { has_country_flag = NMB_flag_10 has_country_flag = NMB_flag_11 NOT = { has_country_flag = NMB_flag_12 } }
-		}
+			OR = {
+				has_country_flag = NMB_flag_10 NOT = { has_country_flag = NMB_flag_11 has_country_flag = NMB_flag_12 }
+				has_country_flag = NMB_flag_10 has_country_flag = NMB_flag_11 NOT = { has_country_flag = NMB_flag_12 }
+			}
 		}
 		set_country_flag = NMB_flag_15
-		if = { limit = { NOT = { has_country_flag - NMB_flag_11 } }  set_party_name = { ideology = democratic name = NMB_democratic_party_2 long_name = NMB_democratic_party_2 } }
-		else = { set_politics = { ruling_party = fascism } add_autonomy_ratio = { value = 0.25 } add_popularity = { ideology = fascism popularity = 0.3 } }
-	} 
+		if = {
+			limit = {
+				NOT = { has_country_flag = NMB_flag_11 }
+			}
+			set_party_name = { ideology = democratic name = NMB_democratic_party_2 long_name = NMB_democratic_party_2 }
+		}
+		else = {
+			set_politics = { ruling_party = fascism elections_allowed = no }
+			add_autonomy_ratio = { value = 0.25 } add_popularity = { ideology = fascism popularity = 0.3 } 
+		}
+	}
 	option = { # Победа Экономической Лиги
 		name = namibian.87.c
 		ai_chance = { factor = 1 }
 		trigger = {
-		OR = {
-	    ALL = { has_country_flag = NMB_flag_10 has_country_flag = NMB_flag_11 has_country_flag = NMB_flag_12 }
-		ALL = { NOT = { has_country_flag = NMB_flag_10 } has_country_flag = NMB_flag_11 NOT = { has_country_flag = NMB_flag_12 } }
-		}
+			OR = {
+				has_country_flag = NMB_flag_10 has_country_flag = NMB_flag_11 has_country_flag = NMB_flag_12
+				NOT = { has_country_flag = NMB_flag_10 } has_country_flag = NMB_flag_11 NOT = { has_country_flag = NMB_flag_12 }
+			}
 		}
         set_country_flag = NMB_flag_16
 		add_political_power = 50
@@ -2018,7 +2055,17 @@ country_event = { # Окончательная интеграция в ЮАС
 	option = { # Выбора нет
 		name = namibian.92.a
 		change_tag_from = SAF
-		SAF = { annex = NMB }
+		NMB = {
+			every_unit_leader = {
+				set_nationality = SAF
+			}
+		}
+		SAF = {
+			annex_country = {
+				target = NMB
+				transfer_troops = yes
+			}
+		}
 	}
 }
 
@@ -2035,7 +2082,8 @@ country_event = { # Окончание строительства цитадел
 	option = { # Перережем ленточку!
 		name = namibian.93.a
 		1114 = {
-			add_building_construction = { type = dockyard level = 3 add_extra_state_shared_building_slots = 3 instant_build = yes }
+			add_extra_state_shared_building_slots = 3
+			add_building_construction = { type = dockyard level = 3 instant_build = yes }
 			add_building_construction = { type = bunker level = 10 province = 5154 instant_build = yes }
 			add_building_construction = { type = coastal_bunker level = 10 province = 5154 instant_build = yes }		
 			add_building_construction = { type = naval_base level = 8 province = 5154 instant_build = yes }

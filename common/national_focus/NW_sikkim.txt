@@ -8,7 +8,6 @@ focus_tree = {
 		}
 	}
 	
-		
 	continuous_focus_position = { x = 200 y = 2500 }
 	
 	default = no
@@ -120,12 +119,12 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SKM_tibet"
-			add_relation_modifier = {
+			add_opinion_modifier = {
 				modifier = SKM_TIB_relation_trade
 				target = TIB
 			}
 			TIB = {
-				add_relation_modifier = {
+				add_opinion_modifier = {
 					modifier = SKM_TIB_relation_trade
 					target = ROOT
 				}
@@ -316,12 +315,12 @@ focus_tree = {
 		mutually_exclusive = { focus = SKM_1861 }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SKM_strength_india"
-			add_relation_modifier = {
+			add_opinion_modifier = {
 				modifier = SKM_friendship_trade
 				target = RAJ
 			}
 			RAJ = {
-				add_relation_modifier = {
+				add_opinion_modifier = {
 					modifier = SKM_friendship_trade
 					target = ROOT
 				}
@@ -512,12 +511,12 @@ focus_tree = {
 		mutually_exclusive = { focus = SKM_regions }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTagt]): Focus SKM_britain"
-			add_relation_modifier = {
+			add_opinion_modifier = {
 				modifier = SKM_friend_brit_trade
 				target = ENG
 			}
 			ENG = {
-				add_relation_modifier = {
+				add_opinion_modifier = {
 					modifier = SKM_friend_brit_trade
 					target = ROOT 
 				}
@@ -1484,3 +1483,4 @@ focus_tree = {
 			add_ideas = SKM_conscript_points_idea
 		}
 	}
+}
