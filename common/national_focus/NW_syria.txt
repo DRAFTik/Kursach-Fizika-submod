@@ -512,7 +512,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SYR_expand_circassian_cavalry
-		icon = GFX_goal_generic_cavalry
+		icon = GFX_z_goal_syr_cherkesses
 		cost = 10
 		prerequisite = {
 			focus = SYR_invite_french_instructors
@@ -853,7 +853,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SYR_new_pex_for_president
-		icon = GFX_goal_generic_improve_relations
+		icon = GFX_z_goal_syr_president
 		cost = 10
 		prerequisite = {
 			focus = SYR_upgrade_pex_civil_gov
@@ -1233,7 +1233,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SYR_transfer_control_to_civilian_gov
-		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		icon = GFX_z_goal_syr_citizen_gov
 		cost = 10
 		prerequisite = {
 			focus = SYR_weaken_colonial_institutions
@@ -2254,7 +2254,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SYR_second_kingdom_reborn
-		icon = GFX_focus_generic_monarchy_2
+		icon = GFX_z_goal_syr_second_kingdom
 		cost = 10
 		prerequisite = {
 			focus = SYR_transfer_control_to_civilian_gov
@@ -2293,7 +2293,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SYR_preparing_for_war_independence
-		icon = GFX_z_goal_generic_general_support
+		icon = GFX_z_goal_syr_royal_war
 		cost = 10
 		prerequisite = {
 			focus = SYR_second_kingdom_reborn
@@ -2359,7 +2359,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SYR_union_with_iraq
-		icon = GFX_z_goal_expansion_iraq
+		icon = GFX_z_goal_syr_iraq
 		cost = 10
 		prerequisite = {
 			focus = SYR_invite_sayyid_bin_hussein_to_throne
@@ -2521,7 +2521,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SYR_panarabica_propaganda
-		icon = GFX_goal_generic_propaganda
+		icon = GFX_z_goal_Mislim_propaganda
 		cost = 10
 		prerequisite = {
 			focus = SYR_invite_sayyid_bin_hussein_to_throne
