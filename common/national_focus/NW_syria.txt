@@ -2673,7 +2673,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SYR_save_the_mandath
-		icon = GFX_focus_generic_self_management
+		icon = GFX_z_goal_syr_save_mandat
 		cost = 10
 		prerequisite = {
 			focus = SYR_delegation_to_paris
@@ -3059,7 +3059,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SYR_syrian_nationalism_act
-		icon = GFX_goal_generic_territory_or_war
+		icon = GFX_z_goal_syr_complete_nac
 		cost = 10
 		prerequisite = {
 			focus = SYR_islam_government_religion
@@ -3615,7 +3615,7 @@ focus_tree = {
 	}
 	focus = {
 		id = SYR_suppress_kurds_tribes
-		icon = GFX_goal_tfv_saf_anti_colonialist_crusade
+		icon = GFX_z_goal_syr_control_curds
 		cost = 10
 		prerequisite = {
 			focus = SYR_save_the_mandath
