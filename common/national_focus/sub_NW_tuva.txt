@@ -381,9 +381,9 @@ focus_tree = {
 		available_if_capitulated = yes
 		
 		completion_reward = {
-		add_stability = 0.1
-		add_opinion_modifier = { target = SOV modifier = TAN_soviet_path }
-        SOV = { add_opinion_modifier = { target = TAN modifier = TAN_soviet_path } }	
+			add_stability = 0.1
+			add_opinion_modifier = { target = SOV modifier = TAN_soviet_path }
+			SOV = { add_opinion_modifier = { target = TAN modifier = TAN_soviet_path } }	
 		}
 	}
 	
@@ -404,22 +404,22 @@ focus_tree = {
 		available_if_capitulated = yes
 		
 		completion_reward = {
-		329 = {		
-			add_building_construction = {
-				type = industrial_complex
-				level = 1
-				instant_build = yes
-			}			
-		}
-		
-		930  = {		
-			add_building_construction = {
-				type = industrial_complex
-				level = 1
-				instant_build = yes
-		}			
-		}
-		
+			329 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}			
+			}
+			930 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}			
+			}
 		}
 	}
 	
@@ -505,13 +505,14 @@ focus_tree = {
 		available_if_capitulated = yes
 		
 		completion_reward = {
-		329 = {		
-			add_building_construction = {
-				type = industrial_complex
-				level = 1
-				instant_build = yes
-			}			
-		}
+			329 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}			
+			}
 		}
 	}
    
@@ -556,7 +557,7 @@ focus_tree = {
 		bypass = { }
 		available_if_capitulated = yes
 		
-		completion_reward = {		
+		completion_reward = {
 			set_politics = {
 				ruling_party = trozkism
 				elections_allowed = no
@@ -565,14 +566,9 @@ focus_tree = {
 				ideology = trozkism
 				popularity = 0.6
 			}
-			
 			if = {
-			limit = { 
-			TAN = {
-			is_in_faction_with = SOV
-			}
-			}		
-	        country_event = { days = 1 id = NWtuva.19 } 
+				limit = { is_in_faction_with = SOV }
+				SOV = { country_event = { days = 1 id = NWtuva.19 } }
 			}
 		}
 	}
@@ -647,19 +643,16 @@ focus_tree = {
 		available_if_capitulated = yes
 		
 		completion_reward = {
-		329 = {		
-			add_building_construction = {
-				type = industrial_complex
-				level = 1
-				instant_build = yes
-			}			
-		}
-		
-		add_ideas = TAN_chastichnoe_sohranenie
-		
-		hidden_effect = {
-	    country_event = { days = 35 id = NWtuva.20 } 
-		}
+			329 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}			
+			}
+			add_ideas = TAN_chastichnoe_sohranenie
+			hidden_effect = { country_event = { days = 35 id = NWtuva.20 } }
 		}
 	}
 	
@@ -702,12 +695,11 @@ focus_tree = {
 		available_if_capitulated = yes
 		
 		completion_reward = {
-		custom_effect_tooltip = TAN_inakoyazichie
-		add_timed_idea = { idea = TAN_vnedrenie days = 1080 }
-		hidden_effect = {
-	   country_event = { days = 1080 id = NWtuva.21 } 
-		}
-		
+			custom_effect_tooltip = TAN_inakoyazichie
+			add_timed_idea = { idea = TAN_vnedrenie days = 1080 }
+			hidden_effect = {
+				country_event = { days = 1080 id = NWtuva.21 } 
+			}
 		}
 	}
 	
@@ -724,9 +716,9 @@ focus_tree = {
 		}
 		
 		available = {
-        NOT = {
-		has_idea = TAN_X_SOV
-		}
+			NOT = {
+				has_idea = TAN_X_SOV
+			}
 		}		
 		bypass = { }
 		available_if_capitulated = yes
@@ -736,8 +728,8 @@ focus_tree = {
 		every_country = {
 			limit = {
 			    OR = {
-				has_government = communism 
-				has_government = trozkism 
+					has_government = communism 
+					has_government = trozkism 
 				}
 			}
 			add_opinion_modifier = { target = TAN modifier = tuva_hochet_chtoby_s_ney_druzhili }
@@ -790,36 +782,31 @@ focus_tree = {
 			factor = 1
 		}
 		
-		available = { 
-		TAN = {
-		is_in_faction_with = MON
-		}
+		available = {
+			is_in_faction_with = MON
 		}		
 		bypass = { }
 		available_if_capitulated = yes
 		
 		completion_reward = {
-		329 = {		
-			add_building_construction = {
-				type = industrial_complex
-				level = 1
-				instant_build = yes
-			}			
-		}
-		953 = {		
-			add_building_construction = {
-				type = industrial_complex
-				level = 1
-				instant_build = yes
-			}			
-		}
-		
-		add_ideas = TAN_vzaimnaya_integracia
-		
-		MON = {
-		add_ideas = TAN_vzaimnaya_integracia
-		}
-		
+			329 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}			
+			}
+			953 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}			
+			}
+			add_ideas = TAN_vzaimnaya_integracia
+			MON = { add_ideas = TAN_vzaimnaya_integracia }
 		}
 	}
 	
@@ -886,28 +873,27 @@ focus_tree = {
 		available_if_capitulated = yes
 		
 		completion_reward = {
-		329 = {		
-			add_building_construction = {
-				type = infrastructure
-				level = 1
-				instant_build = yes
-			}			
-		}
-		930 = {		
-			add_building_construction = {
-				type = infrastructure
-				level = 1
-				instant_build = yes
-			}			
-		}
-		953 = {		
-			add_building_construction = {
-				type = infrastructure
-				level = 2
-				instant_build = yes
-			}			
-		}
-		
+			329 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}			
+			}
+			930 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}			
+			}
+			953 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}			
+			}
 		}
 	}
 	
@@ -954,29 +940,27 @@ focus_tree = {
 		available_if_capitulated = yes
 		
 		completion_reward = {
-		329 = {		
-			add_building_construction = {
-				type = air_base
-				level = 1
-				instant_build = yes
-			}			
-		}
-		
-		329 = {		
-			add_building_construction = {
-				type = infrastructure
-				level = 1
-				instant_build = yes
-			}			
-		}
-		930 = {		
-			add_building_construction = {
-				type = infrastructure
-				level = 1
-				instant_build = yes
-			}			
-		}
-		
+			329 = {
+				add_building_construction = {
+					type = air_base
+					level = 1
+					instant_build = yes
+				}			
+			}
+			329 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}			
+			}
+			930 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}			
+			}
 		}
 	}
 	
@@ -997,35 +981,30 @@ focus_tree = {
 		available_if_capitulated = yes
 		
 		completion_reward = {
-		329 = {		
-			add_building_construction = {
-				type = industrial_complex
-				level = 1
-				instant_build = yes
-			}			
-		}
-		930 = {		
-			add_building_construction = {
-				type = industrial_complex
-				level = 1
-				instant_build = yes
-			}			
-		}
-		
-		if = {
-		limit = {
-		PRC = { is_faction_leader = yes }		
-		}		
-	    PRC = { country_event = { days = 1 id = NWtuva.38 } }
-		}
-		 
-		if = {
-		limit = {
-		PRC = { is_in_faction = no }		
-		}
-		PRC = { country_event = { days = 1 id = NWtuva.35 } }
-		}
-		
+			329 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}			
+			}
+			930 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}			
+			}
+			if = {
+				limit = { PRC = { is_faction_leader = yes } }		
+				PRC = { country_event = { days = 1 id = NWtuva.38 } }
+			}
+			if = {
+				limit = { PRC = { is_in_faction = no } }
+				PRC = { country_event = { days = 1 id = NWtuva.35 } }
+			}
 		}
 	}
 	
@@ -1143,28 +1122,23 @@ focus_tree = {
 		available_if_capitulated = yes
 		
 		completion_reward = {
-		if = {
-		limit = {   has_country_leader = { name = "Irgit Shadgirzhap" } 	}
-create_country_leader = {
-	name = "Adig-Tyulyush Hemchik-ool"
-	desc = "POLITICS_SALCHAK_TOKA_TUVA_DESC"
-	picture = "gfx/leaders/TAN/portrait_tan_salchak_toka.dds"
-	expire = "1965.1.1"
-	ideology = stalinism
-	traits = {
-	}
-}
-		}
-		
-		set_country_flag = comissarov_zasudili
-		
-		if = {
-		limit = {
-		TAN = { is_in_faction_with = SOV }
-		}
-		SOV = { country_event = { hours = 12 id = NWtuva.22 } }
-		}
-		
+			if = {
+				limit = { has_country_leader = { name = "Irgit Shadgirzhap" } }
+				create_country_leader = {
+					name = "Adig-Tyulyush Hemchik-ool"
+					desc = "POLITICS_SALCHAK_TOKA_TUVA_DESC"
+					picture = "gfx/leaders/TAN/portrait_tan_salchak_toka.dds"
+					expire = "1965.1.1"
+					ideology = stalinism
+					traits = {
+					}
+				}
+			}
+			set_country_flag = comissarov_zasudili
+			if = {
+				limit = { is_in_faction_with = SOV }
+				SOV = { country_event = { hours = 12 id = NWtuva.22 } }
+			}
 		}
 	}
 	
@@ -1185,66 +1159,49 @@ create_country_leader = {
 		available_if_capitulated = yes
 		
 		completion_reward = {
-		if = {
-		limit = {
-		country_exists = GER
-		NOT = {
-		has_war_with = GER
-		}
-		}
-		GER = { country_event = { days = 1 id = NWtuva.23 } }
-		}
-		
-		if = {
-		limit = {
-		country_exists = ITA
-		NOT = {
-		has_war_with = ITA
-		}
-		}
-		ITA = { country_event = { days = 1 id = NWtuva.23 } }
-		}
-		
-		if = {
-		limit = {
-		country_exists = JAP
-		NOT = {
-		has_war_with = JAP
-		}
-		}
-		JAP = { country_event = { days = 1 id = NWtuva.25 } }
-		}
-		
-		if = {
-		limit = {
-		country_exists = ENG
-		NOT = {
-		has_war_with = ENG
-		}
-		}
-		ENG = { country_event = { days = 1 id = NWtuva.23 } }
-		}
-		
-		if = {
-		limit = {
-		country_exists = FRA
-		NOT = {
-		has_war_with = FRA
-		}
-		}
-		FRA = { country_event = { days = 1 id = NWtuva.23 } }
-		}
-		
-		if = {
-		limit = {
-		country_exists = USA
-		NOT = {
-		has_war_with = USA
-		}
-		}
-		USA = { country_event = { days = 1 id = NWtuva.23 } }
-		}
-		
+			if = {
+				limit = {
+					country_exists = GER
+					NOT = { has_war_with = GER }
+				}
+				GER = { country_event = { days = 1 id = NWtuva.23 } }
+			}
+			if = {
+				limit = {
+					country_exists = ITA
+					NOT = { has_war_with = ITA }
+				}
+				ITA = { country_event = { days = 1 id = NWtuva.23 } }
+			}
+			if = {
+				limit = {
+					country_exists = JAP
+					NOT = { has_war_with = JAP }
+				}
+				JAP = { country_event = { days = 1 id = NWtuva.23 } }
+			}
+			if = {
+				limit = {
+					country_exists = ENG
+					NOT = { has_war_with = ENG }
+				}
+				ENG = { country_event = { days = 1 id = NWtuva.23 } }
+			}
+			if = {
+				limit = {
+					country_exists = FRA
+					NOT = { has_war_with = FRA }
+				}
+				FRA = { country_event = { days = 1 id = NWtuva.23 } }
+			}
+			if = {
+				limit = {
+					country_exists = USA
+					NOT = { has_war_with = USA }
+				}
+				USA = { country_event = { days = 1 id = NWtuva.23 } }
+			}
+			
 		}
 	}
 	
@@ -1252,7 +1209,6 @@ create_country_leader = {
 		id = TAN_japan
 		icon = GFX_focus_chi_collaboration_with_the_japanese
 	    prerequisite = { focus = TAN_priznanie }
-	    prerequisite = { focus = TAN_democratia }
 		x = 12
 		y = 7
 	    relative_position_id = TAN_chast_hramov
@@ -1278,7 +1234,7 @@ create_country_leader = {
 		available_if_capitulated = yes
 		
 		completion_reward = {
-		JAP = { country_event = { days = 1 id = NWtuva.28 } }
+			JAP = { country_event = { days = 1 id = NWtuva.28 } }
 		}
 	}
 	
@@ -1295,29 +1251,28 @@ create_country_leader = {
 		}
 		
 		available = {
-        TAN = {
-		is_in_faction_with = JAP
-		}
+			is_in_faction_with = JAP
 		}		
 		bypass = { }
 		available_if_capitulated = yes
 		
 		completion_reward = {
-		329 = {		
-			add_building_construction = {
-				type = industrial_complex
-				level = 1
-				instant_build = yes
-			}			
-		}
-		930 = {		
-			add_building_construction = {
-				type = arms_factory
-				level = 2
-				instant_build = yes
-			}			
-		}
-		
+			329 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}			
+			}
+			930 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}			
+			}
 		}
 	}
 	
@@ -1400,37 +1355,33 @@ create_country_leader = {
 		}
 				
 		available = {
-        TAN = {
-		is_in_faction_with = JAP
+			is_in_faction_with = JAP
 		}
-		}	
 		bypass = { }
 		available_if_capitulated = yes
 		
 		completion_reward = {
-		329 = {		
-			add_building_construction = {
-				type = infrastructure
-				level = 2
-				instant_build = yes
-			}			
-		}
-		930 = {		
-			add_building_construction = {
-				type = infrastructure
-				level = 2
-				instant_build = yes
-			}			
-		}
-		329 = {		
-			add_building_construction = {
-				type = air_base
-				level = 3
-				instant_build = yes
-			}			
-		}
-		
-		
+			329 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}			
+			}
+			930 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}			
+			}
+			329 = {
+				add_building_construction = {
+					type = air_base
+					level = 3
+					instant_build = yes
+				}			
+			}
 		}
 	}
 	
@@ -1679,28 +1630,23 @@ create_country_leader = {
 			factor = 1
 		}		
 		available = {
-		NOT = { 
-		has_country_leader = { name = "Salchak Toka" }
+			NOT = { has_country_leader = { name = "Salchak Toka" } }
+			TAN = { is_in_faction_with = SOV }
 		}
-		TAN = { is_in_faction_with = SOV }
-		}		
 		bypass = {
-		NOT = {
-		TAN = { is_in_faction_with = SOV }
-		}
+			NOT = { is_in_faction_with = SOV }
 		}
 		available_if_capitulated = yes		
 	    relative_position_id = TAN_baza
 		completion_reward = {
-		930 = {		
-			add_building_construction = {
-				type = industrial_complex
-				level = 2
-				instant_build = yes
-			}			
-		}
-		
-		
+			930 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}			
+			}
 		}
 	}
 	
@@ -1719,26 +1665,24 @@ create_country_leader = {
 		bypass = { }
 		available_if_capitulated = yes		
 	    relative_position_id = TAN_baza
-		completion_reward = {		
-		329 = {		
-			add_building_construction = {
-				type = infrastructure
-				level = 2
-				instant_build = yes
-			}			
-		}
-		
-		if = {
-		limit = { TAN = { is_in_faction_with = SOV } }
-		568 = {		
-			add_building_construction = {
-				type = infrastructure
-				level = 1
-				instant_build = yes
-			}			
-		}
-		}
-		
+		completion_reward = {
+			329 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}			
+			}
+			if = {
+				limit = { TAN = { is_in_faction_with = SOV } }
+				568 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}			
+				}
+			}
 		}
 	}
 	
@@ -1782,14 +1726,15 @@ create_country_leader = {
 		available_if_capitulated = yes		
 	    relative_position_id = TAN_baza
 		completion_reward = {		
-		329 = {		
-			add_building_construction = {
-				type = industrial_complex
-				level = 2
-				instant_build = yes
-			}			
-		}
-		add_ideas = TAN_kustarnie_proizvodstvo
+			329 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}			
+			}
+			add_ideas = TAN_kustarnie_proizvodstvo
 		}
 	}
 	
@@ -1809,22 +1754,20 @@ create_country_leader = {
 		available_if_capitulated = yes		
 	    relative_position_id = TAN_baza
 		completion_reward = {		
-		930 = {		
-			add_building_construction = {
-				type = infrastructure
-				level = 1
-				instant_build = yes
-			}			
-		}
-		
-		329 = {		
-			add_building_construction = {
-				type = infrastructure
-				level = 1
-				instant_build = yes
-			}			
-		}
-		
+			930 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}			
+			}
+			329 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}			
+			}
 		}
 	}
 	
@@ -1843,13 +1786,13 @@ create_country_leader = {
 		available_if_capitulated = yes		
 	    relative_position_id = TAN_baza
 		completion_reward = {
-		329 = {		
-			add_building_construction = {
-				type = air_base
-				level = 1
-				instant_build = yes
-			}			
-		}
+			329 = {
+				add_building_construction = {
+					type = air_base
+					level = 1
+					instant_build = yes
+				}			
+			}
 		}
 	}
 	
@@ -1930,21 +1873,20 @@ create_country_leader = {
 		bypass = { }
 		available_if_capitulated = yes		
 	    relative_position_id = TAN_baza
-		completion_reward = {		
-		329 = {		
-			add_building_construction = {
-				type = industrial_complex
-				level = 1
-				instant_build = yes
-			}			
-		}
-		329 = {		
-			add_building_construction = {
-				type = arms_factory
-				level = 1
-				instant_build = yes
-			}			
-		}
+		completion_reward = {
+			329 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}			
+			}
 		}
 	}
 	
@@ -2088,20 +2030,22 @@ create_country_leader = {
 		available_if_capitulated = yes		
 	    relative_position_id = TAN_baza
 		completion_reward = {
-		329 = {		
-			add_building_construction = {
-				type = industrial_complex
-				level = 1
-				instant_build = yes
-			}			
-		}
-		930 = {		
-			add_building_construction = {
-				type = industrial_complex
-				level = 1
-				instant_build = yes
-			}			
-		}
+			329 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}			
+			}
+			930 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}			
+			}
 		}
 	}
 	
@@ -2177,89 +2121,81 @@ create_country_leader = {
 		available_if_capitulated = yes		
 	    relative_position_id = TAN_baza
 		completion_reward = {
-		
-		329 = {		
-			add_building_construction = {
-				type = infrastructure
-				level = 2
-				instant_build = yes
-			}			
-		}
-		930 = {		
-			add_building_construction = {
-				type = infrastructure
-				level = 2
-				instant_build = yes
-			}			
-		}
-		
-		if = {
-		limit = {
-		TAN = { is_in_faction_with = MON}
-		}
-		953 = {		
-			add_building_construction = {
-				type = infrastructure
-				level = 2
-				instant_build = yes
-			}			
-		}
-		955 = {		
-			add_building_construction = {
-				type = infrastructure
-				level = 2
-				instant_build = yes
-			}			
-		}
-		}
-		
-		if = {
-		limit = {
-		NOT = { has_war_with = GXC }
-		country_exists = GXC
-		}
-		add_opinion_modifier = { target = GXC modifier = TAN_chineese_minor }
-		}
-		
-		if = {
-		limit = {
-		NOT = { has_war_with = XSM }
-		country_exists = XSM
-		}
-		add_opinion_modifier = { target = XSM modifier = TAN_chineese_minor }
-		}
-		
-		if = {
-		limit = {
-		NOT = { has_war_with = PRC }
-		country_exists = PRC
-		}
-		add_opinion_modifier = { target = PRC modifier = TAN_chineese_minor }
-		}
-		
-		if = {
-		limit = {
-		NOT = { has_war_with = YUN }
-		country_exists = YUN
-		}
-		add_opinion_modifier = { target = YUN modifier = TAN_chineese_minor }
-		}
-		
-		if = {
-		limit = {
-		NOT = { has_war_with = SHX }
-		country_exists = SHX
-		}
-		add_opinion_modifier = { target = SHX modifier = TAN_chineese_minor }
-		}
-		
-		if = {
-		limit = {
-		NOT = { has_war_with = CHI }
-		country_exists = CHI
-		}
-		add_opinion_modifier = { target = CHI modifier = TAN_chineese_minor }
-		}
+			329 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}			
+			}
+			930 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}			
+			}
+			if = {
+				limit = { TAN = { is_in_faction_with = MON } }
+				953 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+						instant_build = yes
+					}			
+				}
+				955 = {
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+						instant_build = yes
+					}			
+				}
+			}
+			if = {
+				limit = {
+					NOT = { has_war_with = GXC }
+					country_exists = GXC
+				}
+				add_opinion_modifier = { target = GXC modifier = TAN_chineese_minor }
+			}
+			if = {
+				limit = {
+					NOT = { has_war_with = XSM }
+					country_exists = XSM
+				}
+				add_opinion_modifier = { target = XSM modifier = TAN_chineese_minor }
+			}
+			if = {
+				limit = {
+					NOT = { has_war_with = PRC }
+					country_exists = PRC
+				}
+				add_opinion_modifier = { target = PRC modifier = TAN_chineese_minor }
+			}
+			if = {
+				limit = {
+					NOT = { has_war_with = YUN }
+					country_exists = YUN
+				}
+				add_opinion_modifier = { target = YUN modifier = TAN_chineese_minor }
+			}
+			
+			if = {
+				limit = {
+					NOT = { has_war_with = SHX }
+					country_exists = SHX
+				}
+				add_opinion_modifier = { target = SHX modifier = TAN_chineese_minor }
+			}
+			
+			if = {
+				limit = {
+					NOT = { has_war_with = CHI }
+					country_exists = CHI
+				}
+				add_opinion_modifier = { target = CHI modifier = TAN_chineese_minor }
+			}
 		
 		}
 	}
@@ -2436,15 +2372,13 @@ create_country_leader = {
 		available_if_capitulated = yes		
 	    relative_position_id = TAN_baza
 		completion_reward = {
-		add_ideas = TAN_pish_prom
-		
-		if = {
-		limit = {
-		has_idea = TAN_kustarnie_proizvodstvo
-		}
-		remove_ideas = TAN_kustarnie_proizvodstvo
-		}
-		
+			add_ideas = TAN_pish_prom
+			if = {
+				limit = {
+					has_idea = TAN_kustarnie_proizvodstvo
+				}
+				remove_ideas = TAN_kustarnie_proizvodstvo
+			}
 		}
 	}
 	
@@ -2463,21 +2397,20 @@ create_country_leader = {
 		available_if_capitulated = yes		
 	    relative_position_id = TAN_baza
 		completion_reward = {			
-		930 = {		
-			add_building_construction = {
-				type = hospital
-				level = 2
-				instant_build = yes
-			}			
-		}
-		
-		329 = {		
-			add_building_construction = {
-				type = hospital
-				level = 2
-				instant_build = yes
-			}			
-		}		
+			930 = {
+				add_building_construction = {
+					type = hospital
+					level = 2
+					instant_build = yes
+				}			
+			}
+			329 = {		
+				add_building_construction = {
+					type = hospital
+					level = 2
+					instant_build = yes
+				}			
+			}		
 		}
 	}
 	

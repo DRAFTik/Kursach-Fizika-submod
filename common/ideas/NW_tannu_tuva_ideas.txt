@@ -120,6 +120,7 @@ ideas = {
 		}
 	
 		TAN_vnedrenie = {
+			name = TAN_nash_yazik
 			allowed = {
 				always = no
 			}

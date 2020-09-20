@@ -444,7 +444,7 @@ country_event = {
 		ai_chance = { factor = 0 }
 		SOV = {
 			create_wargoal = {
-				target = TAN
+				target = FROM
 				type = puppet_wargoal_focus
 			}
 		}
@@ -537,7 +537,7 @@ country_event = {
 	option = {
 		name = NWtuva.23.a
 		ai_chance = { factor = 60 }
-	    TAN = { country_event = { days = 1 id = NWtuva.24 } }
+	    FROM = { country_event = { days = 1 id = NWtuva.24 } }
 	}
 	
 	option = {
@@ -559,6 +559,10 @@ country_event = {
 		name = NWtuva.24.a
 		add_political_power = 15
 		add_stability = 0.01
+		if = {
+			limit = { FROM = { tag = JAP } }
+			set_country_flag = TAN_japan_accept
+		}
 	}
 }
 
