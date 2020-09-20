@@ -1,5 +1,6 @@
 focus_tree = {
-	id = skm_focus
+	id = nw_skm_focus
+	
 	country = {
 		factor = 0
 		modifier = {

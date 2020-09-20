@@ -3,9 +3,15 @@ political_actions = {
 		icon = generic_form_nation
 		cost = 50
 		fire_only_once = yes
+		allowed = {
+			original_tag = SYR
+		}
 		available = {
-			controls_state = 991
-			controls_state = 679
+			has_full_control_of_state = 991
+			has_full_control_of_state = 679
+		}
+		highlight_states = {
+			state = 679
 		}
 		complete_effect = {
 			add_state_core = 991

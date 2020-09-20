@@ -716,4 +716,4 @@ NMB_decisions_tag_8_category = { # Формирование судебной с�
 		swap_ideas = { remove_idea = NMB_idea_87 add_idea = NMB_idea_88 }
 		}	
 	}
-  }
+}

@@ -61,7 +61,7 @@ SAF_decisions_tag_2 = { # Сформировать Великую Южную А�
 		allowed = { original_tag = SAF }
 		
 		available = {
-		controls_state = 1106 
+			controls_state = 1106 
 		}
 		
 		visible = {  }

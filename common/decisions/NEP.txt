@@ -1,33 +1,33 @@
 political_actions = {
 	NEP_threesides_agreement_eng_decision = {
+		allowed = { original_tag = ENG }
 		available = {
-			original_tag = ENG
-			NEP = {
-				has_completed_focus = NEP_threesides_agreement
-			}
+			NEP = { has_completed_focus = NEP_threesides_agreement }
 		}
 		visible = {
-			original_tag = ENG
-			NEP = {
-				has_completed_focus = NEP_threesides_agreement
-			}
+			NEP = { has_completed_focus = NEP_threesides_agreement }
 		}
 		icon = GFX_decision_eng_support_imperialist_coup
 		fire_only_once = yes
 		complete_effect = {
 			ENG = {
 				add_ideas = NEP_nepal_ghurks_in_army
-				division_template = {
-					name = "Battalion Nepal Ghurks"
-					regiments = {
-						mountaineers = { x = 0 y = 0 }
-						mountaineers = { x = 0 y = 1 }
-						mountaineers = { x = 0 y = 2 }
-						mountaineers = { x = 0 y = 3 }
-						mountaineers = { x = 1 y = 0 }
-						mountaineers = { x = 1 y = 1 }
-						mountaineers = { x = 1 y = 2 }
-						mountaineers = { x = 1 y = 3 }
+				hidden_effect = {
+					if = {
+						limit = { NOT = { has_template = "Battalion Nepal Ghurks" } }
+						division_template = {
+							name = "Battalion Nepal Ghurks"
+							regiments = {
+								mountaineers = { x = 0 y = 0 }
+								mountaineers = { x = 0 y = 1 }
+								mountaineers = { x = 0 y = 2 }
+								mountaineers = { x = 0 y = 3 }
+								mountaineers = { x = 1 y = 0 }
+								mountaineers = { x = 1 y = 1 }
+								mountaineers = { x = 1 y = 2 }
+								mountaineers = { x = 1 y = 3 }
+							}
+						}
 					}
 				}
 				126 = {
@@ -55,34 +55,34 @@ political_actions = {
 		}
 	}
 	NEP_threesides_agreement_raj_decision = {
+		allowed = { original_tag = RAJ }
 		available = {
-			original_tag = RAJ
-			NEP = {
-				has_completed_focus = NEP_threesides_agreement
-			}
+			NEP = { has_completed_focus = NEP_threesides_agreement }
 		}
 		visible = {
-			original_tag = RAJ
-			NEP = {
-				has_completed_focus = NEP_threesides_agreement
-			}
+			NEP = { has_completed_focus = NEP_threesides_agreement }
 		}
 		icon = GFX_decision_eng_support_imperialist_coup
 		fire_only_once = yes
 		complete_effect = {
 			RAJ = {
 				add_ideas = NEP_nepal_ghurks_in_army
-				division_template = {
-					name = "Battalion Nepal Ghurks"
-					regiments = {
-						mountaineers = { x = 0 y = 0 }
-						mountaineers = { x = 0 y = 1 }
-						mountaineers = { x = 0 y = 2 }
-						mountaineers = { x = 0 y = 3 }
-						mountaineers = { x = 1 y = 0 }
-						mountaineers = { x = 1 y = 1 }
-						mountaineers = { x = 1 y = 2 }
-						mountaineers = { x = 1 y = 3 }
+				hidden_effect = {
+					if = {
+						limit = { NOT = { has_template = "Battalion Nepal Ghurks" } }
+						division_template = {
+							name = "Battalion Nepal Ghurks"
+							regiments = {
+								mountaineers = { x = 0 y = 0 }
+								mountaineers = { x = 0 y = 1 }
+								mountaineers = { x = 0 y = 2 }
+								mountaineers = { x = 0 y = 3 }
+								mountaineers = { x = 1 y = 0 }
+								mountaineers = { x = 1 y = 1 }
+								mountaineers = { x = 1 y = 2 }
+								mountaineers = { x = 1 y = 3 }
+							}
+						}
 					}
 				}
 				439 = {

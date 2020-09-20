@@ -1,5 +1,6 @@
 focus_tree = {
-	id = syria
+	id = nw_syria_focus
+	
 	country = {
 		factor = 0
 		modifier = {
@@ -7,6 +8,7 @@ focus_tree = {
 			tag = SYR
 		}
 	}
+	
 	default = no
 	
 	
@@ -59,6 +61,7 @@ focus_tree = {
 			add_ideas = SYR_upgrade_pex_civil_gov_idea
 		}
 	}
+	
 	focus = {
 		id = SYR_upgrade_ir_damascus_beirut
 		icon = GFX_goal_generic_construct_infrastructure
@@ -96,6 +99,7 @@ focus_tree = {
 			}
 		}
 	}
+	
 	focus = {
 		id = SYR_delegation_to_paris
 		icon = GFX_z_goal_syr_delegate

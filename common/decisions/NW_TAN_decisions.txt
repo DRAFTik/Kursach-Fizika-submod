@@ -514,6 +514,8 @@ political_actions = {
 		
 	TAN_poprositsa_v_sssr = {
 	
+		allowed = { original_tag = TAN }
+	
 		available = {
 			TAN = { is_in_faction_with = SOV }
 			NOT = { has_government = anarchism }
@@ -540,6 +542,8 @@ political_actions = {
 	}
 
 	TAN_voen_sovet_sssr = {
+	
+		allowed = { original_tag = TAN }
 	
 		available = {
 			TAN = { is_in_faction_with = SOV }
