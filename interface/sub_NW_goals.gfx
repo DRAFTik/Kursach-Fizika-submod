@@ -395,6 +395,26 @@ spriteTypes = {
 		texturefile = "gfx/interface/goals/z_goal_syr_save_mandat.dds"
 	}
 	
+	spriteType = {
+		name = "GFX_z_goal_black_deth"
+		texturefile = "gfx/interface/goals/z_goal_black_deth.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_z_goal_Solchak_dream"
+		texturefile = "gfx/interface/goals/z_goal_Solchak_dream.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_z_goal_war_kommissars"
+		texturefile = "gfx/interface/goals/z_goal_war_kommissars.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_z_goal_war_red_generals"
+		texturefile = "gfx/interface/goals/z_goal_war_red_generals.dds"
+	}
+	
 	frameAnimatedSpriteType = {
 		name = "GFX_z_goal_mountain_warriors"
 		texturefile = "gfx/interface/goals/z_goal_mountain_warriors.dds"

@@ -3,7 +3,7 @@ ideas = {
 		SKM_hard_farmers = {
 			removal_cost = -1
 			allowed = { always = yes }
-			picture = GFX_idea_SKM_hard_farmers
+			picture = Hard_fermers_1
 			modifier = {
 				production_speed_buildings_factor = -0.2
 				MONTHLY_POPULATION = -0.2
@@ -13,7 +13,7 @@ ideas = {
 		SKM_conservative_nobles = {
 			removal_cost = -1
 			allowed = { always = yes }
-			picture = GFX_idea_SKM_conservative_nobles
+			picture = big_col_app2
 			modifier = {
 				research_speed_factor = -0.08
 				stability_factor = 0.4
@@ -24,7 +24,7 @@ ideas = {
 		SKM_taksari_idea = {
 			removal_cost = -1
 			allowed = { has_completed_focus = SKM_taksari }
-			picture = GFX_idea_taksari
+			picture = generic_economic_increase
 			modifier = {
 				political_power_gain = 0.05
 				political_advisor_cost_factor = -0.15
@@ -33,7 +33,7 @@ ideas = {
 		SKM_dzumsa_idea = {
 			removal_cost = -1
 			allowed = { has_completed_focus = SKM_dzumsa }
-			picture = GFX_idea_dzumsa
+			picture = dzumsa
 			modifier = {
 				conscription_factor = 0.1
 				line_change_production_efficiency_factor = 0.05
@@ -42,7 +42,7 @@ ideas = {
 		SKM_hard_farmers_1 = {
 			removal_cost = -1
 			allowed = { always = yes }
-			picture = GFX_idea_SKM_hard_farmers
+			picture = Hard_fermers_2
 			modifier = {
 				production_speed_buildings_factor = -0.15
 				MONTHLY_POPULATION = -0.15
@@ -52,7 +52,7 @@ ideas = {
 		SKM_hard_farmers_rev = {
 			removal_cost = -1
 			allowed = { always = yes }
-			picture = GFX_idea_SKM_hard_farmers
+			picture = Hard_fermers_3
 			modifier = {
 				production_speed_buildings_factor = -0.1
 				MONTHLY_POPULATION = -0.1
@@ -62,7 +62,7 @@ ideas = {
 		SKM_calcutta_idea = {
 			removal_cost = -1
 			allowed = { always = yes }
-			picture = GFX_idea_SKM_calcutta
+			picture = generic_research_bonus
 			modifier = {
 				research_speed_factor = 0.03
 			}
@@ -70,7 +70,7 @@ ideas = {
 		SKM_kazi_tikadori_idea = {
 			removal_cost = -1
 			allowed = { always = yes }
-			picture = GFX_idea_SKM_kazi_tikadori_idea
+			picture = kazi
 			modifier = {
 				production_speed_infrastructure_factor = 0.3
 				consumer_goods_factor = -0.01
@@ -81,7 +81,7 @@ ideas = {
 		SKM_gallavali_1 = {
 			removal_cost = -1
 			allowed = { always = yes }
-			picture = GFX_idea_SKM_gallavali_1
+			picture = idea_eng_imperial_conscription
 			modifier = {
 				conscription = 0.03
 			}
@@ -89,7 +89,7 @@ ideas = {
 		SKM_gallavali_2 = {
 			removal_cost = -1
 			allowed = { always = yes }
-			picture = GFX_idea_SKM_gallavali_2
+			picture = idea_eng_imperial_conscription
 			modifier = {
 				conscription = 0.03
 				autonomy_manpower_share = 0.3
@@ -98,7 +98,7 @@ ideas = {
 		SKM_loyalism = {
 			removal_cost = -1
 			allowed = { always = yes }
-			picture = GFX_idea_SKM_loyalism
+			picture = sikkim_loyalists
 			modifier = {
 				drift_defence_factor = 0.1
 				offence = 0.1
@@ -108,7 +108,7 @@ ideas = {
 		SKM_bureaucracy_idea = {
 			removal_cost = -1
 			allowed = { always = yes }
-			picture = GFX_idea_SKM_bureaucracy
+			picture = generic_pp_unity_bonus
 			modifier = {
 				political_power_factor = 0.2
 				mobilization_speed = 0.2
@@ -118,7 +118,7 @@ ideas = {
 		SKM_commune_harmony = {
 			removal_cost = -1
 			allowed = { always = yes }
-			picture = GFX_idea_SKM_harmony_commune
+			picture = idea_generic_central_management
 			modifier = {
 				production_factory_max_efficiency_factor = 0.1
 			}
@@ -126,7 +126,7 @@ ideas = {
 		SKM_india_inc = {
 			removal_cost = -1
 			allowed = { always = yes }
-			picture = GFX_idea_SKM_india_inc 
+			picture = INC_piece
 			modifier = {
 				political_advisor_cost_factor = -0.4
 			}
@@ -134,7 +134,7 @@ ideas = {
 		SKM_narod_idea = {
 			removal_cost = -1
 			allowed = { always = yes }
-			picture = GFX_idea_SKM_narod
+			picture = ppl_power
 			modifier = {
 				non_core_manpower = 0.1
 				army_org = 10
@@ -143,7 +143,7 @@ ideas = {
 		SKM_farmers_militia = {
 			removal_cost = -1
 			allowed = { always = yes }
-			picture = GFX_idea_SKM_farm_militia
+			picture = idea_hol_liberation
 			modifier = {
 				conscription = 0.02
 				training_time_army_factor = -0.1
@@ -152,7 +152,7 @@ ideas = {
 		SKM_farm_schools = {
 			removal_cost = -1
 			allowed = { always = yes }
-			picture = GFX_idea_SKM_farm_schools
+			picture = idea_jap_duplicate_research
 			modifier = {
 				research_speed_factor = 0.03
 			}
@@ -160,7 +160,7 @@ ideas = {
 		SKM_rocket_post_idea = {
 			removal_cost = -1
 			allowed = { always = yes }
-			picture = GFX_idea_SKM_rocket_post_idea
+			picture = rocket_mail
 			modifier = {
 				political_power_factor = 0.1
 				no_supply_grace = 48
@@ -170,7 +170,7 @@ ideas = {
 		SKM_cardamon_idea = {
 			removal_cost = -1
 			allowed = { always = yes }
-			picture = GFX_idea_SKM_cardamon_idea
+			picture = idea_generic_agrarian_society
 			modifier = {
 				political_power_gain = 0.5
 				production_speed_buildings_factor = 0.05
@@ -179,7 +179,7 @@ ideas = {
 		SKM_rice_idea = {
 			removal_cost = -1
 			allowed = { always = yes }
-			picture = GFX_idea_SKM_rice 
+			picture = idea_generic_agrarian_reform
 			modifier = {
 				MONTHLY_POPULATION = 0.3
 				consumer_goods_factor = -0.03
@@ -188,7 +188,7 @@ ideas = {
 		SKM_conscript_points_idea = {
 			removal_cost = -1
 			allowed = { always = yes }
-			picture = GFX_idea_SKM_conscript_points
+			picture = idea_eng_imperial_conscription
 			modifier = {
 				conscription = 0.03
 			}

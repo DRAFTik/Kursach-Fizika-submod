@@ -99,5 +99,52 @@ spriteTypes = {
 		name = "GFX_idea_jews_exile"
 		texturefile = "gfx/interface/ideas/jews_exile.dds"
 	}
+	
+	spriteType = {
+		name = "GFX_idea_INC_piece"
+		texturefile = "gfx/interface/ideas/SKM/INC_piece.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_sikkim_loyalists"
+		texturefile = "gfx/interface/ideas/SKM/sikkim_loyalists.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_rocket_mail"
+		texturefile = "gfx/interface/ideas/SKM/rocket_mail.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_dzumsa"
+		texturefile = "gfx/interface/ideas/dzumsa.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_Hard_fermers_1"
+		texturefile = "gfx/interface/ideas/Hard_fermers_1.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_Hard_fermers_2"
+		texturefile = "gfx/interface/ideas/Hard_fermers_2.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_Hard_fermers_3"
+		texturefile = "gfx/interface/ideas/Hard_fermers_3.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_kazi"
+		texturefile = "gfx/interface/ideas/kazi.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_ppl_power"
+		texturefile = "gfx/interface/ideas/ppl_power.dds"
+	}
+	
+	
 
 }

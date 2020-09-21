@@ -225,7 +225,7 @@ focus_tree = {
 	
 	focus = {
 		id = TAN_i_have_a_dream
-		icon = GFX_z_focus_propaganda_soviet
+		icon = GFX_z_goal_Solchak_dream
 	    prerequisite = { focus = TAN_XII_tnrp }
 		x = -4
 		y = 4
@@ -1428,7 +1428,7 @@ focus_tree = {
 	
 	focus = {
 		id = TAN_voenniy_sovet
-		icon = GFX_z_goal_order_army
+		icon = GFX_z_goal_war_red_generals
 		x = 18
 		y = 0
 		cost = 7.2
@@ -1472,7 +1472,7 @@ focus_tree = {
 	
 	focus = {
 		id = TAN_voennie_komisari
-		icon = GFX_z_goal_chain_army
+		icon = GFX_z_goal_war_kommissars
 	    prerequisite = { focus = TAN_pomosh_sovetov }
 		x = -2
 		y = 2
@@ -1542,7 +1542,7 @@ focus_tree = {
 	
 	focus = {
 		id = TAN_chernaya_smert
-		icon = GFX_goal_generic_cavalry
+		icon = GFX_z_goal_black_deth
 	    prerequisite = { focus = TAN_voennoe_ministerstvo }
 		x = 0
 		y = 3

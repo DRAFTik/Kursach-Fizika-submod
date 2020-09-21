@@ -824,9 +824,9 @@ bookmarks = {
 				SYR_syrian_nationalists
 			}
 			focuses = {
-				SYR_setting_the_pro_french_regime
-				SYR_national_socialism_goverment
-				SYR_communism_goverment
+				SYR_transfer_control_to_civilian_gov
+				SYR_syrian_nationalism_act
+				SYR_syrian_indepedence_democraty
 				SYR_second_kingdom_reborn
 			}
 		}
