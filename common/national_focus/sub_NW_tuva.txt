@@ -16,7 +16,7 @@ focus_tree = {
 
 	focus = {
 		id = TAN_chast_hramov
-		icon = GFX_z_dangerous_laws
+		icon = GFX_z_goal_open_buddish_temple
 		x = 8
 		y = 0
 		cost = 7.2
@@ -82,7 +82,7 @@ focus_tree = {
 	
 	focus = {
 		id = TAN_dukhoventvo
-		icon = GFX_z_goal_looting_of_churches
+		icon = GFX_z_goal_destroy_buddism
 	    prerequisite = { focus = TAN_sledstvie_veli }
 		x = -6
 		y = 3
@@ -151,7 +151,7 @@ focus_tree = {
 	
 	focus = {
 		id = TAN_tnrp
-		icon = GFX_z_goal_communist_brigades
+		icon = GFX_z_goal_x_tuva
 	    prerequisite = { focus = TAN_chast_hramov }
 	    mutually_exclusive = { focus = TAN_preobrazovania }
 		x = 4
@@ -173,7 +173,7 @@ focus_tree = {
 	
 	focus = {
 		id = TAN_preobrazovania_strani
-		icon = GFX_z_goal_generic_industrial_worker
+		icon = GFX_z_goal_com_country_up
 	    prerequisite = { focus = TAN_tnrp }
 		x = 4
 		y = 2
@@ -194,7 +194,7 @@ focus_tree = {
    
 	focus = {
 		id = TAN_XI_tnrp
-		icon = GFX_z_goal_communist_discourse
+		icon = GFX_z_goal_xi_tuva
 	    prerequisite = { focus = TAN_preobrazovania_strani }
 		x = 4
 		y = 3
@@ -277,7 +277,7 @@ focus_tree = {
 	
 	focus = {
 		id = TAN_soviet_republic_flag
-		icon = GFX_z_goal_generic_laws
+		icon = GFX_z_goal_republic_up
 	    prerequisite = { focus = TAN_i_have_a_dream }
 		x = -6
 		y = 5
@@ -357,7 +357,7 @@ focus_tree = {
 	
 	focus = {
 		id = TAN_sovietwave
-		icon = GFX_z_goal_council_communism
+		icon = GFX_z_goal_take_soviet_path
 	    prerequisite = { focus = TAN_XI_tnrp  focus = TAN_XII_tnrp }
 		mutually_exclusive = { focus = TAN_arat_socialism }
 		mutually_exclusive = { focus = TAN_raskol }
@@ -1562,7 +1562,7 @@ focus_tree = {
 	
 	focus = {
 		id = TAN_pomosh_v_voyne
-		icon = GFX_z_goal_syndication
+		icon = GFX_z_goal_help_ussr
 	    prerequisite = { focus = TAN_voennoe_ministerstvo }
 		x = 2
 		y = 3
@@ -2357,7 +2357,7 @@ focus_tree = {
 	
 	focus = {
 		id = TAN_pishevaya
-		icon = GFX_goal_generic_production2
+		icon = GFX_z_goal_food_prom
 	    prerequisite = { focus = TAN_skot }		
 		x = 6
 		y = 2
