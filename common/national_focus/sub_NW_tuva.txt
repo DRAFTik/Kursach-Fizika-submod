@@ -107,7 +107,7 @@ focus_tree = {
 	
 	focus = {
 		id = TAN_XII_tnrp
-		icon = GFX_z_goal_council_communism2
+		icon = GFX_z_goal_xii_tuva
 	    prerequisite = { focus = TAN_sledstvie_veli }
 		x = -4
 		y = 3
@@ -541,7 +541,7 @@ focus_tree = {
 	
 	focus = {
 		id = TAN_arat_socialism
-		icon = GFX_z_communism12
+		icon = GFX_z_goal_revolution_soc
 	    prerequisite = { focus = TAN_XI_tnrp }
 		mutually_exclusive = { focus = TAN_sovietwave }
 		mutually_exclusive = { focus = TAN_raskol }
@@ -628,7 +628,7 @@ focus_tree = {
 	
 	focus = {
 		id = TAN_hozaystva
-		icon = GFX_z_goal_coop_resourses
+		icon = GFX_z_goal_save_farms
 	    prerequisite = { focus = TAN_arat_socialism focus = TAN_raskol }
 		x = 10
 		y = 5
@@ -1062,7 +1062,7 @@ focus_tree = {
 	
 	focus = {
 		id = TAN_raskol
-		icon = GFX_z_communism11
+		icon = GFX_z_goal_commi_raskol
 	    prerequisite = { focus = TAN_XI_tnrp }
 		mutually_exclusive = { focus = TAN_sovietwave }
 		mutually_exclusive = { focus = TAN_arat_socialism }
@@ -2016,7 +2016,7 @@ focus_tree = {
 	
 	focus = {
 		id = TAN_gornodobivayushie
-		icon = GFX_goal_generic_construct_civilian	
+		icon = GFX_z_goal_mountain_prom_1
 	    prerequisite = { focus = TAN_zheleznaya_doroga }		
 	    prerequisite = { focus = TAN_enisey  focus = TAN_energetika }	
 		x = 5
@@ -2051,7 +2051,7 @@ focus_tree = {
 	
 	focus = {
 		id = TAN_gornodobivayushie2
-		icon = GFX_goal_generic_consumer_goods
+		icon = GFX_z_goal_mountain_prom_2
 	    prerequisite = { focus = TAN_gornodobivayushie }		
 		x = 5
 		y = 5
