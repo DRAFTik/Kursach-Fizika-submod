@@ -1,0 +1,25 @@
+on_actions = {
+	on_startup = {
+		effect = {
+			KUM = {
+				country_event = { id = KUM.12 days = 5}
+				country_event = { id = KUM.13221 days = 638}
+				country_event = { id = 01121 days = 211}
+			}
+			SIK = {
+				country_event = { id = KUM.13222 days = 638}
+			}
+			KAS = {
+				IF = {
+					limit = {
+						KAS = {has_country_flag = KAS_kum_integration}
+						760 = {
+							is_controlled_by = KAS
+						}
+					}
+					country_event = { id = KUM.13221 days = 638}
+				}
+			}
+		}
+	}
+}

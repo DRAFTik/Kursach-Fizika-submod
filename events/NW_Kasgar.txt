@@ -1,0 +1,44 @@
+country_event = {
+	id = KUM.1000
+	title = KUM.1000.t
+	desc = KUM.1000.d
+	is_triggered_only = yes
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event KUM.1000" }
+	option = {
+		ai_chance ={factor = 90}
+		name = KUM.1000.a
+		KUM = {
+			country_event = KUM.1001
+		}
+	}	
+	option = {
+		ai_chance = {factor = 10}
+		name = KUM.1000.b
+		KUM = {
+			country_event = KUM.1002
+		}
+	}
+}
+country_event = {
+	id = KUM.1004
+	title = KUM.1004.t
+	desc = KUM.1004.d
+	is_triggered_only = yes
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event KUM.1004" }
+	option = {
+		name = KUM.1004.a 
+		KAS = {
+			annex_country = {
+				target = KUM
+				transfer_troops = yes
+			}
+			set_country_flag = KAS_kum_integration
+		}
+		DZH = {
+			country_event = { id = KUM.1003}
+		}
+		TNG = {
+			country_event = { id = KUM.1003}
+		}
+	}
+}

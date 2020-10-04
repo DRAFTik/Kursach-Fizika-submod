@@ -1,0 +1,91 @@
+add_namespace = KUM
+country_event = {
+	id = KUM.292
+	title = KUM.292.t
+	desc = KUM.292.d
+	is_triggered_only = yes
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event KUM.292" }
+	option = {
+		name = kum.292.a
+		ai_chance = {factor = 50}
+		KUM = {
+			country_event = {id = KUM.293}
+		}
+	}
+	option = {
+		ai_chance = {factor = 50}
+		name = kum.292.b
+			KUM = {
+				country_event = { id = KUM.294}
+			}
+	}
+}
+country_event = {
+	id = KUM.300
+	title = KUM.300.t
+	desc = KUM.300.d
+	is_triggered_only = yes
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event KUM.300" }
+	option = {
+		ai_chance = {factor = 50}
+		name = KUM.300.a
+		CHI = {
+			country_event = {id = KUM.304}
+		}
+	}	
+	option = {
+		ai_chance = {factor = 50}
+		name = KUM.300.b
+		CHI = {
+			country_event = {id = KUM.305}
+		}
+	}
+	
+}
+
+
+
+
+country_event = {
+	id = KUM.308 
+	title = KUM.308.t
+	desc = KUM.308.d
+	is_triggered_only = yes
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event KUM.308" }
+	option = {
+		ai_chance ={factor = 20}
+		name = KUM.308.a
+	}	
+	option = {
+		ai_chance = {factor = 80}
+		name = KUM.308.b
+		SIK = {
+			add_state_claim = 760
+		}
+		add_opinion_modifier = { target = CHI modifier = CHI_kumul }
+		add_opinion_modifier = { target = KUM modifier = KUM_kumul }
+		
+	}
+}
+country_event = {
+	id = KUM.13222
+	title = KUM.13222.t
+	desc = KUM.13222.d
+	is_triggered_only = yes
+	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event KUM.512" }
+	
+	option = {
+		name = KUM.13222.a
+		SIK = {
+			set_autonomy = {
+				target = KUM
+				autonomy_state = autonomy_free
+			}
+			declare_war_on = {
+				target = KUM
+				type = annex_everything
+			}
+		}
+	}
+}

@@ -1,0 +1,403 @@
+KUM_aristocrats_category = {
+	ar_hotan = {
+		icon = decision_generic_industry
+		allowed = {
+			original_tag = KUM
+		}
+		cost = 20
+		available = {
+			287 = {
+				NOT = {
+					is_core_of = KUM
+				}
+			}
+			KUM = {
+				controls_state = 287
+			}
+		}
+		fire_only_once = yes
+		complete_effect = {
+			KUM = {
+				add_state_core = 287
+			}
+		}
+		visible = {
+			has_completed_focus = 	kum_aristocrats
+			
+		}
+	}
+	ar_kunlunshan = {
+		icon = decision_generic_industry
+		allowed = {
+			original_tag = KUM
+		}
+		cost = 20
+		available = {
+			759 = {
+				NOT = {
+					is_core_of = KUM
+				}
+			}
+			KUM = {
+				controls_state = 759
+			}
+		}
+		fire_only_once = yes
+		complete_effect = {
+			KUM = {
+				add_state_core = 759
+			}
+		}
+		visible = {
+			has_completed_focus = 	kum_aristocrats
+			
+		}
+	}
+	ar_kasgar = {
+		icon = decision_generic_industry
+		allowed = {
+			original_tag = KUM
+		}
+		cost = 20
+		available = {
+			619 = {
+				NOT = {
+					is_core_of = KUM
+				}
+			}
+			KUM = {
+				controls_state = 619
+			}
+		}
+		fire_only_once = yes
+		complete_effect = {
+			KUM = {
+				add_state_core = 619
+			}
+		}
+		visible = {
+			has_completed_focus = 	kum_aristocrats
+			
+		}
+	}
+	ar_takamaklan = {
+		icon = decision_generic_industry
+		allowed = {
+			original_tag = KUM
+		}
+		cost = 20
+		available = {
+			1046 = {
+				NOT = {
+					is_core_of = KUM
+				}
+			}
+			KUM = {
+				controls_state = 1046
+			}
+		}
+		fire_only_once = yes
+		complete_effect = {
+			KUM = {
+				add_state_core = 1046
+			}
+		}
+		visible = {
+			has_completed_focus = 	kum_aristocrats
+			
+		}
+	}
+	ar_aksu = {
+		icon = decision_generic_industry
+		allowed = {
+			original_tag = KUM
+		}
+		cost = 20
+		available = {
+			1047 = {
+				NOT = {
+					is_core_of = KUM
+				}
+			}
+			KUM = {
+				controls_state = 1047
+			}
+		}
+		fire_only_once = yes
+		complete_effect = {
+			KUM = {
+				add_state_core = 1047
+			}
+		}
+		visible = {
+			has_completed_focus = 	kum_aristocrats
+			
+		}
+	}
+	ar_jungaria = {
+		icon = decision_generic_industry
+		allowed = {
+			original_tag = KUM
+		}
+		cost = 20
+		available = {
+			618 = {
+				NOT = {
+					is_core_of = KUM
+				}
+			}
+			KUM = {
+				controls_state = 618
+			}
+		}
+		fire_only_once = yes
+		complete_effect = {
+			KUM = {
+				add_state_core = 618
+			}
+		}
+		visible = {
+			has_completed_focus = 	kum_aristocrats
+			
+		}
+	}
+	ar_dihua = {
+		icon = decision_generic_industry
+		allowed = {
+			original_tag = KUM
+		}
+		cost = 20
+		available = {
+			617 = {
+				NOT = {
+					is_core_of = KUM
+				}
+			}
+			KUM = {
+				controls_state = 617
+			}
+		}
+		fire_only_once = yes
+		complete_effect = {
+			KUM = {
+				add_state_core = 617
+			}
+		}
+		visible = {
+			has_completed_focus = kum_aristocrats
+		}
+	}
+}
+KUM_melons_category = {
+	mel_dung = {
+		icon = decision_generic_industry
+		available = {
+			country_exists = TNG
+			TNG = {
+				has_war = no
+			}
+			check_variable = { var = KUM_melon_total value = 1000 compare = greater_than_or_equals }
+		}
+		days_re_enable = 90
+		complete_effect = {
+			KUM = {
+				add_political_power = 100
+			}
+			subtract_from_variable { KUM_melon_total = 1000}
+			if = {
+				limit = {check_variable = { var = KUM_melon_total value = 3000 compare = greater_than_or_equals }}
+				custom_effect_tooltip = KUM_m_tt_1
+			}
+			else = {
+				custom_effect_tooltip = KUM_m_tt_11
+			}
+		}
+	}
+	mel_sink = {
+		icon = decision_generic_industry
+		available = {
+			country_exists = SIK
+			SIK = {
+				has_war = no
+			}
+			check_variable = { var = KUM_melon_total value = 3000 compare = greater_than_or_equals }
+		}
+		days_re_enable = 90
+		complete_effect = {
+			KUM = {
+				subtract_from_variable { KUM_melon_total = 3000}
+				add_timed_idea = {
+					idea = KUM_mel
+					days = 90
+				}
+				hidden_effect = {
+					add_offsite_building = { 
+						type = industrial_complex
+						level = 1
+					}
+				}
+				if = {
+					limit = {check_variable = { var = KUM_melon_total value = 3000 compare = greater_than_or_equals }}
+					custom_effect_tooltip = KUM_m_tt_2
+				}
+				else = {
+					custom_effect_tooltip = KUM_m_tt_21
+				}
+			}
+		}
+	}
+	mel_loc = {
+		icon = decision_generic_industry
+		available = {
+			check_variable = { var = KUM_melon_total value = 250 compare = greater_than_or_equals }
+		}
+		days_re_enable = 30
+		complete_effect = {
+			subtract_from_variable { KUM_melon_total = 250}
+			add_political_power = 20
+			add_stability = 0.05
+			if = {
+				limit = {check_variable = { var = KUM_melon_total value = 250 compare = greater_than_or_equals }}
+				custom_effect_tooltip = KUM_m_tt_3
+			}
+			else = {
+				custom_effect_tooltip = KUM_m_tt_31
+			}
+		}
+	}
+	mel_san_ma = {
+		icon = decision_generic_industry
+		available = {
+			check_variable = { var = KUM_melon_total value = 2000 compare = greater_than_or_equals }
+		}
+		days_re_enable = 90
+		complete_effect = {
+			if = {
+				limit = {check_variable = { var = KUM_melon_total value = 2000 compare = greater_than_or_equals }}
+				custom_effect_tooltip = KUM_m_tt_4
+			}
+			else = {
+				custom_effect_tooltip = KUM_m_tt_41
+			}
+			add_timed_idea = {
+				idea = KUM_mel_2
+				days = 90
+			}
+		}
+	}
+	mel_chin = {
+		icon = decision_generic_industry
+		available = {
+			check_variable = { var = KUM_melon_total value = 3000 compare = greater_than_or_equals }
+		}
+		days_re_enable = 120
+		complete_effect = {
+			KUM = {
+				if = {
+					limit = {check_variable = { var = KUM_melon_total value = 3000 compare = greater_than_or_equals }}
+					custom_effect_tooltip = KUM_m_tt_5
+				}
+				else = {
+					custom_effect_tooltip = KUM_m_tt_51
+				}
+				add_timed_idea = {
+					idea = KUM_mel_1
+					days = 60
+				}
+				hidden_effect = {
+					add_offsite_building = { 
+						type = industrial_complex
+						level = 1
+					}
+				}
+			}			
+		}
+	}
+	mel_bachci = {
+		icon = decision_generic_industry
+		available = {
+			ROOT = {
+				num_of_civilian_factories > 2
+			}
+			OR {
+				617 = {
+					is_controlled_by = ROOT
+				}
+				759 = {
+					is_controlled_by = ROOT
+				}
+			}
+		}
+		cost = 50
+		days_remove = 50
+		modifier = {
+			civilian_factory_use = 2
+		}
+		remove_effect = {
+			hidden_effect = {
+				set_country_flag = KUM_bah_2
+			}
+			custom_effect_tooltip = KUM_bahchi_tt
+		}
+	}
+	mel_greenhouse = {
+		icon = decision_generic_industry
+		fire_only_once = yes
+		available = {
+			ROOT = {
+				num_of_civilian_factories > 4
+			}
+		}
+		cost = 100
+		days_remove = 120
+		modifier = {
+			civilian_factory_use = 4
+		}
+		remove_effect = {
+			custom_effect_tooltip = KUM_gh_tt
+			set_country_flag = KUM_bah
+			760 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+		
+	}
+	mel_greenhouse_res = {
+		icon = decision_generic_industry
+		available = {
+			KUM = {
+				hidden_trigger = {
+					has_country_flag = KUM_bah
+				}
+				custom_trigger_tooltip = {
+					tooltip = KUM_bah_tt
+				}
+			}
+			760 = {
+				infrastructure > 2
+			}
+		}
+		days_remove = 180
+		remove_effect = {
+			set_temp_variable = {
+				var = KUM_recent_mel
+			}
+			if = {
+				limit = { KUM = { has_completed_focus = kum_new_melon } }
+				add_to_variable = { KUM_melon_total = 2000}
+				set_variable = {KUM_melon_temp = 2000}
+			}
+			else = {
+				add_to_variable = { KUM_melon_total = 1000 }
+				set_variable = { KUM_melon_temp = 1000 }
+			}
+			custom_effect_tooltip = KUM_tep_melon_tt
+		}
+		
+	}
+}

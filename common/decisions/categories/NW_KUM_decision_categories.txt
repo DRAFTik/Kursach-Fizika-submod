@@ -1,0 +1,12 @@
+KUM_aristocrats_category = {
+	allowed = {
+		original_tag = KUM
+	}
+	picture = decision_generic_industry
+}
+KUM_melons_category = {
+	allowed = {
+		original_tag = KUM
+	}
+	picture = decision_generic_industry
+}

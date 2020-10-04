@@ -1,0 +1,452 @@
+﻿add_namespace = KUM
+
+country_event = {
+	id = KUM.12
+	title = KUM.12.t
+	desc = KUM.12.d
+	is_triggered_only = yes
+	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event KUM.12" }
+	
+	option = { name = KUM.12.a }
+}
+
+country_event = {
+	id = KUM.289
+	title = KUM.289.t
+	desc = KUM.289.d
+	picture = GFX_report_event_china_chiang_kai_shek
+	is_triggered_only = yes
+	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event KUM.289" }
+	
+	option = {
+				name = KUM.289.a
+							KUM = {
+										set_country_flag = KUM_flag_1
+										add_state_core = 287
+										add_state_core = 617
+										add_state_core = 618
+										add_state_core = 619
+										add_state_core = 1074
+										add_state_core = 1076
+										give_military_access = CHI
+								}
+							set_cosmetic_tag = KUM_sink_2_neutrality
+							CHI = {
+								give_military_access = KUM
+							}
+
+			}
+}
+
+country_event = {
+	id = KUM.290
+	title = KUM.290.t
+	desc = KUM.290.d
+	picture = GFX_report_event_china_chiang_kai_shek
+	is_triggered_only = yes
+	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event KUM.290" }
+	
+	option = {
+				name = KUM.290.a
+			}
+}
+country_event = {			#######Не работает#####
+		id = KUM.291
+		title = KUM.291.t
+		desc = KUM.291.d
+		is_triggered_only = yes
+
+		immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event KUM.291" }
+
+		option = {
+			name = KUM.291.a
+			add_equipment_to_stockpile = {
+    			type = infantry_equipment
+    			amount = 500
+   				producer = CHI
+			}
+		}
+
+}
+country_event = {
+	id = KUM.293
+	title = KUM.293.t
+	desc = KUM.293.d
+	is_triggered_only = yes
+	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event KUM.293" }
+	
+	option = {
+		name = KUM.293.a
+		760 = {
+			create_unit = {
+				division = "name = \"1. Sinkang Garnison\" division_template = \"Sinkang Garnison\" start_experience_factor = 0.1"
+			}
+		}
+	}
+}
+country_event = {
+	id = KUM.294
+	title = KUM.294.t
+	desc = KUM.294.d
+	is_triggered_only = yes
+	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event KUM.294" }
+	
+	option = { name = KUM.294.a }
+}
+country_event = {
+	id = KUM.296
+	title = KUM.296.t
+	desc = KUM.296.d
+	is_triggered_only = yes
+	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event KUM.296" }
+	
+	option = {
+		name = KUM.296.a 
+					KUM = {
+						add_equipment_to_stockpile = {
+							type = infantry_equipment
+							amount = 500
+							producer = TNG
+						}
+					}
+				}
+	}
+	
+country_event = {
+	id = KUM.297
+	title = KUM.297.t
+	desc = KUM.297.d
+	is_triggered_only = yes
+	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event KUM.297" }
+	
+	option = {
+		name = KUM.297.a 
+		KUM = {
+			add_opinion_modifier = { target = TNG modifier = TNG_traitors }
+		}
+	}
+}
+country_event = {
+	id = KUM.299
+	title = KUM.299.t
+	desc = KUM.299.d
+	is_triggered_only = yes
+	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event KUM.299" }
+	
+	option = {
+		name = KUM.299.a 
+		set_country_flag = KUM_flag_2	
+		SIK = {
+			release_puppet = KUM
+			country_event = { id = KUM.308}
+		}
+		CHI = {
+			set_autonomy = {
+					target = KUM
+					autonomy_state = autonomy_dominion
+				}
+		}
+		
+	}
+}
+country_event = {
+	id = KUM.4040
+	title = KUM.4040.t
+	desc = KUM.4040.d
+	is_triggered_only = yes
+	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event KUM.299" }
+	
+	option = {
+		name = KUM.4040.a 
+		set_country_flag = KUM_flag_2	
+		SIK = {
+			release_puppet = KUM
+		}
+		CHI = {
+				set_autonomy = {
+					target = KUM
+					autonomy_state = autonomy_dominion
+				}
+		}
+		
+	}
+}
+country_event = {
+	id = KUM.309
+	title = KUM.309.t
+	desc = KUM.309.d
+	is_triggered_only = yes
+	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event KUM.309" }
+	
+	option = {
+		name = KUM.309.a 
+		KUM = {
+			add_opinion_modifier = { target = SIK modifier = TNG_traitors }
+		}
+	}
+}
+country_event = {
+	id = KUM.501
+	title = KUM.501.t
+	desc = KUM.501.d
+	is_triggered_only = yes
+	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event KUM.501" }
+	
+	option = {
+		name = KUM.501.a 
+		KUM = {
+			set_politics = {
+				ruling_party = monarchy
+			}
+			add_popularity = {
+				ideology = monarchy 
+				popularity = 0.6
+				}
+
+		}
+	}
+}
+country_event = {
+	id = KUM.507
+	title = KUM.507.t
+	desc = KUM.507.d
+	is_triggered_only = yes
+	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event KUM.507" }
+	
+	option = {
+		name = KUM.507.a
+		ai_chance = {factor = 70}
+		CHI = {country_event = {id = KUM.508}}
+	}
+	option = {
+		name = KUM.507.b
+		ai_chance = {factor = 30}
+		CHI = {
+			country_event = {id = KUM.509}
+		}
+	}
+}
+country_event = {
+	id = KUM.510
+	title = KUM.510.t
+	desc = KUM.510.d
+	is_triggered_only = yes
+	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event KUM.510" }
+	
+	option = {
+		name = KUM.510.a
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = 500
+			producer = CHI
+		}
+	}
+}
+country_event = {
+	id = KUM.511
+	title = KUM.511.t
+	desc = KUM.511.d
+	is_triggered_only = yes
+	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event KUM.511" }
+	
+	option = {
+		name = KUM.511.a
+		add_offsite_building = { type = industrial_complex level = 1 }
+	}
+}
+country_event = {
+	id = KUM.512
+	title = KUM.512.t
+	desc = KUM.512.d
+	is_triggered_only = yes
+	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event KUM.512" }
+	
+	option = {
+		name = KUM.512.a
+		add_manpower = 5000
+	}
+}
+country_event = {
+	id = KUM.13221
+	title = KUM.13221.t
+	desc = KUM.13221.d
+	is_triggered_only = yes
+	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event KUM.512" }
+	
+	option = {
+		name = KUM.13221.a
+		add_opinion_modifier = { target = SIK modifier = SIK_commies}
+	}
+}
+country_event = {
+	id = KUM.1001
+	title = KUM.1001.t
+	desc = KUM.1001.d
+	is_triggered_only = yes
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event KUM.1001" }
+	option = {
+		name = KUM.1001.a
+		KAS = {
+			country_event = { id = KUM.1004}
+		}
+		IF = {
+			limit = { KUM = {is_ai = no} KAS = {is_ai = yes}}
+			KAS = {
+				change_tag_from = ROOT
+			}
+			
+		}
+		else = {
+			KAS = {
+				annex_country = {
+					target = KUM
+					transfer_troops = yes
+				}
+			}
+		}
+	}	
+}
+country_event = {
+	id = KUM.1002
+	title = KUM.1002.t
+	desc = KUM.1002.d
+	is_triggered_only = yes
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event KUM.1002" }
+	option = {
+		name = KUM.1002.a
+	}	
+}
+country_event = {
+	id = KUM.01121
+	title = KUM.01121.t
+	desc = KUM.01121.d
+	is_triggered_only = yes
+	hidden = yes
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event KUM.01121" }
+	option = {
+		name = KUM.01121.a
+		if = {
+			limit = { KUM = { has_completed_focus = kum_melons } }
+			KUM = {
+				country_event = { id = kum.01121 days = 365 }
+				country_event = { id = KUM.101 days = 2 }
+			}
+		}
+	}	
+}
+country_event = {
+	id = KUM.101
+	title = KUM.101.t
+	desc = KUM.101.d
+	is_triggered_only = yes
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event KUM.101" }
+	option = {
+		name = KUM.101.a
+		IF = {
+			limit ={ KUM = { has_completed_focus = kum_new_melon } }
+			add_to_variable = { KUM_melon_total = 5000}
+		}
+		else = {
+			add_to_variable = { KUM_melon_total = 2500}
+		}
+		KUM = {country_event = {id = KUM.115 days = 14}}
+	}	
+}
+country_event = {
+	id = KUM.115
+	title = KUM.115.t
+	desc = KUM.115.d
+	is_triggered_only = yes
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event KUM.115" }
+	option = {
+		name = KUM.115.a
+		IF = {
+			limit = { KUM = { has_completed_focus = kum_new_melon } }
+			add_to_variable = { KUM_melon_total = 5000}
+		}
+		else = {
+			add_to_variable = { KUM_melon_total = 2500}
+		}
+		KUM = {
+			country_event = {id = KUM.201 days = 17}
+		}
+	}	
+}
+country_event = {
+	id = KUM.201
+	title = KUM.201.t
+	desc = KUM.201.d
+	is_triggered_only = yes
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event KUM.201" }
+	option = {
+		name = KUM.201.a
+		IF = {
+			limit ={ KUM = { has_completed_focus = kum_new_melon } }
+			add_to_variable = { KUM_melon_total = 5000}
+		}
+		else = {
+			add_to_variable = { KUM_melon_total = 2500}
+		}
+		KUM = {
+			country_event = {id = KUM.215 days = 14}
+		}
+	}	
+}
+country_event = {
+	id = KUM.215
+	title = KUM.215.t
+	desc = KUM.215.d
+	is_triggered_only = yes
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event KUM.215" }
+	option = {
+		name = KUM.215.a
+		IF = {
+			limit ={ KUM = { has_completed_focus = kum_new_melon } }
+			add_to_variable = { KUM_melon_total = 5000}
+		}
+		else_if = {
+			limit = {KUM = {has_country_flag = KUM_bah_2}}
+			add_to_variable = { KUM_melon_total = 5000}
+		}
+		else_if = {
+			limit = {
+				KUM = {
+					has_completed_focus = kum_new_melon
+					has_country_flag = KUM_bah_2
+				}
+			}
+			add_to_variable = { KUM_melon_total = 7500}
+		}
+		else = {
+			add_to_variable = { KUM_melon_total = 2500}
+		}
+	}	
+}
+
+country_event = {
+	id = KUM.2001
+	title = KUM.2001.t
+	desc = KUM.2001.d
+	is_triggered_only = yes
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event KUM.2001" }
+	option = {
+		name = KUM.2001.a
+		
+	}	
+}

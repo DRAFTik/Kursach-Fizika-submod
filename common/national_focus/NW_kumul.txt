@@ -1,0 +1,1735 @@
+focus_tree = {
+	continuous_focus_position = { x = 300 y = 1800 }
+	id = nw_kumul_focus
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = KUM
+		}
+	}
+	default = no
+	
+	focus = {
+		id = kum_control
+		text = kum_control_desc
+		icon = GFX_goal_molotov_ribbentrop_pact
+		cost = 10
+		x = 5
+		y = 0
+			ai_will_do = {
+					factor = 2
+				}
+			completion_reward = {
+					add_political_power = 100
+					add_stability = 0.05
+				}
+
+	}
+	focus = {
+		id = kum_recovery_industry
+		icon = GFX_goal_generic_production
+		cost = 7.2
+		x = 18
+		y = 0
+			ai_will_do = {
+					factor = 10
+				}
+			completion_reward = {
+					760 = {
+							add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}
+						}
+				}
+
+	}
+	focus = {
+		id = kum_melons
+		icon = GFX_goal_generic_trade
+		cost = 7.2
+		prerequisite = {
+			focus = kum_recovery_industry
+		}
+		x = -5
+		y = 1
+		relative_position_id = kum_recovery_industry
+			ai_will_do = {
+					factor = 10
+				}
+			completion_reward = {
+				log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus kum_melons"
+				add_ideas = KUM_melons
+				set_temp_variable = { KUM_melon_temp = 5000 }
+				add_to_variable = { KUM_melon_total = KUM_melon_temp }
+				custom_effect_tooltip = KUM_melon
+				clamp_variable = { var = KUM_melon_total min = 0 max = 200000 }
+				unlock_decision_category_tooltip = KUM_melons_category
+				custom_effect_tooltip = KUM_mel2_tt
+			}
+
+	}
+	focus = {
+		id = kum_agrarian_reform
+		icon = GFX_goal_generic_construct_mil_factory
+		cost = 7.2
+		prerequisite = {
+			focus = kum_melons
+		}
+		x = 0
+		y = 1
+		relative_position_id = kum_melons
+			available = {
+					KUM = {
+							NOT = {
+									is_subject_of = SIK
+								}
+						}
+				}
+			ai_will_do = {
+					factor = 10
+				}
+			completion_reward = {
+					log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus kum_agrarian_reform"
+					add_research_slot = 1
+				}
+
+	}
+	focus = {
+		id = kum_weapons
+		icon = GFX_focus_generic_combined_arms
+		cost = 7.2
+		prerequisite = {
+			focus = kum_recovery_industry
+		}
+		x = 1
+		y = 1
+		relative_position_id = kum_recovery_industry
+			ai_will_do = {
+					factor = 10
+				}
+			completion_reward = {
+					log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus kum_weapons"
+					760 = {
+							add_building_construction = {
+									type = arms_factory
+									level = 1
+									instant_build = yes
+								}
+						}
+				}
+
+	}
+	focus = {
+		id = kum_taxes
+		icon = GFX_goal_generic_neutrality_focus
+		cost = 10
+		prerequisite = {
+			focus = kum_control
+		}
+		x = 2
+		y = 1
+			ai_will_do = {
+					factor = 10
+				}
+			completion_reward = {
+					remove_ideas = KUM_scattered_taxes
+				}
+
+	}
+	focus = {
+		id = kum_road_of_sinkang
+		icon = GFX_goal_generic_construct_infrastructure
+		cost = 10
+		prerequisite = {
+			focus = kum_taxes
+		}
+		x = 1
+		y = 2
+			ai_will_do = {
+					factor = 5
+				}
+			completion_reward = {
+					log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus kum_road_of_sinkang"
+					760 = {
+							if = {
+									limit = {
+											is_controlled_by = ROOT
+										}
+									add_building_construction = {
+											type = bunker
+											level = 1
+											instant_build = yes
+											province = {
+													id = 4704
+													id = 4843
+													id = 12524
+												}
+										}
+								}
+							add_building_construction = {
+									type = infrastructure
+									level = 1
+									instant_build = yes
+								}
+						}
+				}
+
+	}
+	focus = {
+		id = kum_no_hunger
+		icon = GFX_focus_hol_abandon_the_gold_standard
+		cost = 10
+		prerequisite = {
+			focus = kum_taxes
+		}
+		x = 3
+		y = 2
+			ai_will_do = {
+					factor = 2
+				}
+			completion_reward = {
+					remove_ideas = KUM_famine
+				}
+
+	}
+	focus = {
+		id = kum_road_taxes
+		icon = GFX_goal_generic_position_armies
+		cost = 10
+		prerequisite = {
+			focus = kum_no_hunger
+		}
+		prerequisite = {
+			focus = kum_road_of_sinkang
+		}
+		x = 2
+		y = 3
+			ai_will_do = {
+					factor = 10
+				}
+			completion_reward = {
+					log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus kum_road_taxes"
+					add_offsite_building = {
+							type = industrial_complex
+							level = 1
+						}
+				}
+
+	}
+	focus = {
+		id = kum_nofeodals
+		icon = GFX_goal_molotov_ribbentrop_pact
+		cost = 7.2
+		prerequisite = {
+			focus = kum_recovery_industry
+		}
+		x = 3
+		y = 1
+		relative_position_id = kum_recovery_industry
+			available = {
+					KUM = {
+							is_subject_of = SIK
+						}
+				}
+			ai_will_do = {
+					factor = 10
+				}
+			completion_reward = {
+					log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus kum_nofeodals"
+					remove_ideas = KUM_feodals
+				}
+
+	}
+	focus = {
+		id = kum_stop_the_road
+		icon = GFX_goal_generic_major_war
+		cost = 5
+		prerequisite = {
+			focus = kum_control
+		}
+		x = 5
+		y = 4
+			ai_will_do = {
+					factor = 10
+				}
+			bypass = {
+					KUM = {
+							has_full_control_of_state = 617
+							has_full_control_of_state = 618
+							has_full_control_of_state = 619
+							has_full_control_of_state = 1046
+							has_full_control_of_state = 1047
+							has_full_control_of_state = 1120
+							has_full_control_of_state = 1121
+							has_full_control_of_state = 1122
+							has_full_control_of_state = 287
+							has_full_control_of_state = 759
+							has_full_control_of_state = 760
+						}
+				}
+			completion_reward = {
+					log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus kum_stop_the_road"
+					SIK = {
+							end_puppet = KUM
+						}
+					KUM = {
+							declare_war_on = {
+									target = SIK
+									type = annex_everything
+								}
+						}
+				}
+
+	}
+	focus = {
+		id = kum_head_of_sinkang
+		icon = GFX_goal_generic_military_deal
+		cost = 10
+		prerequisite = {
+			focus = kum_stop_the_road
+		}
+		mutually_exclusive = {
+			focus = kum_chan
+		}
+		x = 5
+		y = 6
+			available = {
+					KUM = {
+							has_war = no
+							has_full_control_of_state = 617
+							has_full_control_of_state = 618
+							has_full_control_of_state = 619
+							has_full_control_of_state = 1046
+							has_full_control_of_state = 1047
+							has_full_control_of_state = 1120
+							has_full_control_of_state = 1121
+							has_full_control_of_state = 1122
+							has_full_control_of_state = 287
+							has_full_control_of_state = 759
+							has_full_control_of_state = 760
+						}
+				}
+			ai_will_do = {
+					factor = 10
+				}
+			completion_reward = {
+					log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus kum_head_of_sinkang"
+					CHI = {
+							country_event = {
+									id = KUM.288
+								}
+						}
+				}
+
+	}
+	focus = {
+		id = kum_china_integration
+		icon = GFX_focus_chi_cooperation_with_the_nationalists
+		cost = 10
+		prerequisite = {
+			focus = kum_head_of_sinkang
+		}
+		mutually_exclusive = {
+			focus = kum_authonomy
+		}
+		x = 2
+		y = 7
+			ai_will_do = {
+					factor = 10
+				}
+			available = {
+					KUM = {
+							has_war = no
+							has_full_control_of_state = 617
+						}
+				}
+			completion_reward = {
+					log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus kum_china_integration"
+					set_cosmetic_tag = KUM_sink_neutrality
+					set_cosmetic_tag = KUM_puppet
+					KUM = {
+							add_ideas = KUM_integration
+						}
+				}
+
+	}
+	focus = {
+		id = kum_central_gov
+		icon = GFX_focus_generic_treaty
+		cost = 10
+		prerequisite = {
+			focus = kum_china_integration
+		}
+		x = 1
+		y = 8
+			ai_will_do = {
+					factor = 10
+				}
+			completion_reward = {
+					log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus kum_central_gov"
+					add_ideas = KUM_integration_2
+				}
+
+	}
+	focus = {
+		id = kum_nolocal
+		icon = GFX_goal_generic_major_alliance
+		cost = 10
+		prerequisite = {
+			focus = kum_china_integration
+		}
+		x = 3
+		y = 8
+			ai_will_do = {
+					factor = 10
+				}
+			completion_reward = {
+					log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus kum_nolocal"
+					add_autonomy_ratio = {
+							value = -0.5
+							localization = KUM_china_integration_3
+						}
+					every_state = {
+							add_building_construction = {
+									type = infrastructure
+									level = 1
+									instant_build = yes
+								}
+						}
+				}
+
+	}
+	focus = {
+		id = kum_army_training
+		icon = GFX_goal_generic_production2
+		cost = 10
+		prerequisite = {
+			focus = kum_control
+		}
+		x = 8
+		y = 1
+			ai_will_do = {
+					factor = 10
+				}
+			completion_reward = {
+					log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus kum_army_training"
+					army_experience = 10
+					add_tech_bonus = {
+							name = land_doc_bonus
+							bonus = 1.0
+							uses = 1
+							category = land_doctrine
+						}
+				}
+
+	}
+	focus = {
+		id = kum_propoganda
+		icon = GFX_goal_generic_national_unity
+		cost = 5
+		prerequisite = {
+			focus = kum_army_training
+		}
+		x = 6
+		y = 2
+			ai_will_do = {
+					factor = 10
+				}
+			completion_reward = {
+					log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus kum_propoganda"
+					add_ideas = KUM_uguymobilization
+				}
+
+	}
+	focus = {
+		id = kum_authonomy
+		icon = GFX_goal_continuous_boost_freedom
+		cost = 10
+		prerequisite = {
+			focus = kum_head_of_sinkang
+		}
+		mutually_exclusive = {
+			focus = kum_china_integration
+		}
+		x = 8
+		y = 7
+			ai_will_do = {
+					factor = 20
+				}
+			completion_reward = {
+					log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus kum_authonomy"
+					CHI = {
+							country_event = {
+									id = KUM.500
+								}
+						}
+				}
+
+	}
+	focus = {
+		id = kum_newgov
+		icon = GFX_goal_tripartite_pact
+		cost = 10
+		prerequisite = {
+			focus = kum_authonomy
+		}
+		x = 7
+		y = 8
+			ai_will_do = {
+					factor = 10
+				}
+			completion_reward = {
+					log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus kum_newgov"
+					add_tech_bonus = {
+							name = KUM_construction_tech
+							bonus = 0.5
+							uses = 1
+							category = construction_tech
+						}
+				}
+
+	}
+	focus = {
+		id = kum_oldexp
+		icon = GFX_goal_generic_construction2
+		cost = 5
+		prerequisite = {
+			focus = kum_army_training
+		}
+		x = 8
+		y = 2
+			ai_will_do = {
+					factor = 10
+				}
+			completion_reward = {
+					log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus kum_oldexp"
+					army_experience = 15
+					add_tech_bonus = {
+							name = land_doc_bonus
+							bonus = 1.0
+							uses = 1
+							category = land_doctrine
+						}
+				}
+
+	}
+	focus = {
+		id = kum_garnison
+		icon = GFX_focus_generic_tank_production
+		cost = 10
+		prerequisite = {
+			focus = kum_oldexp
+		}
+		x = 8
+		y = 3
+			ai_will_do = {
+					factor = 10
+				}
+			completion_reward = {
+					SIK = {
+							country_event = {
+									id = KUM.292
+								}
+						}
+				}
+
+	}
+	focus = {
+		id = kum_recover_relations
+		icon = GFX_goal_generic_construct_infrastructure
+		cost = 10
+		prerequisite = {
+			focus = kum_authonomy
+		}
+		x = 9
+		y = 8
+			available = {
+					has_full_control_of_state = 617
+					has_full_control_of_state = 618
+					has_full_control_of_state = 1047
+					has_full_control_of_state = 619
+				}
+			ai_will_do = {
+					factor = 10
+				}
+			completion_reward = {
+					log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus kum_recover_relations"
+					KUM = {
+							add_timed_idea = {
+									idea = KUM_road_recovery
+									days = 180
+								}
+						}
+					760 = {
+							add_building_construction = {
+									type = infrastructure
+									level = 1
+									instant_build = yes
+								}
+						}
+					617 = {
+							add_building_construction = {
+									type = infrastructure
+									level = 1
+									instant_build = yes
+								}
+						}
+				}
+
+	}
+	focus = {
+		id = kum_ourlaw
+		icon = GFX_goal_generic_consumer_goods
+		cost = 10
+		prerequisite = {
+			focus = kum_recover_relations
+		}
+		prerequisite = {
+			focus = kum_newgov
+		}
+		x = 8
+		y = 9
+			ai_will_do = {
+					factor = 10
+				}
+			completion_reward = {
+					log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus kum_ourlaw"
+					add_ideas = KUM_law
+				}
+
+	}
+	focus = {
+		id = kum_huei_gansu
+		icon = GFX_focus_generic_air_defense
+		cost = 5
+		prerequisite = {
+			focus = kum_army_training
+		}
+		x = 10
+		y = 2
+			ai_will_do = {
+					factor = 10
+				}
+			completion_reward = {
+					log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus kum_huei_gansu"
+					hidden_effect = {
+							if = {
+									limit = {
+											NOT = {
+													has_template = "Huei Gansu"
+												}
+										}
+									division_template = {
+											name = "Huei Gansu"
+											is_locked = yes
+											regiments = {
+													infantry = {
+															x = 0
+															y = 0
+														}
+													infantry = {
+															x = 0
+															y = 1
+														}
+													infantry = {
+															x = 0
+															y = 2
+														}
+													infantry = {
+															x = 0
+															y = 3
+														}
+													infantry = {
+															x = 1
+															y = 0
+														}
+													infantry = {
+															x = 1
+															y = 1
+														}
+													infantry = {
+															x = 1
+															y = 2
+														}
+												}
+										}
+								}
+						}
+					capital_scope = {
+							create_unit = {
+									division = "name = \"1. Huei Gansu\" division_template = \"Huei Gansu\" start_experience_factor = 0.3"
+									owner = ROOT
+								}
+						}
+				}
+
+	}
+	focus = {
+		id = kum_new_battle
+		icon = GFX_goal_demand_sudetenland
+		cost = 2.1
+		prerequisite = {
+			focus = kum_garnison
+		}
+		available = {
+			KUM = {
+				has_war = yes
+			}
+		}
+		x = 12
+		y = 4
+		completion_reward = {
+			add_political_power = 50
+		}
+	}
+	focus = {
+		id = kum_now_or_never
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		cost = 2.1
+		prerequisite = {
+			focus = kum_new_battle
+		}
+		x = 11
+		y = 5
+		completion_reward = {
+						add_timed_idea = {
+							idea = KUM_now_or_never
+							days = 360
+						}
+		}
+
+	}
+	focus = {
+		id = kum_mounts
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		cost = 2.1
+		prerequisite = {
+			focus = kum_new_battle
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		x = 13
+		y = 5
+		completion_reward = {
+			custom_effect_tooltip = kum_mounts_tt
+			hidden_effect = { set_technology = { mountain_gun = 1 } }
+			add_ideas = {
+				KUM_mounts
+			}
+			760 = {
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = { id = 4704}
+				}
+			}
+		}
+	}
+	 focus = {
+	 	id = kum_muhiti
+	 	icon = GFX_goal_generic_military_deal
+	 	cost = 3
+	 	prerequisite = {
+	 		focus = kum_garnison
+	 	}
+	 	available = {
+			has_war = no
+			is_subject = no
+	 		KAS = {
+	 			has_war = no
+	 			has_country_leader = {
+	 				name = "Mahmoud Muhiti"
+	 				ruling_only = yes
+	 			}
+	 			is_subject = no
+	 		}
+	 	}
+	 	x = 16
+	 	y = 4
+	 	completion_reward = {
+	 		KAS = {
+	 			country_event = { id = KUM.1000}
+				custom_effect_tooltip = KAS_war_tt
+	 		}
+	 	}
+	 }
+	focus = {
+		id = kum_decisonn
+		icon = GFX_goal_generic_territory_or_war
+		cost = 3
+		ai_will_do = {
+			factor = 10
+		}
+		prerequisite = {
+			focus = kum_garnison
+		}
+		available = {
+			NOT = {
+				 country_exists = SIK
+			}
+		}
+		x = 19
+		y = 4
+		completion_reward = {
+			IF = {
+				limit = {
+					country_exists = DZH
+				}
+				ROOT = {
+					create_wargoal = {
+						type = annex_everything
+						target = DZH
+					}
+				}
+			}
+			IF = {
+				limit = {
+					country_exists = TNG
+				}
+				ROOT = {
+					create_wargoal = {
+						type = annex_everything
+						target = TNG
+					}
+				}
+			}
+			IF = {
+				limit = {
+					country_exists = KAS
+					KAS = {
+						is_ai = yes
+					}
+				}
+				ROOT = {
+					create_wargoal = {
+						type = annex_everything
+						target = KAS
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = kum_chan
+		icon = GFX_goal_generic_alliance
+		cost = 10
+		prerequisite = {
+			focus = kum_garnison
+		}
+		mutually_exclusive = {
+			focus = kum_head_of_sinkang
+		}
+		x = 25
+		y = 6
+			available = {
+					has_war = no
+					617 = {
+						is_controlled_by = ROOT
+					}
+					618 = {
+						is_controlled_by = ROOT
+					}
+					619 = {
+						is_controlled_by = ROOT
+					}
+					1046 = {
+						is_controlled_by = ROOT
+					}
+					1047 = {
+						is_controlled_by = ROOT
+					}
+					1120 = {
+						is_controlled_by = ROOT
+					}
+					1121 = {
+						is_controlled_by = ROOT
+					}
+					1122 = {
+						is_controlled_by = ROOT
+					}
+					287 = {
+						is_controlled_by = ROOT
+					}
+					759 = {
+						is_controlled_by = ROOT
+					}
+					760 = {
+						is_controlled_by = ROOT
+					}
+			}
+			completion_reward = {
+				set_cosmetic_tag = KUM_chan_neutrality
+				CHI = {
+					country_event = { id = KUM.peace}
+				}
+			}
+
+	}
+	focus = {
+		id = kum_newchan
+		icon = GFX_goal_molotov_ribbentrop_pact
+		cost = 10
+		prerequisite = {
+			focus = kum_chan
+		}
+		x = 25
+		y = 7
+			ai_will_do = {
+					factor = 10
+				}
+			completion_reward = {
+					log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus kum_newchan"
+					KUM = {
+							country_event = {
+									id = KUM.501
+								}
+						}
+				}
+
+	}
+	focus = {
+		id = kum_reforms
+		icon = GFX_goal_continuous_suppression
+		cost = 10
+		prerequisite = {
+			focus = kum_newchan
+		}
+		x = 22
+		y = 8
+			ai_will_do = {
+					factor = 10
+				}
+			completion_reward = {
+					log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus kum_reforms"
+					add_timed_idea = {
+							idea = KUM_recovery
+							days = 180
+						}
+				}
+
+	}
+	focus = {
+		id = kum_nominal_constitution
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		cost = 10
+		prerequisite = {
+			focus = kum_reforms
+		}
+		x = 21
+		y = 9
+			ai_will_do = {
+					factor = 10
+				}
+			completion_reward = {
+					log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus kum_nominal_constitution"
+					add_stability = 0.1
+					add_political_power = 150
+				}
+
+	}
+	focus = {
+		id = kum_religious_courts
+		icon = GFX_goal_generic_neutrality_focus
+		cost = 10
+		prerequisite = {
+			focus = kum_reforms
+		}
+		x = 23
+		y = 9
+			ai_will_do = {
+					factor = 10
+				}
+			completion_reward = {
+					log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus kum_religious_courts"
+					add_popularity = {
+							ideology = monarchy
+							popularity = 0.15
+						}
+					add_stability = 0.1
+				}
+
+	}
+	focus = {
+		id = kum_king_ter
+		icon = GFX_focus_rom_royal_dictatorship
+		cost = 5
+		prerequisite = {
+			focus = kum_newchan
+		}
+		x = 25
+		y = 8
+			ai_will_do = {
+					factor = 10
+				}
+			completion_reward = {
+					log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus kum_king_ter"
+					760 = {
+							add_extra_state_shared_building_slots  = 2
+							add_building_construction = {
+									type = infrastructure
+									level = 1
+									instant_build = yes
+								}
+							add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}
+						}
+				}
+
+	}
+	focus = {
+		id = kum_modern_taxes
+		icon = GFX_focus_mex_privatisation
+		cost = 10
+		prerequisite = {
+			focus = kum_religious_courts
+		}
+		prerequisite = {
+			focus = kum_nominal_constitution
+		}
+		x = 23
+		y = 10
+			ai_will_do = {
+					factor = 10
+				}
+			completion_reward = {
+					log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus kum_modern_taxes"
+					add_stability = -0.05
+					add_ideas = KUM_taxes
+				}
+
+	}
+	focus = {
+		id = kum_nohan
+		icon = GFX_focus_generic_strike_at_democracy2
+		cost = 10
+		prerequisite = {
+			focus = kum_nominal_constitution
+		}
+		prerequisite = {
+			focus = kum_religious_courts
+		}
+		x = 21
+		y = 10
+			ai_will_do = {
+					factor = 10
+				}
+			completion_reward = {
+					log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus kum_nohan"
+					add_timed_idea = {
+							idea = KUM_bur
+							days = 360
+						}
+					remove_ideas = KUM_oldhan
+				}
+
+	}
+	focus = {
+		id = kum_history_borders
+		icon = GFX_focus_generic_manpower
+		cost = 10
+		prerequisite = {
+			focus = kum_newchan
+		}
+		x = 28
+		y = 8
+			ai_will_do = {
+					factor = 10
+				}
+			completion_reward = {
+					log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus kum_history_borders"
+					KUM = {
+							add_state_core = 759
+							add_state_claim = 759
+						}
+				}
+
+	}
+	focus = {
+		id = kum_aristocrats
+		icon = GFX_goal_generic_national_unity
+		cost = 10
+		prerequisite = {
+			focus = kum_history_borders
+		}
+		x = 27
+		y = 9
+			ai_will_do = {
+					factor = 10
+				}
+			completion_reward = {
+					log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus kum_aristocrats"
+					unlock_decision_category_tooltip = KUM_aristocrats_category
+					custom_effect_tooltip = kum_tt_1
+				}
+
+	}
+	focus = {
+		id = kum_personal_guard
+		icon = GFX_focus_generic_military_mission
+		cost = 10
+		prerequisite = {
+			focus = kum_history_borders
+		}
+		x = 29
+		y = 9
+			ai_will_do = {
+					factor = 10
+				}
+			completion_reward = {
+					log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus kum_personal_guard"
+					army_experience = 5
+				}
+
+	}
+	focus = {
+		id = kum_local_nationalists
+		icon = GFX_focus_generic_little_entente
+		cost = 10
+		prerequisite = {
+			focus = kum_aristocrats
+		}
+		prerequisite = {
+			focus = kum_personal_guard
+		}
+		x = 27
+		y = 10
+			bypass = {
+					AND = {
+							NOT = {
+									country_exists = UYG
+									country_exists = TNG
+									country_exists = SIK
+									country_exists = DZH
+								}
+						}
+				}
+			ai_will_do = {
+					factor = 10
+				}
+			completion_reward = {
+					log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus kum_local_nationalists"
+					IF = {
+							limit = {
+									country_exists = UYG
+								}
+							ROOT = {
+									create_wargoal = {
+											type = annex_everything
+											target = UYG
+										}
+								}
+						}
+					IF = {
+							limit = {
+									country_exists = DZH
+								}
+							ROOT = {
+									create_wargoal = {
+											type = annex_everything
+											target = DZH
+										}
+								}
+						}
+					IF = {
+							limit = {
+									country_exists = SIK
+								}
+							ROOT= {
+									create_wargoal = {
+											type = annex_everything
+											target = SIK
+										}
+								}
+						}
+					IF = {
+							limit = {
+									country_exists = TNG
+								}
+							ROOT = {
+									create_wargoal = {
+											type = annex_everything
+											target = TNG
+										}
+								}
+						}
+					CHI = {
+							country_event = {
+									id = KUM.506
+								}
+						}
+				}
+
+	}
+	focus = {
+		id = kum_recovery
+		icon = GFX_focus_generic_industry_3
+		cost = 10
+		prerequisite = {
+			focus = kum_china_loyality
+			focus = kum_ourlaw
+		}
+		x = 17
+		y = 13
+			ai_will_do = {
+					factor = 10
+				}
+			completion_reward = {
+					log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus kum_recovery"
+					add_timed_idea = {
+							idea = KUM_renovating
+							days = 360
+						}
+				}
+
+	}
+	focus = {
+		id = kum_investitions
+		icon = GFX_goal_generic_construct_civ_factory
+		cost = 10
+		prerequisite = {
+			focus = kum_recovery
+		}
+		x = 15
+		y = 14
+			ai_will_do = {
+					factor = 10
+				}
+			completion_reward = {
+					log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus kum_investitions"
+					760 = {
+							add_extra_state_shared_building_slots = 1
+							add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}
+						}
+					IF = {
+							limit = {
+									KUM = {
+											has_full_control_of_state = 617
+										}
+								}
+							617 = {
+									add_building_construction = {
+											type = industrial_complex
+											level = 1
+											instant_build = yes
+										}
+								}
+						}
+					IF = {
+							limit = {
+									KUM = {
+											has_full_control_of_state = 1047
+										}
+								}
+							1047 = {
+									add_building_construction = {
+											type = industrial_complex
+											level = 1
+											instant_build = yes
+										}
+								}
+						}
+				}
+
+	}
+	focus = {
+		id = kum_railway
+		icon = GFX_goal_generic_construct_infrastructure
+		cost = 20
+		prerequisite = {
+			focus = kum_recovery
+		}
+		x = 17
+		y = 14
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus kum_railway"
+			760 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+				name = construction_tech
+				bonus = 0.5
+				uses = 2
+				category = construction_tech
+			}
+		}
+
+	}
+	focus = {
+		id = kum_war_industry
+		icon = GFX_goal_generic_construct_civilian
+		cost = 10
+		prerequisite = {
+			focus = kum_recovery
+		}
+		x = 19
+		y = 14
+			ai_will_do = {
+					factor = 10
+				}
+			completion_reward = {
+					log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus kum_war_industry"
+					760 = {
+							add_extra_state_shared_building_slots = 2
+							add_building_construction = {
+									type = arms_factory
+									level = 2
+									instant_build = yes
+								}
+						}
+				}
+
+	}
+	focus = {
+		id = kum_unification
+		icon = GFX_goal_continuous_increase_nu
+		cost = 10
+		prerequisite = {
+			focus = kum_central_gov
+		}
+		prerequisite = {
+			focus = kum_nolocal
+		}
+		x = 2
+		y = 9
+			available = {
+					KUM = {
+							compare_autonomy_state < integrated_puppet
+						}
+				}
+			ai_will_do = {
+					factor = 10
+				}
+			completion_reward = {
+					log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus kum_unification"
+					CHI = {
+							country_event = {
+									id = KUM.001
+								}
+						}
+					IF = {
+						limit = { KUM = {is_ai = no} CHI = {is_ai = yes}}
+						CHI = {
+							change_tag_from = ROOT
+						}
+					}
+					else = {
+						CHI = {
+							annex_country = {
+								target = KUM
+								transfer_troops = yes
+							}
+						}
+					}
+				}
+
+	}
+	focus = {
+		id = kum_uguyrs
+		icon = GFX_goal_continuous_def_against_influence
+		cost = 10
+		prerequisite = {
+			focus = kum_personal_guard
+		}
+		prerequisite = {
+			focus = kum_aristocrats
+		}
+		x = 29
+		y = 10
+			ai_will_do = {
+					factor = 10
+				}
+			completion_reward = {
+					log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus kum_uguyrs"
+					add_ideas = KUM_uguyrs
+				}
+
+	}
+	focus = {
+		id = kum_traditions
+		icon = GFX_focus_generic_monarchy_2
+		cost = 10
+		prerequisite = {
+			focus = kum_local_nationalists
+		}
+		prerequisite = {
+			focus = kum_uguyrs
+		}
+		prerequisite = {
+			focus = kum_modern_taxes
+		}
+		prerequisite = {
+			focus = kum_nohan
+		}
+		x = 25
+		y = 11
+			ai_will_do = {
+					factor = 10
+				}
+			completion_reward = {
+					log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus kum_traditions"
+					add_stability = 0.1
+					add_war_support = 0.1
+					add_popularity = {
+							ideology = monarchy
+							popularity = 0.05
+						}
+					add_political_power = 50
+				}
+
+	}
+	focus = {
+		id = kum_china_loyality
+		icon = GFX_focus_chi_cooperation_with_the_nationalists
+		cost = 10
+		prerequisite = {
+			focus = kum_traditions
+		}
+		mutually_exclusive = {
+			focus = kum_unbeliveable_plan
+		}
+		x = 24
+		y = 12
+			ai_will_do = {
+					factor = 10
+				}
+			completion_reward = {
+					log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus kum_china_loyality"
+					add_offsite_building = {
+							type = industrial_complex
+							level = 1
+						}
+					add_autonomy_ratio = {
+							value = -0.15
+							localization = KUM_loyality_mod
+						}
+					add_opinion_modifier = {
+							target = CHI
+							modifier = CHI_loyality
+						}
+				}
+
+	}
+	focus = {
+		id = kum_unbeliveable_plan
+		icon = GFX_goal_generic_small_arms
+		cost = 10
+		prerequisite = {
+			focus = kum_traditions
+		}
+		mutually_exclusive = {
+			focus = kum_china_loyality
+		}
+		bypass = {
+			is_subject = no
+		}
+		x = 26
+		y = 12
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus kum_unbeliveable_plan"
+			CHI = {
+				end_puppet = KUM
+				country_event = { id = KUM.505 }
+			}
+		}
+	}
+	focus = {
+		id = kum_beijing_academy
+		icon = GFX_focus_research
+		cost = 10
+		prerequisite = {
+			focus = kum_war_industry
+		}
+		prerequisite = {
+			focus = kum_railway
+		}
+		prerequisite = {
+			focus = kum_investitions
+		}
+		x = 17
+		y = 15
+			ai_will_do = {
+					factor = 10
+				}
+			completion_reward = {
+					log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus kum_beijing_academy"
+					add_research_slot = 1
+				}
+
+	}
+	focus = {
+		id = kum_new_melon
+		icon = GFX_goal_tfv_generic_tech_sharing
+		cost = 7.2
+		prerequisite = {
+			focus = kum_agrarian_reform
+		}
+		x = -2
+		y = 1
+		relative_position_id = kum_agrarian_reform
+			ai_will_do = {
+					factor = 10
+				}
+			completion_reward = {
+					log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus kum_new_melon"
+					remove_ideas = kum_melons
+					add_ideas = KUM_new_melons
+					custom_effect_tooltip = KUM_mel1_tt
+				}
+
+	}
+	focus = {
+		id = kum_light_industry
+		icon = GFX_goal_generic_construct_civ_factory
+		cost = 7.2
+		prerequisite = {
+			focus = kum_agrarian_reform
+		}
+		x = 2
+		y = 1
+		relative_position_id = kum_agrarian_reform
+			ai_will_do = {
+					factor = 10
+				}
+			completion_reward = {
+					log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus kum_light_industry"
+					760 = {
+							add_extra_state_shared_building_slots = 2
+							add_building_construction = {
+									type = infrastructure
+									level = 1
+									instant_build = yes
+								}
+							add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}
+						}
+				}
+
+	}
+	focus = {
+		id = kum_heretic_camps
+		icon = GFX_focus_generic_support_the_left_right
+		cost = 7.2
+		prerequisite = {
+			focus = kum_recovery_industry
+		}
+		x = -1
+		y = 1
+		relative_position_id = kum_recovery_industry
+		available = {
+			is_subject = no
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus kum_heretic_camps"
+			add_ideas = KUM_heretics
+		}
+	}
+	focus = {
+		id = kum_modernizing_building
+		icon = GFX_goal_generic_construct_civilian
+		cost = 7.2
+		prerequisite = {
+			focus = kum_heretic_camps
+		}
+		x = -1
+		y = 1
+		relative_position_id = kum_heretic_camps
+			ai_will_do = {
+					factor = 10
+				}
+			completion_reward = {
+					log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus kum_modernizing_building"
+					760 = {
+							add_extra_state_shared_building_slots = 2
+							add_building_construction = {
+									type = infrastructure
+									level = 1
+									instant_build = yes
+								}
+							add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}
+						}
+					add_ideas = KUM_building
+				}
+
+	}
+	focus = {
+		id = kum_industry_on_bones
+		icon = GFX_goal_generic_secret_weapon
+		cost = 7.2
+		prerequisite = {
+			focus = kum_heretic_camps
+		}
+		x = 1
+		y = 1
+		relative_position_id = kum_heretic_camps
+			ai_will_do = {
+					factor = 10
+				}
+			completion_reward = {
+					log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus kum_industry_on_bones"
+					760 = {
+							add_extra_state_shared_building_slots = 2
+							add_building_construction = {
+									type = arms_factory
+									level = 2
+									instant_build = yes
+								}
+							add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}
+						}
+				}
+
+	}
+	focus = {
+		id = kum_foreign_investors
+		icon = GFX_focus_invite_finland
+		cost = 7.2
+		prerequisite = {
+			focus = kum_modernizing_building
+		}
+		prerequisite = {
+			focus = kum_industry_on_bones
+		}
+		x = -1
+		y = 1
+		relative_position_id = kum_industry_on_bones
+			ai_will_do = {
+					factor = 10
+				}
+			completion_reward = {
+					log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus kum_foreign_investors"
+					add_tech_bonus = {
+							name = industry_bonus
+							bonus = 1.0
+							uses = 1
+							category = industry
+						}
+				}
+
+	}
+	focus = {
+		id = kum_private_sector
+		icon = GFX_focus_generic_self_management
+		cost = 7.2
+		prerequisite = {
+			focus = kum_nofeodals
+		}
+		x = -1
+		y = 1
+		relative_position_id = kum_nofeodals
+			ai_will_do = {
+					factor = 10
+				}
+			completion_reward = {
+					log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus kum_private_sector"
+					add_political_power = 75
+					add_tech_bonus = {
+							name = construction_tech_bonus
+							bonus = 0.5
+							uses = 2
+							category = construction_tech
+						}
+				}
+
+	}
+	focus = {
+		id = kum_infrastructure
+		icon = GFX_goal_generic_construct_infrastructure
+		cost = 7.2
+		prerequisite = {
+			focus = kum_nofeodals
+		}
+		x = 1
+		y = 1
+		relative_position_id = kum_nofeodals
+			ai_will_do = {
+					factor = 10
+				}
+			completion_reward = {
+					log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus kum_nofeodals"
+					760 = {
+							add_extra_state_shared_building_slots = 2
+							add_building_construction = {
+									type = industrial_complex
+									level = 2
+									instant_build = yes
+								}
+							add_building_construction = {
+									type = air_base
+									level = 1
+									instant_build = yes
+								}
+						}
+				}
+
+	}
+	focus = {
+		id = kum_geologic
+		icon = GFX_goal_generic_oil_refinery
+		cost = 7.2
+		prerequisite = {
+			focus = kum_infrastructure
+		}
+		prerequisite = {
+			focus = kum_private_sector
+		}
+		x = -1
+		y = 1
+		relative_position_id = kum_infrastructure
+			ai_will_do = {
+					factor = 10
+				}
+			completion_reward = {
+					log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus kum_geologic"
+					760 = {
+							add_extra_state_shared_building_slots = 1
+							add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}
+					}
+					add_resource = {
+							type = oil
+							amount = 4
+							state = 760
+					}
+				}
+
+	}
+}
