@@ -966,7 +966,7 @@ focus_tree = {
 		prerequisite = {
 			focus = NEP_support_of_the_army
 		}
-		x = -2
+		x = 2
 		y = 3
 		relative_position_id = NEP_collusion_old_and_younger
 
@@ -995,7 +995,7 @@ focus_tree = {
 	}
 	focus = {
 		id = NEP_claim_tibet
-		icon = GFX_goal_generic_political_pressure
+		icon = GFX_z_goal_revenge_tibet
 		cost = 10
 		prerequisite = {
 			focus = NEP_recall_past_claims
@@ -1063,6 +1063,48 @@ focus_tree = {
 		}
 	}
 	focus = {
+		id = NEP_support_buddism
+		icon = GFX_z_goal_win_nepal_democracy
+		cost = 10
+		prerequisite = {
+			focus = NEP_nepalese_national_assembly
+			focus = NEP_collusion_old_and_younger
+		}
+		available = {
+			NOT = { has_civil_war = yes }
+			NOT = { has_completed_focus = NEP_repress_buddism }
+		}
+		x = -4
+		y = 1
+		relative_position_id = NEP_nepalese_national_assembly
+
+		completion_reward = {
+			add_political_power = 100
+			add_stability = 0.05
+		}
+	}
+	focus = {
+		id = NEP_repress_buddism
+		icon = GFX_z_goal_win_nepal_democracy
+		cost = 10
+		prerequisite = {
+			focus = NEP_nepalese_national_assembly
+			focus = NEP_fighting_with_nna
+		}
+		available = {
+			NOT = { has_civil_war = yes }
+			NOT = { has_completed_focus = NEP_support_buddism }
+		}
+		x = 3
+		y = 1
+		relative_position_id = NEP_nepalese_national_assembly
+
+		completion_reward = {
+			add_political_power = 100
+			add_stability = 0.05
+		}
+	}
+	focus = {
 		id = NEP_victory_popular_movement
 		icon = GFX_z_goal_win_nepal_democracy
 		cost = 10
@@ -1120,13 +1162,28 @@ focus_tree = {
 		}
 	}
 	focus = {
+		id = NEP_free_credit_for_tibet
+		icon = GFX_z_goal_fight_for_money
+		cost = 10
+		prerequisite = {
+			focus = NEP_close_system_britts
+		}
+		x = -1
+		y = 3
+		relative_position_id = NEP_nepalese_national_assembly
+
+		completion_reward = {
+			remove_ideas = NEP_britts_system
+		}
+	}
+	focus = {
 		id = NEP_create_nepali_peoples_weekly
 		icon = GFX_z_goal_worker_press_commi
 		cost = 10
 		prerequisite = {
 			focus = NEP_victory_popular_movement
 		}
-		x = 0
+		x = 2
 		y = 2
 		relative_position_id = NEP_nepalese_national_assembly
 
@@ -1141,7 +1198,7 @@ focus_tree = {
 		prerequisite = {
 			focus = NEP_victory_popular_movement
 		}
-		x = 2
+		x = 0
 		y = 2
 		relative_position_id = NEP_nepalese_national_assembly
 
@@ -1155,8 +1212,6 @@ focus_tree = {
 		cost = 10
 		prerequisite = {
 			focus = NEP_create_nepali_peoples_weekly
-		}
-		prerequisite = {
 			focus = NEP_prepare_a_constitution
 		}
 		x = 1
@@ -1228,8 +1283,8 @@ focus_tree = {
 			focus = NEP_cultural_heritage
 			focus = NEP_victory_popular_movement
 		}
-		x = -3
-		y = 3
+		x = -2
+		y = 6
 		relative_position_id = NEP_fighting_with_nna
 
 		completion_reward = {
@@ -1471,7 +1526,7 @@ focus_tree = {
 	}
 	focus = {
 		id = NEP_join_butan
-		icon = GFX_goal_generic_occupy_states_ongoing_war
+		icon = GFX_z_goal_butan_revenge
 		cost = 10
 		prerequisite = {
 			focus = NEP_claim_tibet
@@ -1568,6 +1623,8 @@ focus_tree = {
 			focus = NEP_save_old_british_treaties
 			focus = NEP_support_british_war_with_ger
 			focus = NEP_neutral_in_the_war
+			focus = NEP_china_ally
+			focus = NEP_INK_ally
 		}
 		available = {
 			has_government = monarchy
@@ -1579,8 +1636,8 @@ focus_tree = {
 				HUN = { has_government = monarchy }
 			}
 		}
-		x = 2
-		y = 4
+		x = 1
+		y = 7
 		relative_position_id = NEP_collusion_old_and_younger
 
 		completion_reward = {
@@ -1597,8 +1654,8 @@ focus_tree = {
 		prerequisite = {
 			focus = NEP_alliance_with_kings_revenge
 		}
-		x = 2
-		y = 5
+		x = 1
+		y = 8
 		relative_position_id = NEP_collusion_old_and_younger
 
 		completion_reward = {
@@ -1617,9 +1674,6 @@ focus_tree = {
 		icon = GFX_goal_molotov_ribbentrop_pact
 		cost = 10
 		prerequisite = {
-			focus = NEP_recall_past_claims
-		}
-		prerequisite = {
 			focus = NEP_open_embassy_for_great_c
 		}
 		mutually_exclusive = {
@@ -1627,12 +1681,11 @@ focus_tree = {
 			focus = NEP_save_old_british_treaties
 			focus = NEP_support_british_war_with_ger
 			focus = NEP_neutral_in_the_war
+			focus = NEP_china_ally
+			focus = NEP_INK_ally
 		}
-		available = {
-			has_government = monarchy
-		}
-		x = 4
-		y = 4
+		x = 3
+		y = 7
 		relative_position_id = NEP_collusion_old_and_younger
 
 		completion_reward = {
@@ -1654,9 +1707,11 @@ focus_tree = {
 			focus = NEP_alliance_with_kings_revenge
 			focus = NEP_neutral_in_the_war
 			focus = NEP_support_british_war_with_ger
+			focus = NEP_china_ally
+			focus = NEP_INK_ally
 		}
-		x = 6
-		y = 4
+		x = 5
+		y = 7
 		relative_position_id = NEP_collusion_old_and_younger
 
 		completion_reward = {
@@ -1680,8 +1735,8 @@ focus_tree = {
 		prerequisite = {
 			focus = NEP_save_old_british_treaties
 		}
-		x = 6
-		y = 5
+		x = 5
+		y = 8
 		relative_position_id = NEP_collusion_old_and_younger
 
 		completion_reward = {
@@ -1697,6 +1752,72 @@ focus_tree = {
 		}
 	}
 	focus = {
+		id = NEP_INK_ally
+		icon = GFX_focus_chi_british_cooperation
+		cost = 10
+		prerequisite = {
+			focus = NEP_open_embassy_for_great_c
+		}
+		mutually_exclusive = {
+			focus = NEP_own_coalition
+			focus = NEP_neutral_in_the_war
+			focus = NEP_alliance_with_kings_revenge
+			focus = NEP_neutral_in_the_war
+			focus = NEP_support_british_war_with_ger
+			focus = NEP_china_ally
+		}
+		x = 7
+		y = 7
+		relative_position_id = NEP_collusion_old_and_younger
+
+		completion_reward = {
+			add_opinion_modifier = {
+				target = ENG
+				modifier = NEP_british_concessions_op
+			}
+			ENG = {
+				add_opinion_modifier = {
+					target = NEP
+					modifier = NEP_british_concessions_op
+				}
+				give_guarantee = NEP
+			}
+		}
+	}
+	focus = {
+		id = NEP_china_ally
+		icon = GFX_focus_chi_british_cooperation
+		cost = 10
+		prerequisite = {
+			focus = NEP_open_embassy_for_great_c
+		}
+		mutually_exclusive = {
+			focus = NEP_own_coalition
+			focus = NEP_neutral_in_the_war
+			focus = NEP_alliance_with_kings_revenge
+			focus = NEP_neutral_in_the_war
+			focus = NEP_support_british_war_with_ger
+			focus = NEP_INK_ally
+		}
+		x = 9
+		y = 7
+		relative_position_id = NEP_collusion_old_and_younger
+
+		completion_reward = {
+			add_opinion_modifier = {
+				target = ENG
+				modifier = NEP_british_concessions_op
+			}
+			ENG = {
+				add_opinion_modifier = {
+					target = NEP
+					modifier = NEP_british_concessions_op
+				}
+				give_guarantee = NEP
+			}
+		}
+	}
+	focus = {
 		id = NEP_open_embassy_for_great_c
 		icon = GFX_focus_hol_the_fourth_ally
 		cost = 10
@@ -1704,7 +1825,7 @@ focus_tree = {
 			focus = NEP_end_isolation
 		}
 		x = 3
-		y = 3
+		y = 6
 		relative_position_id = NEP_collusion_old_and_younger
 
 		completion_reward = {
@@ -1777,9 +1898,219 @@ focus_tree = {
 		prerequisite = {
 			focus = NEP_close_system_britts
 		}
-		x = -2
+		x = -3
 		y = 3
 		relative_position_id = NEP_nepalese_national_assembly
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+			}
+			add_ideas = NEP_abolition_privileged_land_tenure_idea
+		}
+	}
+	focus = {
+		id = NEP_end_rana
+		icon = GFX_z_goal_close_land_aristo
+		cost = 10
+		prerequisite = {
+			focus = NEP_abolition_privileged_land_tenure
+		}
+		mutually_exclusive = {
+			focus = NEP_create_commi
+		}
+		x = -3
+		y = 4
+		relative_position_id = NEP_nepalese_national_assembly
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+			}
+			add_ideas = NEP_abolition_privileged_land_tenure_idea
+		}
+	}
+	focus = {
+		id = NEP_chains_for_king
+		icon = GFX_z_goal_close_land_aristo
+		cost = 10
+		prerequisite = {
+			focus = NEP_end_rana
+		}
+		x = 0
+		y = 1
+		relative_position_id = NEP_end_rana
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+			}
+			add_ideas = NEP_abolition_privileged_land_tenure_idea
+		}
+	}
+	focus = {
+		id = NEP_raja_friends
+		icon = GFX_z_goal_close_land_aristo
+		cost = 10
+		prerequisite = {
+			focus = NEP_chains_for_king
+		}
+		x = 0
+		y = 2
+		relative_position_id = NEP_end_rana
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+			}
+			add_ideas = NEP_abolition_privileged_land_tenure_idea
+		}
+	}
+	focus = {
+		id = NEP_create_commi
+		icon = GFX_z_goal_close_land_aristo
+		cost = 10
+		prerequisite = {
+			focus = NEP_apply_shastri_social_reform
+		}
+		mutually_exclusive = {
+			focus = NEP_end_rana
+		}
+		x = 1
+		y = 4
+		relative_position_id = NEP_nepalese_national_assembly
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+			}
+			add_ideas = NEP_abolition_privileged_land_tenure_idea
+		}
+	}
+	focus = {
+		id = NEP_end_shah
+		icon = GFX_z_goal_close_land_aristo
+		cost = 10
+		prerequisite = {
+			focus = NEP_create_commi
+		}
+		x = 0
+		y = 1
+		relative_position_id = NEP_create_commi
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+			}
+			add_ideas = NEP_abolition_privileged_land_tenure_idea
+		}
+	}
+	focus = {
+		id = NEP_end_Dalai_lama
+		icon = GFX_z_goal_close_land_aristo
+		cost = 10
+		prerequisite = {
+			focus = NEP_create_commi
+		}
+		x = -2
+		y = 1
+		relative_position_id = NEP_create_commi
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+			}
+			add_ideas = NEP_abolition_privileged_land_tenure_idea
+		}
+	}
+	focus = {
+		id = NEP_end_dragon_king
+		icon = GFX_z_goal_close_land_aristo
+		cost = 10
+		prerequisite = {
+			focus = NEP_create_commi
+		}
+		x = 2
+		y = 1
+		relative_position_id = NEP_create_commi
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+			}
+			add_ideas = NEP_abolition_privileged_land_tenure_idea
+		}
+	}
+	focus = {
+		id = NEP_end_chogyal
+		icon = GFX_z_goal_close_land_aristo
+		cost = 10
+		prerequisite = {
+			focus = NEP_end_shah
+		}
+		mutually_exclusive = {
+			focus = NEP_dick_coalition
+		}
+		x = -1
+		y = 2
+		relative_position_id = NEP_create_commi
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+			}
+			add_ideas = NEP_abolition_privileged_land_tenure_idea
+		}
+	}
+	focus = {
+		id = NEP_dick_coalition
+		icon = GFX_z_goal_close_land_aristo
+		cost = 10
+		prerequisite = {
+			focus = NEP_end_shah
+		}
+		mutually_exclusive = {
+			focus = NEP_end_chogyal
+		}
+		x = 1
+		y = 2
+		relative_position_id = NEP_create_commi
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+			}
+			add_ideas = NEP_abolition_privileged_land_tenure_idea
+		}
+	}
+	focus = {
+		id = NEP_commi_for_all_ppl
+		icon = GFX_z_goal_close_land_aristo
+		cost = 10
+		prerequisite = {
+			focus = NEP_create_nepali_peoples_weekly
+		}
+		x = 1
+		y = 1
+		relative_position_id = NEP_create_nepali_peoples_weekly
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+			}
+			add_ideas = NEP_abolition_privileged_land_tenure_idea
+		}
+	}
+	focus = {
+		id = NEP_ateism
+		icon = GFX_z_goal_close_land_aristo
+		cost = 10
+		prerequisite = {
+			focus = NEP_commi_for_all_ppl
+		}
+		x = 1
+		y = 2
+		relative_position_id = NEP_create_nepali_peoples_weekly
 
 		completion_reward = {
 			random_owned_controlled_state = {
@@ -1801,9 +2132,11 @@ focus_tree = {
 			focus = NEP_save_old_british_treaties
 			focus = NEP_alliance_with_kings_revenge
 			focus = NEP_own_coalition
+			focus = NEP_china_ally
+			focus = NEP_INK_ally
 		}
-		x = -5
-		y = 4
+		x = -3
+		y = 7
 		relative_position_id = NEP_fighting_with_nna
 
 		completion_reward = {
@@ -1826,9 +2159,11 @@ focus_tree = {
 			focus = NEP_save_old_british_treaties
 			focus = NEP_own_coalition
 			focus = NEP_alliance_with_kings_revenge
+			focus = NEP_china_ally
+			focus = NEP_INK_ally
 		}
 		x = -1
-		y = 4
+		y = 7
 		relative_position_id = NEP_fighting_with_nna
 
 		completion_reward = {
