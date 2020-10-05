@@ -1404,7 +1404,7 @@ focus_tree = {
 		x = 2
 		y = 9
 		available = {
-			has_autonomy_state = integrated_puppet
+			has_autonomy_state = autonomy_integrated_puppet
 		}
 		ai_will_do = {
 			factor = 10
