@@ -1,194 +1,113 @@
 KUM_aristocrats_category = {
+
 	ar_hotan = {
 		icon = decision_generic_industry
-		allowed = {
-			original_tag = KUM
-		}
 		cost = 20
 		available = {
-			287 = {
-				NOT = {
-					is_core_of = KUM
-				}
-			}
-			KUM = {
-				controls_state = 287
-			}
+			controls_state = 287
+		}
+		visible = {
+			287 = { NOT = { is_core_of = KUM } }
 		}
 		fire_only_once = yes
 		complete_effect = {
-			KUM = {
-				add_state_core = 287
-			}
-		}
-		visible = {
-			has_completed_focus = KUM_aristocrats
-			
+			add_state_core = 287
 		}
 	}
+	
 	ar_kunlunshan = {
 		icon = decision_generic_industry
-		allowed = {
-			original_tag = KUM
-		}
 		cost = 20
 		available = {
-			759 = {
-				NOT = {
-					is_core_of = KUM
-				}
-			}
-			KUM = {
-				controls_state = 759
-			}
+			controls_state = 759
+		}
+		visible = {
+			759 = { NOT = { is_core_of = KUM } }
 		}
 		fire_only_once = yes
 		complete_effect = {
-			KUM = {
-				add_state_core = 759
-			}
-		}
-		visible = {
-			has_completed_focus = KUM_aristocrats
-			
+			add_state_core = 759
 		}
 	}
+	
 	ar_kasgar = {
 		icon = decision_generic_industry
-		allowed = {
-			original_tag = KUM
-		}
 		cost = 20
 		available = {
-			619 = {
-				NOT = {
-					is_core_of = KUM
-				}
-			}
-			KUM = {
-				controls_state = 619
-			}
+			controls_state = 619
+		}
+		visible = {
+			619 = { NOT = { is_core_of = KUM } }
 		}
 		fire_only_once = yes
 		complete_effect = {
-			KUM = {
-				add_state_core = 619
-			}
-		}
-		visible = {
-			has_completed_focus = KUM_aristocrats
-			
+			add_state_core = 619
 		}
 	}
+	
 	ar_takamaklan = {
 		icon = decision_generic_industry
-		allowed = {
-			original_tag = KUM
-		}
 		cost = 20
 		available = {
-			1046 = {
-				NOT = {
-					is_core_of = KUM
-				}
-			}
-			KUM = {
-				controls_state = 1046
-			}
+			controls_state = 1046
+		}
+		visible = {
+			1046 = { NOT = { is_core_of = KUM } }
 		}
 		fire_only_once = yes
 		complete_effect = {
-			KUM = {
-				add_state_core = 1046
-			}
-		}
-		visible = {
-			has_completed_focus = KUM_aristocrats
-			
+			add_state_core = 1046
 		}
 	}
+	
 	ar_aksu = {
 		icon = decision_generic_industry
-		allowed = {
-			original_tag = KUM
-		}
 		cost = 20
 		available = {
-			1047 = {
-				NOT = {
-					is_core_of = KUM
-				}
-			}
-			KUM = {
-				controls_state = 1047
-			}
+			controls_state = 1047
+		}
+		visible = {
+			1047 = { NOT = { is_core_of = KUM } }
 		}
 		fire_only_once = yes
 		complete_effect = {
-			KUM = {
-				add_state_core = 1047
-			}
-		}
-		visible = {
-			has_completed_focus = KUM_aristocrats
-			
+			add_state_core = 1047
 		}
 	}
+	
 	ar_jungaria = {
 		icon = decision_generic_industry
-		allowed = {
-			original_tag = KUM
-		}
 		cost = 20
 		available = {
-			618 = {
-				NOT = {
-					is_core_of = KUM
-				}
-			}
-			KUM = {
-				controls_state = 618
-			}
+			controls_state = 618
+		}
+		visible = {
+			618 = { NOT = { is_core_of = KUM } }
 		}
 		fire_only_once = yes
 		complete_effect = {
-			KUM = {
-				add_state_core = 618
-			}
-		}
-		visible = {
-			has_completed_focus = KUM_aristocrats
-			
+			add_state_core = 618
 		}
 	}
+	
 	ar_dihua = {
 		icon = decision_generic_industry
-		allowed = {
-			original_tag = KUM
-		}
 		cost = 20
 		available = {
-			617 = {
-				NOT = {
-					is_core_of = KUM
-				}
-			}
-			KUM = {
-				controls_state = 617
-			}
+			controls_state = 617
+		}
+		visible = {
+			617 = { NOT = { is_core_of = KUM } }
 		}
 		fire_only_once = yes
 		complete_effect = {
-			KUM = {
-				add_state_core = 617
-			}
-		}
-		visible = {
-			has_completed_focus = KUM_aristocrats
+			add_state_core = 617
 		}
 	}
 }
+
 KUM_melons_category = {
+
 	mel_dung = {
 		icon = decision_generic_industry
 		available = {
@@ -213,6 +132,7 @@ KUM_melons_category = {
 			}
 		}
 	}
+	
 	mel_sink = {
 		icon = decision_generic_industry
 		available = {
@@ -246,6 +166,7 @@ KUM_melons_category = {
 			}
 		}
 	}
+	
 	mel_loc = {
 		icon = decision_generic_industry
 		available = {
@@ -265,6 +186,7 @@ KUM_melons_category = {
 			}
 		}
 	}
+	
 	mel_san_ma = {
 		icon = decision_generic_industry
 		available = {
@@ -285,6 +207,7 @@ KUM_melons_category = {
 			}
 		}
 	}
+	
 	mel_chin = {
 		icon = decision_generic_industry
 		available = {
@@ -313,6 +236,7 @@ KUM_melons_category = {
 			}			
 		}
 	}
+	
 	mel_bachci = {
 		icon = decision_generic_industry
 		available = {
@@ -340,6 +264,7 @@ KUM_melons_category = {
 			custom_effect_tooltip = KUM_bahchi_tt
 		}
 	}
+	
 	mel_greenhouse = {
 		icon = decision_generic_industry
 		fire_only_once = yes
@@ -365,8 +290,8 @@ KUM_melons_category = {
 				}
 			}
 		}
-		
 	}
+	
 	mel_greenhouse_res = {
 		icon = decision_generic_industry
 		available = {
@@ -398,6 +323,5 @@ KUM_melons_category = {
 			}
 			custom_effect_tooltip = KUM_tep_melon_tt
 		}
-		
 	}
 }

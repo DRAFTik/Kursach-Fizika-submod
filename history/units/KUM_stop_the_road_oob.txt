@@ -1,0 +1,29 @@
+##### Division Templates #####
+
+division_template = {
+	name = "Sinkang Garnison"
+	regiments = {
+		infantry = {x = 0 y = 0}
+		infantry = {x = 0 y = 1}
+		infantry = {x = 1 y = 0}
+		infantry = {x = 1 y = 1}
+		infantry = {x = 0 y = 2}
+		infantry = {x = 1 y = 2}
+		
+	}
+}
+
+units = {
+	division = {
+		name = "Sinkang Garnison"
+		location = 4714
+		division_template = "Sinkang Garnison"
+		start_experience_factor = 0.1
+	}
+	division = {
+		name = "Sinkang Garnison"
+		location = 7792
+		division_template = "Sinkang Garnison"
+		start_experience_factor = 0.1
+	}
+}

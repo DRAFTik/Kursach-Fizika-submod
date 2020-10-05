@@ -39,7 +39,7 @@ units = {
 		}
 		location = 12524
 		division_template = "Kumul Support"
-		force_equipment_variants = {infantry_equipment_1 = {owner = "KUM"}}
+		force_equipment_variants = { infantry_equipment_0 = {owner = "KUM"} }
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.5
 	}
@@ -50,7 +50,7 @@ units = {
 		}
 		location = 4704
 		division_template = "Kumul Support"
-		force_equipment_variants = {infantry_equipment_1 = {owner = "KUM"}}
+		force_equipment_variants = { infantry_equipment_0 = {owner = "KUM"} }
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.5
 	}

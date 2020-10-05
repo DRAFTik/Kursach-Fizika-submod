@@ -269,37 +269,50 @@ focus_tree = {
 		}
 		x = 5
 		y = 4
-			ai_will_do = {
-					factor = 10
+		ai_will_do = {
+			factor = 10
+		}
+		bypass = {
+			has_full_control_of_state = 617
+			has_full_control_of_state = 618
+			has_full_control_of_state = 619
+			has_full_control_of_state = 1046
+			has_full_control_of_state = 1047
+			has_full_control_of_state = 1120
+			has_full_control_of_state = 1121
+			has_full_control_of_state = 1122
+			has_full_control_of_state = 287
+			has_full_control_of_state = 759
+			has_full_control_of_state = 760
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus KUM_stop_the_road"
+			if = {
+				limit = { is_subject_of = SIK }
+				SIK = { end_puppet = ROOT }
+			}
+			if = {
+				limit = {
+					country_exists = SIK
+					NOT = { has_war_with = SIK }
 				}
-			bypass = {
-					KUM = {
-							has_full_control_of_state = 617
-							has_full_control_of_state = 618
-							has_full_control_of_state = 619
-							has_full_control_of_state = 1046
-							has_full_control_of_state = 1047
-							has_full_control_of_state = 1120
-							has_full_control_of_state = 1121
-							has_full_control_of_state = 1122
-							has_full_control_of_state = 287
-							has_full_control_of_state = 759
-							has_full_control_of_state = 760
-						}
+				declare_war_on = {
+					target = SIK
+					type = annex_everything
 				}
-			completion_reward = {
-					log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus KUM_stop_the_road"
-					SIK = {
-							end_puppet = KUM
-						}
-					KUM = {
-							declare_war_on = {
-									target = SIK
-									type = annex_everything
-								}
-						}
+			}
+			effect_tooltip = {
+				create_unit = {
+					division = "name = \"Sinkang Garnison\" division_template = \"Sinkang Garnison\" start_experience_factor = 0.1" 
+					owner = ROOT
+					count = 2
+					allow_spawning_on_enemy_provs = yes
 				}
-
+			}
+			hidden_effect = {
+				load_oob = "KUM_stop_the_road_oob"
+			}
+		}
 	}
 
 	focus = {
@@ -314,34 +327,30 @@ focus_tree = {
 		}
 		x = 5
 		y = 6
-			available = {
-					KUM = {
-							has_war = no
-							has_full_control_of_state = 617
-							has_full_control_of_state = 618
-							has_full_control_of_state = 619
-							has_full_control_of_state = 1046
-							has_full_control_of_state = 1047
-							has_full_control_of_state = 1120
-							has_full_control_of_state = 1121
-							has_full_control_of_state = 1122
-							has_full_control_of_state = 287
-							has_full_control_of_state = 759
-							has_full_control_of_state = 760
-						}
-				}
-			ai_will_do = {
-					factor = 10
-				}
-			completion_reward = {
-					log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus KUM_head_of_sinkang"
-					CHI = {
-							country_event = {
-									id = NWkumul.288
-								}
-						}
-				}
-
+		available = {
+			has_war = no
+			has_full_control_of_state = 617
+			has_full_control_of_state = 618
+			has_full_control_of_state = 619
+			has_full_control_of_state = 1046
+			has_full_control_of_state = 1047
+			has_full_control_of_state = 1120
+			has_full_control_of_state = 1121
+			has_full_control_of_state = 1122
+			has_full_control_of_state = 287
+			has_full_control_of_state = 759
+			has_full_control_of_state = 760
+			country_exists = CHI
+			NOT = { has_war_with = CHI }
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus KUM_head_of_sinkang"
+			CHI = { country_event = { id = NWkumul.288 days = 1 } }
+		}
 	}
 
 	focus = {
@@ -356,24 +365,22 @@ focus_tree = {
 		}
 		x = 2
 		y = 7
-			ai_will_do = {
-					factor = 10
-				}
-			available = {
-					KUM = {
-							has_war = no
-							has_full_control_of_state = 617
-						}
-				}
-			completion_reward = {
-					log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus KUM_china_integration"
-					set_cosmetic_tag = KUM_sink_neutrality
-					set_cosmetic_tag = KUM_puppet
-					KUM = {
-							add_ideas = KUM_integration
-						}
-				}
-
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+			has_war = no
+			has_full_control_of_state = 617
+			country_exists = CHI
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus KUM_china_integration"
+			CHI = { puppet = ROOT }
+			add_ideas = KUM_integration
+			hidden_effect = {
+				set_cosmetic_tag = KUM_puppet
+			}
+		}
 	}
 
 	focus = {
@@ -385,14 +392,19 @@ focus_tree = {
 		}
 		x = 1
 		y = 8
-			ai_will_do = {
-					factor = 10
-				}
-			completion_reward = {
-					log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus KUM_central_gov"
-					add_ideas = KUM_integration_2
-				}
-
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+			is_subject_of = CHI
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus KUM_central_gov"
+			swap_ideas = {
+				remove_idea = KUM_integration
+				add_idea = KUM_integration_2
+			}
+		}
 	}
 
 	focus = {
@@ -404,24 +416,23 @@ focus_tree = {
 		}
 		x = 3
 		y = 8
-			ai_will_do = {
-					factor = 10
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus KUM_nolocal"
+			add_autonomy_score = {
+				value = -500
+				localization = KUM_nolocal
+			}
+			every_owned_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
 				}
-			completion_reward = {
-					log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus KUM_nolocal"
-					add_autonomy_ratio = {
-							value = -0.5
-							localization = KUM_china_integration_3
-						}
-					every_state = {
-							add_building_construction = {
-									type = infrastructure
-									level = 1
-									instant_build = yes
-								}
-						}
-				}
-
+			}
+		}
 	}
 
 	focus = {
@@ -433,20 +444,19 @@ focus_tree = {
 		}
 		x = 8
 		y = 1
-			ai_will_do = {
-					factor = 10
-				}
-			completion_reward = {
-					log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus KUM_army_training"
-					army_experience = 10
-					add_tech_bonus = {
-							name = land_doc_bonus
-							bonus = 1.0
-							uses = 1
-							category = land_doctrine
-						}
-				}
-
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus KUM_army_training"
+			army_experience = 10
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 1.0
+				uses = 1
+				category = land_doctrine
+			}
+		}
 	}
 
 	focus = {
@@ -458,14 +468,13 @@ focus_tree = {
 		}
 		x = 6
 		y = 2
-			ai_will_do = {
-					factor = 10
-				}
-			completion_reward = {
-					log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus KUM_propoganda"
-					add_ideas = KUM_uguymobilization
-				}
-
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus KUM_propoganda"
+			add_ideas = KUM_uguymobilization
+		}
 	}
 
 	focus = {
@@ -480,18 +489,17 @@ focus_tree = {
 		}
 		x = 8
 		y = 7
-			ai_will_do = {
-					factor = 20
-				}
-			completion_reward = {
-					log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus KUM_authonomy"
-					CHI = {
-							country_event = {
-									id = NWkumul.500
-								}
-						}
-				}
-
+		ai_will_do = {
+			factor = 20
+		}
+		available = {
+			country_exists = CHI
+			NOT = { has_war_with = CHI }
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus KUM_authonomy"
+			CHI = { country_event = { id = NWkumul.500 days = 1 } }
+		}
 	}
 
 	focus = {
@@ -503,19 +511,24 @@ focus_tree = {
 		}
 		x = 7
 		y = 8
-			ai_will_do = {
-					factor = 10
-				}
-			completion_reward = {
-					log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus KUM_newgov"
-					add_tech_bonus = {
-							name = KUM_construction_tech
-							bonus = 0.5
-							uses = 1
-							category = construction_tech
-						}
-				}
-
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus KUM_newgov"
+			add_tech_bonus = {
+				name = KUM_newgov
+				bonus = 0.5
+				uses = 1
+				category = construction_tech
+			}
+			add_tech_bonus = {
+				name = KUM_newgov
+				bonus = 0.5
+				uses = 1
+				category = industry
+			}
+		}
 	}
 
 	focus = {
@@ -527,20 +540,19 @@ focus_tree = {
 		}
 		x = 8
 		y = 2
-			ai_will_do = {
-					factor = 10
-				}
-			completion_reward = {
-					log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus KUM_oldexp"
-					army_experience = 15
-					add_tech_bonus = {
-							name = land_doc_bonus
-							bonus = 1.0
-							uses = 1
-							category = land_doctrine
-						}
-				}
-
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus KUM_oldexp"
+			army_experience = 15
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 1.0
+				uses = 1
+				category = land_doctrine
+			}
+		}
 	}
 
 	focus = {
@@ -552,16 +564,22 @@ focus_tree = {
 		}
 		x = 8
 		y = 3
-			ai_will_do = {
-					factor = 10
-				}
-			completion_reward = {
-					SIK = {
-							country_event = {
-									id = NWkumul.292
-								}
-						}
-				}
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+			country_exists = SIK
+			NOT = { has_war_with = SIK }
+		}
+		bypass = {
+			OR = {
+				NOT = { country_exists = SIK }
+				has_war_with = SIK
+			}
+		}
+		completion_reward = {
+			SIK = { country_event = { id = NWkumul.292 days = 1 } }
+		}
 
 	}
 
@@ -574,39 +592,31 @@ focus_tree = {
 		}
 		x = 9
 		y = 8
-			available = {
-					has_full_control_of_state = 617
-					has_full_control_of_state = 618
-					has_full_control_of_state = 1047
-					has_full_control_of_state = 619
+		available = {
+			has_full_control_of_state = 760
+			has_full_control_of_state = 617
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus KUM_recover_relations"
+			add_timed_idea = { idea = KUM_road_recovery days = 180 }
+			760 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
 				}
-			ai_will_do = {
-					factor = 10
+			}
+			617 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
 				}
-			completion_reward = {
-					log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus KUM_recover_relations"
-					KUM = {
-							add_timed_idea = {
-									idea = KUM_road_recovery
-									days = 180
-								}
-						}
-					760 = {
-							add_building_construction = {
-									type = infrastructure
-									level = 1
-									instant_build = yes
-								}
-						}
-					617 = {
-							add_building_construction = {
-									type = infrastructure
-									level = 1
-									instant_build = yes
-								}
-						}
-				}
-
+			}
+		}
 	}
 
 	focus = {
@@ -621,13 +631,13 @@ focus_tree = {
 		}
 		x = 8
 		y = 9
-			ai_will_do = {
-					factor = 10
-				}
-			completion_reward = {
-					log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus KUM_ourlaw"
-					add_ideas = KUM_law
-				}
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus KUM_ourlaw"
+			add_ideas = KUM_law
+		}
 
 	}
 
@@ -640,105 +650,76 @@ focus_tree = {
 		}
 		x = 10
 		y = 2
-			ai_will_do = {
-					factor = 10
-				}
-			completion_reward = {
-					log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus KUM_huei_gansu"
-					hidden_effect = {
-							if = {
-									limit = {
-											NOT = {
-													has_template = "Huei Gansu"
-												}
-										}
-									division_template = {
-											name = "Huei Gansu"
-											is_locked = yes
-											regiments = {
-													infantry = {
-															x = 0
-															y = 0
-														}
-													infantry = {
-															x = 0
-															y = 1
-														}
-													infantry = {
-															x = 0
-															y = 2
-														}
-													infantry = {
-															x = 0
-															y = 3
-														}
-													infantry = {
-															x = 1
-															y = 0
-														}
-													infantry = {
-															x = 1
-															y = 1
-														}
-													infantry = {
-															x = 1
-															y = 2
-														}
-												}
-										}
-								}
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus KUM_huei_gansu"
+			hidden_effect = {
+				if = {
+					limit = { NOT = { has_template = "Huei Gansu" } }
+					division_template = {
+						name = "Huei Gansu"
+						is_locked = no
+						regiments = {
+							infantry = { x = 0 y = 0 }
+							infantry = { x = 0 y = 1 }
+							infantry = { x = 0 y = 2 }
+							infantry = { x = 0 y = 3 }
+							infantry = { x = 1 y = 0 }
+							infantry = { x = 1 y = 1 }
+							infantry = { x = 1 y = 2 }
 						}
-					capital_scope = {
-							create_unit = {
-									division = "name = \"1. Huei Gansu\" division_template = \"Huei Gansu\" start_experience_factor = 0.3"
-									owner = ROOT
-								}
-						}
+					}
 				}
-
+			}
+			capital_scope = {
+				create_unit = {
+					division = "name = \"1. Huei Gansu\" division_template = \"Huei Gansu\" start_experience_factor = 0.6"
+					owner = ROOT
+				}
+			}
+		}
 	}
 
 	focus = {
 		id = KUM_new_battle
 		icon = GFX_goal_demand_sudetenland
-		cost = 2.1
+		cost = 2
 		prerequisite = {
 			focus = KUM_garnison
 		}
 		available = {
-			KUM = {
-				has_war = yes
-			}
+			has_war = yes
 		}
 		x = 12
 		y = 4
 		completion_reward = {
-			add_political_power = 50
+			add_war_support = 0.1
 		}
 	}
 
 	focus = {
 		id = KUM_now_or_never
 		icon = GFX_focus_eng_concessions_to_the_trade_unions
-		cost = 2.1
+		cost = 2
 		prerequisite = {
 			focus = KUM_new_battle
 		}
 		x = 11
 		y = 5
-		completion_reward = {
-						add_timed_idea = {
-							idea = KUM_now_or_never
-							days = 360
-						}
+		available = {
+			has_war = yes
 		}
-
+		completion_reward = {
+			add_timed_idea = { idea = KUM_now_or_never days = 360 }
+		}
 	}
 
 	focus = {
 		id = KUM_mounts
 		icon = GFX_goal_generic_navy_doctrines_tactics
-		cost = 2.1
+		cost = 2
 		prerequisite = {
 			focus = KUM_new_battle
 		}
@@ -747,23 +728,25 @@ focus_tree = {
 		}
 		x = 13
 		y = 5
+		available = {
+			has_war = yes
+		}
 		completion_reward = {
-			custom_effect_tooltip = KUM_mounts_tt
-			hidden_effect = { set_technology = { mountain_gun = 1 } }
-			add_ideas = {
-				KUM_mounts
-			}
+			custom_effect_tooltip = mountain_warfare_effect
+			hidden_effect = { set_technology = { mountain_warfare = 1 } }
+			add_ideas = KUM_mounts
 			760 = {
 				add_building_construction = {
 					type = bunker
 					level = 1
 					instant_build = yes
-					province = { id = 4704}
+					province = 4704
 				}
 			}
 		}
 	}
-	 focus = {
+	
+	focus = {
 	 	id = KUM_muhiti
 	 	icon = GFX_goal_generic_military_deal
 	 	cost = 3
@@ -790,7 +773,7 @@ focus_tree = {
 				custom_effect_tooltip = KAS_war_tt
 	 		}
 	 	}
-	 }
+	}
 
 	focus = {
 		id = KUM_decisonn
@@ -861,49 +844,62 @@ focus_tree = {
 		}
 		x = 25
 		y = 6
-			available = {
-					has_war = no
-					617 = {
-						is_controlled_by = ROOT
-					}
-					618 = {
-						is_controlled_by = ROOT
-					}
-					619 = {
-						is_controlled_by = ROOT
-					}
-					1046 = {
-						is_controlled_by = ROOT
-					}
-					1047 = {
-						is_controlled_by = ROOT
-					}
-					1120 = {
-						is_controlled_by = ROOT
-					}
-					1121 = {
-						is_controlled_by = ROOT
-					}
-					1122 = {
-						is_controlled_by = ROOT
-					}
-					287 = {
-						is_controlled_by = ROOT
-					}
-					759 = {
-						is_controlled_by = ROOT
-					}
-					760 = {
-						is_controlled_by = ROOT
-					}
+		available = {
+			has_war = no
+			has_full_control_of_state = 617
+			has_full_control_of_state = 618
+			has_full_control_of_state = 619
+			has_full_control_of_state = 1046
+			has_full_control_of_state = 1047
+			has_full_control_of_state = 1120
+			has_full_control_of_state = 1121
+			has_full_control_of_state = 1122
+			has_full_control_of_state = 287
+			has_full_control_of_state = 759
+			has_full_control_of_state = 760
+			NOT = {
+				has_government = communism
+				has_government = trozkism
+				has_government = anarchism
+				has_government = democratic
 			}
-			completion_reward = {
-				set_cosmetic_tag = KUM_chan_neutrality
-				CHI = {
-					country_event = { id = NWkumul.peace}
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					country_exists = CHI
+					NOT = { has_war_with = CHI }
+					is_subject = no
+				}
+				CHI = { country_event = { id = NWkumul.peace days = 1 } }
+				effect_tooltip = {
+					CHI = {
+						set_autonomy = {
+							target = ROOT
+							autonomy_state = autonomy_dominion
+						}
+					}
+					set_politics = {
+						ruling_party = monarchy
+						elections_allowed = no
+					}
+					add_popularity = {
+						ideology = monarchy 
+						popularity = 0.6
+					}
 				}
 			}
-
+			else = {
+				set_politics = {
+					ruling_party = monarchy
+					elections_allowed = no
+				}
+				add_popularity = {
+					ideology = monarchy 
+					popularity = 0.6
+				}
+			}
+		}
 	}
 
 	focus = {
@@ -915,18 +911,21 @@ focus_tree = {
 		}
 		x = 25
 		y = 7
-			ai_will_do = {
-					factor = 10
-				}
-			completion_reward = {
-					log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus KUM_newchan"
-					KUM = {
-							country_event = {
-									id = NWkumul.501
-								}
-						}
-				}
-
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+			NOT = {
+				has_government = communism
+				has_government = trozkism
+				has_government = anarchism
+				has_government = democratic
+			}
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus KUM_newchan"
+			country_event = { id = NWkumul.501 }
+		}
 	}
 
 	focus = {
@@ -938,17 +937,13 @@ focus_tree = {
 		}
 		x = 22
 		y = 8
-			ai_will_do = {
-					factor = 10
-				}
-			completion_reward = {
-					log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus KUM_reforms"
-					add_timed_idea = {
-							idea = KUM_recovery
-							days = 180
-						}
-				}
-
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus KUM_reforms"
+			add_timed_idea = { idea = KUM_reforms days = 180 }
+		}
 	}
 
 	focus = {
@@ -960,15 +955,14 @@ focus_tree = {
 		}
 		x = 21
 		y = 9
-			ai_will_do = {
-					factor = 10
-				}
-			completion_reward = {
-					log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus KUM_nominal_constitution"
-					add_stability = 0.1
-					add_political_power = 150
-				}
-
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus KUM_nominal_constitution"
+			add_stability = 0.1
+			add_political_power = 150
+		}
 	}
 
 	focus = {
@@ -980,18 +974,17 @@ focus_tree = {
 		}
 		x = 23
 		y = 9
-			ai_will_do = {
-					factor = 10
-				}
-			completion_reward = {
-					log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus KUM_religious_courts"
-					add_popularity = {
-							ideology = monarchy
-							popularity = 0.15
-						}
-					add_stability = 0.1
-				}
-
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus KUM_religious_courts"
+			add_popularity = {
+				ideology = monarchy
+				popularity = 0.15
+			}
+			add_stability = 0.1
+		}
 	}
 
 	focus = {
@@ -1003,26 +996,28 @@ focus_tree = {
 		}
 		x = 25
 		y = 8
-			ai_will_do = {
-					factor = 10
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+			has_full_control_of_state = 760
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus KUM_king_ter"
+			760 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
 				}
-			completion_reward = {
-					log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus KUM_king_ter"
-					760 = {
-							add_extra_state_shared_building_slots  = 2
-							add_building_construction = {
-									type = infrastructure
-									level = 1
-									instant_build = yes
-								}
-							add_building_construction = {
-									type = industrial_complex
-									level = 1
-									instant_build = yes
-								}
-						}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
 				}
-
+			}
+		}
 	}
 
 	focus = {
@@ -1037,15 +1032,17 @@ focus_tree = {
 		}
 		x = 23
 		y = 10
-			ai_will_do = {
-					factor = 10
-				}
-			completion_reward = {
-					log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus KUM_modern_taxes"
-					add_stability = -0.05
-					add_ideas = KUM_taxes
-				}
-
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+			NOT = { has_idea = KUM_scattered_taxes }
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus KUM_modern_taxes"
+			add_stability = -0.05
+			add_ideas = KUM_modern_taxes
+		}
 	}
 
 	focus = {
@@ -1060,18 +1057,18 @@ focus_tree = {
 		}
 		x = 21
 		y = 10
-			ai_will_do = {
-					factor = 10
-				}
-			completion_reward = {
-					log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus KUM_nohan"
-					add_timed_idea = {
-							idea = KUM_bur
-							days = 360
-						}
-					remove_ideas = KUM_oldhan
-				}
-
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus KUM_nohan"
+			add_timed_idea = { idea = KUM_bur days = 360 }
+			set_country_flag = KUM_nohan_flag
+			custom_effect_tooltip = KUM_nohan_tt
+			effect_tooltip = {
+				remove_ideas = KUM_oldhan
+			}
+		}
 	}
 
 	focus = {
@@ -1083,17 +1080,14 @@ focus_tree = {
 		}
 		x = 28
 		y = 8
-			ai_will_do = {
-					factor = 10
-				}
-			completion_reward = {
-					log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus KUM_history_borders"
-					KUM = {
-							add_state_core = 759
-							add_state_claim = 759
-						}
-				}
-
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus KUM_history_borders"
+			add_state_core = 759
+			add_state_claim = 759
+		}
 	}
 
 	focus = {
@@ -1105,15 +1099,13 @@ focus_tree = {
 		}
 		x = 27
 		y = 9
-			ai_will_do = {
-					factor = 10
-				}
-			completion_reward = {
-					log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus KUM_aristocrats"
-					unlock_decision_category_tooltip = KUM_aristocrats_category
-					custom_effect_tooltip = KUM_tt_1
-				}
-
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus KUM_aristocrats"
+			unlock_decision_category_tooltip = KUM_aristocrats_category
+		}
 	}
 
 	focus = {
@@ -1125,14 +1117,24 @@ focus_tree = {
 		}
 		x = 29
 		y = 9
-			ai_will_do = {
-					factor = 10
-				}
-			completion_reward = {
-					log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus KUM_personal_guard"
-					army_experience = 5
-				}
-
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus KUM_personal_guard"
+			army_experience = 15
+			add_tech_bonus = {
+                name = special_forces_bonus
+                bonus = 1.0
+                uses = 1
+                technology = paratroopers
+                technology = paratroopers2
+                technology = marines
+                technology = marines2
+                technology = tech_mountaineers
+                technology = tech_mountaineers2
+            }
+		}
 	}
 
 	focus = {
@@ -1147,71 +1149,116 @@ focus_tree = {
 		}
 		x = 27
 		y = 10
-			bypass = {
-					AND = {
-							NOT = {
-									country_exists = UYG
-									country_exists = TNG
-									country_exists = SIK
-									country_exists = DZH
-								}
-						}
+		bypass = {
+			OR = {
+				NOT = { country_exists = UYG }
+				UYG = {
+					OR = {
+						has_war_with = ROOT
+						is_in_faction_with = ROOT
+						is_subject_of = ROOT
+					}
 				}
-			ai_will_do = {
-					factor = 10
+			}
+			OR = {
+				NOT = { country_exists = DZH }
+				DZH = {
+					OR = {
+						has_war_with = ROOT
+						is_in_faction_with = ROOT
+						is_subject_of = ROOT
+					}
 				}
-			completion_reward = {
-					log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus KUM_local_nationalists"
-					IF = {
-							limit = {
-									country_exists = UYG
-								}
-							ROOT = {
-									create_wargoal = {
-											type = annex_everything
-											target = UYG
-										}
-								}
-						}
-					IF = {
-							limit = {
-									country_exists = DZH
-								}
-							ROOT = {
-									create_wargoal = {
-											type = annex_everything
-											target = DZH
-										}
-								}
-						}
-					IF = {
-							limit = {
-									country_exists = SIK
-								}
-							ROOT= {
-									create_wargoal = {
-											type = annex_everything
-											target = SIK
-										}
-								}
-						}
-					IF = {
-							limit = {
-									country_exists = TNG
-								}
-							ROOT = {
-									create_wargoal = {
-											type = annex_everything
-											target = TNG
-										}
-								}
-						}
-					CHI = {
-							country_event = {
-									id = NWkumul.506
-								}
-						}
+			}
+			OR = {
+				NOT = { country_exists = SIK }
+				SIK = {
+					OR = {
+						has_war_with = ROOT
+						is_in_faction_with = ROOT
+						is_subject_of = ROOT
+					}
 				}
+			}
+			OR = {
+				NOT = { country_exists = TNG }
+				TNG = {
+					OR = {
+						has_war_with = ROOT
+						is_in_faction_with = ROOT
+						is_subject_of = ROOT
+					}
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus KUM_local_nationalists"
+			add_ideas = KUM_local_nationalists
+			if = {
+				limit = {
+					country_exists = UYG
+					NOT = { has_war_with = UYG }
+					UYG = {
+						NOT = { is_in_faction_with = ROOT }
+						is_subject_of = ROOT
+					}
+				}
+				create_wargoal = {
+					type = annex_everything
+					target = UYG
+				}
+			}
+			if = {
+				limit = {
+					country_exists = DZH
+					NOT = { has_war_with = DZH }
+					DZH = {
+						NOT = { is_in_faction_with = ROOT }
+						is_subject_of = ROOT
+					}
+				}
+				create_wargoal = {
+					type = annex_everything
+					target = DZH
+				}
+			}
+			if = {
+				limit = {
+					country_exists = SIK
+					NOT = { has_war_with = SIK }
+					SIK = {
+						NOT = { is_in_faction_with = ROOT }
+						is_subject_of = ROOT
+					}
+				}
+				create_wargoal = {
+					type = annex_everything
+					target = SIK
+				}
+			}
+			if = {
+				limit = {
+					country_exists = TNG
+					NOT = { has_war_with = TNG }
+					TNG = {
+						NOT = { is_in_faction_with = ROOT }
+						is_subject_of = ROOT
+					}
+				}
+				create_wargoal = {
+					type = annex_everything
+					target = TNG
+				}
+			}
+			if = {
+				limit = { country_exists = CHI }
+				CHI = { country_event = { id = NWkumul.506 days = 1 } }
+			}
+		}
 
 	}
 
@@ -1225,17 +1272,13 @@ focus_tree = {
 		}
 		x = 17
 		y = 13
-			ai_will_do = {
-					factor = 10
-				}
-			completion_reward = {
-					log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus KUM_recovery"
-					add_timed_idea = {
-							idea = KUM_renovating
-							days = 360
-						}
-				}
-
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus KUM_recovery"
+			add_timed_idea = { idea = KUM_recovery_region days = 360 }
+		}
 	}
 
 	focus = {
@@ -1247,49 +1290,43 @@ focus_tree = {
 		}
 		x = 15
 		y = 14
-			ai_will_do = {
-					factor = 10
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+			has_full_control_of_state = 760
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus KUM_investitions"
+			760 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
 				}
-			completion_reward = {
-					log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus KUM_investitions"
-					760 = {
-							add_extra_state_shared_building_slots = 1
-							add_building_construction = {
-									type = industrial_complex
-									level = 1
-									instant_build = yes
-								}
-						}
-					IF = {
-							limit = {
-									KUM = {
-											has_full_control_of_state = 617
-										}
-								}
-							617 = {
-									add_building_construction = {
-											type = industrial_complex
-											level = 1
-											instant_build = yes
-										}
-								}
-						}
-					IF = {
-							limit = {
-									KUM = {
-											has_full_control_of_state = 1047
-										}
-								}
-							1047 = {
-									add_building_construction = {
-											type = industrial_complex
-											level = 1
-											instant_build = yes
-										}
-								}
-						}
+			}
+			if = {
+				limit = { has_full_control_of_state = 617 }
+				617 = {
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
 				}
-
+			}
+			if = {
+				limit = { has_full_control_of_state = 1047 }
+				1047 = {
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+		}
 	}
 
 	focus = {
@@ -1303,6 +1340,9 @@ focus_tree = {
 		y = 14
 		ai_will_do = {
 			factor = 10
+		}
+		available = {
+			has_full_control_of_state = 760
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus KUM_railway"
@@ -1321,7 +1361,6 @@ focus_tree = {
 				category = construction_tech
 			}
 		}
-
 	}
 
 	focus = {
@@ -1333,21 +1372,23 @@ focus_tree = {
 		}
 		x = 19
 		y = 14
-			ai_will_do = {
-					factor = 10
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+			has_full_control_of_state = 760
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus KUM_war_industry"
+			760 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
 				}
-			completion_reward = {
-					log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus KUM_war_industry"
-					760 = {
-							add_extra_state_shared_building_slots = 2
-							add_building_construction = {
-									type = arms_factory
-									level = 2
-									instant_build = yes
-								}
-						}
-				}
-
+			}
+		}
 	}
 
 	focus = {
@@ -1362,37 +1403,34 @@ focus_tree = {
 		}
 		x = 2
 		y = 9
-			available = {
-					KUM = {
-							compare_autonomy_state < integrated_puppet
-						}
-				}
-			ai_will_do = {
-					factor = 10
-				}
-			completion_reward = {
-					log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus KUM_unification"
+		available = {
+			has_autonomy_state = integrated_puppet
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus KUM_unification"
+			CHI = { country_event = { id = NWkumul.001 } }
+			if = {
+				limit = { CHI = { is_ai = no } }
+				custom_effect_tooltip = GAME_OVER_TT
+			}
+			else = {
+				effect_tooltip = {
 					CHI = {
-							country_event = {
-									id = NWkumul.001
-								}
+						change_tag_from = ROOT
+						every_unit_leader = {
+							set_nationality = ROOT
 						}
-					IF = {
-						limit = { KUM = {is_ai = no} CHI = {is_ai = yes}}
-						CHI = {
-							change_tag_from = ROOT
-						}
-					}
-					else = {
-						CHI = {
-							annex_country = {
-								target = KUM
-								transfer_troops = yes
-							}
+						annex_country = {
+							target = KUM
+							transfer_troops = yes
 						}
 					}
 				}
-
+			}
+		}
 	}
 
 	focus = {
@@ -1407,14 +1445,16 @@ focus_tree = {
 		}
 		x = 29
 		y = 10
-			ai_will_do = {
-					factor = 10
-				}
-			completion_reward = {
-					log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus KUM_uguyrs"
-					add_ideas = KUM_uguyrs
-				}
-
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+			threat > 0.25
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus KUM_uguyrs"
+			add_ideas = KUM_uguyrs_ideas
+		}
 	}
 
 	focus = {
@@ -1435,20 +1475,14 @@ focus_tree = {
 		}
 		x = 25
 		y = 11
-			ai_will_do = {
-					factor = 10
-				}
-			completion_reward = {
-					log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus KUM_traditions"
-					add_stability = 0.1
-					add_war_support = 0.1
-					add_popularity = {
-							ideology = monarchy
-							popularity = 0.05
-						}
-					add_political_power = 50
-				}
-
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus KUM_traditions"
+			add_political_power = 50
+			add_ideas = KUM_traditions
+		}
 	}
 
 	focus = {
@@ -1463,25 +1497,16 @@ focus_tree = {
 		}
 		x = 24
 		y = 12
-			ai_will_do = {
-					factor = 10
-				}
-			completion_reward = {
-					log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus KUM_china_loyality"
-					add_offsite_building = {
-							type = industrial_complex
-							level = 1
-						}
-					add_autonomy_ratio = {
-							value = -0.15
-							localization = KUM_loyality_mod
-						}
-					add_opinion_modifier = {
-							target = CHI
-							modifier = CHI_loyality
-						}
-				}
-
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus KUM_china_loyality"
+			add_offsite_building = { type = industrial_complex level = 1 }
+			add_autonomy_score = { value = -150 localization = KUM_china_loyality }
+			add_opinion_modifier = { target = CHI modifier = CHI_loyality }
+			CHI = { add_opinion_modifier = { target = ROOT modifier = CHI_loyality } }
+		}
 	}
 
 	focus = {
@@ -1504,9 +1529,15 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus KUM_unbeliveable_plan"
-			CHI = {
-				end_puppet = KUM
-				country_event = { id = NWkumul.505 }
+			if = {
+				limit = { is_subject = yes }
+				OVERLORD = {
+					set_autonomy = {
+						target = ROOT
+						autonomy_state = autonomy_free
+					}
+					country_event = { id = NWkumul.505 days = 1 }
+				}
 			}
 		}
 	}
@@ -1526,14 +1557,16 @@ focus_tree = {
 		}
 		x = 17
 		y = 15
-			ai_will_do = {
-					factor = 10
-				}
-			completion_reward = {
-					log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus KUM_beijing_academy"
-					add_research_slot = 1
-				}
-
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+			is_subject_of = CHI
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus KUM_beijing_academy"
+			add_research_slot = 1
+		}
 	}
 
 	focus = {

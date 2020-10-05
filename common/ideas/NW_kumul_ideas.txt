@@ -8,8 +8,9 @@ ideas = {
 			allowed_civil_war = {
 				always = yes
 			}
+			picture = chi_hyper_inflation
 			modifier = {
-				political_power_gain = -0.25
+				political_power_factor = -0.25
 			}
 		}
 		KUM_famine = {
@@ -19,6 +20,7 @@ ideas = {
 			allowed_civil_war = {
 				always = yes
 			}
+			picture = raj_risk_of_famine
 			modifier = {
 				monthly_population = -0.25
 			}
@@ -30,9 +32,16 @@ ideas = {
 			allowed_civil_war = {
 				always = yes
 			}
+			available = {
+				OR = {
+					NOT = { has_country_flag = KUM_nohan_flag }
+					has_country_flag = { flag = KUM_nohan_flag days < 360 }
+				}
+			}
+			picture = generic_disjointed_gov
 			modifier = {
 				stability_factor = -0.15
-				political_power_gain = 0.1
+				political_power_factor = 0.1
 			}
 		}
 		KUM_tortures = {
@@ -42,6 +51,7 @@ ideas = {
 			allowed_civil_war = {
 				always = yes
 			}
+			picture = generic_oppression
 			modifier = {
 				stability_factor = 0.15
 				political_power_gain = -0.5
@@ -54,6 +64,7 @@ ideas = {
 			allowed_civil_war = {
 				always = yes
 			}
+			picture = hol_shell_shocked_spectator
 			modifier = {
 				production_speed_buildings_factor = -0.25
 				production_factory_max_efficiency_factor = -0.2
@@ -68,6 +79,7 @@ ideas = {
 			allowed_civil_war = {
 				always = yes
 			}
+			picture = air_support_focus
 			modifier = {
 				political_power_gain = 0.25
 			}
@@ -79,6 +91,7 @@ ideas = {
 			allowed_civil_war = {
 				always = yes
 			}
+			picture = air_support_focus
 			modifier = {
 				custom_effect_tooltip = KUM_reward_tt
 				hidden_effect = {
@@ -93,6 +106,7 @@ ideas = {
 			allowed_civil_war = {
 				always = yes
 			}
+			picture = air_support_focus
 			modifier = {
 				custom_effect_tooltip = KUM_reward_tt
 				hidden_effect = {
@@ -107,8 +121,10 @@ ideas = {
 			allowed_civil_war = {
 				always = yes
 			}
+			picture = generic_wall_line
 			modifier = {
 				production_speed_bunker_factor = 0.1
+				max_dig_in_factor = 0.05
 			}
 		}
 		KUM_now_or_never = {
@@ -118,29 +134,32 @@ ideas = {
 			allowed_civil_war = {
 				always = yes
 			}
+			picture = chi_chinese_support
 			modifier = {
 				army_core_defence_factor = 0.1
 			}
 		}
-		KUM_renovating = {
+		KUM_recovery_region = {
 			allowed = {
 				always = no
 			}
 			allowed_civil_war = {
 				always = yes
 			}
+			picture = generic_exploit_mines
 			modifier = {
 				production_speed_industrial_complex_factor = 0.05
-				industry_repair_factor = 0.5
+				repair_speed_industrial_complex_factor = 0.5
 			}
 		}
-		KUM_taxes = {
+		KUM_modern_taxes = {
 				allowed = {
 				always = no
 			}
 			allowed_civil_war = {
 				always = yes
 			}
+			picture = generic_economic_increase
 			modifier = {
 				political_power_gain = 0.15
 				political_advisor_cost_factor = -0.15
@@ -153,42 +172,65 @@ ideas = {
 			allowed_civil_war = {
 				always = yes
 			}
+			picture = power_vacuum_and_powerlessness
 			modifier = {
-				political_power_gain = -0.15
+				political_power_factor = -0.15
 			}
 		}
-		KUM_recovery = {
+		KUM_reforms = {
 			allowed = {
 				always = no
 			}
 			allowed_civil_war = {
 				always = no
 			}
+			picture = generic_pp_unity_bonus
 			modifier = {
 				political_power_gain = 0.25
 			}
 		}
-		KUM_uguyrs = {
+		KUM_uguyrs_ideas = {
 			allowed = {
 				always = no
 			}
 			allowed_civil_war = {
 				always = yes
 			}
+			picture = chi_chinese_support
 			modifier = {
-				army_defence_factor = 0.5
+				army_core_defence_factor = 0.05
 				conscription = 0.03
 			}
 		}
-		KUM_integration_2 = {
+		KUM_local_nationalists = {
 			allowed = {
 				always = no
 			}
 			allowed_civil_war = {
+				always = yes
+			}
+			picture = chi_war_of_resistance2
+			modifier = {
+				stability_factor = -0.1
+				war_support_factor = 0.15
+				army_core_attack_factor = 0.05
+			}
+		}
+		KUM_traditions = {
+			allowed = {
 				always = no
 			}
+			allowed_civil_war = {
+				always = yes
+			}
+			picture = generic_morale_bonus
 			modifier = {
-				autonomy_gain = -2
+				stability_factor = 0.1
+				war_support_factor = 0.1
+				monarchy_drift = 0.02
+				political_advisor_cost_factor = -0.25
+				trade_laws_cost_factor = -0.25
+				economy_cost_factor = -0.25
 			}
 		}
 		KUM_integration = {
@@ -198,8 +240,28 @@ ideas = {
 			allowed_civil_war = {
 				always = no
 			}
+			available = {
+				is_subject = yes
+			}
+			picture = colonial_elite
 			modifier = {
 				autonomy_gain = -1
+			}
+		}
+		KUM_integration_2 = {
+			name = KUM_integration
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = no
+			}
+			available = {
+				is_subject = yes
+			}
+			picture = colonial_elite
+			modifier = {
+				autonomy_gain = -2
 			}
 		}
 		KUM_terrain = {
@@ -209,6 +271,7 @@ ideas = {
 			allowed_civil_war = {
 				always = yes
 			}
+			picture = air_support_focus
 			modifier = {
 				intel_network_gain_factor = 0.25
 				army_attack_factor = 0.1
@@ -223,6 +286,7 @@ ideas = {
 			allowed_civil_war = {
 				always  = yes
 			}
+			picture = generic_reserve_divisions
 			modifier = {
 				conscription = 0.03
 			}
@@ -234,6 +298,7 @@ ideas = {
 			allowed_civil_war = {
 				always  = yes
 			}
+			picture = air_support_focus
 			equipment_bonus = {
 				infantry_equipment = {
 					build_cost_ic = -0.15 instant = yes
@@ -247,6 +312,7 @@ ideas = {
 			allowed_civil_war = {
 				always = yes
 			}
+			picture = air_support_focus
 			modifier = {
 				political_power_gain = 0.5
 				consumer_goods_factor = 0.05
@@ -259,6 +325,7 @@ ideas = {
 			allowed_civil_war = {
 				always = yes
 			}
+			picture = air_support_focus
 			modifier = {
 				political_power_gain = 0.15
 				production_speed_buildings_factor = 0.05
@@ -271,6 +338,7 @@ ideas = {
 			allowed_civil_war = {
 				always = yes
 			}
+			picture = air_support_focus
 			modifier = {
 				consumer_goods_factor = -0.1
 				production_speed_buildings_factor = 0.1
@@ -283,6 +351,7 @@ ideas = {
 			allowed_civil_war = {
 				always = yes
 			}
+			picture = air_support_focus
 			modifier = {
 				production_speed_buildings_factor = 0.1
 			}
@@ -294,9 +363,10 @@ ideas = {
 			allowed_civil_war = {
 				always = yes
 			}
+			picture = generic_build_infrastructure
 			modifier = {
-				production_speed_infrastructure_factor	= 0.2
-				industry_repair_factor = 0.5
+				production_speed_infrastructure_factor = 0.2
+				repair_speed_infrastructure_factor = 0.5
 			}
 		}
 		KUM_law = {
@@ -306,83 +376,60 @@ ideas = {
 			allowed_civil_war = {
 				always = yes
 			}
+			picture = generic_constitutional_guarantees
 			modifier = {
 				political_advisor_cost_factor = -0.15
-				political_power_gain = 0.1
+				political_power_factor = 0.1
 			}
 		}
 	}
 
 
 	political_advisor = {
-
+	
 		KUM_yulbars_1 = {
-
 			picture = generic_political_advisor_asia_3
-			
 			allowed = {
 				original_tag = KUM
 			}
-			
 			traits = { popular_figurehead }
 		}
-	}	
+	}
 
 	army_chief = {
 		
 		KUM_yulbars = {
-			
 			picture = generic_army_asia_4
-
 			allowed = {
 				original_tag = KUM
 			}
-			
 			traits = { imperial_guard }
-			
 			ai_will_do = {
 				factor = 1
 			}
 		}
 		
 		KUM_abdullah_beg = {
-			
 			picture = generic_army_asia_1
-
 			allowed = {
 				original_tag = KUM
 			}
-			
 			traits = { army_chief_offensive_2 }
-			
 			ai_will_do = {
 				factor = 1
 			}
 		}
 	}
 
-	air_chief = {
-		
-		
-	}
-	
-	navy_chief = {
-
-	}
-
-
 	high_command = {
 	
         KUM_abdullah_beg_1 = {
 			ledger = army
 			picture = generic_army_asia_1
-
 			allowed = {
 				original_tag = KUM
 			}
-			
 			traits = { army_cavalry_3 }
-			
 			ai_will_do = {
 				factor = 1
 			}
@@ -391,13 +438,10 @@ ideas = {
 		KUM_timur_beg = {
 			ledger = army
 			picture = generic_army_asia_2
-
 			allowed = {
 				original_tag = KUM
 			}
-			
 			traits = { army_regrouping_2 }
-			
 			ai_will_do = {
 				factor = 1
 			}
@@ -406,32 +450,24 @@ ideas = {
 		KUM_muhammad_beg = {
 			ledger = army
 			picture = generic_army_asia_3
-
 			allowed = {
 				original_tag = KUM
 			}
-			
 			traits = { army_infantry_2 }
-			
 			ai_will_do = {
 				factor = 1
 			}
 		}
 	}
 
-
-
 	theorist = {
         KUM_timur_beg_1 = {
 			ledger = army
 			picture = generic_army_asia_2
-
 			allowed = {
 				original_tag = KUM
 			}
-			
 			traits = { military_theorist }
-			
 			ai_will_do = {
 				factor = 1
 			}

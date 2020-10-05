@@ -4,7 +4,7 @@
 country_event = {
 	id = NWkumul.12
 	title = NWkumul.12.t
-	desc = NWkumul.12.d
+	desc = NWkumul.12.desc
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event KUM.12" }
@@ -12,10 +12,27 @@ country_event = {
 	option = { name = NWkumul.12.a }
 }
 
+#Письмо от Юлбарса // CHI
+country_event = {
+	id = NWkumul.288
+	title = NWkumul.288.t
+	desc = NWkumul.288.desc
+	picture = GFX_report_event_china_chiang_kai_shek
+	is_triggered_only = yes
+	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event KUM.288" }
+	
+	option = {
+		name = NWkumul.288.a
+		FROM = { country_event = { id = NWkumul.289 days = 1 } }
+	}
+}
+
+#Юлбарс – губернатор Синьцзяня // KUM
 country_event = {
 	id = NWkumul.289
 	title = NWkumul.289.t
-	desc = NWkumul.289.d
+	desc = NWkumul.289.desc
 	picture = GFX_report_event_china_chiang_kai_shek
 	is_triggered_only = yes
 	
@@ -23,27 +40,23 @@ country_event = {
 	
 	option = {
 		name = NWkumul.289.a
-		KUM = {
-			set_country_flag = KUM_flag_1
-			add_state_core = 287
-			add_state_core = 617
-			add_state_core = 618
-			add_state_core = 619
-			add_state_core = 1074
-			add_state_core = 1076
-			give_military_access = CHI
-		}
-		set_cosmetic_tag = KUM_sink_2_neutrality
-		CHI = {
-			give_military_access = KUM
-		}
+		set_country_flag = KUM_flag_1
+		add_state_core = 287
+		add_state_core = 617
+		add_state_core = 618
+		add_state_core = 619
+		add_state_core = 1074
+		add_state_core = 1076
+		give_military_access = CHI
+		CHI = { give_military_access = ROOT }
+		set_cosmetic_tag = SIK
 	}
 }
 
 country_event = {
 	id = NWkumul.290
 	title = NWkumul.290.t
-	desc = NWkumul.290.d
+	desc = NWkumul.290.desc
 	picture = GFX_report_event_china_chiang_kai_shek
 	is_triggered_only = yes
 	
@@ -56,7 +69,7 @@ country_event = {
 country_event = {			#######Не работает#####
 	id = NWkumul.291
 	title = NWkumul.291.t
-	desc = NWkumul.291.d
+	desc = NWkumul.291.desc
 	is_triggered_only = yes
 
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event KUM.291" }
@@ -71,60 +84,76 @@ country_event = {			#######Не работает#####
 	}
 }
 
-# // SIK
-country_event = { 
+#Просьба об увеличении гарнизона Хами // SIK
+country_event = {
 	id = NWkumul.292
 	title = NWkumul.292.t
-	desc = NWkumul.292.d
+	desc = NWkumul.292.desc
 	is_triggered_only = yes
+	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event KUM.292" }
+	
 	option = {
 		name = NWkumul.292.a
-		ai_chance = {factor = 50}
-		KUM = {
-			country_event = {id = NWkumul.293}
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		FROM = {
+			country_event = { id = NWkumul.293 days = 1 }
 		}
 	}
+	
 	option = {
-		ai_chance = {factor = 50}
 		name = NWkumul.292.b
-		KUM = {
-			country_event = { id = NWkumul.294}
+		ai_chance = { factor = 50 }
+		FROM = {
+			country_event = { id = NWkumul.294 days = 1 }
 		}
 	}
 }
 
+#Гарнизон увеличен // KUM
 country_event = {
 	id = NWkumul.293
 	title = NWkumul.293.t
-	desc = NWkumul.293.d
+	desc = NWkumul.293.desc
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event KUM.293" }
 	
 	option = {
 		name = NWkumul.293.a
-		760 = {
+		capital_scope = {
 			create_unit = {
-				division = "name = \"1. Sinkang Garnison\" division_template = \"Sinkang Garnison\" start_experience_factor = 0.1"
+				division = "name = \"Sinkang Garnison\" division_template = \"Sinkang Garnison\" start_experience_factor = 0.1" 
+				owner = ROOT
+				count = 2
+				allow_spawning_on_enemy_provs = yes
 			}
 		}
 	}
 }
+
+#Отказ в увеличении гарнизона // KUM
 country_event = {
 	id = NWkumul.294
 	title = NWkumul.294.t
-	desc = NWkumul.294.d
+	desc = NWkumul.294.desc
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event KUM.294" }
 	
 	option = { name = NWkumul.294.a }
 }
+
 country_event = {
 	id = NWkumul.296
 	title = NWkumul.296.t
-	desc = NWkumul.296.d
+	desc = NWkumul.296.desc
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event KUM.296" }
@@ -145,7 +174,7 @@ country_event = {
 country_event = {
 	id = NWkumul.295
 	title = NWkumul.295.t
-	desc = NWkumul.295.d
+	desc = NWkumul.295.desc
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event KUM.295" }
@@ -169,7 +198,7 @@ country_event = {
 country_event = {
 	id = NWkumul.297
 	title = NWkumul.297.t
-	desc = NWkumul.297.d
+	desc = NWkumul.297.desc
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event KUM.297" }
@@ -184,7 +213,7 @@ country_event = {
 country_event = {
 	id = NWkumul.299
 	title = NWkumul.299.t
-	desc = NWkumul.299.d
+	desc = NWkumul.299.desc
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event KUM.299" }
@@ -210,7 +239,7 @@ country_event = {
 country_event = {
 	id = NWkumul.300
 	title = NWkumul.300.t
-	desc = NWkumul.300.d
+	desc = NWkumul.300.desc
 	is_triggered_only = yes
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event KUM.300" }
 	option = {
@@ -232,7 +261,7 @@ country_event = {
 country_event = {
 	id = NWkumul.4040
 	title = NWkumul.4040.t
-	desc = NWkumul.4040.d
+	desc = NWkumul.4040.desc
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event KUM.299" }
@@ -256,7 +285,7 @@ country_event = {
 country_event = {
 	id = NWkumul.308 
 	title = NWkumul.308.t
-	desc = NWkumul.308.d
+	desc = NWkumul.308.desc
 	is_triggered_only = yes
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event KUM.308" }
 	option = {
@@ -277,7 +306,7 @@ country_event = {
 country_event = {
 	id = NWkumul.309
 	title = NWkumul.309.t
-	desc = NWkumul.309.d
+	desc = NWkumul.309.desc
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event KUM.309" }
@@ -289,98 +318,48 @@ country_event = {
 		}
 	}
 }
+
+#Возвращение на трон хана // KUM
 country_event = {
 	id = NWkumul.501
 	title = NWkumul.501.t
-	desc = NWkumul.501.d
+	desc = NWkumul.501.desc
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event KUM.501" }
 	
 	option = {
-		name = NWkumul.501.a 
-		KUM = {
+		name = NWkumul.501.a
+		if = {
+			limit = { NOT = { has_government = monarchy } }
 			set_politics = {
 				ruling_party = monarchy
+				elections_allowed = no
 			}
 			add_popularity = {
 				ideology = monarchy 
 				popularity = 0.6
-				}
+			}
+		}
+		create_country_leader = {
+			name = "Bashir Shah"
+			desc = "POLITICS_BASHIR_SHAH_DESC"
+			picture = "gfx/leaders/Asia/Portrait_Asia_Generic_warlord2.dds"
+			expire = "1967.1.1"
+			ideology = monarchy_ideology
+			traits = {
+			}
+		}
+	}
+}
 
-		}
-	}
-}
-country_event = {
-	id = NWkumul.507
-	title = NWkumul.507.t
-	desc = NWkumul.507.d
-	is_triggered_only = yes
-	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event KUM.507" }
-	
-	option = {
-		name = NWkumul.507.a
-		ai_chance = {factor = 70}
-		CHI = {country_event = {id = NWkumul.508}}
-	}
-	option = {
-		name = NWkumul.507.b
-		ai_chance = {factor = 30}
-		CHI = {
-			country_event = {id = NWkumul.509}
-		}
-	}
-}
-country_event = {
-	id = NWkumul.510
-	title = NWkumul.510.t
-	desc = NWkumul.510.d
-	is_triggered_only = yes
-	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event KUM.510" }
-	
-	option = {
-		name = NWkumul.510.a
-		add_equipment_to_stockpile = {
-			type = infantry_equipment
-			amount = 500
-			producer = CHI
-		}
-	}
-}
-country_event = {
-	id = NWkumul.511
-	title = NWkumul.511.t
-	desc = NWkumul.511.d
-	is_triggered_only = yes
-	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event KUM.511" }
-	
-	option = {
-		name = NWkumul.511.a
-		add_offsite_building = { type = industrial_complex level = 1 }
-	}
-}
-country_event = {
-	id = NWkumul.512
-	title = NWkumul.512.t
-	desc = NWkumul.512.d
-	is_triggered_only = yes
-	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event KUM.512" }
-	
-	option = {
-		name = NWkumul.512.a
-		add_manpower = 5000
-	}
-}
+
 
 #Прибытие колонны КПК // SIK и KUM
 country_event = {
 	id = NWkumul.13221
 	title = NWkumul.13221.t
-	desc = NWkumul.13221.d
+	desc = NWkumul.13221.desc
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event KUM.512" }
@@ -409,7 +388,7 @@ country_event = {
 country_event = {
 	id = NWkumul.1001
 	title = NWkumul.1001.t
-	desc = NWkumul.1001.d
+	desc = NWkumul.1001.desc
 	is_triggered_only = yes
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event KUM.1001" }
 	option = {
@@ -437,7 +416,7 @@ country_event = {
 country_event = {
 	id = NWkumul.1002
 	title = NWkumul.1002.t
-	desc = NWkumul.1002.d
+	desc = NWkumul.1002.desc
 	is_triggered_only = yes
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event KUM.1002" }
 	option = {
@@ -447,7 +426,7 @@ country_event = {
 country_event = {
 	id = NWkumul.01121
 	title = NWkumul.01121.t
-	desc = NWkumul.01121.d
+	desc = NWkumul.01121.desc
 	is_triggered_only = yes
 	hidden = yes
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event KUM.01121" }
@@ -465,7 +444,7 @@ country_event = {
 country_event = {
 	id = NWkumul.101
 	title = NWkumul.101.t
-	desc = NWkumul.101.d
+	desc = NWkumul.101.desc
 	is_triggered_only = yes
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event KUM.101" }
 	option = {
@@ -483,7 +462,7 @@ country_event = {
 country_event = {
 	id = NWkumul.115
 	title = NWkumul.115.t
-	desc = NWkumul.115.d
+	desc = NWkumul.115.desc
 	is_triggered_only = yes
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event KUM.115" }
 	option = {
@@ -503,7 +482,7 @@ country_event = {
 country_event = {
 	id = NWkumul.201
 	title = NWkumul.201.t
-	desc = NWkumul.201.d
+	desc = NWkumul.201.desc
 	is_triggered_only = yes
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event KUM.201" }
 	option = {
@@ -523,7 +502,7 @@ country_event = {
 country_event = {
 	id = NWkumul.215
 	title = NWkumul.215.t
-	desc = NWkumul.215.d
+	desc = NWkumul.215.desc
 	is_triggered_only = yes
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event KUM.215" }
 	option = {
@@ -554,7 +533,7 @@ country_event = {
 country_event = {
 	id = NWkumul.2001
 	title = NWkumul.2001.t
-	desc = NWkumul.2001.d
+	desc = NWkumul.2001.desc
 	is_triggered_only = yes
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event KUM.2001" }
 	option = {
@@ -567,7 +546,7 @@ country_event = {
 country_event = {
 	id = NWkumul.1000
 	title = NWkumul.1000.t
-	desc = NWkumul.1000.d
+	desc = NWkumul.1000.desc
 	is_triggered_only = yes
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event KUM.1000" }
 	option = {
@@ -590,7 +569,7 @@ country_event = {
 country_event = {
 	id = NWkumul.1003
 	title = NWkumul.1003.t
-	desc = NWkumul.1003.d
+	desc = NWkumul.1003.desc
 	is_triggered_only = yes
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event KUM.1003" }
 	option = {
@@ -614,7 +593,7 @@ country_event = {
 country_event = {
 	id = NWkumul.1004
 	title = NWkumul.1004.t
-	desc = NWkumul.1004.d
+	desc = NWkumul.1004.desc
 	is_triggered_only = yes
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event KUM.1004" }
 	option = {
@@ -635,32 +614,10 @@ country_event = {
 	}
 }
 
-
-### КИТАЙСКАЯ ЧАСТЬ (из NW_China.txt)
-country_event = {
-	id = NWkumul.288
-	title = NWkumul.288.t
-	desc = NWkumul.288.d
-	picture = GFX_report_event_china_chiang_kai_shek
-	is_triggered_only = yes
-	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event KUM.288" }
-	
-	option = {
-		name = NWkumul.288.a
-		ai_chance = {
-		}
-		KUM = {
-			country_event = {
-				id = NWkumul.289
-			}
-		}
-	}
-}
 country_event = {
 	id = NWkumul.298
 	title = NWkumul.298.t
-	desc = NWkumul.298.d
+	desc = NWkumul.298.desc
 	is_triggered_only = yes
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event KUM.298" }
 	option = {
@@ -685,10 +642,11 @@ country_event = {
 		}
 	}
 }
+
 country_event = {
 	id = NWkumul.304
 	title = NWkumul.304.t
-	desc = NWkumul.304.d
+	desc = NWkumul.304.desc
 	is_triggered_only = yes
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event KUM.304" }
 	option = {
@@ -701,7 +659,7 @@ country_event = {
 country_event = {
 	id = NWkumul.305
 	title = NWkumul.305.t
-	desc = NWkumul.305.d
+	desc = NWkumul.305.desc
 	is_triggered_only = yes
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event KUM.305" }
 	option = {
@@ -719,26 +677,37 @@ country_event = {
 		}
 	}
 }
+
+#Присоединение северо-запада страны // CHI
 country_event = {
 	id = NWkumul.001
 	title = NWkumul.001.t
-	desc = NWkumul.001.d
+	desc = NWkumul.001.desc
 	is_triggered_only = yes
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event KUM.001" }
 	option = {
-		name = NWkumul.001.a 
-		CHI = {
-			annex_country = {
-				target = KUM
-				transfer_troops = yes
+		name = NWkumul.001.a
+		if = {
+			limit = {
+				is_ai = yes
+				FROM = { is_ai = no }
 			}
+			change_tag_from = FROM
+		}
+		every_unit_leader = {
+			set_nationality = FROM
+		}
+		annex_country = {
+			target = FROM
+			transfer_troops = yes
 		}
 	}
 }
+
 country_event = {
 	id = NWkumul.002
 	title = NWkumul.002.t
-	desc = NWkumul.002.d
+	desc = NWkumul.002.desc
 	is_triggered_only = yes
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event KUM.002" }
 	option = {
@@ -753,140 +722,255 @@ country_event = {
 		
 	}
 }
+
+#Автономный статус Синьцзяня // CHI
 country_event = {
 	id = NWkumul.500
 	title = NWkumul.500.t
-	desc = NWkumul.500.d
+	desc = NWkumul.500.desc
 	is_triggered_only = yes
+	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event KUM.500" }
+	
 	option = {
-		ai_chance = {factor = 10}
+		ai_chance = { factor = 9 }
 		name = NWkumul.500.a
-		set_cosmetic_tag = KUM_sink_neutrality
-		CHI = {
-			set_autonomy = {
-				target = KUM
-				autonomy_state = autonomy_dominion
-			}
+		set_autonomy = {
+			target = FROM
+			autonomy_state = autonomy_dominion
+		}
+		hidden_effect = {
+			set_cosmetic_tag = KUM_puppet
 		}
 	}
+	
 	option = {
-		ai_chance = {factor = 1}
+		ai_chance = { factor = 1 }
 		name = NWkumul.500.b
-		CHI = {
-			declare_war_on = {
-				target = KUM
-				type = annex_everything
-			}
+		declare_war_on = {
+			target = FROM
+			type = annex_everything
 		}
 	}
 }
+
+#Кумульское ханство заявляет о своей независимости // OVERLORD
 country_event = {
 	id = NWkumul.505
 	title = NWkumul.505.t
-	desc = NWkumul.505.d
+	desc = NWkumul.505.desc
 	is_triggered_only = yes
+	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event KUM.505" }
+	
 	option = {
-		ai_chance = {factor = 50}
 		name = NWkumul.505.a
-		CHI = {
-			declare_war_on = {
-				target = KUM
-				type = annex_everything
+		trigger = {
+			has_capitulated = no
+		}
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor 0.1
+				OR = {
+					any_enemy_country = {
+						is_major = yes
+					}
+					surrender_progress > 0.25
+				}
 			}
+		}
+		declare_war_on = {
+			target = FROM
+			type = annex_everything
 		}
 	}
+	
 	option = {
-		ai_chance = {factor = 50}
 		name = NWkumul.505.b
-		CHI = {
-			create_wargoal = {
-				type = puppet_wargoal_focus
-				target = KUM
+		trigger = {
+			has_capitulated = no
+		}
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor 0.1
+				OR = {
+					any_enemy_country = {
+						is_major = yes
+					}
+					surrender_progress > 0.25
+				}
 			}
 		}
+		create_wargoal = {
+			type = puppet_wargoal_focus
+			target = FROM
+		}
+	}
+	
+	option = {
+		name = NWkumul.505.c
+		ai_chance = { factor = 40 }
 	}
 }
+
+#Напрягающие новости с северо-запада // CHI
 country_event = {
 	id = NWkumul.506
 	title = NWkumul.506.t
-	desc = NWkumul.506.d
+	desc = NWkumul.506.desc
 	is_triggered_only = yes
+	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event KUM.506" }
+	
 	option = {
-		ai_chance = {factor = 15}
 		name = NWkumul.506.a
-		CHI = {
-			declare_war_on = {
-				target = KUM
-				type = annex_everything
-			}
+		ai_chance = { factor = 15 }
+		declare_war_on = {
+			target = FROM
+			type = annex_everything
 		}
 	}
+	
 	option = {
-		ai_chance = {factor = 25}
 		name = NWkumul.506.b
-		KUM = {
-			country_event = {id = NWkumul.507}
-		}
+		ai_chance = { factor = 25 }
+		FROM = { country_event = { id = NWkumul.507 days = 1 } }
 	}
+	
 	option = {
-		ai_chance = {factor = 60}
 		name = NWkumul.506.c
-		
+		ai_chance = { factor = 60 }
 	}
 }
+
+#Вопросы от центрального правительства // KUM
+country_event = {
+	id = NWkumul.507
+	title = NWkumul.507.t
+	desc = NWkumul.507.desc
+	is_triggered_only = yes
+	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event KUM.507" }
+	
+	option = {
+		name = NWkumul.507.a
+		ai_chance = { factor = 70 }
+		FROM = { country_event = { id = NWkumul.508 days = 1 } }
+	}
+	
+	option = {
+		name = NWkumul.507.b
+		ai_chance = { factor = 30 }
+		FROM = { country_event = { id = NWkumul.509 days = 1 } }
+	}
+}
+
+#Уйгуры подтверждают лояльность нам // CHI
 country_event = {
 	id = NWkumul.508
 	title = NWkumul.508.t
-	desc = NWkumul.508.d
+	desc = NWkumul.508.desc
 	is_triggered_only = yes
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event KUM.508" }
 	option = {
 		name = NWkumul.508.a
 	}
 }
+
+#Уйгуры выходят из-под контроля // CHI
 country_event = {
 	id = NWkumul.509
 	title = NWkumul.509.t
-	desc = NWkumul.509.d
+	desc = NWkumul.509.desc
 	is_triggered_only = yes
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event KUM.509" }
 	option = {
 		name = NWkumul.509.a
-		ai_chance = {factor = 30}
-		CHI = {
-			declare_war_on = {
-				target = KUM
-				type = annex_everything
-			}
+		ai_chance = { factor = 30 }
+		declare_war_on = {
+			target = FROM
+			type = annex_everything
 		}
 	}
+	
 	option = {
 		name = NWkumul.509.b
-		ai_chance = {factor = 70}
-		CHI = {
-			create_wargoal = {
-				type = puppet_wargoal_focus
-				target = KUM
-			}
+		ai_chance = { factor = 70 }
+		create_wargoal = {
+			type = puppet_wargoal_focus
+			target = FROM
+		}
+	}
+}
+
+country_event = {
+	id = NWkumul.510
+	title = NWkumul.510.t
+	desc = NWkumul.510.desc
+	is_triggered_only = yes
+	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event KUM.510" }
+	
+	option = {
+		name = NWkumul.510.a
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = 500
+			producer = CHI
 		}
 	}
 }
 country_event = {
+	id = NWkumul.511
+	title = NWkumul.511.t
+	desc = NWkumul.511.desc
+	is_triggered_only = yes
+	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event KUM.511" }
+	
+	option = {
+		name = NWkumul.511.a
+		add_offsite_building = { type = industrial_complex level = 1 }
+	}
+}
+country_event = {
+	id = NWkumul.512
+	title = NWkumul.512.t
+	desc = NWkumul.512.desc
+	is_triggered_only = yes
+	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event KUM.512" }
+	
+	option = {
+		name = NWkumul.512.a
+		add_manpower = 5000
+	}
+}
+
+#Юлбарс хан восстанавливает закон и мир в Синьцзяне // CHI
+country_event = {
 	id = NWkumul.peace
 	title = NWkumul.peace.t
-	desc = NWkumul.peace.d
+	desc = NWkumul.peace.desc
 	is_triggered_only = yes
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event KUM.509" }
 	option = {
 		name = NWkumul.peace.a
-		CHI = {
-				set_autonomy = {
-					target = KUM
-					autonomy_state = autonomy_dominion
-				}
+		set_autonomy = {
+			target = FROM
+			autonomy_state = autonomy_dominion
+		}
+		FROM = {
+			set_politics = {
+				ruling_party = monarchy
+				elections_allowed = no
+			}
+			add_popularity = {
+				ideology = monarchy 
+				popularity = 0.6
+			}
 		}
 	}
 }

@@ -1,5 +1,6 @@
 ﻿capital = 760
 
+add_manpower = 7000
 oob = "KUM_1936"
 
 set_technology = {
@@ -12,6 +13,8 @@ set_technology = {
 	early_bomber = 1
 }
 set_research_slots = 1
+
+set_cosmetic_tag = KUM_SIK
 
 add_ideas = {
 	KUM_scattered_taxes
@@ -34,13 +37,12 @@ set_politics = {
 }
 
 create_country_leader = {
-	name = "Bashir Shah"
-	desc = "POLITICS_BASHIR_SHAH_DESC"
-	picture = ""
-	expire = "1967.1.1"
+	name = "Yulbars Khan"
+	desc = "POLITICS_YULBARS_KHAN_DESC"
+	picture = "gfx/leaders/KUM/Portrait_Yulbars_Khan.dds"
+	expire = "1965.1.1"
 	ideology = monarchy_ideology
 	traits = {
-		
 	}
 }
 create_country_leader = {
@@ -50,7 +52,6 @@ create_country_leader = {
 	expire = "1965.1.1"
 	ideology = militarism
 	traits = {
-		
 	}
 }
 

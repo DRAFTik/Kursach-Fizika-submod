@@ -2,11 +2,22 @@ KUM_aristocrats_category = {
 	allowed = {
 		original_tag = KUM
 	}
+	available = {
+		hidden_trigger = {
+			has_completed_focus = KUM_aristocrats
+		}
+	}
+	visible = {
+		has_completed_focus = KUM_aristocrats
+	}
 	picture = decision_generic_industry
+	priority = 50
 }
+
 KUM_melons_category = {
 	allowed = {
 		original_tag = KUM
 	}
 	picture = decision_generic_industry
+	priority = 50
 }
