@@ -1064,7 +1064,7 @@ focus_tree = {
 	}
 	focus = {
 		id = NEP_support_buddism
-		icon = GFX_z_goal_win_nepal_democracy
+		icon = GFX_z_goal_support_buddism_gimns
 		cost = 10
 		prerequisite = {
 			focus = NEP_nepalese_national_assembly
@@ -1085,7 +1085,7 @@ focus_tree = {
 	}
 	focus = {
 		id = NEP_repress_buddism
-		icon = GFX_z_goal_win_nepal_democracy
+		icon = GFX_z_goal_close_buddism_gimns
 		cost = 10
 		prerequisite = {
 			focus = NEP_nepalese_national_assembly
@@ -1753,7 +1753,7 @@ focus_tree = {
 	}
 	focus = {
 		id = NEP_INK_ally
-		icon = GFX_focus_chi_british_cooperation
+		icon = GFX_z_goal_raj_dem_ally
 		cost = 10
 		prerequisite = {
 			focus = NEP_open_embassy_for_great_c
@@ -1786,7 +1786,7 @@ focus_tree = {
 	}
 	focus = {
 		id = NEP_china_ally
-		icon = GFX_focus_chi_british_cooperation
+		icon = GFX_focus_chi_cooperation_with_the_communists
 		cost = 10
 		prerequisite = {
 			focus = NEP_open_embassy_for_great_c
@@ -1911,7 +1911,7 @@ focus_tree = {
 	}
 	focus = {
 		id = NEP_end_rana
-		icon = GFX_z_goal_close_land_aristo
+		icon = GFX_z_goal_stop_rana_dinasty
 		cost = 10
 		prerequisite = {
 			focus = NEP_abolition_privileged_land_tenure
@@ -1932,7 +1932,7 @@ focus_tree = {
 	}
 	focus = {
 		id = NEP_chains_for_king
-		icon = GFX_z_goal_close_land_aristo
+		icon = GFX_z_goal_control_nepal_king
 		cost = 10
 		prerequisite = {
 			focus = NEP_end_rana
@@ -1968,7 +1968,7 @@ focus_tree = {
 	}
 	focus = {
 		id = NEP_create_commi
-		icon = GFX_z_goal_close_land_aristo
+		icon = GFX_z_goal_com_reactions_nep
 		cost = 10
 		prerequisite = {
 			focus = NEP_apply_shastri_social_reform
@@ -1989,7 +1989,7 @@ focus_tree = {
 	}
 	focus = {
 		id = NEP_end_shah
-		icon = GFX_z_goal_close_land_aristo
+		icon = GFX_z_goal_fale_nepal_king
 		cost = 10
 		prerequisite = {
 			focus = NEP_create_commi
@@ -2025,7 +2025,7 @@ focus_tree = {
 	}
 	focus = {
 		id = NEP_end_dragon_king
-		icon = GFX_z_goal_close_land_aristo
+		icon = GFX_z_goal_bhutan_king
 		cost = 10
 		prerequisite = {
 			focus = NEP_create_commi
@@ -2043,7 +2043,7 @@ focus_tree = {
 	}
 	focus = {
 		id = NEP_end_chogyal
-		icon = GFX_z_goal_close_land_aristo
+		icon = GFX_z_goal_sikkim_king
 		cost = 10
 		prerequisite = {
 			focus = NEP_end_shah
@@ -2085,7 +2085,7 @@ focus_tree = {
 	}
 	focus = {
 		id = NEP_commi_for_all_ppl
-		icon = GFX_z_goal_close_land_aristo
+		icon = GFX_z_goal_red_army
 		cost = 10
 		prerequisite = {
 			focus = NEP_create_nepali_peoples_weekly

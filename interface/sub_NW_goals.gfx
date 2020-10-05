@@ -490,6 +490,46 @@ spriteTypes = {
 		texturefile = "gfx/interface/goals/z_goal_xii_tuva.dds"
 	}
 	
+	spriteType = {
+		name = "GFX_z_goal_bhutan_king"
+		texturefile = "gfx/interface/goals/z_goal_bhutan_king.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_z_goal_sikkim_king"
+		texturefile = "gfx/interface/goals/z_goal_sikkim_king.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_z_goal_fale_nepal_king"
+		texturefile = "gfx/interface/goals/z_goal_fale_nepal_king.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_z_goal_com_reactions_nep"
+		texturefile = "gfx/interface/goals/z_goal_com_reactions_nep.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_z_goal_stop_rana_dinasty"
+		texturefile = "gfx/interface/goals/z_goal_stop_rana_dinasty.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_z_goal_control_nepal_king"
+		texturefile = "gfx/interface/goals/z_goal_control_nepal_king.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_z_goal_close_buddism_gimns"
+		texturefile = "gfx/interface/goals/z_goal_close_buddism_gimns.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_z_goal_support_buddism_gimns"
+		texturefile = "gfx/interface/goals/z_goal_support_buddism_gimns.dds"
+	}
+	
 	
 	frameAnimatedSpriteType = {
 		name = "GFX_z_goal_mountain_warriors"
