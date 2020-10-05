@@ -22,7 +22,7 @@ KUM_aristocrats_category = {
 			}
 		}
 		visible = {
-			has_completed_focus = 	kum_aristocrats
+			has_completed_focus = KUM_aristocrats
 			
 		}
 	}
@@ -49,7 +49,7 @@ KUM_aristocrats_category = {
 			}
 		}
 		visible = {
-			has_completed_focus = 	kum_aristocrats
+			has_completed_focus = KUM_aristocrats
 			
 		}
 	}
@@ -76,7 +76,7 @@ KUM_aristocrats_category = {
 			}
 		}
 		visible = {
-			has_completed_focus = 	kum_aristocrats
+			has_completed_focus = KUM_aristocrats
 			
 		}
 	}
@@ -103,7 +103,7 @@ KUM_aristocrats_category = {
 			}
 		}
 		visible = {
-			has_completed_focus = 	kum_aristocrats
+			has_completed_focus = KUM_aristocrats
 			
 		}
 	}
@@ -130,7 +130,7 @@ KUM_aristocrats_category = {
 			}
 		}
 		visible = {
-			has_completed_focus = 	kum_aristocrats
+			has_completed_focus = KUM_aristocrats
 			
 		}
 	}
@@ -157,7 +157,7 @@ KUM_aristocrats_category = {
 			}
 		}
 		visible = {
-			has_completed_focus = 	kum_aristocrats
+			has_completed_focus = KUM_aristocrats
 			
 		}
 	}
@@ -184,7 +184,7 @@ KUM_aristocrats_category = {
 			}
 		}
 		visible = {
-			has_completed_focus = kum_aristocrats
+			has_completed_focus = KUM_aristocrats
 		}
 	}
 }
@@ -388,7 +388,7 @@ KUM_melons_category = {
 				var = KUM_recent_mel
 			}
 			if = {
-				limit = { KUM = { has_completed_focus = kum_new_melon } }
+				limit = { KUM = { has_completed_focus = KUM_new_melon } }
 				add_to_variable = { KUM_melon_total = 2000}
 				set_variable = {KUM_melon_temp = 2000}
 			}

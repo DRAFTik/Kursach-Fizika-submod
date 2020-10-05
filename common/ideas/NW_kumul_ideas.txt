@@ -1,9 +1,69 @@
 ideas = {
 
 	country = {
+		KUM_scattered_taxes = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				political_power_gain = -0.25
+			}
+		}
+		KUM_famine = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				monthly_population = -0.25
+			}
+		}
+		KUM_oldhan = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				stability_factor = -0.15
+				political_power_gain = 0.1
+			}
+		}
+		KUM_tortures = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				stability_factor = 0.15
+				political_power_gain = -0.5
+			}
+		}	
+		KUM_feodals = {
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			modifier = {
+				production_speed_buildings_factor = -0.25
+				production_factory_max_efficiency_factor = -0.2
+			}
+		}
+		
+		
 		KUM_mel_2 = {
 			allowed = {
-				always = yes
+				always = no
 			}
 			allowed_civil_war = {
 				always = yes
@@ -14,7 +74,7 @@ ideas = {
 		}	
 		KUM_mel = {
 			allowed = {
-				always = yes
+				always = no
 			}
 			allowed_civil_war = {
 				always = yes
@@ -28,7 +88,7 @@ ideas = {
 		}
 		KUM_mel_1 = {
 			allowed = {
-				always = yes
+				always = no
 			}
 			allowed_civil_war = {
 				always = yes
@@ -42,7 +102,7 @@ ideas = {
 		}
 		KUM_mounts = {
 			allowed = {
-				always = yes
+				always = no
 			}
 			allowed_civil_war = {
 				always = yes
@@ -53,7 +113,7 @@ ideas = {
 		}
 		KUM_now_or_never = {
 			allowed = {
-				always = yes
+				always = no
 			}
 			allowed_civil_war = {
 				always = yes
@@ -62,21 +122,9 @@ ideas = {
 				army_core_defence_factor = 0.1
 			}
 		}
-		KUM_oldhan = {
-			allowed = {
-				always = yes
-			}
-			allowed_civil_war = {
-				always = yes
-			}
-			modifier = {
-				stability_factor = 0.15
-				political_power_gain = 0.1
-			}
-		}
 		KUM_renovating = {
 			allowed = {
-				always = yes
+				always = no
 			}
 			allowed_civil_war = {
 				always = yes
@@ -88,7 +136,7 @@ ideas = {
 		}
 		KUM_taxes = {
 				allowed = {
-				always = yes
+				always = no
 			}
 			allowed_civil_war = {
 				always = yes
@@ -100,7 +148,7 @@ ideas = {
 		}
 		KUM_bur = {
 			allowed = {
-				always = yes
+				always = no
 			}
 			allowed_civil_war = {
 				always = yes
@@ -111,7 +159,7 @@ ideas = {
 		}
 		KUM_recovery = {
 			allowed = {
-				always = yes
+				always = no
 			}
 			allowed_civil_war = {
 				always = no
@@ -122,7 +170,7 @@ ideas = {
 		}
 		KUM_uguyrs = {
 			allowed = {
-				always = yes
+				always = no
 			}
 			allowed_civil_war = {
 				always = yes
@@ -134,7 +182,7 @@ ideas = {
 		}
 		KUM_integration_2 = {
 			allowed = {
-				always = yes
+				always = no
 			}
 			allowed_civil_war = {
 				always = no
@@ -145,7 +193,7 @@ ideas = {
 		}
 		KUM_integration = {
 			allowed = {
-				always = yes
+				always = no
 			}
 			allowed_civil_war = {
 				always = no
@@ -156,7 +204,7 @@ ideas = {
 		}
 		KUM_terrain = {
 			allowed = {
-				always = yes
+				always = no
 			}
 			allowed_civil_war = {
 				always = yes
@@ -165,52 +213,6 @@ ideas = {
 				intel_network_gain_factor = 0.25
 				army_attack_factor = 0.1
 				army_defence_factor = 0.1
-			}
-		}
-		KUM_scattered_taxes = {
-			allowed = {
-				always = no
-			}
-			allowed_civil_war = {
-				always = yes
-			}
-			modifier = {
-					political_power_gain = -0.25
-			}
-		}
-		KUM_famine = {
-			allowed = {
-				always = yes
-			}
-			allowed_civil_war  = {
-				always = yes
-			}
-			modifier = {
-				monthly_population = -0.25
-			}
-		}
-		KUM_tortures = {
-			allowed = {
-				always = yes
-			}
-			allowed_civil_war = {
-				always = yes
-			}
-			modifier = {
-				stability_factor = 0.15
-				political_power_gain = -0.5
-			}
-		}	
-		KUM_feodals = {
-			allowed = {
-				always = yes
-			}
-			allowed_civil_war = {
-				always = yes
-			}
-			modifier = {
-				production_speed_buildings_factor = -0.25
-				production_factory_max_efficiency_factor = -0.2
 			}
 		}
 		KUM_uguymobilization = {
@@ -240,7 +242,7 @@ ideas = {
 		}
 		KUM_melons = {
 			allowed = {
-				always = yes
+				always = no
 			}
 			allowed_civil_war = {
 				always = yes
@@ -252,7 +254,7 @@ ideas = {
 		}
 		KUM_new_melons = {
 			allowed = {
-				always = yes
+				always = no
 			}
 			allowed_civil_war = {
 				always = yes
@@ -264,7 +266,7 @@ ideas = {
 		}
 		KUM_heretics = {
 			allowed = {
-				always = yes
+				always = no
 			}
 			allowed_civil_war = {
 				always = yes
@@ -276,7 +278,7 @@ ideas = {
 		}
 		KUM_building = {
 			allowed = {
-				always = yes
+				always = no
 			}
 			allowed_civil_war = {
 				always = yes
@@ -287,7 +289,7 @@ ideas = {
 		}
 		KUM_road_recovery = {
 			allowed = {
-				always = yes
+				always = no
 			}
 			allowed_civil_war = {
 				always = yes
@@ -299,7 +301,7 @@ ideas = {
 		}
 		KUM_law = {
 			allowed = {
-				always = yes
+				always = no
 			}
 			allowed_civil_war = {
 				always = yes

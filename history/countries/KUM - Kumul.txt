@@ -14,12 +14,12 @@ set_technology = {
 set_research_slots = 1
 
 add_ideas = {
-		KUM_scattered_taxes
-		KUM_famine
-		KUM_tortures
-		KUM_feodals
-		KUM_oldhan
-	}
+	KUM_scattered_taxes
+	KUM_famine
+	KUM_tortures
+	KUM_feodals
+	KUM_oldhan
+}
 
 
 set_popularities = {
@@ -95,37 +95,44 @@ create_corps_commander = {
 	logistics_skill = 2
 }
 create_corps_commander = {
-		name = "Wu Zhongxin"
-		portrait_path = "gfx/leaders/KUM/Portrait_Wu_Zhongzin"
-		skill = 2
-		attack_skill = 2
-		defense_skill = 1
-		planning_skill = 2
-		logistics_skill = 2
+	name = "Wu Zhongxin"
+	portrait_path = "gfx/leaders/KUM/Portrait_Wu_Zhongzin"
+	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 2
 }
 create_corps_commander = {
-		name = "Tao Zhiyue"
-		portrait_path = "gfx/leaders/KUM/Portrait_Tao_Zhiyue"
-		skill = 3
-		attack_skill = 2
-		defense_skill = 3
-		planning_skill = 2
-		logistics_skill = 1
+	name = "Tao Zhiyue"
+	portrait_path = "gfx/leaders/KUM/Portrait_Tao_Zhiyue"
+	skill = 3
+	attack_skill = 2
+	defense_skill = 3
+	planning_skill = 2
+	logistics_skill = 1
 }
 create_corps_commander = {
-		name = "Zhang Zhizhong"
-		portrait_path = "gfx/leaders/KUM/Portrait_Zhang_Zhizhong"
-		skill = 1
-		attack_skill = 2
-		defense_skill = 1
-		planning_skill = 2
-		logistics_skill = 1 
+	name = "Zhang Zhizhong"
+	portrait_path = "gfx/leaders/KUM/Portrait_Zhang_Zhizhong"
+	skill = 1
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 1 
 }
 
 
 
 1940.1.1 = {
 	oob = "OOB_zero"
+	remove_ideas = {
+		KUM_scattered_taxes
+		KUM_famine
+		KUM_tortures
+		KUM_feodals
+		KUM_oldhan
+	}
 	add_ideas = {
 		volunteer_only
 		civilian_economy
