@@ -308,7 +308,7 @@ focus_tree = {
 		y = 1
 		icon = GFX_z_goal_raj_gb_ally
 		relative_position_id = SKM_monarchy_won
-		prerequisite = { focus = SKM_monarchy_won OR = SKM_calcutta_univesity }
+		prerequisite = { focus = SKM_monarchy_won focus = SKM_calcutta_univesity }
 		cost = 10
 		ai_will_do = {
 			factor = 3
@@ -400,7 +400,7 @@ focus_tree = {
 		y = 1
 		icon = GFX_z_goal_white_officers
 		relative_position_id = SKM_strength_india
-		prerequisite = { focus = SKM_strength_india OR = SKM_1861 }
+		prerequisite = { focus = SKM_strength_india focus = SKM_1861 }
 		cost = 10
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SKM_gallavali"
@@ -587,7 +587,7 @@ focus_tree = {
 		y = 1
 		icon = GFX_focus_generic_strike_at_democracy1
 		relative_position_id = SKM_japan
-		prerequisite = { focus = SKM_japan OR = SKM_regions }
+		prerequisite = { focus = SKM_japan focus = SKM_regions }
 		cost = 5
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTagt]): Focus SKM_south_claim"
@@ -630,7 +630,7 @@ focus_tree = {
 		y = 0
 		icon = GFX_z_goal_SH_ref
 		relative_position_id = SKM_strength_chogyal
-		prerequisite = { focus = SKM_monarchy_won OR = SKM_democratic_won }
+		prerequisite = { focus = SKM_monarchy_won focus = SKM_democratic_won }
 		cost = 10
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SKM_terra_reform"
@@ -940,7 +940,7 @@ focus_tree = {
 		y = 1
 		icon = GFX_focus_generic_socialist_science
 		relative_position_id = SKM_narodovlastie
-		prerequisite = { focus = SKM_narodovlastie OR = SKM_farm_militia }
+		prerequisite = { focus = SKM_narodovlastie focus = SKM_farm_militia }
 		cost = 10
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SKM_farm_sschools"
@@ -953,7 +953,7 @@ focus_tree = {
 		y = 0
 		icon = GFX_z_goal_Armored_control
 		relative_position_id = SKM_farm_sschools
-		prerequisite = { focus = SKM_narodovlastie OR = SKM_farm_militia }
+		prerequisite = { focus = SKM_narodovlastie focus = SKM_farm_militia }
 		cost = 10
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SKM_custary_weapons"
@@ -1046,7 +1046,7 @@ focus_tree = {
 		y = 1
 		icon = GFX_z_goal_butan_revenge
 		relative_position_id = SKM_camelponta
-		prerequisite = { focus = SKM_tearup_1861 OR = SKM_international }
+		prerequisite = { focus = SKM_tearup_1861 focus = SKM_international }
 		cost = 10
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SKM_revenge_butan"
@@ -1075,7 +1075,7 @@ focus_tree = {
 		y = 0
 		icon = GFX_z_goal_revenge_tibet
 		relative_position_id = SKM_revenge_butan
-		prerequisite = { focus = SKM_tearup_1861 OR = SKM_international }
+		prerequisite = { focus = SKM_tearup_1861 focus = SKM_international }
 		cost = 10
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SKM_revenge_tibet"
@@ -1105,7 +1105,7 @@ focus_tree = {
 		icon = GFX_z_goal_nepal_revenge
 		relative_position_id = SKM_revenge_tibet
 		mutually_exclusive = { focus = SKM_ask_help_nepal }
-		prerequisite = { focus = SKM_tearup_1861 OR = SKM_international }
+		prerequisite = { focus = SKM_tearup_1861 focus = SKM_international }
 		cost = 10
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SKM_revenge_nepal"
@@ -1208,7 +1208,7 @@ focus_tree = {
 		icon = GFX_z_goal_cardamon
 		relative_position_id = SKM_village_hospitals
 		cost = 10
-		prerequisite = { focus = SKM_village_hospitals OR = SKM_rocket_post }
+		prerequisite = { focus = SKM_village_hospitals focus = SKM_rocket_post }
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SKM_cardamon"
 			add_ideas = SKM_cardamon_idea
@@ -1220,7 +1220,7 @@ focus_tree = {
 		y = 0
 		icon = GFX_z_goal_agriculture3
 		relative_position_id = SKM_cardamon
-		prerequisite = { focus = SKM_village_hospitals OR = SKM_rocket_post }
+		prerequisite = { focus = SKM_village_hospitals focus = SKM_rocket_post }
 		cost = 10
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SKM_rice"
@@ -1233,7 +1233,7 @@ focus_tree = {
 		y = 0
 		icon = GFX_z_goal_lather_factory
 		relative_position_id = SKM_rice 
-		prerequisite = { focus = SKM_village_hospitals OR = SKM_rocket_post }
+		prerequisite = { focus = SKM_village_hospitals focus = SKM_rocket_post }
 		cost = 10
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SKM_leather"
