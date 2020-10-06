@@ -35,6 +35,10 @@ mountaineers_NEP = {
 		width_weight = 2.0
 		column_swap_factor = 0.2
 		
+		can_upgrade_in_field = {
+			has_manpower > 500000
+		}
+		
 		stat_weights = {
 			0 #-- default_morale
 			1 #-- defense
@@ -87,6 +91,7 @@ mountaineers_NEP = {
 		}
 		
 		allowed_types = {
+			engineer
 			mountaineers
 			artillery
 			recon
@@ -94,6 +99,7 @@ mountaineers_NEP = {
 			field_hospital
 			logistics_company
 			anti_tank
+			artillery_brigade
 		}
 		
 		replace_at_match = 0.6
@@ -114,6 +120,10 @@ mountaineers_NEP = {
 		target_width = 20.0
 		width_weight = 2.0
 		column_swap_factor = 0.2
+		
+		can_upgrade_in_field = {
+			has_manpower > 1000000
+		}
 		
 		stat_weights = {
 			0 #-- default_morale
@@ -169,6 +179,7 @@ mountaineers_NEP = {
 		}
 		
 		allowed_types = {
+			engineer
 			mountaineers
 			artillery
 			recon
@@ -176,6 +187,7 @@ mountaineers_NEP = {
 			field_hospital
 			logistics_company
 			anti_tank
+			artillery_brigade
 		}
 		
 		replace_at_match = 0.95
@@ -256,6 +268,7 @@ mountaineers_NEP = {
 		}
 		
 		allowed_types = {
+			engineer
 			mountaineers
 			artillery
 			recon
@@ -263,6 +276,7 @@ mountaineers_NEP = {
 			field_hospital
 			logistics_company
 			anti_tank
+			artillery_brigade
 		}
 	}
 }
