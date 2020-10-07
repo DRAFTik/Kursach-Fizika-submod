@@ -23,7 +23,6 @@ focus_tree = {
 			add_political_power = 100
 			add_stability = 0.05
 		}
-
 	}
 
 	focus = {
@@ -47,7 +46,6 @@ focus_tree = {
 				}
 			}
 		}
-
 	}
 
 	focus = {
@@ -60,20 +58,30 @@ focus_tree = {
 		x = -5
 		y = 1
 		relative_position_id = KUM_recovery_industry
-			ai_will_do = {
-					factor = 10
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus KUM_melons"
+			set_temp_variable = { KUM_melons_temp_var = 2500 }
+			set_variable = { KUM_base_melon_var = KUM_melons_temp_var }
+			set_temp_variable = { KUM_melons_trigger_var = 5000 }
+			add_to_variable = { KUM_melon_total = KUM_melons_trigger_var }
+			custom_effect_tooltip = KUM_melons_effect_tt
+			add_ideas = KUM_melons
+			unlock_decision_category_tooltip = KUM_melons_category
+			random_owned_controlled_state = {
+				limit = {
+					hospital < 5
 				}
-			completion_reward = {
-				log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus KUM_melons"
-				add_ideas = KUM_melons
-				set_temp_variable = { KUM_melon_temp = 5000 }
-				add_to_variable = { KUM_melon_total = KUM_melon_temp }
-				custom_effect_tooltip = KUM_melon
-				clamp_variable = { var = KUM_melon_total min = 0 max = 200000 }
-				unlock_decision_category_tooltip = KUM_melons_category
-				custom_effect_tooltip = KUM_mel2_tt
+				add_building_construction = {
+					type = hospital
+					level = 1
+					instant_build = yes
+				}
 			}
-
+			custom_effect_tooltip = KUM_mel2_tt
+		}
 	}
 
 	focus = {
@@ -86,21 +94,26 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = KUM_melons
-			available = {
-					KUM = {
-							NOT = {
-									is_subject_of = SIK
-								}
-						}
+		available = {
+			NOT = { is_subject_of = SIK }
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus KUM_agrarian_reform"
+			add_research_slot = 1
+			random_owned_controlled_state = {
+				limit = {
+					hospital < 5
 				}
-			ai_will_do = {
-					factor = 10
+				add_building_construction = {
+					type = hospital
+					level = 1
+					instant_build = yes
 				}
-			completion_reward = {
-					log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus KUM_agrarian_reform"
-					add_research_slot = 1
-				}
-
+			}
+		}
 	}
 
 	focus = {
@@ -113,20 +126,22 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = KUM_recovery_industry
-			ai_will_do = {
-					factor = 10
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+			controls_state = 760
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus KUM_weapons"
+			760 = {
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
 				}
-			completion_reward = {
-					log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus KUM_weapons"
-					760 = {
-							add_building_construction = {
-									type = arms_factory
-									level = 1
-									instant_build = yes
-								}
-						}
-				}
-
+			}
+		}
 	}
 
 	focus = {
@@ -245,19 +260,28 @@ focus_tree = {
 		x = 3
 		y = 1
 		relative_position_id = KUM_recovery_industry
-			available = {
-					KUM = {
-							is_subject_of = SIK
-						}
+		available = {
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		bypass = {
+			NOT = { has_idea = KUM_feodals }
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus KUM_nofeodals"
+			remove_ideas = KUM_feodals
+			random_owned_controlled_state = {
+				limit = {
+					hospital < 5
 				}
-			ai_will_do = {
-					factor = 10
+				add_building_construction = {
+					type = hospital
+					level = 1
+					instant_build = yes
 				}
-			completion_reward = {
-					log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus KUM_nofeodals"
-					remove_ideas = KUM_feodals
-				}
-
+			}
+		}
 	}
 
 	focus = {
@@ -753,6 +777,9 @@ focus_tree = {
 	 	prerequisite = {
 	 		focus = KUM_garnison
 	 	}
+		allow_branch = {
+			always = no
+		}
 	 	available = {
 			has_war = no
 			is_subject = no
@@ -786,47 +813,83 @@ focus_tree = {
 			focus = KUM_garnison
 		}
 		available = {
-			NOT = {
-				 country_exists = SIK
-			}
+			NOT = { country_exists = SIK }
 		}
 		x = 19
 		y = 4
+		bypass = {
+			OR = {
+				NOT = { country_exists = UYG }
+				UYG = {
+					OR = {
+						has_war_with = ROOT
+						is_in_faction_with = ROOT
+						is_subject_of = ROOT
+					}
+				}
+			}
+			OR = {
+				NOT = { country_exists = DZH }
+				DZH = {
+					OR = {
+						has_war_with = ROOT
+						is_in_faction_with = ROOT
+						is_subject_of = ROOT
+					}
+				}
+			}
+			OR = {
+				NOT = { country_exists = TNG }
+				TNG = {
+					OR = {
+						has_war_with = ROOT
+						is_in_faction_with = ROOT
+						is_subject_of = ROOT
+					}
+				}
+			}
+		}
 		completion_reward = {
-			IF = {
+			if = {
+				limit = {
+					country_exists = UYG
+					NOT = { has_war_with = UYG }
+					UYG = {
+						NOT = { is_in_faction_with = ROOT }
+						is_subject_of = ROOT
+					}
+				}
+				create_wargoal = {
+					type = annex_everything
+					target = UYG
+				}
+			}
+			if = {
 				limit = {
 					country_exists = DZH
-				}
-				ROOT = {
-					create_wargoal = {
-						type = annex_everything
-						target = DZH
+					NOT = { has_war_with = DZH }
+					DZH = {
+						NOT = { is_in_faction_with = ROOT }
+						is_subject_of = ROOT
 					}
 				}
+				create_wargoal = {
+					type = annex_everything
+					target = DZH
+				}
 			}
-			IF = {
+			if = {
 				limit = {
 					country_exists = TNG
-				}
-				ROOT = {
-					create_wargoal = {
-						type = annex_everything
-						target = TNG
+					NOT = { has_war_with = TNG }
+					TNG = {
+						NOT = { is_in_faction_with = ROOT }
+						is_subject_of = ROOT
 					}
 				}
-			}
-			IF = {
-				limit = {
-					country_exists = KAS
-					KAS = {
-						is_ai = yes
-					}
-				}
-				ROOT = {
-					create_wargoal = {
-						type = annex_everything
-						target = KAS
-					}
+				create_wargoal = {
+					type = annex_everything
+					target = TNG
 				}
 			}
 		}
@@ -1008,6 +1071,11 @@ focus_tree = {
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = hospital
 					level = 1
 					instant_build = yes
 				}
@@ -1576,19 +1644,33 @@ focus_tree = {
 		prerequisite = {
 			focus = KUM_agrarian_reform
 		}
-		x = -2
+		x = -1
 		y = 1
 		relative_position_id = KUM_agrarian_reform
-			ai_will_do = {
-					factor = 10
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus KUM_new_melon"
+			random_owned_controlled_state = {
+				limit = {
+					hospital < 5
 				}
-			completion_reward = {
-					log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus KUM_new_melon"
-					remove_ideas = KUM_melons
-					add_ideas = KUM_new_melons
-					custom_effect_tooltip = KUM_mel1_tt
+				add_building_construction = {
+					type = hospital
+					level = 1
+					instant_build = yes
 				}
-
+			}
+			swap_ideas = {
+				remove_idea = KUM_melons
+				add_idea = KUM_new_melons
+			}
+			set_temp_variable = { KUM_base_melon_temp_var = KUM_base_melon_var }
+			multiply_temp_variable = { KUM_base_melon_temp_var = 2 }
+			custom_effect_tooltip = KUM_mel1_tt
+			multiply_variable = { KUM_base_melon_var = 2 }
+		}
 	}
 
 	focus = {
@@ -1598,29 +1680,36 @@ focus_tree = {
 		prerequisite = {
 			focus = KUM_agrarian_reform
 		}
-		x = 2
+		x = 1
 		y = 1
 		relative_position_id = KUM_agrarian_reform
-			ai_will_do = {
-					factor = 10
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+			controls_state = 760
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus KUM_light_industry"
+			760 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
 				}
-			completion_reward = {
-					log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus KUM_light_industry"
-					760 = {
-							add_extra_state_shared_building_slots = 2
-							add_building_construction = {
-									type = infrastructure
-									level = 1
-									instant_build = yes
-								}
-							add_building_construction = {
-									type = industrial_complex
-									level = 1
-									instant_build = yes
-								}
-						}
+				add_building_construction = {
+					type = hospital
+					level = 1
+					instant_build = yes
 				}
-
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
 	}
 
 	focus = {
@@ -1655,27 +1744,35 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = KUM_heretic_camps
-			ai_will_do = {
-					factor = 10
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+			controls_state = 760
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus KUM_modernizing_building"
+			add_ideas = KUM_building
+			760 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
 				}
-			completion_reward = {
-					log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus KUM_modernizing_building"
-					760 = {
-							add_extra_state_shared_building_slots = 2
-							add_building_construction = {
-									type = infrastructure
-									level = 1
-									instant_build = yes
-								}
-							add_building_construction = {
-									type = industrial_complex
-									level = 1
-									instant_build = yes
-								}
-						}
-					add_ideas = KUM_building
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
 				}
-
+			}
+			add_tech_bonus = {
+				name = construction_tech_bonus
+				bonus = 1
+				uses = 1
+				category = construction_tech
+			}
+		}
 	}
 
 	focus = {
@@ -1688,26 +1785,28 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = KUM_heretic_camps
-			ai_will_do = {
-					factor = 10
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+			controls_state = 760
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus KUM_industry_on_bones"
+			760 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
 				}
-			completion_reward = {
-					log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus KUM_industry_on_bones"
-					760 = {
-							add_extra_state_shared_building_slots = 2
-							add_building_construction = {
-									type = arms_factory
-									level = 2
-									instant_build = yes
-								}
-							add_building_construction = {
-									type = industrial_complex
-									level = 1
-									instant_build = yes
-								}
-						}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
 				}
-
+			}
+		}
 	}
 
 	focus = {
@@ -1723,19 +1822,18 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = KUM_industry_on_bones
-			ai_will_do = {
-					factor = 10
-				}
-			completion_reward = {
-					log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus KUM_foreign_investors"
-					add_tech_bonus = {
-							name = industry_bonus
-							bonus = 1.0
-							uses = 1
-							category = industry
-						}
-				}
-
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus KUM_foreign_investors"
+			add_tech_bonus = {
+				name = industry_bonus
+				bonus = 0.5
+				uses = 2
+				category = industry
+			}
+		}
 	}
 
 	focus = {
@@ -1748,20 +1846,29 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = KUM_nofeodals
-			ai_will_do = {
-					factor = 10
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus KUM_private_sector"
+			add_political_power = 75
+			add_tech_bonus = {
+				name = construction_tech_bonus
+				bonus = 0.5
+				uses = 2
+				category = construction_tech
+			}
+			random_owned_controlled_state = {
+				limit = {
+					hospital < 5
 				}
-			completion_reward = {
-					log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus KUM_private_sector"
-					add_political_power = 75
-					add_tech_bonus = {
-							name = construction_tech_bonus
-							bonus = 0.5
-							uses = 2
-							category = construction_tech
-						}
+				add_building_construction = {
+					type = hospital
+					level = 1
+					instant_build = yes
 				}
-
+			}
+		}
 	}
 
 	focus = {
@@ -1774,26 +1881,28 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = KUM_nofeodals
-			ai_will_do = {
-					factor = 10
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+			controls_state = 760
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus KUM_nofeodals"
+			760 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
 				}
-			completion_reward = {
-					log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus KUM_nofeodals"
-					760 = {
-							add_extra_state_shared_building_slots = 2
-							add_building_construction = {
-									type = industrial_complex
-									level = 2
-									instant_build = yes
-								}
-							add_building_construction = {
-									type = air_base
-									level = 1
-									instant_build = yes
-								}
-						}
+				add_building_construction = {
+					type = air_base
+					level = 1
+					instant_build = yes
 				}
-
+			}
+		}
 	}
 
 	focus = {
@@ -1809,25 +1918,27 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = KUM_infrastructure
-			ai_will_do = {
-					factor = 10
+		ai_will_do = {
+			factor = 10
+		}
+		available = {
+			controls_state = 760
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus KUM_geologic"
+			760 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
 				}
-			completion_reward = {
-					log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus KUM_geologic"
-					760 = {
-							add_extra_state_shared_building_slots = 1
-							add_building_construction = {
-									type = industrial_complex
-									level = 1
-									instant_build = yes
-								}
-					}
-					add_resource = {
-							type = oil
-							amount = 4
-							state = 760
-					}
-				}
-
+			}
+			add_resource = {
+				type = oil
+				amount = 4
+				state = 760
+			}
+		}
 	}
 }

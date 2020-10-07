@@ -53,36 +53,6 @@ country_event = {
 	}
 }
 
-country_event = {
-	id = NWkumul.290
-	title = NWkumul.290.t
-	desc = NWkumul.290.desc
-	picture = GFX_report_event_china_chiang_kai_shek
-	is_triggered_only = yes
-	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event KUM.290" }
-	
-	option = {
-		name = NWkumul.290.a
-	}
-}
-country_event = {			#######Не работает#####
-	id = NWkumul.291
-	title = NWkumul.291.t
-	desc = NWkumul.291.desc
-	is_triggered_only = yes
-
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event KUM.291" }
-
-	option = {
-		name = NWkumul.291.a
-		add_equipment_to_stockpile = {
-			type = infantry_equipment
-			amount = 500
-			producer = CHI
-		}
-	}
-}
 
 #Просьба об увеличении гарнизона Хами // SIK
 country_event = {
@@ -150,27 +120,7 @@ country_event = {
 	option = { name = NWkumul.294.a }
 }
 
-country_event = {
-	id = NWkumul.296
-	title = NWkumul.296.t
-	desc = NWkumul.296.desc
-	is_triggered_only = yes
-	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event KUM.296" }
-	
-	option = {
-		name = NWkumul.296.a 
-		KUM = {
-			add_equipment_to_stockpile = {
-				type = infantry_equipment
-				amount = 500
-				producer = TNG
-			}
-		}
-	}
-}
-
-# // TNG
+#Тайное просьба Юлбарс Хана о передачи оружия // TNG
 country_event = {
 	id = NWkumul.295
 	title = NWkumul.295.t
@@ -181,20 +131,36 @@ country_event = {
 	
 	option = { 
 		name = NWkumul.295.a
-		ai_chance = {factor = 80}
-		KUM = {
-			country_event = { id = NWkumul.296}
-		}
+		ai_chance = { factor = 80 }
+		FROM = { country_event = { id = NWkumul.296 days = 1 } }
 	}
 	option = {
 		name = NWkumul.295.b
-		ai_chance = {factor = 20}
-		KUM = {
-			country_event = { id = NWkumul.297}
+		ai_chance = { factor = 20 }
+		FROM = { country_event = { id = NWkumul.297 days = 1 } }
+	}
+}
+
+#Согласие дунган // KUM
+country_event = {
+	id = NWkumul.296
+	title = NWkumul.296.t
+	desc = NWkumul.296.desc
+	is_triggered_only = yes
+	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event KUM.296" }
+	
+	option = {
+		name = NWkumul.296.a 
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = 500
+			producer = TNG
 		}
 	}
 }
-	
+
+#Отказ дунган // KUM
 country_event = {
 	id = NWkumul.297
 	title = NWkumul.297.t
@@ -205,11 +171,40 @@ country_event = {
 	
 	option = {
 		name = NWkumul.297.a 
+		add_opinion_modifier = { target = FROM modifier = TNG_traitors }
+	}
+}
+
+country_event = {
+	id = NWkumul.298
+	title = NWkumul.298.t
+	desc = NWkumul.298.desc
+	is_triggered_only = yes
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event KUM.298" }
+	option = {
+		name = NWkumul.298.a
+		ai_chance = {factor = 50}
 		KUM = {
-			add_opinion_modifier = { target = TNG modifier = TNG_traitors }
+			country_event = { id = NWkumul.299 }
+		}
+	}
+	option = {
+		ai_chance = {factor = 30}
+		name = NWkumul.298.b
+		SIK = {
+			country_event = { id = NWkumul.300 }
+		}
+	}
+	option = {
+		ai_chance = {factor = 20}
+		name = NWkumul.298.c
+		KUM = {
+			country_event = { id = NWkumul.309 }
 		}
 	}
 }
+
+#Центральное правительство восстанавливает автономию Кумульского ханства // KUM
 country_event = {
 	id = NWkumul.299
 	title = NWkumul.299.t
@@ -222,12 +217,12 @@ country_event = {
 		name = NWkumul.299.a 
 		set_country_flag = KUM_flag_2	
 		SIK = {
-			release_puppet = KUM
-			country_event = { id = NWkumul.308}
+			release_puppet = ROOT
+			country_event = { id = NWkumul.308 days = 1 }
 		}
 		CHI = {
 			set_autonomy = {
-				target = KUM
+				target = ROOT
 				autonomy_state = autonomy_dominion
 			}
 		}
@@ -235,7 +230,7 @@ country_event = {
 	}
 }
 
-# // SIK
+#Центральное правительство предлагает восстановить автономию уйгуров // SIK
 country_event = {
 	id = NWkumul.300
 	title = NWkumul.300.t
@@ -281,9 +276,9 @@ country_event = {
 	}
 }
 
-# // SIK
+# Центральное правительство отобрало часть нашей территории! // SIK
 country_event = {
-	id = NWkumul.308 
+	id = NWkumul.308
 	title = NWkumul.308.t
 	desc = NWkumul.308.desc
 	is_triggered_only = yes
@@ -423,24 +418,44 @@ country_event = {
 		name = NWkumul.1002.a
 	}	
 }
+
+#Чек дынь. Ежегодный пульсар // KUM
 country_event = {
 	id = NWkumul.01121
-	title = NWkumul.01121.t
-	desc = NWkumul.01121.desc
 	is_triggered_only = yes
 	hidden = yes
+	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event KUM.01121" }
+	
 	option = {
 		name = NWkumul.01121.a
 		if = {
-			limit = { KUM = { has_completed_focus = KUM_melons } }
-			KUM = {
-				country_event = { id = NWkumul.01121 days = 365 }
-				country_event = { id = NWkumul.101 days = 2 }
-			}
+			limit = { has_completed_focus = KUM_melons }
+			country_event = { id = NWkumul.01121 days = 365 }
+			country_event = { id = NWkumul.101 days = 2 }
 		}
 	}	
 }
+
+#Августовский урожай. Пульсар // KUM
+country_event = {
+	id = NWkumul.100
+	is_triggered_only = yes
+	hidden = yes
+	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event KUM.100" }
+	
+	option = {
+		name = NWkumul.100.a
+		if = {
+			limit = { has_completed_focus = KUM_melons }
+			country_event = { id = NWkumul.101 }
+		}
+		country_event = { id = NWkumul.1150 days = 14 }
+	}	
+}
+
+#Августовский урожай // KUM
 country_event = {
 	id = NWkumul.101
 	title = NWkumul.101.t
@@ -449,16 +464,31 @@ country_event = {
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event KUM.101" }
 	option = {
 		name = NWkumul.101.a
-		IF = {
-			limit ={ KUM = { has_completed_focus = KUM_new_melon } }
-			add_to_variable = { KUM_melon_total = 5000}
-		}
-		else = {
-			add_to_variable = { KUM_melon_total = 2500}
-		}
-		KUM = {country_event = {id = NWkumul.115 days = 14}}
+		set_temp_variable = { KUM_melons_trigger_var = KUM_base_melon_var }
+		add_to_variable = { KUM_melon_total = KUM_melons_trigger_var }
+		custom_effect_tooltip = KUM_melons_effect_tt
 	}	
 }
+
+#Урожай середины августа. Пульсар // KUM
+country_event = {
+	id = NWkumul.1150
+	is_triggered_only = yes
+	hidden = yes
+	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event KUM.1150" }
+	
+	option = {
+		name = NWkumul.1150.a
+		if = {
+			limit = { has_completed_focus = KUM_melons }
+			country_event = { id = NWkumul.115 }
+		}
+		country_event = { id = NWkumul.2010 days = 17 }
+	}	
+}
+
+#Урожай середины августа // KUM
 country_event = {
 	id = NWkumul.115
 	title = NWkumul.115.t
@@ -467,18 +497,31 @@ country_event = {
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event KUM.115" }
 	option = {
 		name = NWkumul.115.a
-		IF = {
-			limit = { KUM = { has_completed_focus = KUM_new_melon } }
-			add_to_variable = { KUM_melon_total = 5000}
-		}
-		else = {
-			add_to_variable = { KUM_melon_total = 2500}
-		}
-		KUM = {
-			country_event = {id = NWkumul.201 days = 17}
-		}
+		set_temp_variable = { KUM_melons_trigger_var = KUM_base_melon_var }
+		add_to_variable = { KUM_melon_total = KUM_melons_trigger_var }
+		custom_effect_tooltip = KUM_melons_effect_tt
 	}	
 }
+
+#Сентябрьский урожай. Пульсар // KUM
+country_event = {
+	id = NWkumul.2010
+	is_triggered_only = yes
+	hidden = yes
+	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event KUM.2010" }
+	
+	option = {
+		name = NWkumul.2010.a
+		if = {
+			limit = { has_completed_focus = KUM_melons }
+			country_event = { id = NWkumul.201 }
+		}
+		country_event = { id = NWkumul.2150 days = 14 }
+	}	
+}
+
+#Сентябрьский урожай // KUM
 country_event = {
 	id = NWkumul.201
 	title = NWkumul.201.t
@@ -487,18 +530,30 @@ country_event = {
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event KUM.201" }
 	option = {
 		name = NWkumul.201.a
-		IF = {
-			limit ={ KUM = { has_completed_focus = KUM_new_melon } }
-			add_to_variable = { KUM_melon_total = 5000}
-		}
-		else = {
-			add_to_variable = { KUM_melon_total = 2500}
-		}
-		KUM = {
-			country_event = {id = NWkumul.215 days = 14}
+		set_temp_variable = { KUM_melons_trigger_var = KUM_base_melon_var }
+		add_to_variable = { KUM_melon_total = KUM_melons_trigger_var }
+		custom_effect_tooltip = KUM_melons_effect_tt
+	}	
+}
+
+#Сентябрьский урожай. Пульсар // KUM
+country_event = {
+	id = NWkumul.2150
+	is_triggered_only = yes
+	hidden = yes
+	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event KUM.2150" }
+	
+	option = {
+		name = NWkumul.2150.a
+		if = {
+			limit = { has_completed_focus = KUM_melons }
+			country_event = { id = NWkumul.215 }
 		}
 	}	
 }
+
+#Урожай середины сентября // KUM
 country_event = {
 	id = NWkumul.215
 	title = NWkumul.215.t
@@ -507,26 +562,9 @@ country_event = {
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event KUM.215" }
 	option = {
 		name = NWkumul.215.a
-		IF = {
-			limit ={ KUM = { has_completed_focus = KUM_new_melon } }
-			add_to_variable = { KUM_melon_total = 5000}
-		}
-		else_if = {
-			limit = {KUM = {has_country_flag = KUM_bah_2}}
-			add_to_variable = { KUM_melon_total = 5000}
-		}
-		else_if = {
-			limit = {
-				KUM = {
-					has_completed_focus = KUM_new_melon
-					has_country_flag = KUM_bah_2
-				}
-			}
-			add_to_variable = { KUM_melon_total = 7500}
-		}
-		else = {
-			add_to_variable = { KUM_melon_total = 2500}
-		}
+		set_temp_variable = { KUM_melons_trigger_var = KUM_base_melon_var }
+		add_to_variable = { KUM_melon_total = KUM_melons_trigger_var }
+		custom_effect_tooltip = KUM_melons_effect_tt
 	}	
 }
 
@@ -610,35 +648,6 @@ country_event = {
 		}
 		TNG = {
 			country_event = { id = NWkumul.1003}
-		}
-	}
-}
-
-country_event = {
-	id = NWkumul.298
-	title = NWkumul.298.t
-	desc = NWkumul.298.desc
-	is_triggered_only = yes
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event KUM.298" }
-	option = {
-		name = NWkumul.298.a
-		ai_chance = {factor = 50}
-		KUM = {
-			country_event = {id = NWkumul.299}
-		}
-	}
-	option = {
-		ai_chance = {factor = 30}
-		name = NWkumul.298.b
-		SIK = {
-			country_event = {id = NWkumul.300}
-		}
-	}
-	option = {
-		ai_chance = {factor = 20}
-		name = NWkumul.298.c
-		KUM = {
-			country_event = {id = NWkumul.309}
 		}
 	}
 }

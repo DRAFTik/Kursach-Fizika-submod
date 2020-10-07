@@ -112,24 +112,22 @@ KUM_melons_category = {
 		icon = decision_generic_industry
 		available = {
 			country_exists = TNG
-			TNG = {
-				has_war = no
+			NOT = { has_war_with = TNG }
+			set_temp_variable = { KUM_melons_trigger_var = 1000 }
+			custom_trigger_tooltip = {
+				tooltip = KUM_melons_trigger_tt		
+				check_variable = { var = KUM_melon_total value = KUM_melons_trigger_var compare = greater_than_or_equals }
 			}
-			check_variable = { var = KUM_melon_total value = 1000 compare = greater_than_or_equals }
+		}
+		visible = {
+			country_exists = TNG
 		}
 		days_re_enable = 90
 		complete_effect = {
-			KUM = {
-				add_political_power = 100
-			}
-			subtract_from_variable { KUM_melon_total = 1000}
-			if = {
-				limit = {check_variable = { var = KUM_melon_total value = 3000 compare = greater_than_or_equals }}
-				custom_effect_tooltip = KUM_m_tt_1
-			}
-			else = {
-				custom_effect_tooltip = KUM_m_tt_11
-			}
+			set_temp_variable = { KUM_melons_trigger_var = -1000 }
+			add_to_variable = { KUM_melon_total = KUM_melons_trigger_var }
+			custom_effect_tooltip = KUM_melons_effect_tt
+			add_political_power = 100
 		}
 	}
 	
@@ -137,131 +135,123 @@ KUM_melons_category = {
 		icon = decision_generic_industry
 		available = {
 			country_exists = SIK
-			SIK = {
-				has_war = no
+			NOT = { has_war_with = SIK }
+			set_temp_variable = { KUM_melons_trigger_var = 3000 }
+			custom_trigger_tooltip = {
+				tooltip = KUM_melons_trigger_tt		
+				check_variable = { var = KUM_melon_total value = KUM_melons_trigger_var compare = greater_than_or_equals }
 			}
-			check_variable = { var = KUM_melon_total value = 3000 compare = greater_than_or_equals }
+		}
+		visible = {
+			country_exists = SIK
 		}
 		days_re_enable = 90
 		complete_effect = {
-			KUM = {
-				subtract_from_variable { KUM_melon_total = 3000}
-				add_timed_idea = {
-					idea = KUM_mel
-					days = 90
-				}
-				hidden_effect = {
-					add_offsite_building = { 
-						type = industrial_complex
-						level = 1
-					}
-				}
-				if = {
-					limit = {check_variable = { var = KUM_melon_total value = 3000 compare = greater_than_or_equals }}
-					custom_effect_tooltip = KUM_m_tt_2
-				}
-				else = {
-					custom_effect_tooltip = KUM_m_tt_21
-				}
-			}
-		}
-	}
-	
-	mel_loc = {
-		icon = decision_generic_industry
-		available = {
-			check_variable = { var = KUM_melon_total value = 250 compare = greater_than_or_equals }
-		}
-		days_re_enable = 30
-		complete_effect = {
-			subtract_from_variable { KUM_melon_total = 250}
-			add_political_power = 20
-			add_stability = 0.05
-			if = {
-				limit = {check_variable = { var = KUM_melon_total value = 250 compare = greater_than_or_equals }}
-				custom_effect_tooltip = KUM_m_tt_3
-			}
-			else = {
-				custom_effect_tooltip = KUM_m_tt_31
-			}
+			set_temp_variable = { KUM_melons_trigger_var = -3000 }
+			add_to_variable = { KUM_melon_total = KUM_melons_trigger_var }
+			custom_effect_tooltip = KUM_melons_effect_tt
+			add_timed_idea = { idea = KUM_mel days = 90 }
+			sync_factories = yes
 		}
 	}
 	
 	mel_san_ma = {
 		icon = decision_generic_industry
 		available = {
-			check_variable = { var = KUM_melon_total value = 2000 compare = greater_than_or_equals }
+			country_exists = XSM
+			NOT = { has_war_with = XSM }
+			set_temp_variable = { KUM_melons_trigger_var = 2000 }
+			custom_trigger_tooltip = {
+				tooltip = KUM_melons_trigger_tt		
+				check_variable = { var = KUM_melon_total value = KUM_melons_trigger_var compare = greater_than_or_equals }
+			}
+		}
+		visible = {
+			country_exists = XSM
 		}
 		days_re_enable = 90
 		complete_effect = {
-			if = {
-				limit = {check_variable = { var = KUM_melon_total value = 2000 compare = greater_than_or_equals }}
-				custom_effect_tooltip = KUM_m_tt_4
-			}
-			else = {
-				custom_effect_tooltip = KUM_m_tt_41
-			}
-			add_timed_idea = {
-				idea = KUM_mel_2
-				days = 90
-			}
+			set_temp_variable = { KUM_melons_trigger_var = -2000 }
+			add_to_variable = { KUM_melon_total = KUM_melons_trigger_var }
+			custom_effect_tooltip = KUM_melons_effect_tt
+			add_timed_idea = { idea = KUM_mel_2 days = 50 }
 		}
 	}
 	
 	mel_chin = {
 		icon = decision_generic_industry
 		available = {
-			check_variable = { var = KUM_melon_total value = 3000 compare = greater_than_or_equals }
+			country_exists = CHI
+			NOT = { has_war_with = CHI }
+			OR = {
+				is_neighbor_of = CHI
+				any_neighbor_country = {
+					is_neighbor_of = CHI
+					OR = {
+						is_subject_of = ROOT
+						is_in_faction_with = ROOT
+						gives_military_access_to = ROOT
+					}
+				}
+			}
+			set_temp_variable = { KUM_melons_trigger_var = 3000 }
+			custom_trigger_tooltip = {
+				tooltip = KUM_melons_trigger_tt		
+				check_variable = { var = KUM_melon_total value = KUM_melons_trigger_var compare = greater_than_or_equals }
+			}
+		}
+		visible = {
+			country_exists = CHI
 		}
 		days_re_enable = 120
 		complete_effect = {
-			KUM = {
-				if = {
-					limit = {check_variable = { var = KUM_melon_total value = 3000 compare = greater_than_or_equals }}
-					custom_effect_tooltip = KUM_m_tt_5
-				}
-				else = {
-					custom_effect_tooltip = KUM_m_tt_51
-				}
-				add_timed_idea = {
-					idea = KUM_mel_1
-					days = 60
-				}
-				hidden_effect = {
-					add_offsite_building = { 
-						type = industrial_complex
-						level = 1
-					}
-				}
-			}			
+			set_temp_variable = { KUM_melons_trigger_var = -3000 }
+			add_to_variable = { KUM_melon_total = KUM_melons_trigger_var }
+			custom_effect_tooltip = KUM_melons_effect_tt
+			add_timed_idea = { idea = KUM_mel_1 days = 90 }
+		}
+	}
+	
+	mel_loc = {
+		icon = decision_generic_industry
+		available = {
+			set_temp_variable = { KUM_melons_trigger_var = 250 }
+			custom_trigger_tooltip = {
+				tooltip = KUM_melons_trigger_tt		
+				check_variable = { var = KUM_melon_total value = KUM_melons_trigger_var compare = greater_than_or_equals }
+			}
+		}
+		days_re_enable = 30
+		complete_effect = {
+			set_temp_variable = { KUM_melons_trigger_var = -250 }
+			add_to_variable = { KUM_melon_total = KUM_melons_trigger_var }
+			custom_effect_tooltip = KUM_melons_effect_tt
+			add_political_power = 20
+			add_stability = 0.05
 		}
 	}
 	
 	mel_bachci = {
 		icon = decision_generic_industry
 		available = {
-			ROOT = {
-				num_of_civilian_factories > 2
-			}
-			OR {
-				617 = {
-					is_controlled_by = ROOT
-				}
-				759 = {
-					is_controlled_by = ROOT
-				}
+			num_of_civilian_factories_available_for_projects > 2
+			OR = {
+				controls_state = 617
+				controls_state = 759
 			}
 		}
 		cost = 50
 		days_remove = 50
+		fire_only_once = yes
 		modifier = {
 			civilian_factory_use = 2
 		}
 		remove_effect = {
-			hidden_effect = {
-				set_country_flag = KUM_bah_2
-			}
-			custom_effect_tooltip = KUM_bahchi_tt
+			set_country_flag = KUM_bah_2
+			set_temp_variable = { KUM_base_melon_temp_var = KUM_base_melon_var }
+			multiply_temp_variable = { KUM_base_melon_temp_var = 2 }
+			custom_effect_tooltip = KUM_mel1_tt
+			multiply_variable = { KUM_base_melon_var = 2 }
 		}
 	}
 	
@@ -269,9 +259,8 @@ KUM_melons_category = {
 		icon = decision_generic_industry
 		fire_only_once = yes
 		available = {
-			ROOT = {
-				num_of_civilian_factories > 4
-			}
+			num_of_civilian_factories_available_for_projects > 4
+			controls_state = 760
 		}
 		cost = 100
 		days_remove = 120
@@ -280,9 +269,8 @@ KUM_melons_category = {
 		}
 		remove_effect = {
 			custom_effect_tooltip = KUM_gh_tt
-			set_country_flag = KUM_bah
+			set_country_flag = mel_greenhouse_flag
 			760 = {
-				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = infrastructure
 					level = 1
@@ -295,17 +283,9 @@ KUM_melons_category = {
 	mel_greenhouse_res = {
 		icon = decision_generic_industry
 		available = {
-			KUM = {
-				hidden_trigger = {
-					has_country_flag = KUM_bah
-				}
-				custom_trigger_tooltip = {
-					tooltip = KUM_bah_tt
-				}
-			}
-			760 = {
-				infrastructure > 2
-			}
+			has_country_flag = mel_greenhouse_flag
+			controls_state = 760
+			760 = { infrastructure > 2 }
 		}
 		days_remove = 180
 		remove_effect = {
@@ -313,15 +293,15 @@ KUM_melons_category = {
 				var = KUM_recent_mel
 			}
 			if = {
-				limit = { KUM = { has_completed_focus = KUM_new_melon } }
-				add_to_variable = { KUM_melon_total = 2000}
-				set_variable = {KUM_melon_temp = 2000}
+				limit = { has_completed_focus = KUM_new_melon }
+				set_temp_variable = { KUM_melons_trigger_var = 2000 }
+				add_to_variable = { KUM_melon_total = KUM_melons_trigger_var }
 			}
 			else = {
-				add_to_variable = { KUM_melon_total = 1000 }
-				set_variable = { KUM_melon_temp = 1000 }
+				set_temp_variable = { KUM_melons_trigger_var = 1000 }
+				add_to_variable = { KUM_melon_total = KUM_melons_trigger_var }
 			}
-			custom_effect_tooltip = KUM_tep_melon_tt
+			custom_effect_tooltip = KUM_melons_effect_tt
 		}
 	}
 }

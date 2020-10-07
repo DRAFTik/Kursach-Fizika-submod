@@ -71,19 +71,6 @@ ideas = {
 			}
 		}
 		
-		
-		KUM_mel_2 = {
-			allowed = {
-				always = no
-			}
-			allowed_civil_war = {
-				always = yes
-			}
-			picture = air_support_focus
-			modifier = {
-				political_power_gain = 0.25
-			}
-		}	
 		KUM_mel = {
 			allowed = {
 				always = no
@@ -91,27 +78,35 @@ ideas = {
 			allowed_civil_war = {
 				always = yes
 			}
-			picture = air_support_focus
+			picture = market_is_source_of_life
 			modifier = {
-				custom_effect_tooltip = KUM_reward_tt
-				hidden_effect = {
-					KUM = {country_event = KUM.2001 days = 90 }
-				}
+				industrial_factory_donations = 1
 			}
 		}
 		KUM_mel_1 = {
+			name = KUM_mel
 			allowed = {
 				always = no
 			}
 			allowed_civil_war = {
 				always = yes
 			}
-			picture = air_support_focus
+			picture = market_is_source_of_life
 			modifier = {
-				custom_effect_tooltip = KUM_reward_tt
-				hidden_effect = {
-					KUM = {country_event = KUM.2001 days = 60 }
-				}
+				industrial_factory_donations = 1
+			}
+		}
+		KUM_mel_2 = {
+			name = KUM_mel
+			allowed = {
+				always = no
+			}
+			allowed_civil_war = {
+				always = yes
+			}
+			picture = market_is_source_of_law
+			modifier = {
+				political_power_gain = 0.25
 			}
 		}
 		KUM_mounts = {
@@ -229,8 +224,6 @@ ideas = {
 				war_support_factor = 0.1
 				monarchy_drift = 0.02
 				political_advisor_cost_factor = -0.25
-				trade_laws_cost_factor = -0.25
-				economy_cost_factor = -0.25
 			}
 		}
 		KUM_integration = {
@@ -312,7 +305,7 @@ ideas = {
 			allowed_civil_war = {
 				always = yes
 			}
-			picture = air_support_focus
+			picture = generic_agrarian_society
 			modifier = {
 				political_power_gain = 0.5
 				consumer_goods_factor = 0.05
@@ -325,7 +318,7 @@ ideas = {
 			allowed_civil_war = {
 				always = yes
 			}
-			picture = air_support_focus
+			picture = generic_agrarian_society
 			modifier = {
 				political_power_gain = 0.15
 				production_speed_buildings_factor = 0.05
@@ -338,7 +331,7 @@ ideas = {
 			allowed_civil_war = {
 				always = yes
 			}
-			picture = air_support_focus
+			picture = slavery
 			modifier = {
 				consumer_goods_factor = -0.1
 				production_speed_buildings_factor = 0.1
@@ -351,7 +344,7 @@ ideas = {
 			allowed_civil_war = {
 				always = yes
 			}
-			picture = air_support_focus
+			picture = generic_exploit_mines
 			modifier = {
 				production_speed_buildings_factor = 0.1
 			}
