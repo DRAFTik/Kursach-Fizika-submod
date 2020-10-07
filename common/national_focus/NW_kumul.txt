@@ -819,8 +819,8 @@ focus_tree = {
 		y = 4
 		bypass = {
 			OR = {
-				NOT = { country_exists = UYG }
-				UYG = {
+				NOT = { country_exists = KAS }
+				KAS = {
 					OR = {
 						has_war_with = ROOT
 						is_in_faction_with = ROOT
@@ -852,16 +852,18 @@ focus_tree = {
 		completion_reward = {
 			if = {
 				limit = {
-					country_exists = UYG
-					NOT = { has_war_with = UYG }
-					UYG = {
-						NOT = { is_in_faction_with = ROOT }
-						is_subject_of = ROOT
+					country_exists = KAS
+					NOT = { has_war_with = KAS }
+					KAS = {
+						NOT = {
+							is_in_faction_with = ROOT
+							is_subject_of = ROOT
+						}
 					}
 				}
 				create_wargoal = {
 					type = annex_everything
-					target = UYG
+					target = KAS
 				}
 			}
 			if = {
@@ -869,8 +871,10 @@ focus_tree = {
 					country_exists = DZH
 					NOT = { has_war_with = DZH }
 					DZH = {
-						NOT = { is_in_faction_with = ROOT }
-						is_subject_of = ROOT
+						NOT = {
+							is_in_faction_with = ROOT
+							is_subject_of = ROOT
+						}
 					}
 				}
 				create_wargoal = {
@@ -883,8 +887,10 @@ focus_tree = {
 					country_exists = TNG
 					NOT = { has_war_with = TNG }
 					TNG = {
-						NOT = { is_in_faction_with = ROOT }
-						is_subject_of = ROOT
+						NOT = {
+							is_in_faction_with = ROOT
+							is_subject_of = ROOT
+						}
 					}
 				}
 				create_wargoal = {
@@ -1229,6 +1235,16 @@ focus_tree = {
 				}
 			}
 			OR = {
+				NOT = { country_exists = KAS }
+				KAS = {
+					OR = {
+						has_war_with = ROOT
+						is_in_faction_with = ROOT
+						is_subject_of = ROOT
+					}
+				}
+			}
+			OR = {
 				NOT = { country_exists = DZH }
 				DZH = {
 					OR = {
@@ -1271,8 +1287,10 @@ focus_tree = {
 					country_exists = UYG
 					NOT = { has_war_with = UYG }
 					UYG = {
-						NOT = { is_in_faction_with = ROOT }
-						is_subject_of = ROOT
+						NOT = {
+							is_in_faction_with = ROOT
+							is_subject_of = ROOT
+						}
 					}
 				}
 				create_wargoal = {
@@ -1282,11 +1300,29 @@ focus_tree = {
 			}
 			if = {
 				limit = {
+					country_exists = KAS
+					NOT = { has_war_with = KAS }
+					KAS = {
+						NOT = {
+							is_in_faction_with = ROOT
+							is_subject_of = ROOT
+						}
+					}
+				}
+				create_wargoal = {
+					type = annex_everything
+					target = KAS
+				}
+			}
+			if = {
+				limit = {
 					country_exists = DZH
 					NOT = { has_war_with = DZH }
 					DZH = {
-						NOT = { is_in_faction_with = ROOT }
-						is_subject_of = ROOT
+						NOT = {
+							is_in_faction_with = ROOT
+							is_subject_of = ROOT
+						}
 					}
 				}
 				create_wargoal = {
@@ -1299,8 +1335,10 @@ focus_tree = {
 					country_exists = SIK
 					NOT = { has_war_with = SIK }
 					SIK = {
-						NOT = { is_in_faction_with = ROOT }
-						is_subject_of = ROOT
+						NOT = {
+							is_in_faction_with = ROOT
+							is_subject_of = ROOT
+						}
 					}
 				}
 				create_wargoal = {
@@ -1313,8 +1351,10 @@ focus_tree = {
 					country_exists = TNG
 					NOT = { has_war_with = TNG }
 					TNG = {
-						NOT = { is_in_faction_with = ROOT }
-						is_subject_of = ROOT
+						NOT = {
+							is_in_faction_with = ROOT
+							is_subject_of = ROOT
+						}
 					}
 				}
 				create_wargoal = {

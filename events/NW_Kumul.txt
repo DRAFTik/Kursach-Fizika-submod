@@ -348,8 +348,6 @@ country_event = {
 	}
 }
 
-
-
 #Прибытие колонны КПК // SIK и KUM
 country_event = {
 	id = NWkumul.13221
@@ -357,29 +355,40 @@ country_event = {
 	desc = NWkumul.13221.desc
 	is_triggered_only = yes
 	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event KUM.512" }
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event KUM.13221" }
 	
 	option = {
 		name = NWkumul.13221.a
 		trigger = { tag = KUM }
-		add_opinion_modifier = { target = SIK modifier = SIK_commies }
+		if = {
+			limit = { country_exists = SIK }
+			add_opinion_modifier = { target = SIK modifier = SIK_commies }
+		}
 	}
 	
 	option = {
 		name = NWkumul.13222.a
 		trigger = { tag = SIK }
-		SIK = {
-			set_autonomy = {
-				target = KUM
-				autonomy_state = autonomy_free
+		if = {
+			limit = {
+				country_exists = KUM
+				NOT = { has_war_with = KUM }
 			}
-			declare_war_on = {
-				target = KUM
-				type = annex_everything
+			SIK = {
+				set_autonomy = {
+					target = KUM
+					autonomy_state = autonomy_free
+				}
+				declare_war_on = {
+					target = KUM
+					type = annex_everything
+				}
 			}
 		}
 	}
 }
+
+
 country_event = {
 	id = NWkumul.1001
 	title = NWkumul.1001.t

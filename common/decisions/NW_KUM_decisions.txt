@@ -185,6 +185,16 @@ KUM_melons_category = {
 			NOT = { has_war_with = CHI }
 			OR = {
 				is_neighbor_of = CHI
+				AND = {
+					any_controlled_state = {
+						is_coastal = yes
+					}
+					CHI = {
+						any_controlled_state = {
+							is_coastal = yes
+						}
+					}
+				}
 				any_neighbor_country = {
 					is_neighbor_of = CHI
 					OR = {
@@ -234,7 +244,7 @@ KUM_melons_category = {
 	mel_bachci = {
 		icon = decision_generic_industry
 		available = {
-			num_of_civilian_factories_available_for_projects > 2
+			num_of_civilian_factories_available_for_projects > 1
 			OR = {
 				controls_state = 617
 				controls_state = 759
@@ -259,7 +269,7 @@ KUM_melons_category = {
 		icon = decision_generic_industry
 		fire_only_once = yes
 		available = {
-			num_of_civilian_factories_available_for_projects > 4
+			num_of_civilian_factories_available_for_projects > 3
 			controls_state = 760
 		}
 		cost = 100
