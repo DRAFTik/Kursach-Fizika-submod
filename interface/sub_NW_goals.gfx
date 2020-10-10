@@ -530,6 +530,31 @@ spriteTypes = {
 		texturefile = "gfx/interface/goals/z_goal_support_buddism_gimns.dds"
 	}
 	
+	spriteType = {
+		name = "GFX_z_goal_dalai_lama_leave"
+		texturefile = "gfx/interface/goals/z_goal_dalai_lama_leave.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_z_goal_money_for_tibet"
+		texturefile = "gfx/interface/goals/z_goal_money_for_tibet.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_z_goal_no_religion"
+		texturefile = "gfx/interface/goals/z_goal_no_religion.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_z_goal_with_sikkim_dicks"
+		texturefile = "gfx/interface/goals/z_goal_with_sikkim_dicks.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_z_goal_support_INK"
+		texturefile = "gfx/interface/goals/z_goal_support_INK.dds"
+	}
+	
 	
 	frameAnimatedSpriteType = {
 		name = "GFX_z_goal_mountain_warriors"

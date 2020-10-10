@@ -1163,7 +1163,7 @@ focus_tree = {
 	}
 	focus = {
 		id = NEP_free_credit_for_tibet
-		icon = GFX_z_goal_fight_for_money
+		icon = GFX_z_goal_money_for_tibet
 		cost = 10
 		prerequisite = {
 			focus = NEP_close_system_britts
@@ -1950,7 +1950,7 @@ focus_tree = {
 	}
 	focus = {
 		id = NEP_raja_friends
-		icon = GFX_z_goal_close_land_aristo
+		icon = GFX_z_goal_support_INK
 		cost = 10
 		prerequisite = {
 			focus = NEP_chains_for_king
@@ -2007,7 +2007,7 @@ focus_tree = {
 	}
 	focus = {
 		id = NEP_end_Dalai_lama
-		icon = GFX_z_goal_close_land_aristo
+		icon = GFX_z_goal_dalai_lama_leave
 		cost = 10
 		prerequisite = {
 			focus = NEP_create_commi
@@ -2064,7 +2064,7 @@ focus_tree = {
 	}
 	focus = {
 		id = NEP_dick_coalition
-		icon = GFX_z_goal_close_land_aristo
+		icon = GFX_z_goal_with_sikkim_dicks
 		cost = 10
 		prerequisite = {
 			focus = NEP_end_shah
@@ -2103,7 +2103,7 @@ focus_tree = {
 	}
 	focus = {
 		id = NEP_ateism
-		icon = GFX_z_goal_close_land_aristo
+		icon = GFX_z_goal_no_religion
 		cost = 10
 		prerequisite = {
 			focus = NEP_commi_for_all_ppl
