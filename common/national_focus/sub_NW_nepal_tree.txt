@@ -1071,16 +1071,20 @@ focus_tree = {
 			focus = NEP_collusion_old_and_younger
 		}
 		available = {
+			has_idea = NEP_budda_rise_idea
 			NOT = { has_civil_war = yes }
 			NOT = { has_completed_focus = NEP_repress_buddism }
+			NOT = { has_government = communism }
 		}
 		x = -4
 		y = 1
 		relative_position_id = NEP_nepalese_national_assembly
 
 		completion_reward = {
-			add_political_power = 100
-			add_stability = 0.05
+			swap_ideas = {
+				remove_idea = NEP_budda_rise_idea
+				add_idea = NEP_budda_loyality
+			}
 		}
 	}
 	focus = {
@@ -1092,16 +1096,27 @@ focus_tree = {
 			focus = NEP_fighting_with_nna
 		}
 		available = {
+			has_idea = NEP_budda_rise_idea
 			NOT = { has_civil_war = yes }
 			NOT = { has_completed_focus = NEP_support_buddism }
+			OR = {
+				has_government = communism
+				has_government = neutrality
+			}
 		}
 		x = 3
 		y = 1
 		relative_position_id = NEP_nepalese_national_assembly
 
 		completion_reward = {
-			add_political_power = 100
-			add_stability = 0.05
+			swap_ideas = {
+				remove_idea = NEP_budda_rise_idea
+				add_idea = NEP_budda_close
+			}
+			hidden_effect = {
+				country_event = { id = nepal.22 days = 1460 }
+				country_event = { id = nepal.23 days = 1825 }
+			}
 		}
 	}
 	focus = {
@@ -1168,12 +1183,22 @@ focus_tree = {
 		prerequisite = {
 			focus = NEP_close_system_britts
 		}
+		available = {
+			has_government = democratic
+			has_idea = NEP_tibet_tribute
+		}
 		x = -1
 		y = 3
 		relative_position_id = NEP_nepalese_national_assembly
 
 		completion_reward = {
-			remove_ideas = NEP_britts_system
+			remove_ideas = NEP_tibet_tribute
+			TIB = {
+				add_opinion_modifier = {
+					target = NEP
+					modifier = NEP_closed_tibet_tribute_op
+				}
+			}
 		}
 	}
 	focus = {
@@ -1220,6 +1245,7 @@ focus_tree = {
 
 		completion_reward = {
 			add_ideas = NEP_shastri_social_reform
+			add_popularity = { ideology = communism popularity = 0.1 }
 		}
 	}
 	focus = {
@@ -1766,22 +1792,20 @@ focus_tree = {
 			focus = NEP_support_british_war_with_ger
 			focus = NEP_china_ally
 		}
+		available = {
+			country_exists = RAJ
+			RAJ = {
+				is_puppet = no
+				has_government = democratic
+				is_faction_leader = yes
+			}
+		}
 		x = 7
 		y = 7
 		relative_position_id = NEP_collusion_old_and_younger
 
 		completion_reward = {
-			add_opinion_modifier = {
-				target = ENG
-				modifier = NEP_british_concessions_op
-			}
-			ENG = {
-				add_opinion_modifier = {
-					target = NEP
-					modifier = NEP_british_concessions_op
-				}
-				give_guarantee = NEP
-			}
+			country_event = { id = generic.2 }
 		}
 	}
 	focus = {
@@ -1799,22 +1823,18 @@ focus_tree = {
 			focus = NEP_support_british_war_with_ger
 			focus = NEP_INK_ally
 		}
+		available = {
+			PRC = {
+				is_puppet = no
+				is_faction_leader = yes
+			}
+		}
 		x = 9
 		y = 7
 		relative_position_id = NEP_collusion_old_and_younger
 
 		completion_reward = {
-			add_opinion_modifier = {
-				target = ENG
-				modifier = NEP_british_concessions_op
-			}
-			ENG = {
-				add_opinion_modifier = {
-					target = NEP
-					modifier = NEP_british_concessions_op
-				}
-				give_guarantee = NEP
-			}
+			country_event = { id = generic.2 }
 		}
 	}
 	focus = {
@@ -1912,22 +1932,27 @@ focus_tree = {
 	focus = {
 		id = NEP_end_rana
 		icon = GFX_z_goal_stop_rana_dinasty
-		cost = 10
+		cost = 5
 		prerequisite = {
 			focus = NEP_abolition_privileged_land_tenure
 		}
 		mutually_exclusive = {
 			focus = NEP_create_commi
 		}
+		available = {
+			has_completed_focus = NEP_prepare_a_constitution
+			has_completed_focus = NEP_apply_shastri_social_reform
+		}
 		x = -3
 		y = 4
 		relative_position_id = NEP_nepalese_national_assembly
 
 		completion_reward = {
-			random_owned_controlled_state = {
-				add_extra_state_shared_building_slots = 2
+			add_stability = 0.1
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.10
 			}
-			add_ideas = NEP_abolition_privileged_land_tenure_idea
 		}
 	}
 	focus = {
@@ -1942,10 +1967,10 @@ focus_tree = {
 		relative_position_id = NEP_end_rana
 
 		completion_reward = {
-			random_owned_controlled_state = {
-				add_extra_state_shared_building_slots = 2
+			swap_ideas = {
+				remove_idea = NEP_tribhuwan_nepal_bad
+				add_idea = NEP_tribhuwan_nepal
 			}
-			add_ideas = NEP_abolition_privileged_land_tenure_idea
 		}
 	}
 	focus = {
@@ -1960,10 +1985,10 @@ focus_tree = {
 		relative_position_id = NEP_end_rana
 
 		completion_reward = {
-			random_owned_controlled_state = {
-				add_extra_state_shared_building_slots = 2
+			add_opinion_modifier = {
+				target = RAJ
+				modifier = NEP_raj_ink_friends_op
 			}
-			add_ideas = NEP_abolition_privileged_land_tenure_idea
 		}
 	}
 	focus = {
@@ -1976,15 +2001,17 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = NEP_end_rana
 		}
+		available = {
+			has_idea = NEP_commi_rev2
+			communism > 0.3
+		}
 		x = 1
 		y = 4
 		relative_position_id = NEP_nepalese_national_assembly
 
 		completion_reward = {
-			random_owned_controlled_state = {
-				add_extra_state_shared_building_slots = 2
-			}
-			add_ideas = NEP_abolition_privileged_land_tenure_idea
+			remove_idea = NEP_commi_rev2
+			country_event = { id = nepal.26 }
 		}
 	}
 	focus = {
@@ -1999,10 +2026,7 @@ focus_tree = {
 		relative_position_id = NEP_create_commi
 
 		completion_reward = {
-			random_owned_controlled_state = {
-				add_extra_state_shared_building_slots = 2
-			}
-			add_ideas = NEP_abolition_privileged_land_tenure_idea
+			remove_ideas = NEP_tribhuwan_nepal_bad
 		}
 	}
 	focus = {
@@ -2012,15 +2036,18 @@ focus_tree = {
 		prerequisite = {
 			focus = NEP_create_commi
 		}
+		available = {
+			has_completed_focus = NEP_end_shah
+		}
 		x = -2
 		y = 1
 		relative_position_id = NEP_create_commi
 
 		completion_reward = {
-			random_owned_controlled_state = {
-				add_extra_state_shared_building_slots = 2
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = TIB
 			}
-			add_ideas = NEP_abolition_privileged_land_tenure_idea
 		}
 	}
 	focus = {
@@ -2030,15 +2057,18 @@ focus_tree = {
 		prerequisite = {
 			focus = NEP_create_commi
 		}
+		available = {
+			has_completed_focus = NEP_end_shah
+		}
 		x = 2
 		y = 1
 		relative_position_id = NEP_create_commi
 
 		completion_reward = {
-			random_owned_controlled_state = {
-				add_extra_state_shared_building_slots = 2
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = BHU
 			}
-			add_ideas = NEP_abolition_privileged_land_tenure_idea
 		}
 	}
 	focus = {
@@ -2051,15 +2081,20 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = NEP_dick_coalition
 		}
+		available = {
+			NOT = {
+				has_government = trozkism
+			}
+		}
 		x = -1
 		y = 2
 		relative_position_id = NEP_create_commi
 
 		completion_reward = {
-			random_owned_controlled_state = {
-				add_extra_state_shared_building_slots = 2
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = SKM
 			}
-			add_ideas = NEP_abolition_privileged_land_tenure_idea
 		}
 	}
 	focus = {
@@ -2072,15 +2107,18 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = NEP_end_chogyal
 		}
+		available = {
+			SKM = {
+				is_puppet = no
+				has_government = trozkism
+			}
+		}
 		x = 1
 		y = 2
 		relative_position_id = NEP_create_commi
 
 		completion_reward = {
-			random_owned_controlled_state = {
-				add_extra_state_shared_building_slots = 2
-			}
-			add_ideas = NEP_abolition_privileged_land_tenure_idea
+			SKM = { country_event = { id = nepal.27 } }
 		}
 	}
 	focus = {
@@ -2090,15 +2128,15 @@ focus_tree = {
 		prerequisite = {
 			focus = NEP_create_nepali_peoples_weekly
 		}
+		available = {
+			has_completed_focus = NEP_create_commi
+		}
 		x = 1
 		y = 1
 		relative_position_id = NEP_create_nepali_peoples_weekly
 
 		completion_reward = {
-			random_owned_controlled_state = {
-				add_extra_state_shared_building_slots = 2
-			}
-			add_ideas = NEP_abolition_privileged_land_tenure_idea
+			add_ideas = NEP_red_petriots
 		}
 	}
 	focus = {
@@ -2113,10 +2151,13 @@ focus_tree = {
 		relative_position_id = NEP_create_nepali_peoples_weekly
 
 		completion_reward = {
-			random_owned_controlled_state = {
-				add_extra_state_shared_building_slots = 2
+			add_ideas = NEP_ateism_idea
+			IF = {
+				limit = {
+					has_idea = NEP_budda_loyality
+				}
+				complete_nacional_focus = NEP_repress_buddism
 			}
-			add_ideas = NEP_abolition_privileged_land_tenure_idea
 		}
 	}
 	focus = {

@@ -346,6 +346,25 @@ ideas = {
 				stability_factor = 0.1
 			}
 		}
+		NEP_tribhuwan_nepal_bad = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = king_tribuhan
+			
+			modifier = {
+				stability_factor = 0.1
+				political_power_gain = -0.2
+			}
+		}
 		NEP_battalion_ghurks_idea = {
 
 			allowed = {
@@ -613,7 +632,7 @@ ideas = {
 			picture = nepal_army_support
 			
 			modifier = {
-				conscription = 0.02
+				conscription = 0.015
 				generate_wargoal_tension = -0.5
 				justify_war_goal_time = -0.25
 			}
@@ -652,7 +671,6 @@ ideas = {
 			picture = FRA_national_mobilization_focus
 			
 			modifier = {
-				democratic_drift = 0.05
 				drift_defence_factor = 0.25
 			}
 		}
@@ -822,6 +840,146 @@ ideas = {
 			modifier = {
 				MONTHLY_POPULATION = 0.25
 				production_factory_efficiency_gain_factor = 0.05
+			}
+		}
+		#буддадвиж
+		NEP_budda_rise_idea = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = generic_agrarian_reform
+			
+			modifier = {
+				conscription_factor = -0.1
+				drift_defence_factor = -0.25
+				political_power_gain = -0.25
+			}
+		}
+		NEP_budda_loyality = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+			available = {
+				NOT = { has_government = communism }
+			}
+			removal_cost = -1
+
+			picture = generic_agrarian_reform
+			
+			modifier = {
+				conscription_factor = 0.1
+				political_power_gain = -0.1
+			}
+		}
+		NEP_budda_close = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = generic_agrarian_reform
+			
+			modifier = {
+				conscription_factor = -0.1
+				drift_defence_factor = 0.25
+				political_power_gain = 0.1
+			}
+		}
+		NEP_red_petriots = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = generic_agrarian_reform
+			
+			modifier = {
+				conscription = 0.01
+				army_morale_factor = 0.05
+				communism_drift = 0.05
+			}
+		}
+		NEP_ateism_idea = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = generic_agrarian_reform
+			
+			modifier = {
+				drift_defence_factor = 0.25
+				political_power_factor = 0.1
+			}
+		}
+		NEP_commi_rev1 = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = generic_agrarian_reform
+			
+			modifier = {
+				drift_defence_factor = -0.25
+				communism_drift = 0.1
+			}
+		}
+		NEP_commi_rev2 = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = generic_agrarian_reform
+			
+			modifier = {
+				drift_defence_factor = -0.50
+				communism_drift = 0.25
+				stability_weekly = -0.01
 			}
 		}
 	}

@@ -1,0 +1,27 @@
+on_actions = {
+	on_startup = {
+		effect = {
+			#Непал стартпак
+			if = {
+				limit = {
+					has_start_date < 1936.01.02
+				}
+				NEP = {
+					country_event = { id = nepal.21 days = 399 }
+				}
+			}
+		}
+	}
+	on_civil_war_end = {
+		effect = {
+			if = {
+				limit = {
+					original_tag = NEP
+					has_government = democratic
+				}
+				country_event = { id = NW_kek.21 days = 120 }
+			}
+		}
+	}
+}
+

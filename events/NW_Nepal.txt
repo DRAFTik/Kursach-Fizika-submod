@@ -541,3 +541,175 @@ country_event = {
 		add_ideas = NEP_democratic_rebelliom
 	}
 }
+#буддадвиж
+country_event = {
+	id = nepal.21
+	title = nepal.21.t
+	picture = GFX_report_event_nep_14_15_16_19_20
+	desc = { text = nepal.21.desc }
+	is_triggered_only = yes
+	
+	option = {
+		name = nepal.21.a
+		add_stability = -0.03
+		add_ideas = NEP_budda_rise_idea
+	}
+}
+country_event = {
+	id = nepal.22
+	title = nepal.22.t
+	picture = GFX_report_event_nep_14_15_16_19_20
+	desc = { text = nepal.22.desc }
+	is_triggered_only = yes
+	
+	option = {
+		name = nepal.22.a
+		add_stability = -0.03
+		add_political_power = 100
+	}
+}
+country_event = {
+	id = nepal.23
+	title = nepal.23.t
+	picture = GFX_report_event_nep_14_15_16_19_20
+	desc = { text = nepal.23.desc }
+	is_triggered_only = yes
+	
+	option = {
+		name = nepal.23.a
+		add_stability = -0.01
+		add_political_power = 50
+		remove_ideas = NEP_budda_close
+	}
+}
+#Коммидвиж
+country_event = {
+	id = nepal.24
+	title = nepal.24.t
+	picture = GFX_report_event_nep_14_15_16_19_20
+	desc = { text = nepal.24.desc }
+	is_triggered_only = yes
+	
+	option = {
+		name = nepal.24.a
+		swap_ideas = {
+			remove_idea = NEP_tribhuwan_nepal
+			add_idea = NEP_tribhuwan_nepal_bad
+		}
+		add_ideas = NEP_commi_rev1
+		hidden_effect = { country_event = { id = nepal.25 days = 120 } }
+	}
+}
+country_event = {
+	id = nepal.25
+	title = nepal.25.t
+	picture = GFX_report_event_nep_14_15_16_19_20
+	desc = { text = nepal.25.desc }
+	is_triggered_only = yes
+	
+	option = {
+		name = nepal.25.a
+		trigger = {
+			has_completed_focus = NEP_prepare_a_constitution
+			has_completed_focus = NEP_apply_shastri_social_reform
+		}
+		remove_ideas = NEP_commi_rev1
+	}
+	option = {
+		name = nepal.25.b
+		trigger = {
+			NOT = {
+				has_completed_focus = NEP_prepare_a_constitution
+				has_completed_focus = NEP_apply_shastri_social_reform
+			}
+		}
+		swap_ideas = {
+			remove_idea = NEP_commi_rev1
+			add_idea = NEP_commi_rev2
+		}
+	}
+}
+country_event = {
+	id = nepal.26
+	title = nepal.26.t
+	picture = GFX_report_event_nep_14_15_16_19_20
+	desc = { text = nepal.26.desc }
+	is_triggered_only = yes
+	
+	option = {
+		name = nepal.26.a
+		add_popularity = {
+			ideology = communism
+			popularity = 0.20
+		}
+		set_politics = {
+			ruling_party = communism
+			elections_allowed = no
+		}
+	}
+}
+#Членоивенты
+country_event = {
+	id = nepal.27
+	title = nepal.27.t
+	picture = GFX_report_event_nep_14_15_16_19_20
+	desc = { text = nepal.27.desc }
+	is_triggered_only = yes
+	
+	option = {
+		ai_chance = {
+			factor = 0
+		}
+		name = nepal.27.a
+		hidden_effect = { NEP = { country_event = { id = nepal.28 days = 7 } } }
+	}
+	option = {
+		name = nepal.27.b
+		ai_chance = {
+			factor = 100
+		}
+		hidden_effect = { NEP = { country_event = { id = nepal.29 days = 7 } } }
+	}
+}
+country_event = {
+	id = nepal.28
+	title = nepal.28.t
+	picture = GFX_report_event_nep_14_15_16_19_20
+	desc = { text = nepal.28.desc }
+	is_triggered_only = yes
+	
+	option = {
+		name = nepal.28.a
+		ai_chance = {
+			factor = 0
+		}
+		add_political_power = -50
+	}
+	option = {
+		name = nepal.28.b
+		ai_chance = {
+			factor = 100
+		}
+		create_wargoal = {
+			type = puppet_wargoal_focus
+			target = SKM
+		}
+	}
+}
+country_event = {
+	id = nepal.29
+	title = nepal.29.t
+	picture = GFX_report_event_nep_14_15_16_19_20
+	desc = { text = nepal.29.desc }
+	is_triggered_only = yes
+	
+	option = {
+		name = nepal.29.a
+		SKM = {
+			every_unit_leader = {
+				set_nationality = NEP
+			}
+		}
+		NEP = { annex_country = { target = SKM transfer_troops = yes } }
+	}
+}

@@ -5,4 +5,6 @@ opinion_modifiers = {
 	NEP_open_embassy_for_great_c_op = { value = 20 }
 	NEP_british_concessions_op = { value = 20 }
 	NEP_closed_country_op = { value = 20 }
+	NEP_closed_tibet_tribute_op = { value = 50 }
+	NEP_raj_ink_friends_op = { value = 40 }
 }
