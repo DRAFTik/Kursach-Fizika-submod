@@ -258,3 +258,12 @@
  skm.26.t:0 "Opening of the Church"
  skm.26.desc:0 "At the request of missionary Mary Scott, Chogyal Sikkim Tashi Namgyal allowed the opening of a Christian Church in Gangtok. Today, the lighting of the temple finally took place, which pleased the country's large number of Christians, who make up 10% of the population of Sikkim."
  skm.26.a:0 "In our country everyone has the right to pray to their God"
+ 
+ ### ПАРТИИ
+ SKM_new_demo:0 "Sikkim State Congress"
+ SKM_new_demo_2:0 "Sikkim Janata Congress"
+ SKM_new_trozkism:0 "Member Party"
+ 
+ ### ТРЕЙТЫ
+ ghandi_follower:0 "Ghandi follower"
+ 

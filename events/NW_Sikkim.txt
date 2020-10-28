@@ -30,7 +30,7 @@ country_event = {
 		}
 		set_party_name = {
 			ideology = democratic
-			long_name = SKM_new_demo_long
+			long_name = SKM_new_demo
 			name = SKM_new_demo	
 		}
 		hidden_effect = {
@@ -293,6 +293,7 @@ country_event = {
 	option = {
 		name = skm.14.a 
 		add_political_power = -70
+		set_party_name = { ideology = democratic name = SKM_new_demo_2 long_name = SKM_new_demo_2 }
 		hidden_effect = {
 			if = {
 				limit = {
@@ -316,6 +317,7 @@ country_event = {
 			ideology = democratic
 			popularity = 0.15
 		}
+		set_party_name = { ideology = democratic name = SKM_new_demo_2 long_name = SKM_new_demo_2 }
 		hidden_effect = {
 			if = {
 				limit = {
