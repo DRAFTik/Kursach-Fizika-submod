@@ -575,9 +575,8 @@ ideas = {
 			picture = rom_michael_figurehead
 			
 			modifier = {
-				trade_laws_cost_factor = -0.33
 				political_advisor_cost_factor = -0.33
-				political_power_factor = 0.1
+				political_power_factor = 0.2
 			}
 		}
 		NEP_prime_minister_from_tapa = {

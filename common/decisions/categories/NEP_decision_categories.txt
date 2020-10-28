@@ -32,13 +32,16 @@ NEP_suppression_of_civil_uprising = {
 	priority = 105
 }
 NEP_wood_develop_category = {
-	icon = eng_move_to_secure_the_dominions
+	icon = GFX_decision_category_wood_develop
 	allowed = { original_tag = NEP }
-	available = { 
+	available = {
 		has_completed_focus = NEP_wood_develop
 	}
 	visible = {
-		has_completed_focus = NEP_wood_develop
+		OR = {
+			has_completed_focus = NEP_wood_develop
+			has_country_flag = NEP_landslide_start
+		}
 	}
 	priority = 105
 }

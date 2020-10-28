@@ -32,7 +32,7 @@ country_event = {
 
 	option = {
 		name = nepal.1.a
-		add_stability = 0.01
+		add_stability = 0.03
 	}
 }
 country_event = {
@@ -46,8 +46,13 @@ country_event = {
 
 	option = {
 		name = nepal.2.a
-		add_stability = -0.01
+		add_stability = -0.02
 		add_political_power = -10
+		damage_building = {
+			type = industrial_complex
+			damage = 0.6
+			province = 833
+		}
 	}
 }
 country_event = {
@@ -61,8 +66,18 @@ country_event = {
 
 	option = {
 	name = nepal.3.a
-		add_stability = -0.03
+		add_stability = -0.05
 		add_political_power = -25
+		damage_building = {
+			type = industrial_complex
+			damage = 0.6
+			province = 833
+		}
+		damage_building = {
+			type = industrial_complex
+			damage = 0.6
+			province = 323
+		}
 	}
 }
 country_event = {
@@ -440,14 +455,7 @@ country_event = {
 		text = nepal.17.desc
 	}
 	
-	trigger = {
-		tag = NEP
-		focus_progress = {
-			focus = NEP_prepare_a_constitution
-			progress < 2.3
-		}
-	}
-	fire_only_once = yes
+	is_triggered_only = yes
 
 	option = {
 		name = nepal.17.a
@@ -638,6 +646,7 @@ country_event = {
 	
 	option = {
 		name = nepal.26.a
+		remove_ideas = NEP_commi_rev2
 		add_popularity = {
 			ideology = communism
 			popularity = 0.20
@@ -711,5 +720,17 @@ country_event = {
 			}
 		}
 		NEP = { annex_country = { target = SKM transfer_troops = yes } }
+	}
+}
+country_event = {
+	id = nepal.30
+	title = nepal.30.t
+	picture = GFX_report_event_nep_2
+	desc = { text = nepal.30.desc }
+	is_triggered_only = yes
+	
+	option = {
+		name = nepal.30.a
+		set_country_flag = NEP_landslide_start
 	}
 }

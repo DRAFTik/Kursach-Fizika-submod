@@ -1226,7 +1226,11 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = NEP_nepalese_national_assembly
-
+		
+		select_effect = {
+			hidden_effect = { country_event = { id = nepal.17 days = 40 } }
+		}
+		
 		completion_reward = {
 			custom_effect_tooltip = NEP_tt1
 		}
@@ -2010,7 +2014,6 @@ focus_tree = {
 		relative_position_id = NEP_nepalese_national_assembly
 
 		completion_reward = {
-			remove_idea = NEP_commi_rev2
 			country_event = { id = nepal.26 }
 		}
 	}
