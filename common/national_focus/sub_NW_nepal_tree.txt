@@ -946,7 +946,7 @@ focus_tree = {
 	}
 	focus = {
 		id = NEP_support_of_the_army
-		icon = GFX_z_goal_Segreration
+		icon = GFX_z_goal_nepal_army_sup
 		cost = 10
 		prerequisite = {
 			focus = NEP_avenge_blood_massacre_of_kathmandu
@@ -966,7 +966,7 @@ focus_tree = {
 		prerequisite = {
 			focus = NEP_support_of_the_army
 		}
-		x = 2
+		x = -2
 		y = 3
 		relative_position_id = NEP_collusion_old_and_younger
 
@@ -976,7 +976,7 @@ focus_tree = {
 	}
 	focus = {
 		id = NEP_recall_past_claims
-		icon = GFX_z_goal_monarchism_15
+		icon = GFX_z_goal_back_gimalai
 		cost = 10
 		prerequisite = {
 			focus = NEP_support_of_the_army
@@ -990,6 +990,39 @@ focus_tree = {
 			swap_ideas = {
 				remove_idea = NEP_support_people_and_army
 				add_idea = NEP_support_people_and_army_2
+			}
+		}
+	}
+	focus = {
+		id = NEP_claim_Sikkim
+		icon = GFX_z_goal_claim_Sikkim
+		cost = 10
+		prerequisite = {
+			focus = NEP_recall_past_claims
+		}
+		available = {
+			country_exists = SKM
+		}
+		bypass = {
+			OR = {
+				NOT = { country_exists = SKM }
+				has_war_with = SKM
+				SKM = {
+					OR = {
+						is_subject_of = ROOT
+						is_in_faction = yes
+					}
+				}
+			}
+		}
+		x = 2
+		y = 4
+		relative_position_id = NEP_collusion_old_and_younger
+
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = SKM
 			}
 		}
 	}
@@ -1088,6 +1121,27 @@ focus_tree = {
 		}
 	}
 	focus = {
+		id = NEP_nepal_bhasa
+		icon = GFX_z_goal_vai
+		cost = 10
+		prerequisite = {
+			focus = NEP_support_buddism
+		}
+		available = {
+			OR = {
+				has_completed_focus = NEP_end_rana
+				has_completed_focus = NEP_support_dynasty_shah
+			}
+		}
+		x = -4
+		y = 2
+		relative_position_id = NEP_nepalese_national_assembly
+
+		completion_reward = {
+			add_ideas = NEP_budda_bhasa
+		}
+	}
+	focus = {
 		id = NEP_repress_buddism
 		icon = GFX_z_goal_close_buddism_gimns
 		cost = 10
@@ -1154,7 +1208,7 @@ focus_tree = {
 			}
 		}
 		x = 3
-		y = 2
+		y = 3
 		relative_position_id = NEP_collusion_old_and_younger
 
 		completion_reward = {
@@ -1589,7 +1643,7 @@ focus_tree = {
 	}
 	focus = {
 		id = NEP_revise_sugaul_treaty
-		icon = GFX_z_goal_end_allies
+		icon = GFX_z_goal_change_segual
 		cost = 10
 		prerequisite = {
 			focus = NEP_recall_past_claims
@@ -1795,6 +1849,7 @@ focus_tree = {
 			focus = NEP_neutral_in_the_war
 			focus = NEP_support_british_war_with_ger
 			focus = NEP_china_ally
+			focus = NEP_save_old_british_treaties
 		}
 		available = {
 			country_exists = RAJ
@@ -1826,6 +1881,7 @@ focus_tree = {
 			focus = NEP_neutral_in_the_war
 			focus = NEP_support_british_war_with_ger
 			focus = NEP_INK_ally
+			focus = NEP_save_old_british_treaties
 		}
 		available = {
 			PRC = {
@@ -2159,7 +2215,7 @@ focus_tree = {
 				limit = {
 					has_idea = NEP_budda_loyality
 				}
-				complete_nacional_focus = NEP_repress_buddism
+				complete_national_focus = NEP_repress_buddism
 			}
 		}
 	}
@@ -2173,7 +2229,6 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = NEP_save_old_british_treaties
 			focus = NEP_support_british_war_with_ger
-			focus = NEP_save_old_british_treaties
 			focus = NEP_alliance_with_kings_revenge
 			focus = NEP_own_coalition
 			focus = NEP_china_ally

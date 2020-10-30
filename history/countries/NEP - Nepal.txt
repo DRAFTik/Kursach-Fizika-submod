@@ -117,7 +117,7 @@ create_country_leader = {
 	desc = "POLITICS_Pushpa_Lal_Shrestha_DESC"
 	picture = "GFX_portrait_nepal_portrait_Pushpa_Lal_Shrestha"
 	expire = "1965.1.1"
-	ideology = communism
+	ideology = marxism
 	traits = {
 		ambitious_of_power
 	}

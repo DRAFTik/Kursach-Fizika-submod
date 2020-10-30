@@ -555,6 +555,26 @@ spriteTypes = {
 		texturefile = "gfx/interface/goals/z_goal_support_INK.dds"
 	}
 	
+	spriteType = {
+		name = "GFX_z_goal_back_gimalai"
+		texturefile = "gfx/interface/goals/z_goal_back_gimalai.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_z_goal_change_segual"
+		texturefile = "gfx/interface/goals/z_goal_change_segual.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_z_goal_claim_Sikkim"
+		texturefile = "gfx/interface/goals/z_goal_claim_Sikkim.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_z_goal_nepal_army_sup"
+		texturefile = "gfx/interface/goals/z_goal_nepal_army_sup.dds"
+	}
+	
 	
 	frameAnimatedSpriteType = {
 		name = "GFX_z_goal_mountain_warriors"

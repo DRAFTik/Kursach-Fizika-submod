@@ -48,10 +48,11 @@ country_event = {
 		name = nepal.2.a
 		add_stability = -0.02
 		add_political_power = -10
-		damage_building = {
-			type = industrial_complex
-			damage = 0.6
-			province = 833
+		833 = {
+			damage_building = {
+				type = industrial_complex
+				damage = 0.6
+			}
 		}
 	}
 }
@@ -68,15 +69,17 @@ country_event = {
 	name = nepal.3.a
 		add_stability = -0.05
 		add_political_power = -25
-		damage_building = {
-			type = industrial_complex
-			damage = 0.6
-			province = 833
+		833 = {
+			damage_building = {
+				type = industrial_complex
+				damage = 0.6
+			}
 		}
-		damage_building = {
-			type = industrial_complex
-			damage = 0.6
-			province = 323
+		323 = {
+			damage_building = {
+				type = industrial_complex
+				damage = 0.6
+			}
 		}
 	}
 }
@@ -268,9 +271,9 @@ country_event = {
 	option = {
 		name = nepal.11.a
 		transfer_state = 844
-		transfer_state = 1104
+		transfer_state = 902
 		add_state_core = 844
-		add_state_core = 1104
+		add_state_core = 902
 	}
 }
 country_event = {
@@ -285,7 +288,7 @@ country_event = {
 	option = {
 		name = nepal.12.a
 		add_state_core = 844
-		add_state_core = 1104
+		add_state_core = 902
 		create_wargoal = {
 			type = take_core_state
 			target = RAJ

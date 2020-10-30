@@ -380,8 +380,8 @@ ideas = {
 			picture = gurhk_batalions
 			
 			modifier = {
-				conscription = 0.02
-				army_attack_factor = 0.1
+				conscription = 0.01
+				army_attack_factor = 0.05
 				special_forces_min = 1000
 			}
 		}
@@ -631,7 +631,7 @@ ideas = {
 			picture = nepal_army_support
 			
 			modifier = {
-				conscription = 0.015
+				conscription = 0.02
 				generate_wargoal_tension = -0.5
 				justify_war_goal_time = -0.25
 			}
@@ -979,6 +979,24 @@ ideas = {
 				drift_defence_factor = -0.50
 				communism_drift = 0.25
 				stability_weekly = -0.01
+			}
+		}
+		NEP_budda_bhasa = {
+
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = generic_agrarian_reform
+			
+			modifier = {
+				research_speed_factor =0.04
 			}
 		}
 	}
