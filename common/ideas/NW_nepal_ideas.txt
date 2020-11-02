@@ -854,7 +854,7 @@ ideas = {
 
 			removal_cost = -1
 
-			picture = generic_agrarian_reform
+			picture = danger_nepal_budda
 			
 			modifier = {
 				conscription_factor = -0.1
@@ -876,7 +876,7 @@ ideas = {
 			}
 			removal_cost = -1
 
-			picture = generic_agrarian_reform
+			picture = loyal_nepal_budda
 			
 			modifier = {
 				conscription_factor = 0.1
@@ -895,7 +895,7 @@ ideas = {
 
 			removal_cost = -1
 
-			picture = generic_agrarian_reform
+			picture = close_nepal_budda
 			
 			modifier = {
 				conscription_factor = -0.1
@@ -915,7 +915,7 @@ ideas = {
 
 			removal_cost = -1
 
-			picture = generic_agrarian_reform
+			picture = peoples_army_anarch
 			
 			modifier = {
 				conscription = 0.01
@@ -935,7 +935,7 @@ ideas = {
 
 			removal_cost = -1
 
-			picture = generic_agrarian_reform
+			picture = nepal_ateism
 			
 			modifier = {
 				drift_defence_factor = 0.25
@@ -954,7 +954,7 @@ ideas = {
 
 			removal_cost = -1
 
-			picture = generic_agrarian_reform
+			picture = ast_abandon_the_westminster_system_communism
 			
 			modifier = {
 				drift_defence_factor = -0.25
@@ -973,7 +973,7 @@ ideas = {
 
 			removal_cost = -1
 
-			picture = generic_agrarian_reform
+			picture = generic_communism_drift_bonus
 			
 			modifier = {
 				drift_defence_factor = -0.50
@@ -987,15 +987,21 @@ ideas = {
 				always = no
 			}
 
+			available = {
+				NOT = { has_government = communism }
+			}
+
 			allowed_civil_war = {
 				always = yes
 			}
 
 			removal_cost = -1
 
-			picture = generic_agrarian_reform
+			picture = loyal_nepal_budda
 			
 			modifier = {
+				conscription_factor = 0.1
+				political_power_gain = -0.1
 				research_speed_factor =0.04
 			}
 		}

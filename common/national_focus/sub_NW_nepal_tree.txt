@@ -1138,7 +1138,10 @@ focus_tree = {
 		relative_position_id = NEP_nepalese_national_assembly
 
 		completion_reward = {
-			add_ideas = NEP_budda_bhasa
+			swap_ideas = {
+				remove_idea = NEP_budda_loyality
+				add_idea = NEP_budda_bhasa
+			}
 		}
 	}
 	focus = {

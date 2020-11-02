@@ -556,7 +556,7 @@ country_event = {
 country_event = {
 	id = nepal.21
 	title = nepal.21.t
-	picture = GFX_report_event_nep_14_15_16_19_20
+	picture = GFX_report_event_nep_21_22_23
 	desc = { text = nepal.21.desc }
 	is_triggered_only = yes
 	
@@ -569,7 +569,7 @@ country_event = {
 country_event = {
 	id = nepal.22
 	title = nepal.22.t
-	picture = GFX_report_event_nep_14_15_16_19_20
+	picture = GFX_report_event_nep_21_22_23
 	desc = { text = nepal.22.desc }
 	is_triggered_only = yes
 	
@@ -582,7 +582,7 @@ country_event = {
 country_event = {
 	id = nepal.23
 	title = nepal.23.t
-	picture = GFX_report_event_nep_14_15_16_19_20
+	picture = GFX_report_event_nep_21_22_23
 	desc = { text = nepal.23.desc }
 	is_triggered_only = yes
 	
@@ -597,7 +597,7 @@ country_event = {
 country_event = {
 	id = nepal.24
 	title = nepal.24.t
-	picture = GFX_report_event_nep_14_15_16_19_20
+	picture = GFX_report_event_nep_24_25
 	desc = { text = nepal.24.desc }
 	is_triggered_only = yes
 	
@@ -614,7 +614,7 @@ country_event = {
 country_event = {
 	id = nepal.25
 	title = nepal.25.t
-	picture = GFX_report_event_nep_14_15_16_19_20
+	picture = GFX_report_event_nep_24_25
 	desc = { text = nepal.25.desc }
 	is_triggered_only = yes
 	
@@ -643,7 +643,7 @@ country_event = {
 country_event = {
 	id = nepal.26
 	title = nepal.26.t
-	picture = GFX_report_event_nep_14_15_16_19_20
+	picture = GFX_report_event_nep_26_27_28_29
 	desc = { text = nepal.26.desc }
 	is_triggered_only = yes
 	
@@ -664,7 +664,7 @@ country_event = {
 country_event = {
 	id = nepal.27
 	title = nepal.27.t
-	picture = GFX_report_event_nep_14_15_16_19_20
+	picture = GFX_report_event_nep_26_27_28_29
 	desc = { text = nepal.27.desc }
 	is_triggered_only = yes
 	
@@ -686,7 +686,7 @@ country_event = {
 country_event = {
 	id = nepal.28
 	title = nepal.28.t
-	picture = GFX_report_event_nep_14_15_16_19_20
+	picture = GFX_report_event_nep_26_27_28_29
 	desc = { text = nepal.28.desc }
 	is_triggered_only = yes
 	
@@ -711,7 +711,7 @@ country_event = {
 country_event = {
 	id = nepal.29
 	title = nepal.29.t
-	picture = GFX_report_event_nep_14_15_16_19_20
+	picture = GFX_report_event_nep_26_27_28_29
 	desc = { text = nepal.29.desc }
 	is_triggered_only = yes
 	

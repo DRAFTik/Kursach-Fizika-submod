@@ -81,6 +81,26 @@ spriteTypes = {
 	}
 	
 	spriteType = {
+		name = "GFX_idea_close_nepal_budda"
+		texturefile = "gfx/interface/ideas/NEP/close_nepal_budda.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_danger_nepal_budda"
+		texturefile = "gfx/interface/ideas/NEP/danger_nepal_budda.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_loyal_nepal_budda"
+		texturefile = "gfx/interface/ideas/NEP/loyal_nepal_budda.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_nepal_ateism"
+		texturefile = "gfx/interface/ideas/NEP/nepal_ateism.dds"
+	}
+	
+	spriteType = {
 		name = "GFX_idea_anglo_bur_war"
 		texturefile = "gfx/interface/ideas/SAF/anglo_bur_war.dds"
 	}
