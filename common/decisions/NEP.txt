@@ -160,7 +160,7 @@ NEP_wood_develop_category = {
 			NOT = { has_idea = NEP_deforestation_forest3 }
 		}
 		is_good = yes
-		days_mission_timeout = 60
+		days_mission_timeout = 70
 		icon = GFX_decision_wood_develop
 		timeout_effect = {
 			IF = {

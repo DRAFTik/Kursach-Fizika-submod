@@ -1006,4 +1006,97 @@ ideas = {
 			}
 		}
 	}
+	political_advisor = {
+	
+		NEP_Dhammalok_Mahasthavir = {
+			
+			picture = iDhammalok_Mahasthavir
+			
+			allowed = {
+				original_tag = NEP
+			}
+			
+			available = {
+				has_completed_focus = NEP_support_buddism
+			}
+			
+			traits = { father_of_nepal_theravada }
+			
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		NEP_Gangalal_Shrestha = {
+			
+			picture = iGangalal_Shrestha
+			
+			allowed = {
+				original_tag = NEP
+			}
+			
+			available = {
+				has_government = democratic
+			}
+			
+			traits = { resolute_social_democrat }
+			
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		NEP_Jagat_Sundar_Malla = {
+			
+			picture = iJagat_Sundar_Malla
+			
+			allowed = {
+				original_tag = NEP
+			}
+			
+			available = {
+				has_completed_focus = NEP_support_buddism
+			}
+			
+			traits = { education_reformer }
+			
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		NEP_Shukraraj_Shastri = {
+			
+			picture = iShukraraj_Shastri
+			
+			allowed = {
+				original_tag = NEP
+			}
+			
+			available = {
+				has_completed_focus = NEP_apply_shastri_social_reform
+			}
+			
+			traits = { socialite_connections }
+			
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		NEP_Yogbir_Singh_Kasa = {
+			
+			picture = iYogbir_Singh_Kasa
+			
+			allowed = {
+				original_tag = NEP
+			}
+
+			available = {
+				has_completed_focus = NEP_support_buddism
+			}
+			
+			traits = { poet_nepal_bhasa }
+			
+			ai_will_do = {
+				factor = 0
+			}
+		}
+	}
 }

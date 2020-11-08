@@ -19,4 +19,12 @@ leader_traits = {
 		communism_drift = 0.1
 		stability_factor = 0.05
 	}
+	father_of_nepal_theravada = {
+		random = no
+		stability_weekly = 0.02
+	}
+	poet_nepal_bhasa = {
+		random = no
+		political_power_gain = 0.1
+	}
 }

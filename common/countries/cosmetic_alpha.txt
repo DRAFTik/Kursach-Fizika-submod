@@ -1,0 +1,5 @@
+gimalay_confederation = {
+    color = rgb { 73 166 186 }
+    color_ui = rgb { 73 166 186 }
+}
+

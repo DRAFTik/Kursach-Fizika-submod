@@ -101,6 +101,31 @@ spriteTypes = {
 	}
 	
 	spriteType = {
+		name = "GFX_idea_iDhammalok_Mahasthavir"
+		texturefile = "gfx/interface/ideas/NEP/iDhammalok_Mahasthavir.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_iGangalal_Shrestha"
+		texturefile = "gfx/interface/ideas/NEP/iGangalal_Shrestha.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_iJagat_Sundar_Malla"
+		texturefile = "gfx/interface/ideas/NEP/iJagat_Sundar_Malla.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_iShukraraj_Shastri"
+		texturefile = "gfx/interface/ideas/NEP/iShukraraj_Shastri.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_iYogbir_Singh_Kasa"
+		texturefile = "gfx/interface/ideas/NEP/iYogbir_Singh_Kasa.dds"
+	}
+	
+	spriteType = {
 		name = "GFX_idea_anglo_bur_war"
 		texturefile = "gfx/interface/ideas/SAF/anglo_bur_war.dds"
 	}

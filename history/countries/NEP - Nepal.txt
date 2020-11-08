@@ -148,8 +148,8 @@ create_field_marshal = {
 }
 
 create_corps_commander = {
-	name = "Mohan Shumsher Jang Bahadur Rana"
-	portrait_path = "gfx/leaders/NEP/Portrait_Mohan_Shumsher_Jang_Bahadur_Rana.dds"
+	name = "Padma Shumsher Jang Bahadur Rana"
+	portrait_path = "gfx/leaders/NEP/Portrait_Padma_Shumsher_Jang_Bahadur_Rana.dds"
 	traits = {  }
 	skill = 2
 	attack_skill = 2
