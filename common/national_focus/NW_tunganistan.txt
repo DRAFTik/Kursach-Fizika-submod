@@ -11,90 +11,25 @@ focus_tree = {
 	
 	continuous_focus_position = { x = 1800 y = 50 }
 	
+	
+	##############################
+	##### NEUTRALITY SECTION #####
+	##############################
+	
 	focus = {
 		id = TNG_support_the_status_quo
 		icon = GFX_goal_generic_improve_relations
 		cost = 5
 		x = 12
 		y = 0
+		available = {
+			has_government = neutrality
+		}
 		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_support_the_status_quo"
 			add_opinion_modifier = { target = SIK modifier = TNG_support_the_status_quo_op }
 			SIK = { add_opinion_modifier = { target = TNG modifier = TNG_support_the_status_quo_op } }
 			add_political_power = 50
-		}
-	}
-	
-	focus = {
-		id = TNG_provisional_council_of_generals
-		icon = GFX_focus_generic_military_mission
-		cost = 1
-		x = 38
-		y = 0
-		completion_reward = {
-			add_stability = -0.05
-			add_political_power = 25
-		}
-	}
-	
-	focus = {
-		id = TNG_save_the_army_from_decay
-		icon = GFX_focus_spr_crush_the_revolution
-		cost = 10
-		x = 11
-		y = 9
-		available = {
-			OR = {
-				has_completed_focus = TNG_soviet_credit
-				has_completed_focus = TNG_money_reform
-			}
-		}
-		completion_reward = {
-			add_command_power = 50
-			add_tech_bonus = {
-				bonus = 0.5
-				uses = 1
-				category = land_doctrine
-				name = TNG_save_the_army_from_decay
-			}
-		}
-	}
-	
-	focus = {
-		id = TNG_fight_against_crime
-		icon = GFX_focus_generic_manpower
-		cost = 5
-		prerequisite = {
-			focus = TNG_support_the_status_quo
-		}
-		x = 0
-		y = 1
-		relative_position_id = TNG_support_the_status_quo
-		completion_reward = {
-			swap_ideas = {
-				remove_idea = TNG_banditry
-				add_idea = TNG_fight_against_crime_idea
-			}
-			add_political_power = -50
-		}
-	}
-	
-	focus = {
-		id = TNG_formulate_anti_sov_jihad_plan
-		icon = GFX_focus_attack_soviet
-		cost = 10
-		prerequisite = {
-			focus = TNG_fight_against_crime
-		}
-		x = 0
-		y = 2
-		relative_position_id = TNG_fight_against_crime
-		available = {
-			has_country_leader = { name = "Ma Hushan" ruling_only = yes }
-			has_country_flag = TNG_patience_is_over_flag
-		}
-		
-		completion_reward = {
-			country_event = { id = NWtunganistan.11 days = 1 }
 		}
 	}
 	
@@ -108,67 +43,13 @@ focus_tree = {
 		x = -3
 		y = 1
 		relative_position_id = TNG_support_the_status_quo
+		available = {
+			has_government = neutrality
+		}
 		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_hotan_paper_mill"
 			custom_effect_tooltip = available_industrial_concern
 			show_ideas_tooltip = TNG_hotan_paper_mill_idea
-		}
-	}
-	
-	focus = {
-		id = TNG_upgrade_weapon_forges
-		icon = GFX_goal_generic_production
-		cost = 5
-		prerequisite = {
-			focus = TNG_hotan_paper_mill
-		}
-		x = 1
-		y = 1
-		relative_position_id = TNG_hotan_paper_mill
-		completion_reward = {
-			random_owned_state = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = industrial_complex
-					level = 1
-					instant_build = yes
-				}
-			}
-		}
-	}
-	
-	focus = {
-		id = TNG_anti_japanese_propaganda
-		icon = GFX_focus_AST_war_japan
-		cost = 5
-		prerequisite = {
-			focus = TNG_support_the_status_quo
-		}
-		x = 3
-		y = 1
-		relative_position_id = TNG_support_the_status_quo
-		completion_reward = {
-			add_stability = 0.2
-			add_war_support = 0.2
-		}
-	}
-	
-	focus = {
-		id = TNG_zhangchang_coup
-		icon = GFX_goal_generic_military_deal
-		cost = 0
-		prerequisite = {
-			focus = TNG_provisional_council_of_generals
-		}
-		x = -6
-		y = 1
-		relative_position_id = TNG_provisional_council_of_generals
-		available = {
-			hidden_trigger = {
-				always = no
-			}
-		}
-		completion_reward = {
-			custom_effect_tooltip = TUR_focus_autocomplete_tt
 		}
 	}
 	
@@ -184,9 +65,37 @@ focus_tree = {
 		relative_position_id = TNG_hotan_paper_mill
 		available = {
 			controls_state = 287
+			has_government = neutrality
 		}
 		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_little_blue_carpets"
 			287 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = TNG_upgrade_weapon_forges
+		icon = GFX_goal_generic_production
+		cost = 5
+		prerequisite = {
+			focus = TNG_hotan_paper_mill
+		}
+		x = 1
+		y = 1
+		relative_position_id = TNG_hotan_paper_mill
+		available = {
+			has_government = neutrality
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_upgrade_weapon_forges"
+			random_owned_state = {
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = industrial_complex
@@ -210,11 +119,80 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = TNG_little_blue_carpets
+		available = {
+			has_government = neutrality
+		}
 		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_start_issuing_your_own_currency"
 			add_ideas = TNG_start_issuing_your_own_currency_idea
 			hidden_effect = {
 				country_event = { id = NWtunganistan.10 days = 15 }
 			}
+		}
+	}
+	
+	focus = {
+		id = TNG_fight_against_crime
+		icon = GFX_focus_generic_manpower
+		cost = 5
+		prerequisite = {
+			focus = TNG_support_the_status_quo
+		}
+		x = 0
+		y = 1
+		relative_position_id = TNG_support_the_status_quo
+		available = {
+			has_government = neutrality
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_fight_against_crime"
+			swap_ideas = {
+				remove_idea = TNG_banditry
+				add_idea = TNG_fight_against_crime_idea
+			}
+			add_political_power = -50
+		}
+	}
+	
+	focus = {
+		id = TNG_formulate_anti_sov_jihad_plan
+		icon = GFX_focus_attack_soviet
+		cost = 10
+		prerequisite = {
+			focus = TNG_fight_against_crime
+		}
+		x = 0
+		y = 2
+		relative_position_id = TNG_fight_against_crime
+		available = {
+			has_country_leader = { name = "Ma Hushan" ruling_only = yes }
+			has_country_flag = TNG_patience_is_over_flag
+			has_government = neutrality
+		}
+		
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_formulate_anti_sov_jihad_plan"
+			country_event = { id = NWtunganistan.11 days = 1 }
+		}
+	}
+	
+	focus = {
+		id = TNG_anti_japanese_propaganda
+		icon = GFX_focus_AST_war_japan
+		cost = 5
+		prerequisite = {
+			focus = TNG_support_the_status_quo
+		}
+		x = 3
+		y = 1
+		relative_position_id = TNG_support_the_status_quo
+		available = {
+			has_government = neutrality
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_anti_japanese_propaganda"
+			add_stability = 0.2
+			add_war_support = 0.2
 		}
 	}
 	
@@ -228,7 +206,11 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = TNG_anti_japanese_propaganda
+		available = {
+			has_government = neutrality
+		}
 		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_preparing_the_div_for_anti_jap_war"
 			add_tech_bonus = {
 				bonus = 1
 				uses = 1
@@ -248,7 +230,11 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = TNG_anti_japanese_propaganda
+		available = {
+			has_government = neutrality
+		}
 		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_control_of_trade_caravans"
 			unlock_decision_tooltip = TNG_protect_the_caravan
 		}
 	}
@@ -266,7 +252,11 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = TNG_preparing_the_div_for_anti_jap_war
+		available = {
+			has_government = neutrality
+		}
 		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_support_contact_with_the_kuomintang"
 			add_stability = 0.05
 			add_opinion_modifier = { target = CHI modifier = TNG_support_contact_with_the_kuomintang_op }
 			CHI = {
@@ -294,161 +284,19 @@ focus_tree = {
 		relative_position_id = TNG_formulate_anti_sov_jihad_plan
 		available = {
 			NOT = { country_exists = SIK }
+			has_government = neutrality
 		}
 		bypass = {
 		}
 		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_decision_time"
 		}
 	}
 	
-	focus = {
-		id = TNG_encouraging_drug_addiction_officers
-		icon = GFX_goal_tripartite_pact
-		cost = 10
-		prerequisite = {
-			focus = TNG_decision_time
-		}
-		x = -2
-		y = 1
-		relative_position_id = TNG_decision_time
-		completion_reward = {
-			every_unit_leader = {
-				add_unit_leader_trait = substance_abuser
-			}
-		}
-	}
 	
-	focus = {
-		id = TNG_arrangement_of_arms_supply_routes
-		icon = GFX_goal_generic_trade
-		cost = 10
-		prerequisite = {
-			focus = TNG_decision_time
-		}
-		x = 2
-		y = 1
-		relative_position_id = TNG_decision_time
-		completion_reward = {
-			unlock_decision_tooltip = TNG_buy_weapons
-			unlock_decision_tooltip = TNG_buy_equipment
-		}
-	}
-	
-	focus = {
-		id = TNG_reconnect_with_gansu_loyalists
-		icon = GFX_goal_generic_dangerous_deal
-		cost = 10
-		prerequisite = {
-			focus = TNG_arrangement_of_arms_supply_routes
-		}
-		x = 0
-		y = 1
-		relative_position_id = TNG_arrangement_of_arms_supply_routes
-		completion_reward = {
-			add_timed_idea = {
-				idea = TNG_reconnect_with_gansu_loyalists_idea
-				days = 1200
-			}
-		}
-	}
-	
-	focus = {
-		id = TNG_money_reform
-		icon = GFX_focus_mex_privatisation
-		cost = 10
-		prerequisite = {
-			focus = TNG_decision_time
-		}
-		x = 0
-		y = 1
-		relative_position_id = TNG_decision_time
-		completion_reward = {
-			if = {
-				limit = { has_idea = TNG_high_inflation }
-				swap_ideas = {
-					remove_idea = TNG_high_inflation
-					add_idea = TNG_money_reform_idea
-				}
-			}
-			else = {
-				swap_ideas = {
-					remove_idea = TNG_hyper_inflation
-					add_idea = TNG_money_reform_idea
-				}
-			}
-			add_ideas = TNG_money_reform_idea_2
-		}
-	}
-	
-	focus = {
-		id = TNG_currency_zeroing
-		icon = GFX_focus_generic_treaty
-		cost = 10
-		prerequisite = {
-			focus = TNG_money_reform
-		}
-		x = 0
-		y = 1
-		relative_position_id = TNG_money_reform
-		completion_reward = {
-			remove_ideas = TNG_money_reform_idea
-		}
-	}
-	
-	focus = {
-		id = TNG_modernization_of_handicraft_industries
-		icon = GFX_focus_generic_industry_3
-		cost = 10
-		prerequisite = {
-			focus = TNG_currency_zeroing
-		}
-		x = -1
-		y = 1
-		relative_position_id = TNG_currency_zeroing
-		available = {
-			controls_state = 287
-		}
-		completion_reward = {
-			287 = {
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = industrial_complex
-					level = 2
-					instant_build = yes
-				}
-			}
-		}
-	}
-	
-	focus = {
-		id = TNG_remove_old_banknotes_from_circulation
-		icon = GFX_focus_renounce_the_treaty_of_trianon
-		cost = 10
-		prerequisite = {
-			focus = TNG_currency_zeroing
-		}
-		x = 1
-		y = 1
-		relative_position_id = TNG_currency_zeroing
-		completion_reward = {
-			remove_ideas = TNG_money_reform_idea_2
-		}
-	}
-	
-	focus = {
-		id = TNG_own_cultivation
-		icon = GFX_goal_generic_construction2
-		cost = 10
-		prerequisite = {
-			focus = TNG_encouraging_drug_addiction_officers
-		}
-		x = 0
-		y = 1
-		relative_position_id = TNG_encouraging_drug_addiction_officers
-		completion_reward = {
-			unlock_decision_category_tooltip = TNG_own_cultivation_category
-		}
-	}
+	#############################
+	##### COALITION SECTION #####
+	#############################
 	
 	focus = {
 		id = TNG_a_shaky_coalition
@@ -464,8 +312,10 @@ focus_tree = {
 			NOT = { country_exists = SIK }
 			TNG = { has_war = no }
 			KAS = { NOT = { is_subject_of = JAP } }
+			has_government = neutrality
 		}
 		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_a_shaky_coalition"
 			KAS = { country_event = { id = NWtunganistan.13 days = 1 } }
 			KUM = { country_event = { id = NWtunganistan.13 days = 1 } }
 			DZH = { country_event = { id = NWtunganistan.13 days = 1 } }
@@ -502,6 +352,7 @@ focus_tree = {
 			controls_state = 1047
 		}
 		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_one_government"
 			add_state_core = 287
 			add_state_core = 759
 			add_state_core = 760
@@ -514,64 +365,6 @@ focus_tree = {
 			add_state_core = 1046
 			add_state_core = 1047
 			set_temp_variable = { temp_unity_of_government = 15 }
-			add_to_variable = { TNG_unity_of_government = temp_unity_of_government }
-			clamp_variable = { var = TNG_unity_of_government min = 0 max = 100 }
-			custom_effect_tooltip = TNG_unity_of_government_effect_tt
-		}
-	}
-	
-	focus = {
-		id = TNG_rebuilding_the_army
-		icon = GFX_focus_secret_rearmament
-		cost = 10
-		prerequisite = {
-			focus = TNG_one_government
-		}
-		x = -1
-		y = 1
-		relative_position_id = TNG_one_government
-		available = {
-			has_war = no
-			controls_state = 287
-			controls_state = 759
-			controls_state = 760
-			controls_state = 617
-			controls_state = 618
-			controls_state = 619
-			controls_state = 1120
-			controls_state = 1121
-			controls_state = 1122
-			controls_state = 1046
-			controls_state = 1047
-		}
-		completion_reward = {
-			set_temp_variable = { temp_unity_of_government = -10 }
-			add_to_variable = { TNG_unity_of_government = temp_unity_of_government }
-			clamp_variable = { var = TNG_unity_of_government min = 0 max = 100 }
-			custom_effect_tooltip = TNG_unity_of_government_effect_tt
-			add_command_power = 50
-			add_tech_bonus = {
-				bonus = 0.5
-				uses = 1
-				category = infantry_weapons
-				name = TNG_rebuilding_the_army
-			}
-		}
-	}
-	
-	focus = {
-		id = TNG_end_the_army_opium_addiction
-		icon = GFX_goal_generic_forceful_treaty
-		cost = 10
-		prerequisite = {
-			focus = TNG_rebuilding_the_army
-		}
-		x = -1
-		y = 1
-		relative_position_id = TNG_rebuilding_the_army
-		completion_reward = {
-			remove_ideas = TNG_army_opium_addiction
-			set_temp_variable = { temp_unity_of_government = -50 }
 			add_to_variable = { TNG_unity_of_government = temp_unity_of_government }
 			clamp_variable = { var = TNG_unity_of_government min = 0 max = 100 }
 			custom_effect_tooltip = TNG_unity_of_government_effect_tt
@@ -603,9 +396,70 @@ focus_tree = {
 			controls_state = 1047
 		}
 		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_delegation_to_nanjing"
 			CHI = {
 				country_event = { id = NWtunganistan.18 days = 1 }
 			}
+		}
+	}
+	
+	focus = {
+		id = TNG_rebuilding_the_army
+		icon = GFX_focus_secret_rearmament
+		cost = 10
+		prerequisite = {
+			focus = TNG_one_government
+		}
+		x = -1
+		y = 1
+		relative_position_id = TNG_one_government
+		available = {
+			has_war = no
+			controls_state = 287
+			controls_state = 759
+			controls_state = 760
+			controls_state = 617
+			controls_state = 618
+			controls_state = 619
+			controls_state = 1120
+			controls_state = 1121
+			controls_state = 1122
+			controls_state = 1046
+			controls_state = 1047
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_rebuilding_the_army"
+			set_temp_variable = { temp_unity_of_government = -10 }
+			add_to_variable = { TNG_unity_of_government = temp_unity_of_government }
+			clamp_variable = { var = TNG_unity_of_government min = 0 max = 100 }
+			custom_effect_tooltip = TNG_unity_of_government_effect_tt
+			add_command_power = 50
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = infantry_weapons
+				name = TNG_rebuilding_the_army
+			}
+		}
+	}
+	
+	focus = {
+		id = TNG_end_the_army_opium_addiction
+		icon = GFX_goal_generic_forceful_treaty
+		cost = 10
+		prerequisite = {
+			focus = TNG_rebuilding_the_army
+		}
+		x = -1
+		y = 1
+		relative_position_id = TNG_rebuilding_the_army
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_end_the_army_opium_addiction"
+			remove_ideas = TNG_army_opium_addiction
+			set_temp_variable = { temp_unity_of_government = -50 }
+			add_to_variable = { TNG_unity_of_government = temp_unity_of_government }
+			clamp_variable = { var = TNG_unity_of_government min = 0 max = 100 }
+			custom_effect_tooltip = TNG_unity_of_government_effect_tt
 		}
 	}
 	
@@ -637,6 +491,7 @@ focus_tree = {
 			controls_state = 1047
 		}
 		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_creation_of_a_legislative_body"
 			set_temp_variable = { temp_unity_of_government = 10 }
 			add_to_variable = { TNG_unity_of_government = temp_unity_of_government }
 			clamp_variable = { var = TNG_unity_of_government min = 0 max = 100 }
@@ -671,6 +526,7 @@ focus_tree = {
 			controls_state = 1047
 		}
 		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_equal_laws_for_nations_and_religions"
 			set_temp_variable = { temp_unity_of_government = 20 }
 			add_to_variable = { TNG_unity_of_government = temp_unity_of_government }
 			clamp_variable = { var = TNG_unity_of_government min = 0 max = 100 }
@@ -706,6 +562,7 @@ focus_tree = {
 			controls_state = 1047
 		}
 		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_prepare_for_war_with_japan"
 			add_tech_bonus = {
 				bonus = 1
 				uses = 1
@@ -741,6 +598,7 @@ focus_tree = {
 			controls_state = 1047
 		}
 		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_increased_punishment_for_banditry"
 			set_temp_variable = { temp_unity_of_government = 5 }
 			add_to_variable = { TNG_unity_of_government = temp_unity_of_government }
 			clamp_variable = { var = TNG_unity_of_government min = 0 max = 100 }
@@ -775,6 +633,7 @@ focus_tree = {
 			controls_state = 1047
 		}
 		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_police_formation"
 			set_temp_variable = { temp_unity_of_government = 5 }
 			add_to_variable = { TNG_unity_of_government = temp_unity_of_government }
 			clamp_variable = { var = TNG_unity_of_government min = 0 max = 100 }
@@ -816,6 +675,7 @@ focus_tree = {
 			controls_state = 1047
 		}
 		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_police_raids"
 			effect_tooltip = { remove_ideas = TNG_banditry }
 			hidden_effect = {
 				remove_ideas = { TNG_banditry TNG_fight_against_crime_idea }
@@ -851,6 +711,7 @@ focus_tree = {
 			controls_state = 1047
 		}
 		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_war_with_sov_rebels"
 			add_ideas = TNG_war_with_sov_rebels_idea
 		}
 	}
@@ -883,6 +744,7 @@ focus_tree = {
 			controls_state = 1047
 		}
 		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_spy_mania"
 			create_intelligence_agency = yes
 		}
 	}
@@ -915,6 +777,7 @@ focus_tree = {
 			controls_state = 1047
 		}
 		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_close_border_control"
 			1121 = {
 				add_building_construction = {
 					type = bunker
@@ -966,6 +829,169 @@ focus_tree = {
 		}
 	}
 	
+	
+	############################
+	##### ECONOMIC SECTION #####
+	############################
+	
+	focus = {
+		id = TNG_encouraging_drug_addiction_officers
+		icon = GFX_goal_tripartite_pact
+		cost = 10
+		prerequisite = {
+			focus = TNG_decision_time
+		}
+		x = -2
+		y = 1
+		relative_position_id = TNG_decision_time
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_encouraging_drug_addiction_officers"
+			every_unit_leader = {
+				add_unit_leader_trait = substance_abuser
+			}
+		}
+	}
+	
+	focus = {
+		id = TNG_own_cultivation
+		icon = GFX_goal_generic_construction2
+		cost = 10
+		prerequisite = {
+			focus = TNG_encouraging_drug_addiction_officers
+		}
+		x = 0
+		y = 1
+		relative_position_id = TNG_encouraging_drug_addiction_officers
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_own_cultivation"
+			unlock_decision_tooltip = TNG_sell_opium_to_afghanistan
+			unlock_decision_category_tooltip = TNG_own_cultivation_category
+		}
+	}
+	
+	focus = {
+		id = TNG_money_reform
+		icon = GFX_focus_mex_privatisation
+		cost = 10
+		prerequisite = {
+			focus = TNG_decision_time
+		}
+		x = 0
+		y = 1
+		relative_position_id = TNG_decision_time
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_money_reform"
+			if = {
+				limit = { has_idea = TNG_high_inflation }
+				swap_ideas = {
+					remove_idea = TNG_high_inflation
+					add_idea = TNG_money_reform_idea
+				}
+			}
+			else = {
+				swap_ideas = {
+					remove_idea = TNG_hyper_inflation
+					add_idea = TNG_money_reform_idea
+				}
+			}
+			add_ideas = TNG_money_reform_idea_2
+		}
+	}
+	
+	focus = {
+		id = TNG_currency_zeroing
+		icon = GFX_focus_generic_treaty
+		cost = 10
+		prerequisite = {
+			focus = TNG_money_reform
+		}
+		x = 0
+		y = 1
+		relative_position_id = TNG_money_reform
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_currency_zeroing"
+			remove_ideas = TNG_money_reform_idea
+		}
+	}
+	
+	focus = {
+		id = TNG_modernization_of_handicraft_industries
+		icon = GFX_focus_generic_industry_3
+		cost = 10
+		prerequisite = {
+			focus = TNG_currency_zeroing
+		}
+		x = -1
+		y = 1
+		relative_position_id = TNG_currency_zeroing
+		available = {
+			controls_state = 287
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_modernization_of_handicraft_industries"
+			287 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	
+	focus = {
+		id = TNG_remove_old_banknotes_from_circulation
+		icon = GFX_focus_renounce_the_treaty_of_trianon
+		cost = 10
+		prerequisite = {
+			focus = TNG_currency_zeroing
+		}
+		x = 1
+		y = 1
+		relative_position_id = TNG_currency_zeroing
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_remove_old_banknotes_from_circulation"
+			remove_ideas = TNG_money_reform_idea_2
+		}
+	}
+	
+	focus = {
+		id = TNG_arrangement_of_arms_supply_routes
+		icon = GFX_goal_generic_trade
+		cost = 10
+		prerequisite = {
+			focus = TNG_decision_time
+		}
+		x = 2
+		y = 1
+		relative_position_id = TNG_decision_time
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_arrangement_of_arms_supply_routes"
+			unlock_decision_tooltip = TNG_buy_weapons
+			unlock_decision_tooltip = TNG_buy_equipment
+		}
+	}
+	
+	focus = {
+		id = TNG_reconnect_with_gansu_loyalists
+		icon = GFX_goal_generic_dangerous_deal
+		cost = 10
+		prerequisite = {
+			focus = TNG_arrangement_of_arms_supply_routes
+		}
+		x = 0
+		y = 1
+		relative_position_id = TNG_arrangement_of_arms_supply_routes
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_reconnect_with_gansu_loyalists"
+			add_timed_idea = {
+				idea = TNG_reconnect_with_gansu_loyalists_idea
+				days = 1200
+			}
+		}
+	}
+	
 	focus = {
 		id = TNG_xinjiang_new_duban
 		icon = GFX_focus_mex_support_general_cedillo
@@ -989,13 +1015,20 @@ focus_tree = {
 			NOT = {
 				has_completed_focus = TNG_a_shaky_coalition
 			}
+			has_government = neutrality
 		}
 		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_xinjiang_new_duban"
 			add_stability = 0.15
 			add_political_power = 50
 			set_cosmetic_tag = SIK
 		}
 	}
+	
+	
+	###########################
+	##### FASCISM SECTION #####
+	###########################
 	
 	focus = {
 		id = TNG_eng_secret_request
@@ -1015,6 +1048,7 @@ focus_tree = {
 			NOT = { has_war_with = ENG }
 		}
 		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_eng_secret_request"
 			ENG = { country_event = { id = NWtunganistan.21 days = 1 } }
 		}
 	}
@@ -1033,7 +1067,47 @@ focus_tree = {
 		y = 1
 		relative_position_id = TNG_reconnect_with_gansu_loyalists
 		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_gansu_adventure"
 			unlock_decision_category_tooltip = TNG_gansu_adventure_category
+		}
+	}
+	
+	focus = {
+		id = TNG_liberation_campaign_in_the_sov
+		icon = GFX_goal_generic_war_with_comintern
+		cost = 10
+		prerequisite = {
+			focus = TNG_gansu_adventure
+		}
+		x = 0
+		y = 1
+		relative_position_id = TNG_gansu_adventure
+		available = {
+			is_subject = no
+		}
+		bypass = {
+			OR = {
+				NOT = { country_exists = SOV }
+				is_in_faction_with = SOV
+				has_war_with = SOV
+			}
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_liberation_campaign_in_the_sov"
+			create_wargoal = {
+				type = annex_everything
+				target = SOV
+			}
+			add_ai_strategy = {
+				type = antagonize
+				id = SOV
+				value = 200
+			}
+			add_ai_strategy = {
+				type = conquer
+				id = SOV
+				value = 100
+			}
 		}
 	}
 	
@@ -1049,8 +1123,10 @@ focus_tree = {
 		relative_position_id = TNG_eng_secret_request
 		available = {
 			has_completed_focus = TNG_encouraging_drug_addiction_officers
+			has_government = fascism
 		}
 		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_creation_of_a_personality_cult"
 			add_political_power = 50
 			add_stability = 0.05
 			add_popularity = {
@@ -1088,34 +1164,14 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = TNG_creation_of_a_personality_cult
+		available = {
+			has_government = fascism
+		}
 		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_demonstration_executions_of_bandits"
 			effect_tooltip = { remove_ideas = TNG_banditry }
 			hidden_effect = {
 				remove_ideas = { TNG_banditry TNG_fight_against_crime_idea }
-			}
-		}
-	}
-	
-	focus = {
-		id = TNG_create_the_khushan_guard
-		icon = GFX_focus_generic_little_entente
-		cost = 10
-		prerequisite = {
-			focus = TNG_demonstration_executions_of_bandits
-		}
-		x = 1
-		y = 1
-		relative_position_id = TNG_demonstration_executions_of_bandits
-		completion_reward = {
-			add_stability = 0.05
-			add_command_power = 50
-			add_tech_bonus = {
-				bonus = 0.5
-				uses = 2
-				category = marine_tech
-				category = para_tech
-				category = mountaineers_tech
-				name = TNG_create_the_khushan_guard
 			}
 		}
 	}
@@ -1130,12 +1186,44 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = TNG_demonstration_executions_of_bandits
+		available = {
+			has_government = fascism
+		}
 		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_hang_portraits_of_khushan"
 			add_political_power = 50
 			add_stability = 0.1
 			add_popularity = {
 				ideology = fascism
 				popularity = 0.15
+			}
+		}
+	}
+	
+	focus = {
+		id = TNG_create_the_khushan_guard
+		icon = GFX_focus_generic_little_entente
+		cost = 10
+		prerequisite = {
+			focus = TNG_demonstration_executions_of_bandits
+		}
+		x = 1
+		y = 1
+		relative_position_id = TNG_demonstration_executions_of_bandits
+		available = {
+			has_government = fascism
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_create_the_khushan_guard"
+			add_stability = 0.05
+			add_command_power = 50
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = marine_tech
+				category = para_tech
+				category = mountaineers_tech
+				name = TNG_create_the_khushan_guard
 			}
 		}
 	}
@@ -1154,6 +1242,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = TNG_hang_portraits_of_khushan
 		available = {
+			has_government = fascism
 			controls_state = 287
 			controls_state = 759
 			controls_state = 760
@@ -1167,6 +1256,7 @@ focus_tree = {
 			controls_state = 1047
 		}
 		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_distribute_lands_to_loyal_commanders"
 			add_state_core = 287
 			add_state_core = 759
 			add_state_core = 760
@@ -1195,7 +1285,11 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = TNG_distribute_lands_to_loyal_commanders
+		available = {
+			has_government = fascism
+		}
 		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_act_of_independence"
 			remove_ideas = TNG_chinese_militarist_gov
 			set_cosmetic_tag = TNG_islamistan
 			every_other_country = {
@@ -1215,7 +1309,11 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = TNG_act_of_independence
+		available = {
+			has_government = fascism
+		}
 		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_seek_recognition_from_islamic_states"
 			every_other_country = {
 				limit = {
 					OR = {
@@ -1237,6 +1335,36 @@ focus_tree = {
 	}
 	
 	focus = {
+		id = TNG_join_to_afgan_bloc
+		icon = GFX_focus_generic_diplomatic_treaty
+		cost = 10
+		prerequisite = {
+			focus = TNG_seek_recognition_from_islamic_states
+		}
+		x = 0
+		y = 1
+		relative_position_id = TNG_seek_recognition_from_islamic_states
+		available = {
+			has_country_flag = TNG_seek_recognition_from_islamic_states_afg_flag
+			is_subject = no
+			is_in_faction = no
+			AFG = { is_faction_leader = yes }
+			NOT = { has_war_with = AFG }
+			has_government = fascism
+		}
+		bypass = {
+			OR = {
+				is_in_faction_with = AFG
+			}
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_join_to_afgan_bloc"
+			AFG = { country_event = { id = generic.2 days = 1 } }
+		}
+	}
+	
+	
+	focus = {
 		id = TNG_secret_uk_tranche
 		icon = GFX_focus_mex_privatisation
 		cost = 10
@@ -1253,6 +1381,7 @@ focus_tree = {
 			controls_state = 287
 		}
 		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_secret_uk_tranche"
 			287 = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
@@ -1284,6 +1413,7 @@ focus_tree = {
 			NOT = { has_war_with = ENG }
 		}
 		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_transfer_of_ammunition"
 			add_equipment_to_stockpile = {
 				type = infantry_equipment
 				amount = 2000
@@ -1322,6 +1452,7 @@ focus_tree = {
 			RAJ = { is_subject_of = ENG }
 		}
 		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_british_oil_interess"
 			add_tech_bonus = {
 				bonus = 0.5
 				uses = 1
@@ -1380,6 +1511,7 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_oil_infrastructure"
 			every_state = {
 				limit = {
 					OR = {
@@ -1417,11 +1549,18 @@ focus_tree = {
 			is_subject = no
 			country_exists = ENG
 			NOT = { has_war_with = ENG }
+			has_government = fascism
 		}
 		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_set_official_opinions_with_eng"
 			ENG = { country_event = { id = NWtunganistan.29 days = 1 } }
 		}
 	}
+	
+	
+	#############################
+	##### PRO CHINA SECTION #####
+	#############################
 	
 	focus = {
 		id = TNG_loyalty_to_the_kuomintang
@@ -1452,6 +1591,7 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_loyalty_to_the_kuomintang"
 			give_military_access = CHI
 			add_ai_strategy = {
 				type = befriend
@@ -1480,6 +1620,7 @@ focus_tree = {
 			has_war = no
 		}
 		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_provincial_development"
 			add_timed_idea = { idea = TNG_provincial_development_idea days = 365 }
 		}
 	}
@@ -1495,12 +1636,55 @@ focus_tree = {
 		y = 1
 		relative_position_id = TNG_provincial_development
 		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_agricultural_recovery_in_the_region"
 			if = {
 				limit = { controls_state = 759 }
 				759 = { set_state_category = pastoral }
 			}
 			every_owned_state = {
 				add_extra_state_shared_building_slots = 1
+			}
+		}
+	}
+	
+	focus = {
+		id = TNG_call_for_farming
+		icon = GFX_goal_generic_construction2
+		cost = 10
+		prerequisite = {
+			focus = TNG_agricultural_recovery_in_the_region
+		}
+		x = 0
+		y = 1
+		relative_position_id = TNG_agricultural_recovery_in_the_region
+		available = {
+			controls_state = 617
+			controls_state = 287
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_call_for_farming"
+			add_stability = 0.15
+			617 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			287 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = excavation_tech
+				name = TNG_agricultural_recovery_in_the_region
 			}
 		}
 	}
@@ -1522,6 +1706,7 @@ focus_tree = {
 			controls_state = 760
 		}
 		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_roads_to_xinjiang"
 			287 = {
 				add_building_construction = {
 					type = infrastructure
@@ -1569,6 +1754,7 @@ focus_tree = {
 			controls_state = 617
 		}
 		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_raise_the_living_standards_of_the_population"
 			759 = {
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
@@ -1628,6 +1814,7 @@ focus_tree = {
 			has_war_with = JAP
 		}
 		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_preparing_for_war_with_jap"
 			617 = {
 				add_building_construction = {
 						type = arms_factory
@@ -1656,6 +1843,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = TNG_preparing_for_war_with_jap
 		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_selection_of_the_best_parts"
 			add_tech_bonus = {
 				bonus = 1
 				uses = 1
@@ -1674,6 +1862,25 @@ focus_tree = {
 	}
 	
 	focus = {
+		id = TNG_joining_the_central_government
+		icon = GFX_focus_prc_social_democracy
+		cost = 10
+		prerequisite = {
+			focus = TNG_preparing_for_war_with_jap
+		}
+		x = 2
+		y = 1
+		relative_position_id = TNG_preparing_for_war_with_jap
+		available = {
+			is_subject_of = CHI
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_joining_the_central_government"
+			add_ideas = TNG_joining_the_central_government_idea
+		}
+	}
+	
+	focus = {
 		id = TNG_xinjiangs_modern_military_factories
 		icon = GFX_goal_generic_construct_mil_factory
 		cost = 10
@@ -1688,6 +1895,7 @@ focus_tree = {
 			controls_state = 287
 		}
 		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_xinjiangs_modern_military_factories"
 			617 = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
@@ -1724,134 +1932,73 @@ focus_tree = {
 			num_of_factories > 25
 		}
 		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_expansion_of_the_university_of_urumqi"
 			add_research_slot = 1
 		}
 	}
 	
+	
 	focus = {
-		id = TNG_joining_the_central_government
-		icon = GFX_focus_prc_social_democracy
-		cost = 10
-		prerequisite = {
-			focus = TNG_preparing_for_war_with_jap
-		}
-		x = 2
-		y = 1
-		relative_position_id = TNG_preparing_for_war_with_jap
+		id = TNG_provisional_council_of_generals
+		icon = GFX_focus_generic_military_mission
+		cost = 1
+		x = 38
+		y = 0
 		available = {
-			is_subject_of = CHI
+			has_government = communism
 		}
 		completion_reward = {
-			add_ideas = TNG_joining_the_central_government_idea
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_provisional_council_of_generals"
+			add_stability = -0.05
+			add_political_power = 25
 		}
 	}
 	
-	focus = {
-		id = TNG_liberation_campaign_in_the_sov
-		icon = GFX_goal_generic_war_with_comintern
-		cost = 10
-		prerequisite = {
-			focus = TNG_gansu_adventure
-		}
-		x = 0
-		y = 1
-		relative_position_id = TNG_gansu_adventure
-		available = {
-			is_subject = no
-		}
-		bypass = {
-			OR = {
-				NOT = { country_exists = SOV }
-				is_in_faction_with = SOV
-				has_war_with = SOV
-			}
-		}
-		completion_reward = {
-			create_wargoal = {
-				type = annex_everything
-				target = SOV
-			}
-			add_ai_strategy = {
-				type = antagonize
-				id = SOV
-				value = 200
-			}
-			add_ai_strategy = {
-				type = conquer
-				id = SOV
-				value = 100
-			}
-		}
-	}
+	
+	###################################
+	##### ZHANGCHANG COUP SECTION #####
+	###################################
 	
 	focus = {
-		id = TNG_call_for_farming
-		icon = GFX_goal_generic_construction2
-		cost = 10
+		id = TNG_zhangchang_coup
+		icon = GFX_goal_generic_military_deal
+		cost = 0
 		prerequisite = {
-			focus = TNG_agricultural_recovery_in_the_region
+			focus = TNG_provisional_council_of_generals
 		}
-		x = 0
+		x = -6
 		y = 1
-		relative_position_id = TNG_agricultural_recovery_in_the_region
+		relative_position_id = TNG_provisional_council_of_generals
 		available = {
-			controls_state = 617
-			controls_state = 287
+			hidden_trigger = {
+				always = no
+			}
 		}
 		completion_reward = {
-			add_stability = 0.15
-			617 = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = industrial_complex
-					level = 1
-					instant_build = yes
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_zhangchang_coup"
+			if = {
+				limit = { NOT = { has_completed_focus = TNG_zhangchang_coup } }
+				custom_effect_tooltip = TUR_focus_autocomplete_tt
+			}
+			if = {
+				limit = { NOT = { has_government = neutrality } }
+				set_politics = {
+					ruling_party = neutrality
+					elections_allowed = no
 				}
 			}
-			287 = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = industrial_complex
-					level = 1
-					instant_build = yes
-				}
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.15
 			}
-			add_tech_bonus = {
-				bonus = 1
-				uses = 1
-				category = excavation_tech
-				name = TNG_agricultural_recovery_in_the_region
+			set_party_name = { 
+				ideology = neutrality
+				long_name = TNG_neutrality_party_ma_zhancanh
+				name = TNG_neutrality_party_ma_zhancanh
 			}
 		}
 	}
-	
-	focus = {
-		id = TNG_join_to_afgan_bloc
-		icon = GFX_focus_generic_diplomatic_treaty
-		cost = 10
-		prerequisite = {
-			focus = TNG_seek_recognition_from_islamic_states
-		}
-		x = 0
-		y = 1
-		relative_position_id = TNG_seek_recognition_from_islamic_states
-		available = {
-			has_country_flag = TNG_seek_recognition_from_islamic_states_afg_flag
-			is_subject = no
-			is_in_faction = no
-			AFG = { is_faction_leader = yes }
-			NOT = { has_war_with = AFG }
-		}
-		bypass = {
-			OR = {
-				is_in_faction_with = AFG
-			}
-		}
-		completion_reward = {
-			AFG = { country_event = { id = generic.2 days = 1 } }
-		}
-	}
-	
+
 	focus = {
 		id = TNG_provincial_government_formation
 		icon = GFX_goal_generic_national_unity
@@ -1862,7 +2009,11 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = TNG_zhangchang_coup
+		available = {
+			has_government = neutrality
+		}
 		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_provincial_government_formation"
 			add_timed_idea = {
 				idea = TNG_provincial_government_formation_idea
 				days = 180
@@ -1880,7 +2031,11 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = TNG_provincial_government_formation
+		available = {
+			has_government = neutrality
+		}
 		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_conspiracy_with_bandits"
 			effect_tooltip = { remove_ideas = TNG_banditry }
 			hidden_effect = {
 				remove_ideas = { TNG_banditry TNG_fight_against_crime_idea }
@@ -1901,6 +2056,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = TNG_zhangchang_coup
 		available = {
+			has_government = neutrality
 			NOT = { has_war_with = XSM }
 		}
 		bypass = {
@@ -1910,6 +2066,7 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_rebuild_relationship_with_the_ma_clique"
 			XSM = {
 				country_event = { id = NWtunganistan.37 days = 1 }
 			}
@@ -1927,6 +2084,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = TNG_rebuild_relationship_with_the_ma_clique
 		available = {
+			has_government = neutrality
 			country_exists = XSM
 			NOT = { has_war_with = XSM }
 			OR = {
@@ -1937,6 +2095,7 @@ focus_tree = {
 			}
 		}
 		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_full_province_capture_support"
 			XSM = {
 				country_event = { id = NWtunganistan.38 days = 1 }
 			}
@@ -1944,6 +2103,7 @@ focus_tree = {
 				if = {
 					limit = {
 						NOT = { has_war_with = SIK }
+						country_exists = SIK
 					}
 					create_wargoal = {
 						type = annex_everything
@@ -1953,6 +2113,7 @@ focus_tree = {
 				if = {
 					limit = {
 						NOT = { has_war_with = KUM }
+						country_exists = KUM
 					}
 					create_wargoal = {
 						type = annex_everything
@@ -1962,6 +2123,7 @@ focus_tree = {
 				if = {
 					limit = {
 						NOT = { has_war_with = DZH }
+						country_exists = DZH
 					}
 					create_wargoal = {
 						type = annex_everything
@@ -1971,6 +2133,7 @@ focus_tree = {
 				if = {
 					limit = {
 						NOT = { has_war_with = KAS }
+						country_exists = KAS
 					}
 					create_wargoal = {
 						type = annex_everything
@@ -1995,17 +2158,24 @@ focus_tree = {
 		y = 1
 		relative_position_id = TNG_conspiracy_with_bandits
 		available = {
+			has_government = neutrality
 			NOT = { has_war_with = NGX }
 		}
 		bypass = {
 			NOT = { country_exists = NGX }
 		}
 		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_treaty_with_ningxia"
 			NGX = {
 				country_event = { id = NWtunganistan.39 days = 1 }
 			}
 		}
 	}
+	
+	
+	#############################
+	##### COMMUNISM SECTION #####
+	#############################
 	
 	focus = {
 		id = TNG_securing_yangliang_power
@@ -2020,7 +2190,11 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = TNG_provisional_council_of_generals
+		available = {
+			has_government = communism
+		}
 		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_securing_yangliang_power"
 			add_stability = 0.25
 			add_war_support = 0.15
 			hidden_effect = {
@@ -2042,7 +2216,11 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = TNG_provisional_council_of_generals
+		available = {
+			has_government = communism
+		}
 		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_transfer_power_to_zhongying"
 			country_event = { id = NWtunganistan.33 days = 1 }
 		}
 	}
@@ -2058,11 +2236,46 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = TNG_securing_yangliang_power
+		available = {
+			has_government = communism
+		}
 		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_promotion_of_the_moscow_program"
 			add_political_power = 25
 			add_popularity = {
 				ideology = communism
 				popularity = 0.25
+			}
+		}
+	}
+	
+	focus = {
+		id = TNG_smash_mukhiti
+		icon = GFX_goal_generic_political_pressure
+		cost = 1
+		prerequisite = {
+			focus = TNG_securing_yangliang_power
+			focus = TNG_transfer_power_to_zhongying
+		}
+		x = 0
+		y = 1
+		relative_position_id = TNG_transfer_power_to_zhongying
+		available = {
+			has_government = communism
+			is_subject = no
+			NOT = { is_in_faction_with = KAS }
+			KAS = {
+				has_country_leader = { name = "Mahmud Muhiti" ruling_only = yes }
+			}
+		}
+		bypass = {
+			has_war_with = KAS
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_smash_mukhiti"
+			declare_war_on = {
+				target = KAS
+				type = annex_everything
 			}
 		}
 	}
@@ -2082,9 +2295,11 @@ focus_tree = {
 		y = 1
 		relative_position_id = TNG_promotion_of_the_moscow_program
 		available = {
+			has_government = communism
 			NOT = { country_exists = KAS }
 		}
 		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_agreement_in_aksu"
 			country_event = { id = NWtunganistan.34 days = 1 }
 			SOV = { country_event = { id = NWtunganistan.34 days = 1 } }
 			SIK = { country_event = { id = NWtunganistan.34 days = 1 } }
@@ -2106,6 +2321,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = TNG_promotion_of_the_moscow_program
 		available = {
+			has_government = communism
 			is_subject = no
 			NOT = { is_in_faction_with = SIK }
 			SIK = {
@@ -2116,117 +2332,9 @@ focus_tree = {
 			has_war_with = SIK
 		}
 		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_smash_the_traitor_shitsai"
 			declare_war_on = {
 				target = SIK
-				type = annex_everything
-			}
-		}
-	}
-	
-	focus = {
-		id = TNG_the_path_to_provincial_prosperity
-		icon = GFX_focus_focus_fra_revolution_utmost
-		cost = 10
-		prerequisite = {
-			focus = TNG_agreement_in_aksu
-			focus = TNG_smash_the_traitor_shitsai
-		}
-		x = 1
-		y = 1
-		relative_position_id = TNG_agreement_in_aksu
-		completion_reward = {
-			add_political_power = 150
-			add_stability = 0.1
-		}
-	}
-	
-	focus = {
-		id = TNG_soviet_advisors
-		icon = GFX_z_goal_socialist_stratocracy
-		cost = 10
-		prerequisite = {
-			focus = TNG_the_path_to_provincial_prosperity
-		}
-		x = -2
-		y = 1
-		relative_position_id = TNG_the_path_to_provincial_prosperity
-		available = {
-			country_exists = SOV
-			NOT = { has_war_with = SOV }
-		}
-		completion_reward = {
-			add_tech_bonus = {
-				bonus = 0.5
-				uses = 1
-				category = construction_tech
-				name = TNG_soviet_advisors
-			}
-			add_tech_bonus = {
-				bonus = 0.5
-				uses = 1
-				category = land_doctrine
-				name = TNG_soviet_advisors
-			}
-		}
-	}
-	
-	focus = {
-		id = TNG_soviet_weapons
-		icon = GFX_goal_generic_army_artillery2
-		cost = 10
-		prerequisite = {
-			focus = TNG_the_path_to_provincial_prosperity
-		}
-		x = 2
-		y = 1
-		relative_position_id = TNG_the_path_to_provincial_prosperity
-		available = {
-			country_exists = SOV
-			NOT = { has_war_with = SOV }
-		}
-		completion_reward = {
-			add_equipment_to_stockpile = {
-				type = infantry_equipment
-				amount = 2000
-				producer = SOV
-			}
-			add_equipment_to_stockpile = {
-				type = support_equipment
-				amount = 500
-				producer = SOV
-			}
-			add_equipment_to_stockpile = {
-				type = artillery_equipment
-				amount = 250
-				producer = SOV
-			}
-		}
-	}
-	
-	focus = {
-		id = TNG_smash_mukhiti
-		icon = GFX_goal_generic_political_pressure
-		cost = 1
-		prerequisite = {
-			focus = TNG_securing_yangliang_power
-			focus = TNG_transfer_power_to_zhongying
-		}
-		x = 0
-		y = 1
-		relative_position_id = TNG_transfer_power_to_zhongying
-		available = {
-			is_subject = no
-			NOT = { is_in_faction_with = KAS }
-			KAS = {
-				has_country_leader = { name = "Mahmud Muhiti" ruling_only = yes }
-			}
-		}
-		bypass = {
-			has_war_with = KAS
-		}
-		completion_reward = {
-			declare_war_on = {
-				target = KAS
 				type = annex_everything
 			}
 		}
@@ -2247,12 +2355,14 @@ focus_tree = {
 		y = 1
 		relative_position_id = TNG_promotion_of_the_moscow_program
 		available = {
+			has_government = communism
 			country_exists = SIK
 			NOT = { has_war_with = SIK }
 			is_subject = no
 			SIK = { is_subject = no }
 		}
 		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_accession_to_xinjiang_as_autonomy"
 			SIK = {
 				set_autonomy = {
 					target = ROOT
@@ -2272,8 +2382,65 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = TNG_accession_to_xinjiang_as_autonomy
+		available = {
+			has_government = communism
+		}
 		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_campaigning_for_accession"
 			add_ideas = TNG_campaigning_for_accession_idea
+		}
+	}
+	
+	focus = {
+		id = TNG_the_path_to_provincial_prosperity
+		icon = GFX_focus_focus_fra_revolution_utmost
+		cost = 10
+		prerequisite = {
+			focus = TNG_agreement_in_aksu
+			focus = TNG_smash_the_traitor_shitsai
+		}
+		x = 1
+		y = 1
+		relative_position_id = TNG_agreement_in_aksu
+		available = {
+			has_government = communism
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_the_path_to_provincial_prosperity"
+			add_political_power = 150
+			add_stability = 0.1
+		}
+	}
+	
+	focus = {
+		id = TNG_soviet_advisors
+		icon = GFX_z_goal_socialist_stratocracy
+		cost = 10
+		prerequisite = {
+			focus = TNG_the_path_to_provincial_prosperity
+		}
+		x = -2
+		y = 1
+		relative_position_id = TNG_the_path_to_provincial_prosperity
+		available = {
+			has_government = communism
+			country_exists = SOV
+			NOT = { has_war_with = SOV }
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_soviet_advisors"
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = construction_tech
+				name = TNG_soviet_advisors
+			}
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = land_doctrine
+				name = TNG_soviet_advisors
+			}
 		}
 	}
 	
@@ -2287,10 +2454,49 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = TNG_the_path_to_provincial_prosperity
+		available = {
+			has_government = communism
+		}
 		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_soviet_credit"
 			remove_ideas = TNG_high_inflation
 			add_ideas = TNG_soviet_credit_idea
 			give_military_access = SOV
+		}
+	}
+	
+	focus = {
+		id = TNG_soviet_weapons
+		icon = GFX_goal_generic_army_artillery2
+		cost = 10
+		prerequisite = {
+			focus = TNG_the_path_to_provincial_prosperity
+		}
+		x = 2
+		y = 1
+		relative_position_id = TNG_the_path_to_provincial_prosperity
+		available = {
+			has_government = communism
+			country_exists = SOV
+			NOT = { has_war_with = SOV }
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_soviet_weapons"
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 2000
+				producer = SOV
+			}
+			add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 500
+				producer = SOV
+			}
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 250
+				producer = SOV
+			}
 		}
 	}
 	
@@ -2311,9 +2517,11 @@ focus_tree = {
 		y = 1
 		relative_position_id = TNG_soviet_credit
 		available = {
+			has_government = communism
 			has_war = no
 		}
 		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_own_five_year_plan"
 			add_ideas = TNG_own_five_year_plan_idea
 		}
 
@@ -2330,11 +2538,13 @@ focus_tree = {
 		y = 1
 		relative_position_id = TNG_own_five_year_plan
 		available = {
+			has_government = communism
 			controls_state = 287
 			controls_state = 619
 			controls_state = 759
 		}
 		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_industrialization_with_the_support_of_the_sov"
 			287 = {
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
@@ -2365,7 +2575,6 @@ focus_tree = {
 				}
 			}
 		}
-
 	}
 	
 	focus = {
@@ -2379,6 +2588,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = TNG_own_five_year_plan
 		available = {
+			has_government = communism
 			NOT = {
 				country_exists = SIK
 			}
@@ -2386,6 +2596,7 @@ focus_tree = {
 			NOT = { has_war_with = SOV }
 		}
 		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_soviet_geological_exploration"
 			add_tech_bonus = {
 				bonus = 0.5
 				uses = 1
@@ -2411,8 +2622,12 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = TNG_own_five_year_plan
-			completion_reward = {
-
+		available = {
+			has_government = communism
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_combating_illiteracy_in_the_southern_territories"
+			add_research_slot = 1
 		}
 	}
 	
@@ -2427,10 +2642,12 @@ focus_tree = {
 		y = 1
 		relative_position_id = TNG_industrialization_with_the_support_of_the_sov
 		available = {
+			has_government = communism
 			controls_state = 287
 			controls_state = 619
 		}
 		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_military_industry"
 			619 = {
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
@@ -2448,7 +2665,6 @@ focus_tree = {
 				}
 			}
 		}
-
 	}
 	
 	focus = {
@@ -2462,11 +2678,13 @@ focus_tree = {
 		y = 1
 		relative_position_id = TNG_soviet_geological_exploration
 		available = {
+			has_government = communism
 			controls_state = 617
 			controls_state = 618
 			controls_state = 1122
 		}
 		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_joint_mining_program"
 			add_resource = {
 				type = oil
 				amount = 2
@@ -2500,10 +2718,14 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = TNG_combating_illiteracy_in_the_southern_territories
+		available = {
+			has_government = communism
+		}
 		bypass = {
 			NOT = { has_idea = TNG_uyghur_discontent }
 		}
 		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_relief_for_minorities"
 			remove_ideas = TNG_uyghur_discontent
 		}
 	}
@@ -2519,6 +2741,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = TNG_combating_illiteracy_in_the_southern_territories
 		available = {
+			has_government = communism
 			CHI = {
 				has_completed_focus = CHI_mission_to_the_soviet_union
 			}
@@ -2527,6 +2750,7 @@ focus_tree = {
 			controls_state = 619
 		}
 		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_route_y"
 			287 = {
 				add_building_construction = {
 					type = infrastructure
@@ -2564,7 +2788,12 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = TNG_military_industry
+		available = {
+			has_government = communism
+			controls_state = 617
+		}
 		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_processing_plants_in_urumqi"
 			add_resource = {
 				type = steel
 				amount = 6
@@ -2591,7 +2820,11 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = TNG_relief_for_minorities
+		available = {
+			has_government = communism
+		}
 		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_declare_a_soviet_republic"
 			add_stability = 0.1
 			set_cosmetic_tag = TNG_soviet_republic
 			every_owned_state = {
@@ -2612,10 +2845,12 @@ focus_tree = {
 		y = 1
 		relative_position_id = TNG_route_y
 		available = {
+			has_government = communism
 			controls_state = 619
 			controls_state = 759
 		}
 		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_appropriate_infrastructure"
 			619 = {
 				add_building_construction = {
 					type = air_base
@@ -2644,10 +2879,12 @@ focus_tree = {
 		y = 1
 		relative_position_id = TNG_route_y
 		available = {
+			has_government = communism
 			controls_state = 287
 			controls_state = 759
 		}
 		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_weapons_factories"
 			287 = {
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
@@ -2683,13 +2920,46 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = TNG_declare_a_soviet_republic
+		available = {
+			has_government = communism
+		}
 		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_join_the_ussr"
 			SOV = {
 				country_event = { id = NWtunganistan.36 days = 1 }
 			}
 			if = {
 				limit = { SOV = { is_ai = no } }
 				custom_effect_tooltip = GAME_OVER_TT
+			}
+		}
+	}
+	
+	
+	########################
+	##### ARMY SECTION #####
+	########################
+	
+	focus = {
+		id = TNG_save_the_army_from_decay
+		icon = GFX_focus_spr_crush_the_revolution
+		cost = 10
+		x = 11
+		y = 9
+		available = {
+			OR = {
+				has_completed_focus = TNG_soviet_credit
+				has_completed_focus = TNG_money_reform
+			}
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_save_the_army_from_decay"
+			add_command_power = 50
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = land_doctrine
+				name = TNG_save_the_army_from_decay
 			}
 		}
 	}
@@ -2705,6 +2975,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = TNG_save_the_army_from_decay
 		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_introduce_harsh_penalties"
 			swap_ideas = {
 				remove_idea = TNG_army_decay
 				add_idea = TNG_army_decay_1
@@ -2726,6 +2997,7 @@ focus_tree = {
 			has_completed_focus = TNG_introduce_harsh_penalties
 		}
 		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_increase_payments_to_officers"
 			swap_ideas = {
 				remove_idea = TNG_army_decay_1
 				add_idea = TNG_army_decay_2
@@ -2747,12 +3019,12 @@ focus_tree = {
 			has_completed_focus = TNG_increase_payments_to_officers
 		}
 		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_cleaning_guns"
 			swap_ideas = {
 				remove_idea = TNG_army_decay_2
 				add_idea = TNG_army_decay_3
 			}
 		}
-
 	}
 	
 	focus = {
@@ -2772,6 +3044,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = TNG_increase_payments_to_officers
 		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_reform_army"
 			remove_ideas = TNG_army_decay_3
 			army_experience = 20
 		}
@@ -2791,6 +3064,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = TNG_reform_army
 		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_increase_recruitment_to_the_uyghur_army"
 			add_ideas = TNG_increase_recruitment_to_the_uyghur_army_idea
 		}
 	}
@@ -2809,11 +3083,34 @@ focus_tree = {
 		y = 1
 		relative_position_id = TNG_reform_army
 		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_place_bet_on_dungan_professionalism"
 			add_tech_bonus = {
 				bonus = 1
 				uses = 2
 				category = land_doctrine
 				name = TNG_place_bet_on_dungan_professionalism
+			}
+		}
+	}
+	
+	focus = {
+		id = TNG_mass_exercises
+		icon = GFX_focus_generic_military_academy
+		cost = 10
+		prerequisite = {
+			focus = TNG_increase_recruitment_to_the_uyghur_army
+		}
+		x = 0
+		y = 1
+		relative_position_id = TNG_increase_recruitment_to_the_uyghur_army
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_mass_exercises"
+			army_experience = 25
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = land_doctrine
+				name = TNG_mass_exercises
 			}
 		}
 	}
@@ -2830,6 +3127,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = TNG_increase_recruitment_to_the_uyghur_army
 		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_create_khotan_arsenal"
 			random_owned_controlled_state = {
 				limit = {
 					free_building_slots = {
@@ -2859,48 +3157,6 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = TNG_upgrade_old_weapons
-		icon = GFX_focus_generic_license_production
-		cost = 10
-		prerequisite = {
-			focus = TNG_create_khotan_arsenal
-		}
-		x = 0
-		y = 1
-		relative_position_id = TNG_create_khotan_arsenal
-		completion_reward = {
-			army_experience = 25
-			add_tech_bonus = {
-				bonus = 0.5
-				uses = 2
-				category = infantry_weapons
-				name = TNG_create_khotan_arsenal
-			}
-		}
-	}
-	
-	focus = {
-		id = TNG_mass_exercises
-		icon = GFX_focus_generic_military_academy
-		cost = 10
-		prerequisite = {
-			focus = TNG_increase_recruitment_to_the_uyghur_army
-		}
-		x = 0
-		y = 1
-		relative_position_id = TNG_increase_recruitment_to_the_uyghur_army
-		completion_reward = {
-			army_experience = 25
-			add_tech_bonus = {
-				bonus = 0.5
-				uses = 2
-				category = land_doctrine
-				name = TNG_mass_exercises
-			}
-		}
-	}
-	
-	focus = {
 		id = TNG_introduce_a_tough_drill
 		icon = GFX_goal_demand_sudetenland
 		cost = 10
@@ -2911,7 +3167,30 @@ focus_tree = {
 		y = 1
 		relative_position_id = TNG_place_bet_on_dungan_professionalism
 		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_introduce_a_tough_drill"
 			add_ideas = TNG_introduce_a_tough_drill_idea
+		}
+	}
+	
+	focus = {
+		id = TNG_upgrade_old_weapons
+		icon = GFX_focus_generic_license_production
+		cost = 10
+		prerequisite = {
+			focus = TNG_create_khotan_arsenal
+		}
+		x = 0
+		y = 1
+		relative_position_id = TNG_create_khotan_arsenal
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_upgrade_old_weapons"
+			army_experience = 25
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = infantry_weapons
+				name = TNG_create_khotan_arsenal
+			}
 		}
 	}
 	
@@ -2926,6 +3205,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = TNG_upgrade_old_weapons
 		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_use_camels_in_cavalry"
 			add_ideas = TNG_use_camels_in_cavalry_idea
 		}
 	}

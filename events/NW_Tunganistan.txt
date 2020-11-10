@@ -8,6 +8,8 @@ country_event = {
 	picture = GFX_report_event_yugoslavian_king_peter
 	is_triggered_only = yes
 	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWtunganistan.0" }
+	
 	option = {
 		name = NWtunganistan.0.a
 	}
@@ -20,6 +22,8 @@ country_event = {
 	desc = NWtunganistan.1.desc
 	picture = GFX_report_event_physics_lab_01
 	fire_only_once = yes
+	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWtunganistan.1" }
 	
 	trigger = {
 		tag = TNG
@@ -41,6 +45,8 @@ country_event = {
 	picture = GFX_report_event_chinese_officers
 	is_triggered_only = yes
 	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWtunganistan.2" }
+	
 	option = {
 		name = NWtunganistan.2.a
 		
@@ -55,6 +61,7 @@ country_event = {
 	is_triggered_only = yes
 	hidden = yes
 	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWtunganistan.300" }
 	immediate = {
 		if = {
 			limit = {
@@ -73,6 +80,8 @@ country_event = {
 	desc = NWtunganistan.3.desc
 	picture = GFX_report_event_soviet_purge_officers_02
 	is_triggered_only = yes
+	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWtunganistan.3" }
 
 	option = {
 		name = NWtunganistan.3.a
@@ -88,6 +97,8 @@ country_event = {
 	desc = NWtunganistan.4.desc
 	picture = GFX_report_event_soviet_japanese_pact
 	is_triggered_only = yes
+	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWtunganistan.4" }
 	
 	option = {
 		name = NWtunganistan.4.a
@@ -126,6 +137,8 @@ country_event = {
 	picture = GFX_report_event_german_politician_speech
 	is_triggered_only = yes
 	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWtunganistan.5" }
+	
 	option = {
 		name = NWtunganistan.5.a
 		
@@ -152,6 +165,8 @@ country_event = {
 	picture = GFX_report_event_china_politicians_captured
 	is_triggered_only = yes
 	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWtunganistan.6" }
+	
 	option = {
 		name = NWtunganistan.6.a
 		
@@ -167,9 +182,10 @@ country_event = {
 	picture = GFX_report_event_china_politicians_captured
 	is_triggered_only = yes
 	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWtunganistan.7" }
+	
 	option = {
 		name = NWtunganistan.7.a
-		
 	}
 }
 
@@ -181,9 +197,10 @@ country_event = {
 	picture = GFX_report_event_china_chiang_kai_shek
 	is_triggered_only = yes
 	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWtunganistan.8" }
+	
 	option = {
 		name = NWtunganistan.8.a
-		
 	}
 }
 
@@ -194,6 +211,8 @@ country_event = {
 	desc = NWtunganistan.9.desc
 	picture = GFX_report_event_stalin_meeting
 	is_triggered_only = yes
+	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWtunganistan.9" }
 	
 	option = {
 		name = NWtunganistan.9.a
@@ -227,6 +246,8 @@ country_event = {
 	picture = GFX_report_event_generic_ruins
 	is_triggered_only = yes
 	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWtunganistan.10" }
+	
 	option = {
 		name = NWtunganistan.10.a
 		
@@ -244,6 +265,8 @@ country_event = {
 	picture = GFX_report_event_soviet_invasion_map
 	is_triggered_only = yes
 	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWtunganistan.11" }
+	
 	option = {
 		name = NWtunganistan.11.a
 		
@@ -259,6 +282,8 @@ country_event = {
 	picture = GFX_report_event_generic_read_write
 	is_triggered_only = yes
 	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWtunganistan.12" }
+	
 	option = {
 		name = NWtunganistan.12.a
 	}
@@ -271,6 +296,8 @@ country_event = {
 	desc = NWtunganistan.13.desc
 	picture = GFX_report_event_generic_conference
 	is_triggered_only = yes
+	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWtunganistan.13" }
 	
 	option = {
 		name = NWtunganistan.13.a
@@ -326,6 +353,16 @@ country_event = {
 				type = annex_everything
 				target = ROOT
 			}
+			add_ai_strategy = {
+				type = antagonize
+				id = ROOT
+				value = 200
+			}
+			add_ai_strategy = {
+				type = conquer
+				id = ROOT
+				value = 100
+			}
 		}
 	}
 }
@@ -336,6 +373,7 @@ country_event = {
 	is_triggered_only = yes
 	hidden = yes
 	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWtunganistan.140" }
 	immediate = {
 		if = {
 			limit = {
@@ -353,6 +391,8 @@ country_event = {
 	desc = NWtunganistan.14.desc
 	picture = GFX_report_event_dead_soldiers
 	is_triggered_only = yes
+	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWtunganistan.14" }
 	
 	option = {
 		name = NWtunganistan.14.a
@@ -373,6 +413,7 @@ country_event = {
 	is_triggered_only = yes
 	hidden = yes
 	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWtunganistan.150" }
 	immediate = {
 		if = {
 			limit = {
@@ -390,6 +431,8 @@ country_event = {
 	desc = NWtunganistan.15.desc
 	picture = GFX_report_event_fascist_militia
 	is_triggered_only = yes
+	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWtunganistan.15" }
 
 	option = {
 		name = NWtunganistan.15.a
@@ -411,6 +454,8 @@ country_event = {
 	desc = NWtunganistan.16.desc
 	picture = GFX_report_event_generic_riot
 	fire_only_once = yes
+	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWtunganistan.16" }
 	
 	trigger = {
 		tag = TNG
@@ -473,6 +518,8 @@ country_event = {
 	picture = GFX_report_event_chinese_soldiers_fighting
 	is_triggered_only = yes
 	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWtunganistan.17" }
+	
 	option = {
 		name = NWtunganistan.17.a
 		
@@ -517,6 +564,8 @@ country_event = {
 	picture = GFX_report_event_chinese_japanese_handshake
 	is_triggered_only = yes
 	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWtunganistan.18" }
+	
 	option = {
 		name = NWtunganistan.18.a
 		
@@ -541,6 +590,8 @@ country_event = {
 	picture = GFX_report_event_communists_cheer
 	is_triggered_only = yes
 	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWtunganistan.19" }
+	
 	option = {
 		name = NWtunganistan.19.a
 		
@@ -559,6 +610,8 @@ country_event = {
 	picture = GFX_report_event_chinese_soldiers_mountain
 	is_triggered_only = yes
 	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWtunganistan.20" }
+	
 	option = {
 		name = NWtunganistan.20.a
 		
@@ -576,6 +629,8 @@ country_event = {
 	desc = NWtunganistan.21.desc
 	picture = GFX_report_event_bose
 	is_triggered_only = yes
+	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWtunganistan.21" }
 	
 	option = {
 		name = NWtunganistan.21.a
@@ -601,6 +656,8 @@ country_event = {
 	picture = GFX_report_event_canada_treaty
 	is_triggered_only = yes
 	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWtunganistan.22" }
+	
 	option = {
 		name = NWtunganistan.22.a
 		
@@ -616,6 +673,8 @@ country_event = {
 	picture = GFX_report_event_chamberlain
 	is_triggered_only = yes
 	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWtunganistan.23" }
+	
 	option = {
 		name = NWtunganistan.23.a
 		
@@ -630,6 +689,8 @@ country_event = {
 	desc = NWtunganistan.24.desc
 	picture = GFX_report_event_military_planning
 	is_triggered_only = yes
+	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWtunganistan.24" }
 	
 	option = {
 		name = NWtunganistan.24.a
@@ -670,6 +731,8 @@ country_event = {
 	picture = GFX_report_event_chinese_officers
 	is_triggered_only = yes
 	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWtunganistan.25" }
+	
 	option = {
 		name = NWtunganistan.25.a
 		random_owned_state = {
@@ -702,6 +765,8 @@ country_event = {
 	picture = GFX_report_event_china_chiang_kai_shek
 	is_triggered_only = yes
 	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWtunganistan.26" }
+	
 	option = {
 		name = NWtunganistan.26.a
 		random_unit_leader = {
@@ -718,6 +783,8 @@ country_event = {
 	desc = NWtunganistan.27.desc
 	picture = GFX_report_event_chinese_soldiers_running
 	is_triggered_only = yes
+	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWtunganistan.27" }
 	
 	option = {
 		name = NWtunganistan.27.a
@@ -736,6 +803,8 @@ country_event = {
 	desc = NWtunganistan.28.desc
 	picture = GFX_report_event_generic_parliament
 	is_triggered_only = yes
+	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWtunganistan.28" }
 	
 	option = {
 		name = NWtunganistan.28.a
@@ -773,6 +842,8 @@ country_event = {
 	picture = GFX_report_event_generic_read_write
 	is_triggered_only = yes
 	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWtunganistan.29" }
+	
 	option = {
 		name = NWtunganistan.29.a
 		
@@ -809,6 +880,8 @@ country_event = {
 	picture = GFX_report_event_chamberlain
 	is_triggered_only = yes
 	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWtunganistan.30" }
+	
 	option = {
 		name = NWtunganistan.30.a
 	}
@@ -821,6 +894,8 @@ country_event = {
 	desc = NWtunganistan.31.desc
 	picture = GFX_report_event_chamberlain_announce
 	is_triggered_only = yes
+	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWtunganistan.31" }
 	
 	option = {
 		name = NWtunganistan.31.a
@@ -836,6 +911,8 @@ country_event = {
 	picture = GFX_report_event_dead_soldiers
 	is_triggered_only = yes
 	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWtunganistan.32" }
+	
 	option = {
 		name = NWtunganistan.32.a
 		
@@ -846,17 +923,7 @@ country_event = {
 			expire = "1965.1.1"
 			ideology = authoritarian_democracy
 			traits = {
-				
 			}
-		}
-		add_popularity = {
-			ideology = neutrality
-			popularity = 0.15
-		}
-		set_party_name = { 
-			ideology = neutrality
-			long_name = TNG_neutrality_party_ma_zhancanh
-			name = TNG_neutrality_party_ma_zhancanh
 		}
 		complete_national_focus = TNG_zhangchang_coup
 	}
@@ -869,6 +936,8 @@ country_event = {
 	desc = NWtunganistan.33.desc
 	picture = GFX_report_event_pla_in_beijing
 	is_triggered_only = yes
+	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWtunganistan.33" }
 	
 	option = {
 		name = NWtunganistan.33.a
@@ -922,6 +991,8 @@ country_event = {
 	picture = GFX_report_event_soviet_japanese_pact
 	is_triggered_only = yes
 	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWtunganistan.34" }
+	
 	option = {
 		name = NWtunganistan.34.a
 		if = {
@@ -947,6 +1018,8 @@ country_event = {
 	desc = NWtunganistan.35.desc
 	picture = GFX_report_event_generic_battle
 	is_triggered_only = yes
+	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWtunganistan.35" }
 
 	option = {
 		name = NWtunganistan.35.a
@@ -992,6 +1065,8 @@ country_event = {
 	picture = GFX_report_event_communists_cheer
 	is_triggered_only = yes
 	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWtunganistan.36" }
+	
 	option = {
 		name = NWtunganistan.36.a
 		
@@ -1028,6 +1103,8 @@ country_event = {
 	picture = GFX_report_event_chinese_japanese_handshake
 	is_triggered_only = yes
 	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWtunganistan.37" }
+	
 	option = {
 		name = NWtunganistan.37.a
 		
@@ -1054,80 +1131,170 @@ country_event = {
 	picture = GFX_report_event_soviet_invasion_map
 	is_triggered_only = yes
 	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWtunganistan.38" }
+	
 	option = {
 		name = NWtunganistan.38.a
 		
 		if = {
 			limit = {
 				NOT = { has_war_with = SIK }
+				country_exists = SIK
 			}
 			create_wargoal = {
 				type = annex_everything
 				target = SIK
 			}
+			add_ai_strategy = {
+				type = antagonize
+				id = SIK
+				value = 200
+			}
+			add_ai_strategy = {
+				type = conquer
+				id = SIK
+				value = 100
+			}
 		}
 		if = {
 			limit = {
 				NOT = { has_war_with = KUM }
+				country_exists = KUM
 			}
 			create_wargoal = {
 				type = annex_everything
 				target = KUM
 			}
+			add_ai_strategy = {
+				type = antagonize
+				id = KUM
+				value = 200
+			}
+			add_ai_strategy = {
+				type = conquer
+				id = KUM
+				value = 100
+			}
 		}
 		if = {
 			limit = {
 				NOT = { has_war_with = DZH }
+				country_exists = DZH
 			}
 			create_wargoal = {
 				type = annex_everything
 				target = DZH
 			}
+			add_ai_strategy = {
+				type = antagonize
+				id = DZH
+				value = 200
+			}
+			add_ai_strategy = {
+				type = conquer
+				id = DZH
+				value = 100
+			}
 		}
 		if = {
 			limit = {
 				NOT = { has_war_with = KAS }
+				country_exists = KAS
 			}
 			create_wargoal = {
 				type = annex_everything
 				target = KAS
+			}
+			add_ai_strategy = {
+				type = antagonize
+				id = KAS
+				value = 200
+			}
+			add_ai_strategy = {
+				type = conquer
+				id = KAS
+				value = 100
 			}
 		}
 		FROM = {
 			if = {
 				limit = {
 					NOT = { has_war_with = SIK }
+					country_exists = SIK
 				}
 				create_wargoal = {
 					type = annex_everything
 					target = SIK
 				}
+				add_ai_strategy = {
+					type = antagonize
+					id = SIK
+					value = 200
+				}
+				add_ai_strategy = {
+					type = conquer
+					id = SIK
+					value = 100
+				}
 			}
 			if = {
 				limit = {
 					NOT = { has_war_with = KUM }
+					country_exists = KUM
 				}
 				create_wargoal = {
 					type = annex_everything
 					target = KUM
 				}
+				add_ai_strategy = {
+					type = antagonize
+					id = KUM
+					value = 200
+				}
+				add_ai_strategy = {
+					type = conquer
+					id = KUM
+					value = 100
+				}
 			}
 			if = {
 				limit = {
 					NOT = { has_war_with = DZH }
+					country_exists = DZH
 				}
 				create_wargoal = {
 					type = annex_everything
 					target = DZH
 				}
+				add_ai_strategy = {
+					type = antagonize
+					id = DZH
+					value = 200
+				}
+				add_ai_strategy = {
+					type = conquer
+					id = DZH
+					value = 100
+				}
 			}
 			if = {
 				limit = {
 					NOT = { has_war_with = KAS }
+					country_exists = KAS
 				}
 				create_wargoal = {
 					type = annex_everything
 					target = KAS
+				}
+				add_ai_strategy = {
+					type = antagonize
+					id = KAS
+					value = 200
+				}
+				add_ai_strategy = {
+					type = conquer
+					id = KAS
+					value = 100
 				}
 			}
 		}
@@ -1140,37 +1307,81 @@ country_event = {
 			if = {
 				limit = {
 					NOT = { has_war_with = SIK }
+					country_exists = SIK
 				}
 				create_wargoal = {
 					type = annex_everything
 					target = SIK
 				}
+				add_ai_strategy = {
+					type = antagonize
+					id = SIK
+					value = 200
+				}
+				add_ai_strategy = {
+					type = conquer
+					id = SIK
+					value = 100
+				}
 			}
 			if = {
 				limit = {
 					NOT = { has_war_with = KUM }
+					country_exists = KUM
 				}
 				create_wargoal = {
 					type = annex_everything
 					target = KUM
 				}
+				add_ai_strategy = {
+					type = antagonize
+					id = KUM
+					value = 200
+				}
+				add_ai_strategy = {
+					type = conquer
+					id = KUM
+					value = 100
+				}
 			}
 			if = {
 				limit = {
 					NOT = { has_war_with = DZH }
+					country_exists = DZH
 				}
 				create_wargoal = {
 					type = annex_everything
 					target = DZH
 				}
+				add_ai_strategy = {
+					type = antagonize
+					id = DZH
+					value = 200
+				}
+				add_ai_strategy = {
+					type = conquer
+					id = DZH
+					value = 100
+				}
 			}
 			if = {
 				limit = {
 					NOT = { has_war_with = KAS }
+					country_exists = KAS
 				}
 				create_wargoal = {
 					type = annex_everything
 					target = KAS
+				}
+				add_ai_strategy = {
+					type = antagonize
+					id = KAS
+					value = 200
+				}
+				add_ai_strategy = {
+					type = conquer
+					id = KAS
+					value = 100
 				}
 			}
 		}
@@ -1184,6 +1395,8 @@ country_event = {
 	desc = NWtunganistan.39.desc
 	picture = GFX_report_event_military_planning
 	is_triggered_only = yes
+	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWtunganistan.39" }
 	
 	option = {
 		name = NWtunganistan.39.a
@@ -1209,6 +1422,8 @@ country_event = {
 	picture = GFX_report_event_generic_read_write
 	is_triggered_only = yes
 	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWtunganistan.40" }
+	
 	option = {
 		name = NWtunganistan.40.a
 		transfer_state = 756
@@ -1223,6 +1438,8 @@ country_event = {
 	picture = GFX_report_event_china_infiltration
 	is_triggered_only = yes
 	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWtunganistan.41" }
+	
 	option = {
 		name = NWtunganistan.41.a
 	}
@@ -1235,6 +1452,8 @@ country_event = {
 	desc = NWtunganistan.42.desc
 	picture = GFX_report_event_generic_read_write
 	is_triggered_only = yes
+	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWtunganistan.42" }
 	
 	option = {
 		name = NWtunganistan.42.a
@@ -1249,6 +1468,8 @@ country_event = {
 	desc = NWtunganistan.43.desc
 	picture = GFX_report_event_generic_read_write
 	is_triggered_only = yes
+	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event NWtunganistan.43" }
 	
 	option = {
 		name = NWtunganistan.43.a
