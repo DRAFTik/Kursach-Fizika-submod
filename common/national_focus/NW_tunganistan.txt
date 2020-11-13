@@ -98,7 +98,7 @@ focus_tree = {
 			random_owned_state = {
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
-					type = industrial_complex
+					type = arms_factory
 					level = 1
 					instant_build = yes
 				}
@@ -191,8 +191,8 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_anti_japanese_propaganda"
-			add_stability = 0.2
-			add_war_support = 0.2
+			add_stability = 0.1
+			add_war_support = 0.1
 		}
 	}
 	
@@ -349,21 +349,14 @@ focus_tree = {
 			controls_state = 1121
 			controls_state = 1122
 			controls_state = 1046
-			controls_state = 1047
+			controls_state = 1047	
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_one_government"
-			add_state_core = 287
-			add_state_core = 759
-			add_state_core = 760
-			add_state_core = 617
-			add_state_core = 618
-			add_state_core = 619
-			add_state_core = 1120
-			add_state_core = 1121
-			add_state_core = 1122
-			add_state_core = 1046
-			add_state_core = 1047
+			every_state = {
+				limit = { is_core_of = SIK }
+				add_core_of = ROOT
+			}
 			set_temp_variable = { temp_unity_of_government = 15 }
 			add_to_variable = { TNG_unity_of_government = temp_unity_of_government }
 			clamp_variable = { var = TNG_unity_of_government min = 0 max = 100 }
@@ -393,7 +386,7 @@ focus_tree = {
 			controls_state = 1121
 			controls_state = 1122
 			controls_state = 1046
-			controls_state = 1047
+			controls_state = 1047	
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_delegation_to_nanjing"
@@ -425,7 +418,7 @@ focus_tree = {
 			controls_state = 1121
 			controls_state = 1122
 			controls_state = 1046
-			controls_state = 1047
+			controls_state = 1047	
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_rebuilding_the_army"
@@ -559,7 +552,7 @@ focus_tree = {
 			controls_state = 1121
 			controls_state = 1122
 			controls_state = 1046
-			controls_state = 1047
+			controls_state = 1047	
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_prepare_for_war_with_japan"
@@ -595,7 +588,7 @@ focus_tree = {
 			controls_state = 1121
 			controls_state = 1122
 			controls_state = 1046
-			controls_state = 1047
+			controls_state = 1047	
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_increased_punishment_for_banditry"
@@ -630,7 +623,7 @@ focus_tree = {
 			controls_state = 1121
 			controls_state = 1122
 			controls_state = 1046
-			controls_state = 1047
+			controls_state = 1047	
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_police_formation"
@@ -672,7 +665,7 @@ focus_tree = {
 			controls_state = 1121
 			controls_state = 1122
 			controls_state = 1046
-			controls_state = 1047
+			controls_state = 1047	
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_police_raids"
@@ -774,7 +767,7 @@ focus_tree = {
 			controls_state = 1121
 			controls_state = 1122
 			controls_state = 1046
-			controls_state = 1047
+			controls_state = 1047	
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_close_border_control"
@@ -1003,15 +996,17 @@ focus_tree = {
 		y = 1
 		relative_position_id = TNG_decision_time
 		available = {
+			controls_state = 287
 			controls_state = 759
 			controls_state = 760
-			controls_state = 619
 			controls_state = 617
-			controls_state = 1122
-			controls_state = 1121
+			controls_state = 618
+			controls_state = 619
 			controls_state = 1120
-			controls_state = 1047
+			controls_state = 1121
+			controls_state = 1122
 			controls_state = 1046
+			controls_state = 1047	
 			NOT = {
 				has_completed_focus = TNG_a_shaky_coalition
 			}
@@ -1257,17 +1252,10 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TNG_distribute_lands_to_loyal_commanders"
-			add_state_core = 287
-			add_state_core = 759
-			add_state_core = 760
-			add_state_core = 617
-			add_state_core = 618
-			add_state_core = 619
-			add_state_core = 1120
-			add_state_core = 1121
-			add_state_core = 1122
-			add_state_core = 1046
-			add_state_core = 1047
+			every_state = {
+				limit = { is_core_of = SIK }
+				add_core_of = ROOT
+			}
 			add_popularity = {
 				ideology = fascism
 				popularity = 0.05
@@ -1577,15 +1565,17 @@ focus_tree = {
 		y = 1
 		relative_position_id = TNG_xinjiang_new_duban
 		available = {
+			controls_state = 287
 			controls_state = 759
 			controls_state = 760
-			controls_state = 619
 			controls_state = 617
-			controls_state = 1122
-			controls_state = 1121
+			controls_state = 618
+			controls_state = 619
 			controls_state = 1120
-			controls_state = 1047
+			controls_state = 1121
+			controls_state = 1122
 			controls_state = 1046
+			controls_state = 1047	
 			NOT = {
 				has_completed_focus = TNG_a_shaky_coalition
 			}

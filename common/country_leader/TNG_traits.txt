@@ -2,8 +2,8 @@ leader_traits = {
 	TNG_temporary_commander = {
 		random = no
 		
-		stability_factor = -0.15
-		political_power_factor = -0.25
+		stability_factor = -0.1
+		political_power_factor = -0.15
 		
 		ai_will_do = {
 			factor = 1
