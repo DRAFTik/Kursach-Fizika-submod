@@ -385,6 +385,26 @@ ideas = {
 				special_forces_min = 1000
 			}
 		}
+		NEP_battalion_ghurks_idea_2 = {
+			name = NEP_battalion_ghurks_idea
+			allowed = {
+				always = no
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = gurhk_batalions
+			
+			modifier = {
+				conscription = 0.025
+				army_attack_factor = 0.05
+				special_forces_min = 1500
+			}
+		}
 		NEP_nepal_ghurks_in_british_army = {
 
 			allowed = {

@@ -629,7 +629,16 @@ country_event = {
 	title = nepal.24.t
 	picture = GFX_report_event_nep_24_25
 	desc = { text = nepal.24.desc }
-	is_triggered_only = yes
+	#is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		tag = NEP
+		has_completed_focus = NEP_victory_popular_movement
+		NOT = { focus_progress = { focus = NEP_prepare_a_constitution progress > 0 } }
+	}
+	
+	mean_time_to_happen = { months = 3 }
 	
 	option = {
 		name = nepal.24.a

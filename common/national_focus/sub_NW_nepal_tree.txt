@@ -768,6 +768,17 @@ focus_tree = {
 			ENG = { is_subject = no }
 		}
 		completion_reward = {
+			swap_ideas = {
+				remove_idea = NEP_battalion_ghurks_idea
+				add_idea = NEP_battalion_ghurks_idea_2
+			}
+			if = {
+				limit = { RAJ = { has_completed_focus = RAJ_indian_gurkhas } }
+				swap_ideas = {
+					remove_idea = RAJ_indian_gurkhas
+					add_idea = RAJ_indian_gurkhas_2
+				}
+			}
 			add_opinion_modifier = {
 				target = ENG
 				modifier = NEP_threesides_agreement_op
@@ -1819,6 +1830,7 @@ focus_tree = {
 		}
 		available = {
 			is_faction_leader = yes
+			country_exists = RAJ
 			RAJ = { is_subject = no }
 			if = {
 				limit = { has_government = communism }
@@ -1864,16 +1876,13 @@ focus_tree = {
 					}
 				}
 			}
+			NOT = { has_war_with = RAJ }
 		}
 		bypass = {
-			OR = {
-				NOT = { country_exists = RAJ }
-				has_war_with = RAJ
-				RAJ = {
-					OR = {
-						is_subject_of = ROOT
-						is_in_faction = yes
-					}
+			RAJ = {
+				OR = {
+					is_subject_of = ROOT
+					is_in_faction_with = ROOT
 				}
 			}
 		}
@@ -1949,6 +1958,7 @@ focus_tree = {
 		}
 		available = {
 			is_faction_leader = yes
+			country_exists = TIB
 			TIB = { is_subject = no }
 			if = {
 				limit = { has_government = communism }
@@ -1994,16 +2004,13 @@ focus_tree = {
 					}
 				}
 			}
+			NOT = { has_war_with = TIB }
 		}
 		bypass = {
-			OR = {
-				NOT = { country_exists = TIB }
-				has_war_with = TIB
-				TIB = {
-					OR = {
-						is_subject_of = ROOT
-						is_in_faction = yes
-					}
+			TIB = {
+				OR = {
+					is_subject_of = ROOT
+					is_in_faction_with = ROOT
 				}
 			}
 		}
@@ -2065,6 +2072,7 @@ focus_tree = {
 		}
 		available = {
 			is_faction_leader = yes
+			country_exists = LKA
 			LKA = { is_subject = no }
 			if = {
 				limit = { has_government = communism }
@@ -2110,16 +2118,13 @@ focus_tree = {
 					}
 				}
 			}
+			NOT = { has_war_with = LKA }
 		}
 		bypass = {
-			OR = {
-				NOT = { country_exists = LKA }
-				has_war_with = LKA
-				LKA = {
-					OR = {
-						is_subject_of = ROOT
-						is_in_faction = yes
-					}
+			LKA = {
+				OR = {
+					is_subject_of = ROOT
+					is_in_faction_with = ROOT
 				}
 			}
 		}
