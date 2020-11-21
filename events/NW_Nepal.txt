@@ -311,22 +311,52 @@ country_event = {
 	
 	option = {
 		name = nepal.13.a
+		trigger = {
+			GER = {
+				has_government = monarchy
+				is_faction_leader = yes
+			}
+		}
 		GER = { country_event = generic.2 }
 	}
 	option = {
 		name = nepal.13.b
+		trigger = {
+			ENG = {
+				has_government = monarchy
+				is_faction_leader = yes
+			}
+		}
 		ENG = { country_event = generic.2 }
 	}
 	option = {
 		name = nepal.13.c
+		trigger = {
+			FRA = {
+				has_government = monarchy
+				is_faction_leader = yes
+			}
+		}
 		FRA = { country_event = generic.2 }
 	}
 	option = {
 		name = nepal.13.e
+		trigger = {
+			TUR = {
+				has_government = monarchy
+				is_faction_leader = yes
+			}
+		}
 		TUR = { country_event = generic.2 }
 	}
 	option = {
 		name = nepal.13.f
+		trigger = {
+			HUN = {
+				has_government = monarchy
+				is_faction_leader = yes
+			}
+		}
 		HUN = { country_event = generic.2 }
 	}
 }
