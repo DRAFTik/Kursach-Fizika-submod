@@ -83,7 +83,7 @@ ideas = {
 			allowed = { always = yes }
 			picture = idea_eng_imperial_conscription
 			modifier = {
-				conscription = 0.03
+				conscription = 0.05
 			}
 		}
 		SKM_gallavali_2 = {
@@ -91,7 +91,7 @@ ideas = {
 			allowed = { always = yes }
 			picture = idea_eng_imperial_conscription
 			modifier = {
-				conscription = 0.03
+				conscription = 0.05
 				autonomy_manpower_share = 0.3
 			}
 		}
@@ -145,7 +145,7 @@ ideas = {
 			allowed = { always = yes }
 			picture = idea_hol_liberation
 			modifier = {
-				conscription = 0.02
+				conscription = 0.06
 				training_time_army_factor = -0.1
 			}
 		}
@@ -154,7 +154,7 @@ ideas = {
 			allowed = { always = yes }
 			picture = idea_jap_duplicate_research
 			modifier = {
-				research_speed_factor = 0.03
+				research_speed_factor = 0.04
 			}
 		}
 		SKM_rocket_post_idea = {
