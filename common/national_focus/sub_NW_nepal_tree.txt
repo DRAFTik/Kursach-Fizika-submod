@@ -2177,7 +2177,10 @@ focus_tree = {
 		x = 5
 		y = 7
 		relative_position_id = NEP_collusion_old_and_younger
-
+		available = {
+			country_exists = ENG
+			NOT = { has_war_with = ENG }
+		}
 		completion_reward = {
 			add_opinion_modifier = {
 				target = ENG
@@ -2202,7 +2205,11 @@ focus_tree = {
 		x = 5
 		y = 8
 		relative_position_id = NEP_collusion_old_and_younger
-
+		
+		available = {
+			country_exists = ENG
+			NOT = { has_war_with = ENG }
+		}
 		completion_reward = {
 			random_owned_controlled_state = {
 				add_extra_state_shared_building_slots = 4
@@ -2655,7 +2662,10 @@ focus_tree = {
 		x = -3
 		y = 7
 		relative_position_id = NEP_fighting_with_nna
-
+		
+		available = {
+			has_war = no
+		}
 		completion_reward = {
 			add_ideas = neutrality_idea
 		}
@@ -2670,7 +2680,6 @@ focus_tree = {
 		prerequisite = {
 			focus = NEP_military_vacations
 		}
-		available = { ENG = { has_war_with = GER } }
 		mutually_exclusive = {
 			focus = NEP_neutral_in_the_war
 			focus = NEP_save_old_british_treaties
@@ -2682,7 +2691,12 @@ focus_tree = {
 		x = -1
 		y = 7
 		relative_position_id = NEP_fighting_with_nna
-
+		
+		available = {
+			ENG = { has_war_with = GER }
+			NOT = { has_war_with = ENG }
+		}
+		
 		completion_reward = {
 			ENG = {
 				add_to_faction = NEP
