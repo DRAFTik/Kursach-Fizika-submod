@@ -1078,9 +1078,7 @@ focus_tree = {
 		available_if_capitulated = yes
 		
 		completion_reward = {	
-		
 		    add_stability = 0.1
-		
 			set_politics = {
 				ruling_party = trozkism
 				elections_allowed = no
@@ -1093,14 +1091,9 @@ focus_tree = {
 				ideology = democratic
 				popularity = 0.05
 			}
-			
 			if = {
-			limit = { 
-			TAN = {
-			is_in_faction_with = SOV
-			}
-			}		
-	        country_event = { days = 1 id = NWtuva.19 } 
+				limit = { is_in_faction_with = SOV }
+				SOV = { country_event = { days = 1 id = NWtuva.19 } }
 			}
 		}
 	}

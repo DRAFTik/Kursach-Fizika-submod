@@ -501,15 +501,6 @@ ideas = {
 			traits = { professional_organizer }
 		}
 		
-		TAN_guy_four = {
-			picture = generic_army_asia_3
-			allowed = {
-				original_tag = TAN
-			}
-			available = { NOT = { has_country_flag = seren_arestovan } }
-			traits = { army_chief_drill_1 }
-		}
-		
 		TAN_guy_five = {
 			picture = generic_navy_asia_2
 			allowed = {
@@ -566,15 +557,6 @@ ideas = {
 			traits = { compassionate_gentleman }
 		}
 		
-		TAN_guy_eleven = {
-			picture = generic_air_asia_2
-			allowed = {
-				original_tag = TAN
-			}
-			available = { has_country_flag = TAN_guy_eleven_open }
-			traits = { army_cavalry_2 }
-		}
-		
 		TAN_guy_twelve = {
 			picture = generic_political_advisor_europe_2
 			allowed = {
@@ -612,6 +594,29 @@ ideas = {
 			}
 			available = { has_country_flag = TAN_guy_fifteen_open }
 			traits = { lingvist }
+		}
+	}
+	
+	high_command = {
+        TAN_guy_eleven = {
+		    ledger = army
+			picture = generic_army_asia_2
+			allowed = {
+				original_tag = TAN
+			}
+			available = { has_country_flag = TAN_guy_eleven_open }
+			traits = { army_cavalry_2 }
+		}
+	}
+	
+	army_chief = {
+		TAN_guy_four = {
+			picture = generic_army_asia_3
+			allowed = {
+				original_tag = TAN
+			}
+			available = { NOT = { has_country_flag = seren_arestovan } }
+			traits = { army_chief_drill_2 }
 		}
 	}
 

@@ -989,7 +989,7 @@ focus_tree = {
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus SKM_camelponta"
 			division_template = {
-				name = "Kalimpong sena"
+				name = "Kalimpong Sena"
 				regiments = {
 					infantry = { x = 0 y = 0 }
 					infantry = { x = 0 y = 1 }
@@ -999,8 +999,10 @@ focus_tree = {
 			
 			902 = {
 				create_unit = {
-					division = "name = \"Kalimpong sena\" division_template = \"Kalimpong sena\" start_experience_factoe = 0.1 start_equipment_factor = 0.8"
+					division = "name = \"Kalimpong sena\" division_template = \"Kalimpong sena\" start_experience_factoe = 0.2 start_equipment_factor = 0.8"
 					owner = ROOT 
+					allow_spawning_on_enemy_provs = yes
+					count = 2
 				}
 				add_core_of = ROOT
 			}
