@@ -14,16 +14,5 @@ on_actions = {
 			}
 		}
 	}
-	on_civil_war_end = {
-		effect = {
-			if = {
-				limit = {
-					original_tag = NEP
-					has_government = democratic
-				}
-				country_event = { id = NW_kek.21 days = 120 }
-			}
-		}
-	}
 }
 

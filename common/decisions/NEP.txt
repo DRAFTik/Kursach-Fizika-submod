@@ -333,6 +333,9 @@ NEP_suppression_of_civil_uprising = {
 		allowed = {
 			always = no
 		}
+		available = {
+			has_country_flag = NEP_destroy_civil_war_flag
+		}
 		activation = {
 			has_idea = NEP_democratic_rebelliom
 		}
@@ -370,7 +373,7 @@ NEP_suppression_of_civil_uprising = {
 		fire_only_once = yes
 		cost = 100
 		days_remove = 120
-		icon = GFX_decision_generic_assasination
+		icon = GFX_decision_generic_political_rally
 		
 		remove_effect = {
 			set_country_flag = NEP_destroy_rebel

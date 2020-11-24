@@ -260,10 +260,10 @@ ideas = {
 			allowed = {
 				always = no
 			}
-			available = {
+			cancel = {
 				OR = {
 					NOT = { has_war_with = TIB }
-					NOT = { country_exists = TIB }
+					country_exists = TIB
 				}
 			}
 			allowed_civil_war = {
