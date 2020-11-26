@@ -48,7 +48,7 @@ set_research_slots = 1
 		#doctrines
 		air_superiority = 1
 
-		mass_assault = 1
+		peoples_army_asy = 1
 		pocket_defence = 1
 		defence_in_depth = 1
 

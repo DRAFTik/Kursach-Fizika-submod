@@ -1023,7 +1023,7 @@ focus_tree = {
 				SKM = {
 					OR = {
 						is_subject_of = ROOT
-						is_in_faction = yes
+						is_in_faction_with = ROOT
 					}
 				}
 			}
@@ -1056,7 +1056,7 @@ focus_tree = {
 				TIB = {
 					OR = {
 						is_subject_of = ROOT
-						is_in_faction = yes
+						is_in_faction_with = ROOT
 					}
 				}
 			}
@@ -1641,7 +1641,7 @@ focus_tree = {
 				BHU = {
 					OR = {
 						is_subject_of = ROOT
-						is_in_faction = yes
+						is_in_faction_with = ROOT
 					}
 				}
 			}
@@ -1919,7 +1919,7 @@ focus_tree = {
 	focus = {
 		id = NEP_expansion_tibet
 		icon = GFX_z_goal_expansion_tibet
-		prerequisite = { focus = NEP_expansion_raj }
+		prerequisite = { focus = NEP_own_coalition }
 		x = -1
 		y = 1
 		relative_position_id = NEP_expansion_raj
@@ -2047,7 +2047,7 @@ focus_tree = {
 	focus = {
 		id = NEP_expansion_lanka
 		icon = GFX_z_goal_expansion_lanka
-		prerequisite = { focus = NEP_expansion_raj }
+		prerequisite = { focus = NEP_own_coalition }
 		x = 1
 		y = 1
 		relative_position_id = NEP_expansion_raj
@@ -2494,7 +2494,7 @@ focus_tree = {
 				TIB = {
 					OR = {
 						is_subject_of = ROOT
-						is_in_faction = yes
+						is_in_faction_with = ROOT
 					}
 				}
 			}
@@ -2527,7 +2527,7 @@ focus_tree = {
 				BHU = {
 					OR = {
 						is_subject_of = ROOT
-						is_in_faction = yes
+						is_in_faction_with = ROOT
 					}
 				}
 			}
@@ -2565,7 +2565,7 @@ focus_tree = {
 				SKM = {
 					OR = {
 						is_subject_of = ROOT
-						is_in_faction = yes
+						is_in_faction_with = ROOT
 					}
 				}
 			}
