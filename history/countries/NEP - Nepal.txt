@@ -115,7 +115,7 @@ create_country_leader = {
 create_country_leader = {
 	name = "Pushpa Lal Shrestha"
 	desc = "POLITICS_Pushpa_Lal_Shrestha_DESC"
-	picture = "GFX_portrait_nepal_portrait_Pushpa_Lal_Shrestha"
+	picture = "gfx/leaders/RAJ/Portrait_The_Raj_Army_Generic.dds"
 	expire = "1965.1.1"
 	ideology = marxism
 	traits = {
@@ -145,17 +145,7 @@ create_field_marshal = {
 	defense_skill = 1
 	planning_skill = 1
 	logistics_skill = 1
-}
-
-create_corps_commander = {
-	name = "Padma Shumsher Jang Bahadur Rana"
-	portrait_path = "gfx/leaders/NEP/Portrait_Padma_Shumsher_Jang_Bahadur_Rana.dds"
-	traits = {  }
-	skill = 2
-	attack_skill = 2
-	defense_skill = 1
-	planning_skill = 2
-	logistics_skill = 2
+	id = 145161
 }
 
 create_corps_commander = {
@@ -167,6 +157,19 @@ create_corps_commander = {
 	defense_skill = 2
 	planning_skill = 1
 	logistics_skill = 2
+	id = 145162
+}
+
+create_corps_commander = {
+	name = "Padma Shumsher Jang Bahadur Rana"
+	portrait_path = "gfx/leaders/NEP/Portrait_Padma_Shumsher_Jang_Bahadur_Rana.dds"
+	traits = {  }
+	skill = 2
+	attack_skill = 2
+	defense_skill = 1
+	planning_skill = 2
+	logistics_skill = 2
+	id = 145163
 }
 
 1941.12.5 = {

@@ -127,6 +127,8 @@ country_event = {
 		set_politics = { ruling_party = monarchy }
 		remove_ideas = NEP_britts_system
 		remove_ideas = NEP_tribhuwan_nepal
+		remove_unit_leader = 145161
+		remove_unit_leader = 145163
 	}
 }
 news_event = {
@@ -382,6 +384,9 @@ country_event = {
 			ruling_party = democratic
 			ideology = neutrality
 			size = 0.9
+			keep_unit_leaders = {
+				145162
+			}
 		}
 		remove_ideas = NEP_democratic_rebelliom
 		set_country_flag = NEP_civil_war_flag
@@ -397,6 +402,9 @@ country_event = {
 			ruling_party = democratic
 			ideology = neutrality
 			size = 0.7
+			keep_unit_leaders = {
+				145162
+			}
 		}
 		remove_ideas = NEP_democratic_rebelliom
 		set_country_flag = NEP_civil_war_flag
@@ -411,6 +419,9 @@ country_event = {
 			ruling_party = democratic
 			ideology = neutrality
 			size = 0.5
+			keep_unit_leaders = {
+				145162
+			}
 		}
 		remove_ideas = NEP_democratic_rebelliom
 		set_country_flag = NEP_civil_war_flag
@@ -425,6 +436,9 @@ country_event = {
 			ruling_party = democratic
 			ideology = neutrality
 			size = 0.3
+			keep_unit_leaders = {
+				145162
+			}
 		}
 		remove_ideas = NEP_democratic_rebelliom
 		set_country_flag = NEP_propaganda_fight_flag
@@ -531,6 +545,9 @@ country_event = {
 			ruling_party = neutrality
 			ideology = democratic
 			size = 0.7
+			keep_unit_leaders = {
+				145161 145163
+			}
 		}
 	}
 	
@@ -541,6 +558,9 @@ country_event = {
 			ruling_party = neutrality
 			ideology = democratic
 			size = 0.5
+			keep_unit_leaders = {
+				145161 145163
+			}
 		}
 	}
 	
@@ -551,6 +571,9 @@ country_event = {
 			ruling_party = neutrality
 			ideology = democratic
 			size = 0.3
+			keep_unit_leaders = {
+				145161 145163
+			}
 		}
 	}
 }
