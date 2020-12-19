@@ -1,3 +1,60 @@
+political_actions = {
+
+	TIB_CHI_pancha_plan = {
+	
+		allowed = { original_tag = CHI }
+	
+		available = {
+			NOT = { has_war_with = JAP }
+			date > 1937.07.07
+			is_subject = no
+			NOT = { has_global_flag = TIB_panchey_lama_died }
+		}
+		visible = {
+			NOT = { has_global_flag = TIB_panchey_lama_died }
+		}
+		cancel_trigger = {
+			has_war_with = JAP
+		}
+		
+		icon = generic_nationalism
+		
+		cost = 200
+		days_remove = 75
+
+		ai_will_do = {
+			factor = 15
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+			modifier = {
+				factor = 200
+				date < 1937.12.01
+			}
+		}
+
+		visible = {
+			TIB = { has_completed_focus = TIB_novaya_strana }
+		}
+		fire_only_once = yes
+		
+		complete_effect = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = -2000
+			}
+			add_manpower = -20000
+		}
+		
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): remove decision TIB_CHI_pancha_plan"
+			set_country_flag = TIB_CHI_pancha_plan_flag
+			TIB = { country_event = { id = tibet.59 } }
+		}
+	}
+}
+
 TIB_prokachka_armii = {
 
 	TIB_prokachka_armii_dec1 = {
@@ -20,6 +77,7 @@ TIB_prokachka_armii = {
 		}
 		
 		remove_effect = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): remove decision TIB_prokachka_armii_dec1"
 			set_country_flag = TIB_dec1_compl
 			remove_ideas = TIB_armia_bad_officers
 			swap_ideas = {
@@ -28,7 +86,6 @@ TIB_prokachka_armii = {
 			}
 		}
 	}
-
 
 	TIB_prokachka_armii_dec2 = {
 		available = {
@@ -51,6 +108,7 @@ TIB_prokachka_armii = {
 		}
 		
 		remove_effect = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): remove decision TIB_prokachka_armii_dec2"
 			set_country_flag = TIB_dec2_compl
 			remove_ideas = TIB_armia_perepodgotovka
 			swap_ideas = {
@@ -82,6 +140,7 @@ TIB_prokachka_armii = {
 		}
 		
 		remove_effect = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): remove decision TIB_prokachka_armii_dec3"
 			set_country_flag = TIB_dec3_compl
 			remove_ideas = TIB_armia_corruption
 			remove_ideas = TIB_armia_bad3
@@ -113,42 +172,38 @@ TIB_buddah_socialism = {
 		
 		fire_only_once = yes
 		
-		
 		complete_effect = {
 		}
 		
 		remove_effect = {
-		set_country_flag = TIB_mozhno_prodolzhat
-		if = {
-		limit = {		
-			has_government = communism
-		}
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): remove decision TIB_novoe_obshestvo"
+			set_country_flag = TIB_mozhno_prodolzhat
+			if = {
+				limit = {		
+					has_government = communism
+				}
 				add_popularity = {
 					ideology = communism
 					popularity = 0.05
 				}
-		}
-		
-		if = {
-		limit = {		
-			has_government = trozkism
-		}
+			}
+			if = {
+				limit = {		
+					has_government = trozkism
+				}
 				add_popularity = {
 					ideology = trozkism
 					popularity = 0.05
 				}
+			}
+			add_ideas = TIB_novoe_obshestvo_idea
 		}
-		
-		add_ideas = TIB_novoe_obshestvo_idea
-		
-		}
-		
 	}
 	
-TIB_buddist_economic = {
+	TIB_buddist_economic = {
 	
 		available = {
-		has_country_flag = TIB_mozhno_prodolzhat
+			has_country_flag = TIB_mozhno_prodolzhat
 		}
 		
 		icon = generic_nationalism
@@ -171,28 +226,27 @@ TIB_buddist_economic = {
 		}
 		
 		remove_effect = {
-		if = {
-		limit = {		
-			has_government = communism
-		}
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): remove decision TIB_buddist_economic"
+			if = {
+				limit = {		
+					has_government = communism
+				}
 				add_popularity = {
 					ideology = communism
 					popularity = 0.05
 				}
-		}
+			}
 		
-		if = {
-		limit = {		
-			has_government = trozkism
-		}
+			if = {
+				limit = {		
+					has_government = trozkism
+				}
 				add_popularity = {
 					ideology = trozkism
 					popularity = 0.05
 				}
-		}
-		
-		add_ideas = TIB_buddist_economic_idea
-		
+			}
+			add_ideas = TIB_buddist_economic_idea
 		}
 		
 	}
@@ -202,16 +256,15 @@ TIB_buddist_economic = {
 
 TIB_rerih_obyedinenie = {
 
-
 	TIB_integr_bhutan = {
 	
 		available = {
-		NOT = {
-        any_state = {
-        is_core_of = BHU
-        NOT = { is_controlled_by = TIB }
-        }
-        } 
+			NOT = {
+				any_state = {
+					is_core_of = BHU
+					NOT = { is_controlled_by = ROOT }
+				}
+			} 
 		}
 		
 		icon = generic_nationalism
@@ -229,30 +282,29 @@ TIB_rerih_obyedinenie = {
 		
 		fire_only_once = yes
 		
-		
 		complete_effect = {
 		}
 		
 		remove_effect = {
-		every_state = {
-			limit = { is_core_of = BHU }
-			add_core_of = TIB
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): remove decision TIB_integr_bhutan"
+			every_state = {
+				limit = { is_core_of = BHU }
+				add_core_of = ROOT
+			}
+			set_country_flag = TIB_shangri_la1
 		}
-		set_country_flag = TIB_shangri_la1
-		}
-		
-		}
+	}
 		
 
 	TIB_integr_nepal = {
 	
 		available = {
-		NOT = {
-        any_state = {
-        is_core_of = NEP
-        NOT = { is_controlled_by = TIB }
-        }
-        } 
+			NOT = {
+				any_state = {
+					is_core_of = NEP
+					NOT = { is_controlled_by = ROOT }
+				}
+			} 
 		}
 		
 		icon = generic_nationalism
@@ -270,30 +322,28 @@ TIB_rerih_obyedinenie = {
 		
 		fire_only_once = yes
 		
-		
 		complete_effect = {
 		}
 		
 		remove_effect = {
-		every_state = {
-			limit = { is_core_of = NEP }
-			add_core_of = TIB
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): remove decision TIB_integr_nepal"
+			every_state = {
+				limit = { is_core_of = NEP }
+				add_core_of = ROOT
+			}
+			set_country_flag = TIB_shangri_la2
 		}
-		set_country_flag = TIB_shangri_la2
-		}
-		
-		}
-		
+	}
 
 	TIB_integr_sixan = {
 	
 		available = {
-		NOT = {
-        any_state = {
-        is_core_of = XIK
-        NOT = { is_controlled_by = TIB }
-        }
-        } 
+			NOT = {
+				any_state = {
+					is_core_of = XIK
+					NOT = { is_controlled_by = ROOT }
+				}
+			} 
 		}
 		
 		icon = generic_nationalism
@@ -311,26 +361,24 @@ TIB_rerih_obyedinenie = {
 		
 		fire_only_once = yes
 		
-		
 		complete_effect = {
 		}
 		
 		remove_effect = {
-		every_state = {
-			limit = { is_core_of = XIK }
-			add_core_of = TIB
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): remove decision TIB_integr_sixan"
+			every_state = {
+				limit = { is_core_of = XIK }
+				add_core_of = ROOT
+			}
+			set_country_flag = TIB_shangri_la3
 		}
-		set_country_flag = TIB_shangri_la3
-		
-		}
-		
-		}
+	}
 	
 	TIB_integr_san_ma = {
 	
 		available = {
-					controls_state = 604
-					controls_state = 754
+			controls_state = 604
+			controls_state = 754
 		}
 		
 		icon = generic_nationalism
@@ -348,18 +396,17 @@ TIB_rerih_obyedinenie = {
 		
 		fire_only_once = yes
 		
-		
 		complete_effect = {
 		}
 		
 		remove_effect = {
-		604 = { add_core_of = TIB }
-		754 = { add_core_of = TIB }
-		set_country_flag = TIB_shangri_la4
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): remove decision TIB_integr_san_ma"
+			604 = { add_core_of = TIB }
+			754 = { add_core_of = TIB }
+			set_country_flag = TIB_shangri_la4
 		}
-		
-		}
-			
+	}
+	
 	TIB_shangri_la_proclaim = {
 	
 		available = {
@@ -417,65 +464,94 @@ TIB_rerih_obyedinenie = {
 		
 		fire_only_once = yes
 		
-		
 		complete_effect = {
-			TIB = { country_event = { days = 1 id = tibet.41 } }
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): complete decision TIB_shangri_la_proclaim"
+			country_event = { days = 1 id = tibet.41 }
 		}
 	}
 }
 
-political_actions = {
 
-	TIB_CHI_pancha_plan = {
-	
-		allowed = { original_tag = CHI }
-	
+TIB_preparation_of_tibetan_uprising_in_kham_categories = {
+
+	TIB_communist_uprising_of_tibetans = {
 		available = {
-			NOT = { has_war_with = JAP }
-			date > 1937.07.07
-			is_subject = no
-			NOT = { has_global_flag = TIB_panchey_lama_died }
 		}
-		visible = {
-			NOT = { has_global_flag = TIB_panchey_lama_died }
+		icon = generic_ignite_civil_war
+		days_mission_timeout = 35
+		activation = {
+			always = no #Triggered from effect
 		}
-		cancel_trigger = {
-			has_war_with = JAP
-		}
+		is_good = no
 		
-		icon = generic_nationalism
-		
-		cost = 200
-		days_remove = 75
-
-		ai_will_do = {
-			factor = 15
-			modifier = {
-				factor = 0
-				is_historical_focus_on = yes
+		timeout_effect = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): timeout decision TIB_communist_uprising_of_tibetans"
+			set_country_flag = TIB_communist_uprising_of_tibetans_flag
+			start_civil_war = {
+				ideology = communism
+				size = var:civ_war_size_var
+				states = { 
+					752
+				}
 			}
-			modifier = {
-				factor = 200
-				date < 1937.12.01
+			hidden_effect = {
+				random_other_country = {
+					limit = {
+						original_tag = ROOT
+						NOT = { tag = ROOT }
+					}
+					create_country_leader = {
+						name = "Phuntsok Wangyal Goranga" 
+						desc = "POLITICS_PHUNTSOK_WANGYAL_GORANGA_DESC"
+						picture = "gfx/leaders/Asia/Portrait_Asia_Generic_2.dds"
+						expire = "1965.1.1"
+						ideology = leninism
+						traits = {
+							TIB_red_buddist
+						}
+					}
+				}
 			}
 		}
-
-		visible = {
-			TIB = { has_completed_focus = TIB_novaya_strana }
-		}
-		fire_only_once = yes
 		
 		complete_effect = {
-			add_equipment_to_stockpile = {
-				type = infantry_equipment
-				amount = -2000
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): complete decision TIB_communist_uprising_of_tibetans"
+		}
+	}
+	
+	TIB_arrest_of_tibetans = {
+		available = {
+		}
+		visible = {
+			check_variable = { civ_war_size_var > 0.1 }
+		}
+		cancel_trigger = {
+			has_civil_war = yes
+		}
+		icon = generic_arrest
+        days_remove = 7
+		ai_will_do = {
+			factor = 10
+		}
+		
+		custom_cost_trigger = {
+			has_equipment = { infantry_equipment > 250 }
+		}
+		custom_cost_text = TIB_arrest_of_tibetans_cost
+		
+		complete_effect = {
+			hidden_effect = {
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = -250
+				}
 			}
-			add_manpower = -20000
 		}
 		
 		remove_effect = {
-			set_country_flag = TIB_CHI_pancha_plan_flag
-			TIB = { country_event = { id = tibet.59 } }
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): remove decision TIB_arrest_of_tibetans"
+			custom_effect_tooltip = TIB_arrest_of_tibetans_tt
+			add_to_variable = { civ_war_size_var = -0.1 }
 		}
 	}
 }

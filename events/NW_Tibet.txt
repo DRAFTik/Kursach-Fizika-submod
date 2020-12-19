@@ -1110,13 +1110,25 @@ country_event = {
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event tibet.40" }
 	
 	option = {
-		name = tibet.40.a		
+		name = tibet.40.a
+		ai_chance = {
+			factor = 50
+		}
 		set_country_flag = TIB_noviy_regent
+		effect_tooltip = { unlock_national_focus = TIB_regent }
 	}
 	
 	option = {
-		name = tibet.40.b	
+		name = tibet.40.b
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
 		set_country_flag = TIB_nikolay_rerih
+		effect_tooltip = { unlock_national_focus = TIB_rerih }
 	}
 }
 
@@ -1297,8 +1309,8 @@ country_event = {
 	
 	option = {
 		name = tibet.45.b
-		GER = { add_opinion_modifier = { target = TIB modifier = TIB_otkaz_ot_expedicii } }
-		TIB = { add_opinion_modifier = { target = GER modifier = TIB_otkaz_ot_expedicii } }
+		GER = { add_opinion_modifier = { target = ROOT modifier = TIB_otkaz_ot_expedicii } }
+		add_opinion_modifier = { target = GER modifier = TIB_otkaz_ot_expedicii }
         hidden_effect = { country_event = { days = 200 id = tibet.46 } }
 	}
 }
@@ -1499,6 +1511,7 @@ country_event = {
 	}
 }	
 
+# Приказ из Гоминьдана
 country_event = {
 	id = tibet.55
 	title = tibet.55.t
@@ -1510,21 +1523,22 @@ country_event = {
 	
 	option = {
 		name = tibet.55.a		
-	TIB = { country_event = { days = 1 id = tibet.56 } }
+		TIB = { country_event = { days = 1 id = tibet.56 } }
 		ai_chance = { 
 		    factor = 60
-			}
+		}
 	}
 	
 	option = {
 		name = tibet.55.b		
 		ai_chance = { 
-		    factor = 40
-			}
-	TIB = { country_event = { days = 1 id = tibet.57 } }
+			factor = 40
+		}
+		TIB = { country_event = { days = 1 id = tibet.57 } }
 	}
 }	
 
+# Военачальник Сикана готов оказать поддержку
 country_event = {
 	id = tibet.56
 	title = tibet.56.t
@@ -1536,11 +1550,12 @@ country_event = {
 	
 	option = {
 		name = tibet.56.a		
-    set_country_flag = TIB_XIK_soglasie
-    add_political_power = 30
+		set_country_flag = TIB_XIK_soglasie
+		add_political_power = 30
 	}
 }	
 
+# Военачальник Сикана отказал в поддержке
 country_event = {
 	id = tibet.57
 	title = tibet.57.t
@@ -1552,11 +1567,12 @@ country_event = {
 	
 	option = {
 		name = tibet.57.a		
-    add_political_power = -30
-    set_country_flag = TIB_XIK_otkaz
+		add_political_power = -30
+		set_country_flag = TIB_XIK_otkaz
 	}
 }	
 
+# Выступление Пхунцок Вангьяла // TIB
 country_event = {
 	id = tibet.58
 	title = tibet.58.t
@@ -1568,32 +1584,32 @@ country_event = {
 	
 	option = {
 		name = tibet.58.a		
-		add_stability = -0.15 #Ну типа он же просто убедил правительство, никого не пиздил вроде бы, зачем -25 то снимать? 
-		    set_politics = {
+		add_stability = -0.25
+		if = {
+			limit = { NOT = { has_government = communism } }
+			set_politics = {
 				ruling_party = communism
 				elections_allowed = no
 			}
-		
-			add_popularity = {
-				ideology = communism
-				popularity = 0.4
+		}
+		add_popularity = {
+			ideology = communism
+			popularity = 0.4
+		}
+		create_country_leader = {
+			name = "Phuntsok Wangyal Goranga" 
+			desc = "POLITICS_PHUNTSOK_WANGYAL_GORANGA_DESC"
+			picture = "gfx/leaders/Asia/Portrait_Asia_Generic_2.dds"
+			expire = "1965.1.1"
+			ideology = leninism
+			traits = {
+				TIB_red_buddist
 			}
-	
-create_country_leader = {
-	name = "Phuntsok Wangyal Goranga" 
-	desc = ""
-	picture = "gfx/leaders/Asia/Portrait_Asia_Generic_2.dds"
-	expire = "1965.1.1"
-	ideology = leninism
-	traits = {
-	TIB_red_buddist
-	}
-}
-
-	    TIB = { transfer_state = 752 }
-	    TIB = { transfer_state = 751 }
-		751 = { add_core_of = TIB }
-		752 = { add_core_of = TIB }
+		}
+	    transfer_state = 752
+		transfer_state = 751
+		751 = { add_core_of = ROOT }
+		752 = { add_core_of = ROOT }
 	}
 }	
 
@@ -1807,5 +1823,22 @@ country_event = {
 	option = {
 		name = tibet.62.a	
 		set_global_flag = TIB_panchey_lama_died
+	}
+}
+
+# Партизанская активность в Кхаме // XIK
+country_event = {
+	id = tibet.63
+	title = tibet.63.t
+	desc = tibet.63.desc
+	picture = GFX_report_event_generic_strike
+	is_triggered_only = yes
+	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event tibet.63" }
+	
+	option = {
+		name = tibet.63.a
+		effect_tooltip = { activate_mission = TIB_communist_uprising_of_tibetans }
+		unlock_decision_tooltip = TIB_arrest_of_tibetans
 	}
 }

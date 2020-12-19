@@ -268,7 +268,7 @@ focus_tree = {
 		mutually_exclusive = { focus = TIB_uravnat_nalogi }
 		x = 13
 		y = 3
-		cost = 7.2
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
@@ -290,7 +290,7 @@ focus_tree = {
 		mutually_exclusive = { focus = TIB_uvelichit_nalogi }
 		x = 15
 		y = 3
-		cost = 7.2
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
@@ -704,7 +704,7 @@ focus_tree = {
 		mutually_exclusive = { focus = TIB_stavka_na_aristokratiyu }
 		x = 17
 		y = 2
-		cost = 7.2
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
@@ -730,7 +730,7 @@ focus_tree = {
 	    prerequisite = { focus = TIB_otstranitsa_ot_aristokratov }
 		x = 17
 		y = 3
-		cost = 7.2
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
@@ -763,7 +763,7 @@ focus_tree = {
 		}
 
 		available = {
-			has_set_country_flag = TIB_dalay_lama_pribil
+			has_country_flag = TIB_dalay_lama_pribil
 		}
 		
 		bypass = {
@@ -784,21 +784,25 @@ focus_tree = {
 		mutually_exclusive = { focus = TIB_sohranit_regenstvo }
 		x = 21
 		y = 5
-		cost = 7.2
+		cost = 5
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				factor = 0
+				date < 1941.1.1
+			}
 		}
 
-		available = {		
-			has_set_country_flag = TIB_dalay_lama_pribil
+		available = {
+			has_idea = TIB_dalay_lama_xiv
 		}
 		
 		bypass = {
 		}
 
 		completion_reward = {
-		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_otrechenie"
-		 TIB = { country_event = { days = 1 id = tibet.40 } }
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_otrechenie"
+			country_event = { days = 1 id = tibet.40 }
 		}
 	}
 	
@@ -818,6 +822,7 @@ focus_tree = {
 		}
 
 		available = {
+			has_country_flag = TIB_nikolay_rerih
 		}
 		
 		bypass = {
@@ -1396,34 +1401,38 @@ focus_tree = {
 		mutually_exclusive = { focus = TIB_poprosit_proshenia_u_allaha }
 		x = 21
 		y = 6
-		cost = 7.2
+		cost = 5
 		ai_will_do = {
 			factor = 1
 		}
 
 		available = {
-		country_exists = XIK
+			country_exists = XIK
+			XIK = { has_civil_war = no }
+			has_country_flag = TIB_iniciativa_commi
 		}
 		
 		bypass = {
-		NOT = {
-		country_exists = XIK		
+			NOT = {
+				country_exists = XIK		
+			}
 		}
+		
+		select_effect = {
+			hidden_effect = {
+				XIK = {
+					country_event = { id = tibet.63 }
+					set_variable = { civ_war_size_var = 0.5 }
+					activate_mission = TIB_communist_uprising_of_tibetans
+				}
+			}
 		}
 
 		completion_reward = {
-		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_borba_v_kitae"		
-		custom_effect_tooltip = TIB_v_sikane_nachnetsa_voyna
-		hidden_effect = {
-		XIK = {
-			start_civil_war = {
-				ruling_party = neutrality
-				ideology = communism
-				size = 0.5
-			}
-		}
-		}
-		add_timed_idea = { idea = TIB_primer_borbi days = 365 }
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_borba_v_kitae"
+			set_rule = { can_send_volunteers = yes }
+			add_idea = TIB_primer_borbi
+			custom_effect_tooltip = TIB_v_sikane_nachnetsa_voyna_tt
 		}
 	}
 	
@@ -1434,20 +1443,26 @@ focus_tree = {
 	    prerequisite = { focus = TIB_borba_v_kitae }
 		x = 21
 		y = 7
-		cost = 7.2
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
 
 		available = {
+			any_country_with_original_tag = {
+				original_tag_to_check = XIK
+				has_country_leader = { name = "Phuntsok Wangyal Goranga" ruling_only = yes }
+				has_civil_war = no
+				exists = yes
+			}
 		}
 		
 		bypass = {
 		}
 
 		completion_reward = {
-		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_kompartia"		
-	    TIB = { country_event = { days = 1 id = tibet.58 } }
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_kompartia"		
+			country_event = { days = 1 id = tibet.58 }
 		}
 	}
 	
@@ -2548,44 +2563,30 @@ create_country_leader = {
 		mutually_exclusive = { focus = TIB_poprosit_proshenia_u_allaha }
 		x = 14
 		y = 6
-		cost = 7.2
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
 
 		available = {
+			has_country_flag = TIB_noviy_regent
 		}
 		
 		bypass = {
 		}
 
 		completion_reward = {
-		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_regent"
-        create_country_leader = {
-	    name = "Daz Avanga Songrao"
-	    desc = "POLITICS_JAMPHEL_YESHE_GYALTSEN_DESC"
-	    picture = "Portrait_Tibet_Jamphel_Yeshe_Gyaltsen.dds"
-	    expire = "1965.1.1"
-	    ideology = despotism
-	    traits = {
-		chistiy_monah
-	    }
-        }
-
-		hidden_effect = {
-		
-        create_country_leader = {
-	    name = "Daz Avanga Songrao"
-	    desc = "POLITICS_JAMPHEL_YESHE_GYALTSEN_DESC"
-	    picture = "Portrait_Tibet_Jamphel_Yeshe_Gyaltsen.dds"
-	    expire = "1965.1.1"
-	    ideology = monarchy_ideology
-	    traits = {
-		chistiy_monah
-	    }
-        }
-		}
-		
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_regent"
+			create_country_leader = {
+				name = "Daz Avanga Songrao"
+				desc = "POLITICS_JAMPHEL_YESHE_GYALTSEN_DESC"
+				picture = "gfx/leaders/TIB/Portrait_Tibet_Jamphel_Yeshe_Gyaltsen.dds"
+				expire = "1965.1.1"
+				ideology = absolute_monarchy
+				traits = {
+					chistiy_monah
+				}
+			}
 		}
 	}
 		
@@ -2596,21 +2597,23 @@ create_country_leader = {
 	    prerequisite = { focus = TIB_regent focus = TIB_poprosit_proshenia_u_allaha focus = TIB_borba_v_kitae focus = TIB_rerih }
 		x = 11
 		y = 7
-		cost = 7.2
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
 
 		available = {
+			NOT = { has_government = neutrality }
 		}
 		
 		bypass = {
+			has_completed_focus = TIB_otstranit_lam
 		}
 
 		completion_reward = {
-		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_izbrat_koshag"
-		add_stability = 0.05
-		add_political_power = 75
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_izbrat_koshag"
+			add_stability = 0.05
+			add_political_power = 75
 		}
 	}
 		
@@ -2621,7 +2624,7 @@ create_country_leader = {
 	    prerequisite = { focus = TIB_izbrat_koshag }
 		x = 11
 		y = 8
-		cost = 7.2
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
@@ -2633,8 +2636,8 @@ create_country_leader = {
 		}
 
 		completion_reward = {
-		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_otdalennie_rayoni"
-		remove_ideas = TIB_vlast_bez_vlasti
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_otdalennie_rayoni"
+			remove_ideas = TIB_vlast_bez_vlasti
 		}
 	}
 	
@@ -2646,7 +2649,7 @@ create_country_leader = {
 	    prerequisite = { focus = TIB_modernizacia2 }
 		x = 11
 		y = 9
-		cost = 7.2
+		cost = 5
 		ai_will_do = {
 			factor = 1
 		}
@@ -2658,11 +2661,9 @@ create_country_leader = {
 		}
 
 		completion_reward = {
-		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_stop_isolation2"
-		custom_effect_tooltip = mozhno_izmenyat_torgovlu
-		hidden_effect = {
-		add_ideas = civilian_economy
-		}
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_stop_isolation2"
+			custom_effect_tooltip = mozhno_izmenyat_torgovlu_tt
+			add_ideas = limited_exports
 		}
 	}
 	
@@ -2686,24 +2687,8 @@ create_country_leader = {
 		}
 
 		completion_reward = {
-		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_pomoch_crestyanam"
-		if = {
-		limit = {
-		has_idea = TIB_deneg_net
-		}
-		swap_ideas = {
-		remove_idea = TIB_deneg_net
-		add_idea = TIB_deneg_net2
-		}
-		}
-		
-		else_if = {
-		limit = {
-		has_idea = TIB_deneg_net2
-		}
-		remove_ideas = TIB_deneg_net2
-		}
-		
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_pomoch_crestyanam"
+			remove_ideas = TIB_deneg_net2
 		}
 	}
 	
@@ -2721,16 +2706,17 @@ create_country_leader = {
 		}
 
 		available = {
+			has_completed_focus = TIB_stop_isolation2
 		}
 		
 		bypass = {
 		}
 
-		completion_reward = {		
-		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_razrabotka_resursov"
-		add_resource = { type = oil amount = 6 state = 601 }
-		add_resource = { type = steel amount = 6 state = 601 }
-		add_resource = { type = tungsten amount = 6 state = 322 }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_razrabotka_resursov"
+			add_resource = { type = oil amount = 6 state = 601 }
+			add_resource = { type = steel amount = 6 state = 601 }
+			add_resource = { type = tungsten amount = 6 state = 322 }
 		}
 	}
 	
@@ -2741,7 +2727,7 @@ create_country_leader = {
 	    prerequisite = { focus = TIB_regent }
 		x = 13
 		y = 7
-		cost = 7.2
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
@@ -2753,8 +2739,8 @@ create_country_leader = {
 		}
 
 		completion_reward = {
-		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_nalogi_s_monastirey"
-		add_timed_idea = { idea = TIB_nedoimki days = 365 }
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_nalogi_s_monastirey"
+			add_timed_idea = { idea = TIB_nedoimki days = 365 }
 		}
 	}
 	
@@ -2765,7 +2751,7 @@ create_country_leader = {
 	    prerequisite = { focus = TIB_regent }
 		x = 15
 		y = 7
-		cost = 7.2
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
@@ -2777,8 +2763,8 @@ create_country_leader = {
 		}
 
 		completion_reward = {
-		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_diplomat_buro"
-		add_ideas = TIB_diplomatic
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_diplomat_buro"
+			add_ideas = TIB_diplomat_buro
 		}
 	}
 	
@@ -2795,31 +2781,44 @@ create_country_leader = {
 		}
 
 		available = {
+			NOT = { has_government = neutrality }
 		}
 		
 		bypass = {
 		}
 
 		completion_reward = {
-		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_modernizacia"
-		random_owned_controlled_state = {		
-			add_building_construction = {
-				type = arms_factory
-				level = 1
-				instant_build = yes
-			}	
-             add_extra_state_shared_building_slots = 1
-		}
-		
-		random_owned_controlled_state = {		
-			add_building_construction = {
-				type = industrial_complex
-				level = 1
-				instant_build = yes
-			}	
-             add_extra_state_shared_building_slots = 1
-		}
-		
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_modernizacia"
+			random_owned_controlled_state = {
+				limit = { 
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = { 
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
 		}
 	}
 	
@@ -2836,32 +2835,22 @@ create_country_leader = {
 		}
 
 		available = {
+			has_completed_focus = TIB_india_machines_desc
 		}
 		
 		bypass = {
 		}
 
 		completion_reward = {
-		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_modernizacia2"
-		if = {
-		limit = {
-		has_idea = TIB_deneg_net
-		}
-		swap_ideas = {
-		remove_idea = TIB_deneg_net
-		add_idea = TIB_deneg_net2
-		}
-		}
-		
-		else_if = {
-		limit = {
-		has_idea = TIB_deneg_net2
-		}
-		remove_ideas = TIB_deneg_net2
-		}
-		
-		
-		
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_modernizacia2"
+			swap_ideas = {
+				remove_idea = TIB_deneg_net
+				add_idea = TIB_deneg_net2
+			}
+			swap_ideas = {
+				remove_idea = TIB_vedomstvo2
+				add_idea = TIB_vedomstvo3
+			}
 		}
 	}
 	
@@ -2880,15 +2869,15 @@ create_country_leader = {
 		}
 
 		available = {
-			has_set_country_flag = TIB_dalay_lama_pribil
+			has_idea = TIB_dalay_lama_xiv
 		}
 		
 		bypass = {
 		}
 
 		completion_reward = {
-		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_sohranit_regenstvo"
-		add_political_power = 50
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_sohranit_regenstvo"
+			add_political_power = 50
 		}
 	}
 	
@@ -4074,13 +4063,20 @@ create_country_leader = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_tkatskie_masterskie"
-			601 = {
+			random_owned_controlled_state = {
+				limit = { 
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = industrial_complex
 					level = 1
 					instant_build = yes
-				}	
+				}
 			}
 		}
 	}
@@ -4136,7 +4132,7 @@ create_country_leader = {
 		x = 12
 		y = 0
 	    relative_position_id = TIB_british_commission
-		cost = 7.2
+		cost = 1
 		ai_will_do = {
 			factor = 1
 		}
@@ -4146,8 +4142,11 @@ create_country_leader = {
 		}		
 
 		completion_reward = {
-			add_political_power = 30
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_german_exp"
+			custom_effect_tooltip = TUR_focus_autocomplete_tt
+			add_political_power = 30
+			GER = { add_opinion_modifier = { target = ROOT modifier = TIB_expediciya } }
+			add_opinion_modifier = { target = GER modifier = TIB_expediciya }
 		}
 	}
 
@@ -4159,7 +4158,7 @@ create_country_leader = {
 	    relative_position_id = TIB_british_commission
 	    prerequisite = { focus = TIB_electrica }
 	    prerequisite = { focus = TIB_german_exp }
-		cost = 7.2
+		cost = 5
 		ai_will_do = {
 			factor = 1
 		}
@@ -4170,9 +4169,15 @@ create_country_leader = {
 		}
 
 		completion_reward = {
-		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_berlin_lkhasa"
-				GER = { add_opinion_modifier = { target = TIB modifier = TIB_radiomost } }
-				TIB = { add_opinion_modifier = { target = GER modifier = TIB_radiomost } }
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_berlin_lkhasa"
+			add_tech_bonus = {
+				name = TIB_berlin_lkhasa
+				bonus = 1.0
+				uses = 1
+				category = electronics
+			}
+			GER = { add_opinion_modifier = { target = ROOT modifier = TIB_radiomost } }
+			add_opinion_modifier = { target = GER modifier = TIB_radiomost }
 		}
 	}
 }		

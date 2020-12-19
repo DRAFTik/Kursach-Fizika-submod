@@ -2,6 +2,7 @@ opinion_modifiers = {
 
 	TIB_german_help = { value = 20 }
 	TIB_shkola = { value = 20 }
+	TIB_expediciya = { value = 20 }
 	TIB_rado_miss = { value = 20 }
 	TIB_oborvannie_svyazi = { value = -50 }
 	TIB_no_reabilitation = { value = -30 }

@@ -29,14 +29,15 @@ ideas = {
 			
 			allowed = { always = no }
 			available = {
+				XIK = { has_civil_war = yes }
 			}
 			removal_cost = -1
-			picture = FRA_scw_intervention_republicans_focus
+			picture = chi_chinese_support
 			
 			modifier = {
 				communism_drift = 0.3
 				send_volunteers_tension = -1
-				send_volunteer_size = 2
+				send_volunteer_size = 1
 			}
 		}
 		
@@ -288,7 +289,7 @@ ideas = {
 			}
 		}
 			
-		TIB_diplomatic = {
+		TIB_diplomat_buro = {
 			allowed = { always = no }
 			available = {
 			}
@@ -301,7 +302,7 @@ ideas = {
 	
 		TIB_nedoimki = {
 			removal_cost = -1
-			picture = FRA_chi_hyper_inflation
+			picture = corruption
 			allowed = { always = no }
 			available = {
 			}
@@ -462,8 +463,22 @@ ideas = {
 			}
 		}
 		
+		TIB_vedomstvo = {
+			name = TIB_electrica
+			allowed = {
+				always = no
+			}
+			available = {
+			}
+			removal_cost = -1
+			picture = usa_magic
+			modifier = {
+				production_factory_efficiency_gain_factor = 0.05	
+			}
+		}
+		
 		TIB_vedomstvo2 = {
-			name = TIB_vedomstvo
+			name = TIB_electrica
 			allowed = {
 				always = no
 			}
@@ -476,8 +491,9 @@ ideas = {
 				production_factory_efficiency_gain_factor = 0.05
 			}
 		}
-	
-		TIB_vedomstvo = {
+		
+		TIB_vedomstvo3 = {
+			name = TIB_electrica
 			allowed = {
 				always = no
 			}
@@ -486,10 +502,13 @@ ideas = {
 			removal_cost = -1
 			picture = usa_magic
 			modifier = {
-				production_factory_efficiency_gain_factor = 0.05	
+				production_factory_start_efficiency_factor = 0.05	
+				production_factory_efficiency_gain_factor = 0.05
+				production_speed_arms_factory_factor = 0.2
+				production_speed_industrial_complex_factor = 0.2
 			}
 		}
-			
+	
 		TIB_rettingsang_idea = {
 			allowed = {
 				always = no
