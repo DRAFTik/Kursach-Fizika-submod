@@ -1,0 +1,481 @@
+TIB_prokachka_armii = {
+
+	TIB_prokachka_armii_dec1 = {
+		available = {
+		}
+		icon = generic_nationalism
+		cost = 200
+        days_remove = 180
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		fire_only_once = yes
+		
+		complete_effect = {
+			add_ideas = TIB_armia_bad_officers
+		}
+		
+		remove_effect = {
+			set_country_flag = TIB_dec1_compl
+			remove_ideas = TIB_armia_bad_officers
+			swap_ideas = {
+				remove_idea = TIB_armia_bad
+				add_idea = TIB_armia_bad2
+			}
+		}
+	}
+
+
+	TIB_prokachka_armii_dec2 = {
+		available = {
+			has_country_flag = TIB_dec1_compl
+		}
+		icon = generic_nationalism
+		cost = 200
+        days_remove = 180
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		fire_only_once = yes
+		
+		complete_effect = {
+			add_ideas = TIB_armia_perepodgotovka
+		}
+		
+		remove_effect = {
+			set_country_flag = TIB_dec2_compl
+			remove_ideas = TIB_armia_perepodgotovka
+			swap_ideas = {
+				remove_idea = TIB_armia_bad2
+				add_idea = TIB_armia_bad3
+			}
+		}
+	}
+
+
+	TIB_prokachka_armii_dec3 = {
+		available = {
+			has_country_flag = TIB_dec2_compl
+		}
+		icon = generic_nationalism
+		cost = 200
+        days_remove = 180
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+		}
+		fire_only_once = yes
+		
+		complete_effect = {
+			add_ideas = TIB_armia_corruption
+		}
+		
+		remove_effect = {
+			set_country_flag = TIB_dec3_compl
+			remove_ideas = TIB_armia_corruption
+			remove_ideas = TIB_armia_bad3
+			set_country_flag = konets_missii
+			add_ideas = TIB_this_is_tibet
+		}
+	}
+}
+
+TIB_buddah_socialism = {
+
+	TIB_novoe_obshestvo = {
+	
+		available = {
+		}
+		
+		icon = generic_nationalism
+		
+		cost = 125
+        days_remove = 90
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		visible = {
+			has_country_flag = TIB_postroenie_buddistskogo_socialisma_fkag
+		}
+		
+		fire_only_once = yes
+		
+		
+		complete_effect = {
+		}
+		
+		remove_effect = {
+		set_country_flag = TIB_mozhno_prodolzhat
+		if = {
+		limit = {		
+			has_government = communism
+		}
+				add_popularity = {
+					ideology = communism
+					popularity = 0.05
+				}
+		}
+		
+		if = {
+		limit = {		
+			has_government = trozkism
+		}
+				add_popularity = {
+					ideology = trozkism
+					popularity = 0.05
+				}
+		}
+		
+		add_ideas = TIB_novoe_obshestvo_idea
+		
+		}
+		
+	}
+	
+TIB_buddist_economic = {
+	
+		available = {
+		has_country_flag = TIB_mozhno_prodolzhat
+		}
+		
+		icon = generic_nationalism
+		
+		cost = 125
+        days_remove = 90
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		visible = {
+			has_country_flag = TIB_postroenie_buddistskogo_socialisma_fkag
+		}
+		
+		fire_only_once = yes
+		
+		
+		complete_effect = {
+		}
+		
+		remove_effect = {
+		if = {
+		limit = {		
+			has_government = communism
+		}
+				add_popularity = {
+					ideology = communism
+					popularity = 0.05
+				}
+		}
+		
+		if = {
+		limit = {		
+			has_government = trozkism
+		}
+				add_popularity = {
+					ideology = trozkism
+					popularity = 0.05
+				}
+		}
+		
+		add_ideas = TIB_buddist_economic_idea
+		
+		}
+		
+	}
+	
+}
+
+
+TIB_rerih_obyedinenie = {
+
+
+	TIB_integr_bhutan = {
+	
+		available = {
+		NOT = {
+        any_state = {
+        is_core_of = BHU
+        NOT = { is_controlled_by = TIB }
+        }
+        } 
+		}
+		
+		icon = generic_nationalism
+		
+		cost = 50
+        days_remove = 60
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		visible = {
+			has_completed_focus = TIB_novaya_strana
+		}
+		
+		fire_only_once = yes
+		
+		
+		complete_effect = {
+		}
+		
+		remove_effect = {
+		every_state = {
+			limit = { is_core_of = BHU }
+			add_core_of = TIB
+		}
+		set_country_flag = TIB_shangri_la1
+		}
+		
+		}
+		
+
+	TIB_integr_nepal = {
+	
+		available = {
+		NOT = {
+        any_state = {
+        is_core_of = NEP
+        NOT = { is_controlled_by = TIB }
+        }
+        } 
+		}
+		
+		icon = generic_nationalism
+		
+		cost = 100
+        days_remove = 180
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		visible = {
+			has_completed_focus = TIB_novaya_strana
+		}
+		
+		fire_only_once = yes
+		
+		
+		complete_effect = {
+		}
+		
+		remove_effect = {
+		every_state = {
+			limit = { is_core_of = NEP }
+			add_core_of = TIB
+		}
+		set_country_flag = TIB_shangri_la2
+		}
+		
+		}
+		
+
+	TIB_integr_sixan = {
+	
+		available = {
+		NOT = {
+        any_state = {
+        is_core_of = XIK
+        NOT = { is_controlled_by = TIB }
+        }
+        } 
+		}
+		
+		icon = generic_nationalism
+		
+		cost = 25
+        days_remove = 30
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		visible = {
+			has_completed_focus = TIB_novaya_strana
+		}
+		
+		fire_only_once = yes
+		
+		
+		complete_effect = {
+		}
+		
+		remove_effect = {
+		every_state = {
+			limit = { is_core_of = XIK }
+			add_core_of = TIB
+		}
+		set_country_flag = TIB_shangri_la3
+		
+		}
+		
+		}
+	
+	TIB_integr_san_ma = {
+	
+		available = {
+					controls_state = 604
+					controls_state = 754
+		}
+		
+		icon = generic_nationalism
+		
+		cost = 25
+        days_remove = 30
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		visible = {
+			has_completed_focus = TIB_novaya_strana
+		}
+		
+		fire_only_once = yes
+		
+		
+		complete_effect = {
+		}
+		
+		remove_effect = {
+		604 = { add_core_of = TIB }
+		754 = { add_core_of = TIB }
+		set_country_flag = TIB_shangri_la4
+		}
+		
+		}
+			
+	TIB_shangri_la_proclaim = {
+	
+		available = {
+			controls_state = 898
+			controls_state = 844
+			controls_state = 833
+			controls_state = 323
+			controls_state = 1104
+			controls_state = 324
+			controls_state = 758
+			controls_state = 322
+			controls_state = 757
+			controls_state = 601
+			controls_state = 434
+			controls_state = 752
+			controls_state = 751
+			controls_state = 287
+			controls_state = 759
+			controls_state = 619
+			controls_state = 1046
+			controls_state = 1047
+			controls_state = 617
+			controls_state = 618
+			controls_state = 760
+			controls_state = 654
+			controls_state = 604
+			controls_state = 755
+			controls_state = 754
+			controls_state = 283
+			controls_state = 616
+			controls_state = 756
+			controls_state = 956
+			controls_state = 955
+			controls_state = 954
+			controls_state = 953
+			controls_state = 957
+			controls_state = 330
+		}
+		
+		icon = generic_form_nation
+		
+		cost = 25
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		visible = {
+			has_completed_focus = TIB_novaya_strana
+			has_country_flag = TIB_shangri_la4
+			has_country_flag = TIB_shangri_la3
+			has_country_flag = TIB_shangri_la2
+			has_country_flag = TIB_shangri_la1
+		}
+		
+		fire_only_once = yes
+		
+		
+		complete_effect = {
+			TIB = { country_event = { days = 1 id = tibet.41 } }
+		}
+	}
+}
+
+political_actions = {
+
+	TIB_CHI_pancha_plan = {
+	
+		allowed = { original_tag = CHI }
+	
+		available = {
+			NOT = { has_war_with = JAP }
+			date > 1937.07.07
+			is_subject = no
+			NOT = { has_global_flag = TIB_panchey_lama_died }
+		}
+		visible = {
+			NOT = { has_global_flag = TIB_panchey_lama_died }
+		}
+		cancel_trigger = {
+			has_war_with = JAP
+		}
+		
+		icon = generic_nationalism
+		
+		cost = 200
+		days_remove = 75
+
+		ai_will_do = {
+			factor = 15
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+			modifier = {
+				factor = 200
+				date < 1937.12.01
+			}
+		}
+
+		visible = {
+			TIB = { has_completed_focus = TIB_novaya_strana }
+		}
+		fire_only_once = yes
+		
+		complete_effect = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = -2000
+			}
+			add_manpower = -20000
+		}
+		
+		remove_effect = {
+			set_country_flag = TIB_CHI_pancha_plan_flag
+			TIB = { country_event = { id = tibet.59 } }
+		}
+	}
+}
