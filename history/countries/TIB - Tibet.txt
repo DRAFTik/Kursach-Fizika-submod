@@ -93,7 +93,7 @@ create_country_leader = {
 	desc = "POLITICS_JAMPHEL_YESHE_GYALTSEN_DESC"
 	picture = "Portrait_Tibet_Jamphel_Yeshe_Gyaltsen.dds"
 	expire = "1965.1.1"
-	ideology = monarchy_ideology
+	ideology = theocratic_monarchy
 	traits = {
 		sodomit
 	}
@@ -101,7 +101,7 @@ create_country_leader = {
 
 create_country_leader = {
 	name = "Phuntsok Wangyal"
-	desc = ""
+	desc = "POLITICS_PHUNTSOK_WANGYAL_DESC"
 	picture = "gfx/leaders/Asia/Portrait_Asia_Generic_1.dds"
 	expire = "1965.1.1"
 	ideology = leninism
@@ -111,11 +111,12 @@ create_country_leader = {
 
 create_country_leader = {
 	name = "Pandatsang Rapga" 
-	desc = ""
+	desc = "POLITICS_PANDATSANG_RAPGA_DESC"
 	picture = "gfx/leaders/Asia/Portrait_Asia_Generic_2.dds"
 	expire = "1965.1.1"
-	ideology = conservatism
+	ideology = national_liberalism
 	traits = {
+		pro_chinese_antiimperialist
 	}
 }
 

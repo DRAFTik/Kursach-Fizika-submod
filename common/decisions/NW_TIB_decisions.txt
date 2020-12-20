@@ -12,33 +12,18 @@ political_actions = {
 		}
 		visible = {
 			NOT = { has_global_flag = TIB_panchey_lama_died }
+			TIB = { has_completed_focus = TIB_novaya_strana }
 		}
 		cancel_trigger = {
 			has_war_with = JAP
 		}
 		
-		icon = generic_nationalism
+		icon = generic_operation
 		
+		fire_only_once = yes
 		cost = 200
 		days_remove = 75
 
-		ai_will_do = {
-			factor = 15
-			modifier = {
-				factor = 0
-				is_historical_focus_on = yes
-			}
-			modifier = {
-				factor = 200
-				date < 1937.12.01
-			}
-		}
-
-		visible = {
-			TIB = { has_completed_focus = TIB_novaya_strana }
-		}
-		fire_only_once = yes
-		
 		complete_effect = {
 			add_equipment_to_stockpile = {
 				type = infantry_equipment
@@ -52,6 +37,18 @@ political_actions = {
 			set_country_flag = TIB_CHI_pancha_plan_flag
 			TIB = { country_event = { id = tibet.59 } }
 		}
+		
+		ai_will_do = {
+			factor = 15
+			modifier = {
+				factor = 0
+				is_historical_focus_on = yes
+			}
+			modifier = {
+				factor = 200
+				date < 1937.12.01
+			}
+		}
 	}
 }
 
@@ -60,7 +57,7 @@ TIB_prokachka_armii = {
 	TIB_prokachka_armii_dec1 = {
 		available = {
 		}
-		icon = generic_nationalism
+		icon = generic_army_support
 		cost = 200
         days_remove = 180
 		ai_will_do = {
@@ -91,7 +88,7 @@ TIB_prokachka_armii = {
 		available = {
 			has_country_flag = TIB_dec1_compl
 		}
-		icon = generic_nationalism
+		icon = generic_military
 		cost = 200
         days_remove = 180
 		ai_will_do = {
@@ -123,7 +120,7 @@ TIB_prokachka_armii = {
 		available = {
 			has_country_flag = TIB_dec2_compl
 		}
-		icon = generic_nationalism
+		icon = generic_arrest
 		cost = 200
         days_remove = 180
 		ai_will_do = {
@@ -150,14 +147,22 @@ TIB_prokachka_armii = {
 	}
 }
 
-TIB_buddah_socialism = {
+TIB_buddah_socialism_category = {
 
 	TIB_novoe_obshestvo = {
 	
 		available = {
+			custom_trigger_tooltip = {
+				tooltip = block_decisions_buddah_socialism_category_tt
+				NOT = {
+					any_state = {
+						has_state_flag = block_decisions_buddah_socialism_category_flag
+					}
+				}
+			}
 		}
 		
-		icon = generic_nationalism
+		icon = generic_form_nation
 		
 		cost = 125
         days_remove = 90
@@ -165,37 +170,26 @@ TIB_buddah_socialism = {
 		ai_will_do = {
 			factor = 100
 		}
-
-		visible = {
-			has_country_flag = TIB_postroenie_buddistskogo_socialisma_fkag
-		}
 		
 		fire_only_once = yes
 		
 		complete_effect = {
+			hidden_effect = {
+				random_state = {
+					set_state_flag = block_decisions_buddah_socialism_category_flag
+				}
+			}
 		}
 		
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): remove decision TIB_novoe_obshestvo"
-			set_country_flag = TIB_mozhno_prodolzhat
-			if = {
-				limit = {		
-					has_government = communism
-				}
-				add_popularity = {
-					ideology = communism
-					popularity = 0.05
+			hidden_effect = {
+				random_state = {
+					limit = { has_state_flag = block_decisions_buddah_socialism_category_flag }
+					clr_state_flag = block_decisions_buddah_socialism_category_flag
 				}
 			}
-			if = {
-				limit = {		
-					has_government = trozkism
-				}
-				add_popularity = {
-					ideology = trozkism
-					popularity = 0.05
-				}
-			}
+			add_popularity = { ideology = var:current_party_ideology_group popularity = 0.05 }
 			add_ideas = TIB_novoe_obshestvo_idea
 		}
 	}
@@ -203,10 +197,17 @@ TIB_buddah_socialism = {
 	TIB_buddist_economic = {
 	
 		available = {
-			has_country_flag = TIB_mozhno_prodolzhat
+			custom_trigger_tooltip = {
+				tooltip = block_decisions_buddah_socialism_category_tt
+				NOT = {
+					any_state = {
+						has_state_flag = block_decisions_buddah_socialism_category_flag
+					}
+				}
+			}
 		}
 		
-		icon = generic_nationalism
+		icon = generic_factory
 		
 		cost = 125
         days_remove = 90
@@ -214,43 +215,94 @@ TIB_buddah_socialism = {
 		ai_will_do = {
 			factor = 100
 		}
-
-		visible = {
-			has_country_flag = TIB_postroenie_buddistskogo_socialisma_fkag
-		}
 		
 		fire_only_once = yes
 		
-		
 		complete_effect = {
+			hidden_effect = {
+				random_state = {
+					set_state_flag = block_decisions_buddah_socialism_category_flag
+				}
+			}
 		}
 		
 		remove_effect = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): remove decision TIB_buddist_economic"
-			if = {
-				limit = {		
-					has_government = communism
-				}
-				add_popularity = {
-					ideology = communism
-					popularity = 0.05
+			hidden_effect = {
+				random_state = {
+					limit = { has_state_flag = block_decisions_buddah_socialism_category_flag }
+					clr_state_flag = block_decisions_buddah_socialism_category_flag
 				}
 			}
-		
-			if = {
-				limit = {		
-					has_government = trozkism
-				}
-				add_popularity = {
-					ideology = trozkism
-					popularity = 0.05
-				}
-			}
+			add_popularity = { ideology = var:current_party_ideology_group popularity = 0.05 }
 			add_ideas = TIB_buddist_economic_idea
 		}
-		
 	}
 	
+	TIB_construction_red_monasteries_in_region = {
+		icon = infiltrate_state
+		on_map_mode = map_and_decisions_view
+		state_target = yes
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = block_decisions_buddah_socialism_category_tt
+				NOT = {
+					any_state = {
+						has_state_flag = block_decisions_buddah_socialism_category_flag
+					}
+				}
+			}
+			FROM = {
+				is_fully_controlled_by = ROOT
+			}
+		}
+		target_trigger = {
+			FROM = {
+				is_core_of = ROOT
+				is_fully_controlled_by = ROOT
+			}
+		}
+		target_array = ROOT.core_states
+		cost = 30
+		days_remove = 45
+		cancel_trigger = {
+			hidden_trigger = {
+				NOT = { FROM = { is_fully_controlled_by = ROOT } }
+			}
+		}
+		complete_effect = {
+			hidden_effect = {
+				FROM = {
+					set_state_flag = block_decisions_buddah_socialism_category_flag
+				}
+			}
+		}
+		remove_effect = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): remove decision TIB_construction_red_monasteries_in_region [From.GetName] [From.GetID]"
+			FROM = {
+				clr_state_flag = block_decisions_buddah_socialism_category_flag
+				add_dynamic_modifier = { modifier = red_monasteries_in_region_dyn }
+			}
+		}
+		cancel_effect = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): remove decision TIB_construction_red_monasteries_in_region [From.GetName] [From.GetID]"
+			FROM = {
+				clr_state_flag = block_decisions_buddah_socialism_category_flag
+			}
+		}
+		ai_will_do = {
+			factor = 15
+			modifier = { factor = 0.2 FROM = { distance_to = { value < 900 target = capital } } }
+			modifier = { factor = 0.3 FROM = { distance_to = { value < 800 target = capital } } }
+			modifier = { factor = 0.4 FROM = { distance_to = { value < 700 target = capital } } }
+			modifier = { factor = 0.5 FROM = { distance_to = { value < 600 target = capital } } }
+			modifier = { factor = 0.6 FROM = { distance_to = { value < 500 target = capital } } }
+			modifier = { factor = 0.7 FROM = { distance_to = { value < 400 target = capital } } }
+			modifier = { factor = 0.8 FROM = { distance_to = { value < 300 target = capital } } }
+			modifier = { factor = 0.9 FROM = { distance_to = { value < 200 target = capital } } }
+			modifier = { factor = 1 FROM = { distance_to = { value < 100 target = capital } } }
+		}
+	}
 }
 
 
@@ -267,7 +319,7 @@ TIB_rerih_obyedinenie = {
 			} 
 		}
 		
-		icon = generic_nationalism
+		icon = infiltrate_state
 		
 		cost = 50
         days_remove = 60
@@ -307,7 +359,7 @@ TIB_rerih_obyedinenie = {
 			} 
 		}
 		
-		icon = generic_nationalism
+		icon = infiltrate_state
 		
 		cost = 100
         days_remove = 180
@@ -346,7 +398,7 @@ TIB_rerih_obyedinenie = {
 			} 
 		}
 		
-		icon = generic_nationalism
+		icon = infiltrate_state
 		
 		cost = 25
         days_remove = 30
@@ -381,7 +433,7 @@ TIB_rerih_obyedinenie = {
 			controls_state = 754
 		}
 		
-		icon = generic_nationalism
+		icon = infiltrate_state
 		
 		cost = 25
         days_remove = 30
@@ -552,6 +604,119 @@ TIB_preparation_of_tibetan_uprising_in_kham_categories = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): remove decision TIB_arrest_of_tibetans"
 			custom_effect_tooltip = TIB_arrest_of_tibetans_tt
 			add_to_variable = { civ_war_size_var = -0.1 }
+		}
+	}
+}
+
+TIB_war_for_freedom_category = {
+
+	TIB_involve_police_xikang = {
+	
+		available = {
+			has_war_with = XIK
+			NOT = { country_exists = XIK }
+		}
+		visible = {
+			has_country_flag = TIB_XIK_soglasie
+		}
+		
+		icon = generic_police_action
+		
+		fire_only_once = yes
+		
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): complete decision TIB_involve_police_xikang"
+			hidden_effect = {
+				division_template = {
+					name = "Xikang Police Division"
+					is_locked = yes
+					regiments = {
+						infantry = { x = 0 y = 0 }
+						infantry = { x = 0 y = 1 }
+					}
+				}
+			}
+			752 = {
+				create_unit = {
+					division = "name = \"Xikang Police Division\" division_template = \"Xikang Police Division\" start_experience_factor = 0.2" 
+					owner = TIB
+					count = 2
+					allow_spawning_on_enemy_provs = yes
+				}
+			}
+			custom_effect_tooltip = BHU_summon_peoples_militia_tt3
+		}
+		
+		ai_will_do = {
+			factor = 50
+		}
+	}
+	
+	TIB_attract_muslim_soldiers_of_qinghai_clique_ma = {
+	
+		available = {
+			has_war_with = XSM
+			NOT = { country_exists = XSM }
+		}
+		visible = {
+			has_country_flag = TIB_XSM_soglasie
+		}
+		
+		icon = generic_military
+		
+		fire_only_once = yes
+		
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): complete decision TIB_attract_muslim_soldiers_of_qinghai_clique_ma"
+			hidden_effect = {
+				division_template = {
+					name = "Qinghai Clique Ma Muslim Division"
+					is_locked = yes
+					regiments = {
+						infantry = { x = 0 y = 0 }
+						infantry = { x = 0 y = 1 }
+						infantry = { x = 0 y = 2 }
+						infantry = { x = 1 y = 0 }
+						infantry = { x = 1 y = 1 }
+						infantry = { x = 1 y = 2 }
+					}
+				}
+			}
+			604 = {
+				create_unit = {
+					division = "name = \"Qinghai Clique Ma Muslim Division\" division_template = \"Qinghai Clique Ma Muslim Division\" start_experience_factor = 0.2" 
+					owner = TIB
+					count = 1
+					allow_spawning_on_enemy_provs = yes
+				}
+			}
+			custom_effect_tooltip = BHU_summon_peoples_militia_tt3
+		}
+		
+		ai_will_do = {
+			factor = 50
+		}
+	}
+	
+	TIB_attract_merchants_supply_ammunition = {
+	
+		available = {
+			has_idea = TIB_khamskie_torgovci
+		}
+		visible = {
+		}
+		
+		icon = gre_investment_decisions
+		
+		fire_only_once = yes
+		
+		complete_effect = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): complete decision TIB_attract_merchants_supply_ammunition"
+			add_ideas = TIB_supply_from_kham_merchants
+		}
+		
+		ai_will_do = {
+			factor = 50
 		}
 	}
 }

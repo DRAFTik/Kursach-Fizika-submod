@@ -85,4 +85,35 @@ leader_traits = {
 		}
 	}
 	
+	pro_chinese_antiimperialist = {
+		random = no
+		custom_modifier_tooltip = pro_chinese_antiimperialist_mod_tt
+		
+		ai_strategy = {
+			type = befriend
+			id = "CHI" 
+			value = 80
+		}
+		ai_strategy = {
+			type = protect
+			id = "CHI" 
+			value = 80
+		}
+		ai_strategy = {
+			type = befriend
+			id = "ENG" 
+			value = -80
+		}
+		ai_strategy = {
+			type = protect
+			id = "ENG" 
+			value = -80
+		}
+		
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
 }

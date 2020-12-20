@@ -15,9 +15,32 @@ TIB_prokachka_armii = {
 	priority = 100
 }
 
-TIB_buddah_socialism = {
+TIB_buddah_socialism_category = {
 	icon = generic_propaganda
 	allowed = { original_tag = TIB }
+	available = {
+		hidden_trigger = {
+			has_completed_focus = TIB_krassnie_monastiri
+		}
+	}
+	visible = {
+		has_completed_focus = TIB_krassnie_monastiri
+	}
+	priority = 100
+}
+
+TIB_war_for_freedom_category = {
+	icon = generic_democracy
+	allowed = { original_tag = TIB }
+	available = {
+		hidden_trigger = {
+			has_completed_focus = TIB_vosstanie_partii
+		}
+	}
+	visible = {
+		has_completed_focus = TIB_vosstanie_partii
+		has_civil_war = yes
+	}
 	priority = 100
 }
 

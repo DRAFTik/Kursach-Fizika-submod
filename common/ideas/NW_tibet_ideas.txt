@@ -54,8 +54,8 @@ ideas = {
 				conscription = 0.02
 			}
 		}
-		
-		TIB_narod_principi_up3 = {
+	
+		TIB_tri_principa = {
 			
 			allowed = { always = no }
 			available = {
@@ -65,26 +65,11 @@ ideas = {
 			
 			modifier = {
 				democratic_drift = 0.2
-				monthly_population = 0.30
-			}
-		}
-		
-		TIB_narod_principi_up2 = {
-			
-			allowed = { always = no }
-			available = {
-			}
-			removal_cost = -1
-			picture = democratic_focus
-			
-			modifier = {
-				democratic_drift = 0.2
-				political_power_factor = 0.3
 			}
 		}
 		
 		TIB_narod_principi_up1 = {
-			
+			name = TIB_tri_principa
 			allowed = { always = no }
 			available = {
 			}
@@ -97,8 +82,8 @@ ideas = {
 			}
 		}
 		
-		TIB_narod_principi = {
-			
+		TIB_narod_principi_up2 = {
+			name = TIB_tri_principa
 			allowed = { always = no }
 			available = {
 			}
@@ -107,6 +92,21 @@ ideas = {
 			
 			modifier = {
 				democratic_drift = 0.2
+				political_power_factor = 0.3
+			}
+		}
+		
+		TIB_narod_principi_up3 = {
+			name = TIB_tri_principa
+			allowed = { always = no }
+			available = {
+			}
+			removal_cost = -1
+			picture = democratic_focus
+			
+			modifier = {
+				democratic_drift = 0.2
+				MONTHLY_POPULATION = 0.30
 			}
 		}
 		
@@ -122,7 +122,21 @@ ideas = {
 				political_power_factor = 0.05		
 			}
 		}
+		
+		TIB_supply_from_kham_merchants = {
 			
+			allowed = { always = no }
+			available = {
+				has_civil_war = yes
+			}
+			removal_cost = -1
+			picture = generic_infantry_equipment_manufacturer_3
+			
+			modifier = {
+				supply_consuming_factor = -0.33
+			}
+		}
+		
 		TIB_inostr_consult = {
 			
 			allowed = { always = no }
@@ -174,7 +188,21 @@ ideas = {
 				research_speed_factor = 0.02
 			}
 		}
+		
+		TIB_molodie_umi = {
 			
+			allowed = { always = no }
+			available = {
+			}
+			removal_cost = -1
+			picture = commi_education
+			
+			modifier = {
+				research_speed_factor = 0.02
+				communism_drift = 0.1
+			}
+		}
+		
 		TIB_buddah_communism_idea = {
 			
 			allowed = { always = no }
@@ -191,20 +219,6 @@ ideas = {
 			}
 		}
 		
-		TIB_molodie_umi = {
-			
-			allowed = { always = no }
-			available = {
-			}
-			removal_cost = -1
-			picture = commi_education
-			
-			modifier = {
-				research_speed_factor = 0.02
-				communism_drift = 0.1
-			}
-		}
-		
 		TIB_iskri_idea = {
 			
 			allowed = { always = no }
@@ -215,7 +229,7 @@ ideas = {
 			
 			modifier = {
 				operative_slot = 1
-				political_power_factor = 0.15		
+				political_power_gain = 0.2		
 				subversive_activites_upkeep = -0.33
 			}
 		}
@@ -268,7 +282,7 @@ ideas = {
 			available = {
 			}
 			removal_cost = -1
-			picture = generic_goods_red_bonus
+			picture = idea_stackanovite
 			
 			modifier = {
 				consumer_goods_factor = -0.05
@@ -281,10 +295,10 @@ ideas = {
 			available = {
 			}
 			removal_cost = -1
-			picture = prc_low_popular_support3
+			picture = ppl_power
 			
 			modifier = {
-				monthly_population = 0.30
+				MONTHLY_POPULATION = 0.30
 				stability_factor = 0.05
 			}
 		}
@@ -559,7 +573,7 @@ ideas = {
 			removal_cost = -1
 			picture = hunger
 			modifier = {
-				monthly_population = 0.25
+				MONTHLY_POPULATION = 0.25
 				conscription_factor = -0.65
 				consumer_goods_factor = 0.1						
 				production_speed_buildings_factor = -0.1
@@ -576,7 +590,7 @@ ideas = {
 			removal_cost = -1
 			picture = hunger
 			modifier = {
-				monthly_population = 0.25
+				MONTHLY_POPULATION = 0.25
 				conscription_factor = -0.3
 				consumer_goods_factor = 0.05						
 				production_speed_buildings_factor = -0.05

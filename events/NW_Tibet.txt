@@ -1,5 +1,28 @@
 ﻿add_namespace = tibet
 
+#delete china division // TIB
+country_event = {
+	id = tibet.0
+	hidden = yes
+	
+	trigger = {
+		original_tag = TIB
+		has_civil_war = no
+		OR = {
+			has_template = "Xikang Police Division"
+			has_template = "Qinghai Clique Ma Muslim Division"
+		}
+	}
+	
+	mean_time_to_happen = { days = 7 }
+	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event tibet.0" }
+	immediate = {
+		delete_unit_template_and_units = { division_template = "Xikang Police Division" }
+		delete_unit_template_and_units = { division_template = "Qinghai Clique Ma Muslim Division" }
+	}
+}
+
 # Организация поисков реинкарнации Далай-ламы // TIB
 country_event = {
 	id = tibet.1
@@ -763,182 +786,62 @@ country_event = {
 	}
 }
 
-country_event = {
-	id = tibet.29
-	title = tibet.29.t
-	desc = tibet.29.d
-	picture = GFX_report_event_generic_strike
-	is_triggered_only = yes
-	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event tibet.29" }
-	
-	option = {
-		name = tibet.29.a		 
-		ai_chance = { factor = 100 }
-		PRC = {
-		add_to_faction = TIB
-		}
-		
-	}
-	
-	option = {
-		name = tibet.29.b
-		 
-		ai_chance = { factor = 0 }
-		
-	}
-}
-
-country_event = {
-	id = tibet.30
-	title = tibet.30.t
-	desc = tibet.30.d
-	picture = GFX_report_event_generic_strike
-	is_triggered_only = yes
-	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event tibet.30" }
-	
-	option = {
-		name = tibet.30.a		 
-		ai_chance = { factor = 100 }
-		TIB = {
-		add_to_faction = TAN
-		}
-		
-	}
-	
-	option = {
-		name = tibet.30.b
-		 
-		ai_chance = { factor = 0 }
-		
-	}
-}
-
-country_event = {
-	id = tibet.31
-	title = tibet.31.t
-	desc = tibet.31.d
-	picture = GFX_report_event_generic_strike
-	is_triggered_only = yes
-	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event tibet.31" }
-	
-	option = {
-		name = tibet.31.a		 
-		ai_chance = { factor = 100 }
-		TIB = {
-		add_to_faction = MON
-		}
-		
-	}
-	
-	option = {
-		name = tibet.31.b
-		 
-		ai_chance = { factor = 0 }
-		
-	}
-}
-
-country_event = {
-	id = tibet.32
-	title = tibet.32.t
-	desc = tibet.32.d
-	picture = GFX_report_event_generic_strike
-	is_triggered_only = yes
-	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event tibet.32" }
-	
-	option = {
-		name = tibet.32.a		 
-		ai_chance = { factor = 100 }
-		SOV = {
-		add_to_faction = TIB
-		}
-		
-	}
-	
-	option = {
-		name = tibet.32.b
-		 
-		ai_chance = { factor = 0 }
-		
-	}
-}
-
+# Главный народный принцип // TIB
 country_event = {
 	id = tibet.33
 	title = tibet.33.t
 	desc = tibet.33.d
 	picture = GFX_report_event_soviet_purge_trial
 
-	fire_only_once = yes
+	is_triggered_only = yes
 	
-	trigger = {
-		tag = TIB
-		NOT = { has_completed_focus = TIB_shkoli }
-		focus_progress = {
-			focus = TIB_shkoli
-			progress > 0.5
-		}
-	}
-
-	mean_time_to_happen = {
-		days = 1
-	}
-
 	option = {
 		ai_chance = {
-			factor = 33
+			factor = 50
 		}
 		name = tibet.33.a
-		
 		if = {
-		limit = {
-		has_idea = TIB_narod_principi
+			limit = {
+				has_idea = TIB_tri_principa
+			}
+			swap_ideas = {
+				remove_idea = TIB_tri_principa
+				add_idea = TIB_narod_principi_up1
+			}
 		}
-		swap_ideas = {
-		remove_idea = TIB_narod_principi
-		add_idea = TIB_narod_principi_up1
-		}
-		}
-				
 	}
 	
 	option = {
 		ai_chance = {
-			factor = 34
+			factor = 50
 		}
 		name = tibet.33.b
-		
 		if = {
-		limit = {
-		has_idea = TIB_narod_principi
-		}
-		swap_ideas = {
-		remove_idea = TIB_narod_principi
-		add_idea = TIB_narod_principi_up2
-		}
+			limit = {
+				has_idea = TIB_tri_principa
+			}
+			swap_ideas = {
+				remove_idea = TIB_tri_principa
+				add_idea = TIB_narod_principi_up2
+			}
 		}
 	}
 	
 	option = {
 		ai_chance = {
-			factor = 33
+			factor = 50
 		}
 		name = tibet.33.c
 		if = {
-		limit = {
-		has_idea = TIB_narod_principi
-		}
-		swap_ideas = {
-		remove_idea = TIB_narod_principi
-		add_idea = TIB_narod_principi_up3
-		}
+			limit = {
+				has_idea = TIB_tri_principa
+			}
+			swap_ideas = {
+				remove_idea = TIB_tri_principa
+				add_idea = TIB_narod_principi_up3
+			}
 		}
 	}
-	
 }
 
 # Просьба из Тибета // CHI
@@ -1404,6 +1307,7 @@ country_event = {
 	}
 }	
 
+# Партия реформ Западного Тибета запрашивает поддержки // CHI
 country_event = {
 	id = tibet.50
 	title = tibet.50.t
@@ -1416,12 +1320,20 @@ country_event = {
 	option = {
 		name = tibet.50.a	
 		ai_chance = { factor = 25 }
+		trigger = {
+			country_exists = XSM
+			NOT = { has_war_with = XSM }
+		}
 		XSM = { country_event = { days = 1 id = tibet.52 } }
 	}
 	
 	option = {
 		name = tibet.50.b		
 		ai_chance = { factor = 25 }
+		trigger = {
+			country_exists = XIK
+			NOT = { has_war_with = XIK }
+		}
 		XIK = { country_event = { days = 1 id = tibet.55 } }
 	}
 	
@@ -1430,14 +1342,15 @@ country_event = {
 		ai_chance = { 
 		    factor = 50
 			modifier = {
-				factor = 100
+				factor = 2
 				has_war_with = JAP
-			} 
 			}
-	TIB = { country_event = { days = 1 id = tibet.51 } }
+		}
+		FROM = { country_event = { days = 1 id = tibet.51 } }
 	}
 }	
 
+# Центральное правительство отказало в поддержке // TIB
 country_event = {
 	id = tibet.51
 	title = tibet.51.t
@@ -1448,11 +1361,13 @@ country_event = {
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event tibet.51" }
 	
 	option = {
-		name = tibet.51.a		
-    add_political_power = -30
+		name = tibet.51.a
+		add_political_power = -30
+		set_country_flag = tibet_51_flag
 	}
 }	
 
+# Приказ из Гоминьдана // XSM
 country_event = {
 	id = tibet.52
 	title = tibet.52.t
@@ -1463,22 +1378,26 @@ country_event = {
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event tibet.52" }
 	
 	option = {
-		name = tibet.52.a		
-	TIB = { country_event = { days = 1 id = tibet.53 } }
+		name = tibet.52.a
 		ai_chance = { 
 		    factor = 60
-			}
+		}
+		TIB = { country_event = { days = 7 id = tibet.53 } }
+		custom_effect_tooltip = tibet_52_a_tt
 	}
 	
 	option = {
-		name = tibet.52.b		
+		name = tibet.52.b
 		ai_chance = { 
 		    factor = 40
-			}
-	TIB = { country_event = { days = 1 id = tibet.54 } }
+		}
+		TIB = { country_event = { days = 7 id = tibet.54 } }
+		add_opinion_modifier = { target = FROM modifier = disobeying_an_order_op }
+		FROM = { add_opinion_modifier = { target = ROOT modifier = disobeying_an_order_op } }
 	}
 }	
 
+# Военачальник Сибей Сань Ма готов оказать поддержку // TIB
 country_event = {
 	id = tibet.53
 	title = tibet.53.t
@@ -1490,11 +1409,12 @@ country_event = {
 	
 	option = {
 		name = tibet.53.a		
-    set_country_flag = TIB_XSM_soglasie
-    add_political_power = 30
+		set_country_flag = TIB_XSM_soglasie
+		add_political_power = 30
 	}
-}	
+}
 
+# Военачальник Сибей Сань Ма отказал в поддержке // TIB
 country_event = {
 	id = tibet.54
 	title = tibet.54.t
@@ -1506,39 +1426,42 @@ country_event = {
 	
 	option = {
 		name = tibet.54.a		
-    add_political_power = -30
-    set_country_flag = TIB_XSM_otkaz
+		add_political_power = -30
+		set_country_flag = TIB_XSM_otkaz
 	}
 }	
 
-# Приказ из Гоминьдана
+# Приказ из Гоминьдана // XIK
 country_event = {
 	id = tibet.55
-	title = tibet.55.t
-	desc = tibet.55.d
+	title = tibet.52.t
+	desc = tibet.52.d
 	picture = GFX_report_event_generic_strike
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event tibet.55" }
 	
 	option = {
-		name = tibet.55.a		
-		TIB = { country_event = { days = 1 id = tibet.56 } }
+		name = tibet.52.a		
 		ai_chance = { 
 		    factor = 60
 		}
+		TIB = { country_event = { days = 7 id = tibet.56 } }
+		custom_effect_tooltip = tibet_55_a_tt
 	}
 	
 	option = {
-		name = tibet.55.b		
+		name = tibet.52.b		
 		ai_chance = { 
 			factor = 40
 		}
-		TIB = { country_event = { days = 1 id = tibet.57 } }
+		TIB = { country_event = { days = 7 id = tibet.57 } }
+		add_opinion_modifier = { target = FROM modifier = disobeying_an_order_op }
+		FROM = { add_opinion_modifier = { target = ROOT modifier = disobeying_an_order_op } }
 	}
 }	
 
-# Военачальник Сикана готов оказать поддержку
+# Военачальник Сикана готов оказать поддержку // TIB
 country_event = {
 	id = tibet.56
 	title = tibet.56.t
@@ -1555,7 +1478,7 @@ country_event = {
 	}
 }	
 
-# Военачальник Сикана отказал в поддержке
+# Военачальник Сикана отказал в поддержке // TIB
 country_event = {
 	id = tibet.57
 	title = tibet.57.t
