@@ -122,7 +122,7 @@ create_country_leader = {
 
 create_corps_commander = {
 	name = "Kunga Wanchuk Landun"
-	portrait_path = "gfx/leaders/IRQ/Portrait_Abd_al-Karim_Qasim.dds"
+	portrait_path = "gfx/leaders/TIB/Portrait_Kunga_Wanchuk_Landun.dds"
 	traits = { trait_cautious }
 	id = 20921
 	skill = 1

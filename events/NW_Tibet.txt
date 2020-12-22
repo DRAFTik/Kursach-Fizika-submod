@@ -28,7 +28,7 @@ country_event = {
 	id = tibet.1
 	title = tibet.1.t
 	desc = tibet.1.d
-	picture = GFX_report_event_generic_strike
+	picture = GFX_report_event_generic_rally_3
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event tibet.1" }
@@ -63,7 +63,7 @@ country_event = {
 	id = tibet.2
 	title = tibet.2.t
 	desc = tibet.2.d
-	picture = GFX_report_event_generic_strike
+	picture = GFX_report_event_generic_rally_3
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event tibet.2" }
@@ -73,25 +73,12 @@ country_event = {
 		create_country_leader = {
 			name = "Kunga Vanchuk Landun"
 			desc = "POLITICS_JAMPHEL_YESHE_GYALTSEN_DESC"
-			picture = "Portrait_Tibet_Jamphel_Yeshe_Gyaltsen.dds"
+			picture = "gfx/leaders/TIB/Portrait_Kunga_Wanchuk_Landun.dds"
 			expire = "1965.1.1"
-			ideology = despotism
+			ideology = monarchy_ideology
 			traits = {
 				yaichek_net
 				senate_puppet
-			}
-		}
-		hidden_effect = {
-			create_country_leader = {
-				name = "Kunga Vanchuk Landun"
-				desc = "POLITICS_JAMPHEL_YESHE_GYALTSEN_DESC"
-				picture = "Portrait_Tibet_Jamphel_Yeshe_Gyaltsen.dds"
-				expire = "1965.1.1"
-				ideology = monarchy_ideology
-				traits = {
-					yaichek_net
-					senate_puppet
-				}
 			}
 		}
 	}
@@ -101,7 +88,7 @@ country_event = {
 	id = tibet.3
 	title = tibet.3.t
 	desc = tibet.3.d
-	picture = GFX_report_event_generic_strike
+	picture = GFX_report_event_generic_rally_3
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event tibet.3" }
@@ -127,7 +114,7 @@ country_event = {
 	id = tibet.4
 	title = tibet.4.t
 	desc = tibet.4.d
-	picture = GFX_report_event_generic_strike
+	picture = GFX_report_event_generic_rally_3
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event tibet.4" }
@@ -149,7 +136,7 @@ country_event = {
 	id = tibet.5
 	title = tibet.5.t
 	desc = tibet.5.d
-	picture = GFX_report_event_generic_strike
+	picture = GFX_report_event_generic_rally_3
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event tibet.5" }
@@ -175,7 +162,7 @@ country_event = {
 	id = tibet.6
 	title = tibet.6.t
 	desc = tibet.6.d
-	picture = GFX_report_event_generic_strike
+	picture = GFX_report_event_generic_rally_3
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event tibet.6" }
@@ -200,7 +187,7 @@ country_event = {
 	id = tibet.7
 	title = tibet.7.t
 	desc = tibet.7.d
-	picture = GFX_report_event_generic_strike
+	picture = GFX_report_event_generic_rally_3
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event tibet.7" }
@@ -222,7 +209,7 @@ country_event = {
 	id = tibet.8
 	title = tibet.8.t
 	desc = tibet.8.d
-	picture = GFX_report_event_generic_strike
+	picture = GFX_report_event_generic_rally_3
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event tibet.8" }
@@ -248,7 +235,7 @@ country_event = {
 	id = tibet.9
 	title = tibet.9.t
 	desc = tibet.9.d
-	picture = GFX_report_event_generic_strike
+	picture = GFX_report_event_generic_rally_3
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event tibet.9" }
@@ -274,7 +261,7 @@ country_event = {
 	id = tibet.10
 	title = tibet.10.t
 	desc = tibet.10.d
-	picture = GFX_report_event_generic_strike
+	picture = GFX_report_event_generic_rally_3
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event tibet.10" }
@@ -296,7 +283,7 @@ country_event = {
 	id = tibet.11
 	title = tibet.11.t
 	desc = tibet.11.d
-	picture = GFX_report_event_generic_strike
+	picture = GFX_report_event_generic_rally_3
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event tibet.11" }
@@ -322,7 +309,7 @@ country_event = {
 	id = tibet.12
 	title = tibet.12.t
 	desc = tibet.12.d
-	picture = GFX_report_event_generic_strike
+	picture = GFX_report_event_generic_rally_3
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event tibet.12" }
@@ -347,7 +334,7 @@ country_event = {
 	id = tibet.13
 	title = tibet.13.t
 	desc = tibet.13.d
-	picture = GFX_report_event_generic_strike
+	picture = GFX_report_event_generic_rally_3
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event tibet.13" }
@@ -406,7 +393,7 @@ country_event = {
 	id = tibet.14
 	title = tibet.14.t
 	desc = tibet.14.d
-	picture = GFX_report_event_generic_strike
+	picture = GFX_report_event_generic_rally_3
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event tibet.14" }
@@ -423,7 +410,7 @@ country_event = {
 	id = tibet.15
 	title = tibet.15.t
 	desc = tibet.15.d
-	picture = GFX_report_event_generic_strike
+	picture = GFX_report_event_generic_rally_3
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event tibet.15" }
@@ -443,7 +430,7 @@ country_event = {
 	id = tibet.16
 	title = tibet.16.t
 	desc = tibet.16.d
-	picture = GFX_report_event_generic_strike
+	picture = GFX_report_event_generic_rally_3
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event tibet.16" }
@@ -481,7 +468,7 @@ country_event = {
 	id = tibet.17
 	title = tibet.17.t
 	desc = tibet.17.d
-	picture = GFX_report_event_generic_strike
+	picture = GFX_report_event_generic_rally_3
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event tibet.17" }
@@ -520,7 +507,7 @@ country_event = {
 	id = tibet.18
 	title = tibet.18.t
 	desc = tibet.18.d
-	picture = GFX_report_event_generic_strike
+	picture = GFX_report_event_generic_rally_3
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event tibet.18" }
@@ -549,7 +536,7 @@ country_event = {
 	id = tibet.19
 	title = tibet.19.t
 	desc = tibet.19.d
-	picture = GFX_report_event_generic_strike
+	picture = GFX_report_event_generic_rally_3
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event tibet.19" }
@@ -588,7 +575,7 @@ country_event = {
 	id = tibet.20
 	title = tibet.20.t
 	desc = tibet.20.d
-	picture = GFX_report_event_generic_strike
+	picture = GFX_report_event_generic_rally_3
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event tibet.20" }
@@ -608,7 +595,7 @@ country_event = {
 	id = tibet.21
 	title = tibet.21.t
 	desc = tibet.21.d
-	picture = GFX_report_event_generic_strike
+	picture = GFX_report_event_generic_rally_3
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event tibet.21" }
@@ -628,7 +615,7 @@ country_event = {
 	id = tibet.22
 	title = tibet.22.t
 	desc = tibet.22.d
-	picture = GFX_report_event_generic_strike
+	picture = GFX_report_event_generic_rally_3
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event tibet.22" }
@@ -644,7 +631,7 @@ country_event = {
 	id = tibet.23
 	title = tibet.23.t
 	desc = tibet.23.d
-	picture = GFX_report_event_generic_strike
+	picture = GFX_report_event_generic_rally_3
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event tibet.23" }
@@ -683,7 +670,7 @@ country_event = {
 	id = tibet.24
 	title = tibet.24.t
 	desc = tibet.24.d
-	picture = GFX_report_event_generic_strike
+	picture = GFX_report_event_generic_rally_3
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event tibet.24" }
@@ -703,7 +690,7 @@ country_event = {
 	id = tibet.25
 	title = tibet.25.t
 	desc = tibet.25.d
-	picture = GFX_report_event_generic_strike
+	picture = GFX_report_event_generic_rally_3
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event tibet.25" }
@@ -723,7 +710,7 @@ country_event = {
 	id = tibet.26
 	title = tibet.26.t
 	desc = tibet.26.d
-	picture = GFX_report_event_generic_strike
+	picture = GFX_report_event_generic_rally_3
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event tibet.26" }
@@ -738,7 +725,7 @@ country_event = {
 	id = tibet.27
 	title = tibet.27.t
 	desc = tibet.27.d
-	picture = GFX_report_event_generic_strike
+	picture = GFX_report_event_generic_rally_3
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event tibet.27" }
@@ -764,7 +751,7 @@ country_event = {
 	id = tibet.28
 	title = tibet.28.t
 	desc = tibet.28.d
-	picture = GFX_report_event_generic_strike
+	picture = GFX_report_event_generic_rally_3
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event tibet.28" }
@@ -849,7 +836,7 @@ country_event = {
 	id = tibet.34
 	title = tibet.34.t
 	desc = tibet.34.d
-	picture = GFX_report_event_generic_strike
+	picture = GFX_report_event_generic_rally_3
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event tibet.34" }
@@ -902,7 +889,7 @@ country_event = {
 	id = tibet.35
 	title = tibet.35.t
 	desc = tibet.35.d
-	picture = GFX_report_event_generic_strike
+	picture = GFX_report_event_generic_rally_3
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event tibet.35" }
@@ -919,7 +906,7 @@ country_event = {
 	id = tibet.36
 	title = tibet.36.t
 	desc = tibet.36.d
-	picture = GFX_report_event_generic_strike
+	picture = GFX_report_event_generic_rally_3
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event tibet.36" }
@@ -935,7 +922,7 @@ country_event = {
 	id = tibet.37
 	title = tibet.37.t
 	desc = tibet.37.d
-	picture = GFX_report_event_generic_strike
+	picture = GFX_report_event_generic_rally_3
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event tibet.37" }
@@ -959,7 +946,7 @@ country_event = {
 	id = tibet.38
 	title = tibet.38.t
 	desc = tibet.38.d
-	picture = GFX_report_event_generic_strike
+	picture = GFX_report_event_generic_rally_3
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event tibet.38" }
@@ -985,7 +972,7 @@ country_event = {
 	id = tibet.39
 	title = tibet.39.t
 	desc = tibet.39.d
-	picture = GFX_report_event_generic_strike
+	picture = GFX_report_event_generic_rally_3
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event tibet.39" }
@@ -1007,7 +994,7 @@ country_event = {
 	id = tibet.40
 	title = tibet.40.t
 	desc = tibet.40.d
-	picture = GFX_report_event_generic_strike
+	picture = GFX_report_event_generic_rally_3
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event tibet.40" }
@@ -1035,6 +1022,7 @@ country_event = {
 	}
 }
 
+# Рерих выступил с речью // TIB
 country_event = {
 	id = tibet.41
 	title = tibet.41.t
@@ -1045,78 +1033,8 @@ country_event = {
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event tibet.41" }
 	
 	option = {
-		name = tibet.41.a		
+		name = tibet.41.a
 		add_war_support = 0.15
-		set_cosmetic_tag = TIB_CHAD_SHANGRI_LA
-		set_province_name = { id = 5033 name = "Шамбала"}
-					898 = { add_core_of = TIB }
-			        TIB = { transfer_state = 898 }
-					844 = { add_core_of = TIB }
-			        TIB = { transfer_state = 844 }
-					833 = { add_core_of = TIB }
-			        TIB = { transfer_state = 833 }
-					323 = { add_core_of = TIB }
-			        TIB = { transfer_state = 323 }
-					1104 = { add_core_of = TIB }
-			        TIB = { transfer_state = 1104 }
-					324 = { add_core_of = TIB }
-			        TIB = { transfer_state = 324 }
-					758 = { add_core_of = TIB }
-			        TIB = { transfer_state = 758 }
-					322 = { add_core_of = TIB }
-			        TIB = { transfer_state = 322 }
-					757 = { add_core_of = TIB }
-			        TIB = { transfer_state = 757 }
-					601 = { add_core_of = TIB }
-			        TIB = { transfer_state = 601 }
-					434 = { add_core_of = TIB }
-			        TIB = { transfer_state = 434 }
-					752 = { add_core_of = TIB }
-			        TIB = { transfer_state = 752 }
-					751 = { add_core_of = TIB }
-			        TIB = { transfer_state = 751 }
-					287 = { add_core_of = TIB }
-			        TIB = { transfer_state = 287 }
-					759 = { add_core_of = TIB }
-			        TIB = { transfer_state = 759 }
-					619 = { add_core_of = TIB }
-			        TIB = { transfer_state = 619 }
-					1046 = { add_core_of = TIB }
-			        TIB = { transfer_state = 1046 }
-					1047 = { add_core_of = TIB }
-			        TIB = { transfer_state = 1047 }
-					617 = { add_core_of = TIB }
-			        TIB = { transfer_state = 617 }
-					618 = { add_core_of = TIB }
-			        TIB = { transfer_state = 618 }
-					760 = { add_core_of = TIB }
-			        TIB = { transfer_state = 760 }
-					654 = { add_core_of = TIB }
-			        TIB = { transfer_state = 654 }
-					604 = { add_core_of = TIB }
-			        TIB = { transfer_state = 604 }
-					755 = { add_core_of = TIB }
-			        TIB = { transfer_state = 755 }
-					754 = { add_core_of = TIB }
-			        TIB = { transfer_state = 754 }
-					283 = { add_core_of = TIB }
-			        TIB = { transfer_state = 283 }
-					616 = { add_core_of = TIB }
-			        TIB = { transfer_state = 616 }
-					756 = { add_core_of = TIB }
-			        TIB = { transfer_state = 756 }
-					956 = { add_core_of = TIB }
-			        TIB = { transfer_state = 956 }
-					955 = { add_core_of = TIB }
-			        TIB = { transfer_state = 955 }
-					954 = { add_core_of = TIB }
-			        TIB = { transfer_state = 954 }
-					953 = { add_core_of = TIB }
-			        TIB = { transfer_state = 953 }
-					957 = { add_core_of = TIB }
-			        TIB = { transfer_state = 957 }
-					330 = { add_core_of = TIB }
-			        TIB = { transfer_state = 330 }
 	}
 }
 
@@ -1124,7 +1042,7 @@ country_event = {
 	id = tibet.42
 	title = tibet.42.t
 	desc = tibet.42.d
-	picture = GFX_report_event_generic_strike
+	picture = GFX_report_event_generic_rally_3
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event tibet.42" }
@@ -1139,7 +1057,7 @@ country_event = {
 	id = tibet.43
 	title = tibet.43.t
 	desc = tibet.43.d
-	picture = GFX_report_event_generic_strike
+	picture = GFX_report_event_generic_rally_3
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event tibet.43" }
@@ -1155,7 +1073,7 @@ country_event = {
 	id = tibet.44
 	title = tibet.44.t
 	desc = tibet.44.d
-	picture = GFX_report_event_generic_strike
+	picture = GFX_report_event_generic_rally_3
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event tibet.44" }
@@ -1200,7 +1118,7 @@ country_event = {
 	id = tibet.45
 	title = tibet.45.t
 	desc = tibet.45.d
-	picture = GFX_report_event_generic_strike
+	picture = GFX_report_event_generic_rally_3
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event tibet.45" }
@@ -1223,7 +1141,7 @@ country_event = {
 	id = tibet.46
 	title = tibet.46.t
 	desc = tibet.46.d
-	picture = GFX_report_event_generic_strike
+	picture = GFX_report_event_generic_rally_3
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event tibet.46" }
@@ -1240,7 +1158,7 @@ country_event = {
 	id = tibet.47
 	title = tibet.47.t
 	desc = tibet.47.d
-	picture = GFX_report_event_generic_strike
+	picture = GFX_report_event_generic_rally_3
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event tibet.47" }
@@ -1256,7 +1174,7 @@ country_event = {
 	id = tibet.48
 	title = tibet.48.t
 	desc = tibet.48.d
-	picture = GFX_report_event_generic_strike
+	picture = GFX_report_event_generic_rally_3
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event tibet.48" }
@@ -1273,7 +1191,7 @@ country_event = {
 	id = tibet.49
 	title = tibet.49.t
 	desc = tibet.49.d
-	picture = GFX_report_event_generic_strike
+	picture = GFX_report_event_generic_rally_3
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event tibet.49" }
@@ -1312,7 +1230,7 @@ country_event = {
 	id = tibet.50
 	title = tibet.50.t
 	desc = tibet.50.d
-	picture = GFX_report_event_generic_strike
+	picture = GFX_report_event_generic_rally_3
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event tibet.50" }
@@ -1355,7 +1273,7 @@ country_event = {
 	id = tibet.51
 	title = tibet.51.t
 	desc = tibet.51.d
-	picture = GFX_report_event_generic_strike
+	picture = GFX_report_event_generic_rally_3
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event tibet.51" }
@@ -1372,7 +1290,7 @@ country_event = {
 	id = tibet.52
 	title = tibet.52.t
 	desc = tibet.52.d
-	picture = GFX_report_event_generic_strike
+	picture = GFX_report_event_generic_rally_3
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event tibet.52" }
@@ -1402,7 +1320,7 @@ country_event = {
 	id = tibet.53
 	title = tibet.53.t
 	desc = tibet.53.d
-	picture = GFX_report_event_generic_strike
+	picture = GFX_report_event_generic_rally_3
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event tibet.53" }
@@ -1419,7 +1337,7 @@ country_event = {
 	id = tibet.54
 	title = tibet.54.t
 	desc = tibet.54.d
-	picture = GFX_report_event_generic_strike
+	picture = GFX_report_event_generic_rally_3
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event tibet.54" }
@@ -1436,7 +1354,7 @@ country_event = {
 	id = tibet.55
 	title = tibet.52.t
 	desc = tibet.52.d
-	picture = GFX_report_event_generic_strike
+	picture = GFX_report_event_generic_rally_3
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event tibet.55" }
@@ -1466,7 +1384,7 @@ country_event = {
 	id = tibet.56
 	title = tibet.56.t
 	desc = tibet.56.d
-	picture = GFX_report_event_generic_strike
+	picture = GFX_report_event_generic_rally_3
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event tibet.56" }
@@ -1483,7 +1401,7 @@ country_event = {
 	id = tibet.57
 	title = tibet.57.t
 	desc = tibet.57.d
-	picture = GFX_report_event_generic_strike
+	picture = GFX_report_event_generic_rally_3
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event tibet.57" }
@@ -1500,7 +1418,7 @@ country_event = {
 	id = tibet.58
 	title = tibet.58.t
 	desc = tibet.58.d
-	picture = GFX_report_event_generic_strike
+	picture = GFX_report_event_generic_rally_3
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event tibet.58" }
@@ -1541,7 +1459,7 @@ country_event = {
 	id = tibet.59
 	title = tibet.59.t
 	desc = tibet.59.d
-	picture = GFX_report_event_generic_strike
+	picture = GFX_report_event_generic_rally_3
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event tibet.59" }
@@ -1670,7 +1588,7 @@ country_event = {
 	id = tibet.60
 	title = tibet.60.t
 	desc = tibet.60.d
-	picture = GFX_report_event_generic_strike
+	picture = GFX_report_event_generic_rally_3
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event tibet.60" }
@@ -1696,7 +1614,7 @@ country_event = {
 	id = tibet.61
 	title = tibet.61.t
 	desc = tibet.61.desc
-	picture = GFX_report_event_generic_strike
+	picture = GFX_report_event_generic_rally_3
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event tibet.61" }
@@ -1738,7 +1656,7 @@ country_event = {
 	id = tibet.62
 	title = tibet.62.t
 	desc = tibet.62.desc
-	picture = GFX_report_event_generic_strike
+	picture = GFX_report_event_generic_rally_3
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event tibet.62" }
@@ -1754,7 +1672,7 @@ country_event = {
 	id = tibet.63
 	title = tibet.63.t
 	desc = tibet.63.desc
-	picture = GFX_report_event_generic_strike
+	picture = GFX_report_event_generic_rally_3
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event tibet.63" }
@@ -1763,5 +1681,30 @@ country_event = {
 		name = tibet.63.a
 		effect_tooltip = { activate_mission = TIB_communist_uprising_of_tibetans }
 		unlock_decision_tooltip = TIB_arrest_of_tibetans
+	}
+}
+
+# Николай Рерих прибыл в Лхасу // TIB
+country_event = {
+	id = tibet.64
+	title = tibet.64.t
+	desc = tibet.64.desc
+	picture = GFX_report_event_generic_rally_3
+	is_triggered_only = yes
+	
+	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event tibet.64" }
+	
+	option = {
+		name = tibet.64.a
+		create_country_leader = {
+			name = "Nikolas Roerich"
+			desc = "POLITICS_NIKOLAS_ROERICH_DESC"
+			picture = "gfx/leaders/TIB/Portrait_Nicholas_Roerich.dds"
+			expire = "1965.1.1"
+			ideology = theocratic_monarchy
+			traits = {
+				TIB_dalai_lama_of_west
+			}
+		}
 	}
 }

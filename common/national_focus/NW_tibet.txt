@@ -361,7 +361,7 @@ focus_tree = {
 
 	focus = {
 		id = TIB_polk_tontra
-		icon = GFX_z_goal_save_army
+		icon = GFX_z_goal_tibet_army
 	    relative_position_id = TIB_chineese_army
 	    prerequisite = { focus = TIB_landun }
 		x = 3
@@ -459,7 +459,7 @@ focus_tree = {
 
 	focus = {
 		id = TIB_koshag
-		icon = GFX_z_goal_national_council
+		icon = GFX_z_goal_centralize_power_of_tibet
 	    relative_position_id = TIB_chineese_army
 	    prerequisite = { focus = TIB_landun }
 		x = 9
@@ -815,7 +815,7 @@ focus_tree = {
 		mutually_exclusive = { focus = TIB_poprosit_proshenia_u_allaha }
 		x = 28
 		y = 6
-		cost = 7.2
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
@@ -828,17 +828,8 @@ focus_tree = {
 		}
 
 		completion_reward = {
-		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_rerih"
-        create_country_leader = {
-	    name = "Nikolas Roerich"
-	    desc = "POLITICS_JAMPHEL_YESHE_GYALTSEN_DESC"
-		picture = "gfx/leaders/TIB/Portrait_Nicholas_Roerich.dds"
-	    expire = "1965.1.1"
-	    ideology = despotism
-	    traits = {
-	    }
-        }
-
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_rerih"
+			country_event = { days = 1 id = tibet.64 }
 		}
 	}
 	
@@ -849,7 +840,7 @@ focus_tree = {
 	    prerequisite = { focus = TIB_rerih }
 		x = 26
 		y = 7
-		cost = 7.2
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
@@ -861,13 +852,13 @@ focus_tree = {
 		}
 
 		completion_reward = {
-		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_lenin_eto_bog"
-		add_stability = -0.1
-		add_popularity = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_lenin_eto_bog"
+			add_stability = -0.1
+			add_popularity = {
 				ideology = trozkism
 				popularity = 0.05
 			}
-		add_ideas = TIB_lenin_eto_bog
+			add_ideas = TIB_lenin_eto_bog
 		}
 	}
 	
@@ -878,15 +869,15 @@ focus_tree = {
 	    prerequisite = { focus = TIB_rerih }
 		x = 28
 		y = 7
-		cost = 7.2
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
 
 		available = {
-		trozkism > 0.4
-		has_idea = TIB_buddist_economic_idea
-		has_idea = TIB_novoe_obshestvo_idea
+			trozkism > 0.4
+			has_idea = TIB_buddist_economic_idea
+			has_idea = TIB_novoe_obshestvo_idea
 		}
 		
 		bypass = {
@@ -894,43 +885,23 @@ focus_tree = {
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_novaya_strana"
+			hidden_effect = { kill_ideology_leader = monarchy }
 			set_politics = {
 				ruling_party = trozkism
 				elections_allowed = no
 			}
 			create_country_leader = {
 				name = "Nikolas Roerich"
-				desc = "POLITICS_JAMPHEL_YESHE_GYALTSEN_DESC"
+				desc = "POLITICS_NIKOLAS_ROERICH_DESC"
 				picture = "gfx/leaders/TIB/Portrait_Nicholas_Roerich.dds"
 				expire = "1965.1.1"
 				ideology = rerihism
 				traits = {
+					TIB_dalai_lama_of_west
 				}
 			}
-			if = {
-				limit = {
-					NOT = { has_idea = TIB_novaya_strana1 }	
-				}
-				add_ideas = TIB_novaya_strana1
-			}
-			else_if = {
-				limit = {
-					has_idea = TIB_novaya_strana1
-				}
-				swap_ideas = {
-					remove_idea = TIB_novaya_strana1
-					add_idea = TIB_novaya_strana2
-				}
-			}
-			else_if = {
-				limit = {
-					has_idea = TIB_novaya_strana2
-				}
-				swap_ideas = {
-					remove_idea = TIB_novaya_strana2
-					add_idea = TIB_novaya_strana3
-				}
-			}
+			add_ideas = TIB_novaya_strana1
+			unlock_decision_category_tooltip = TIB_rerih_obyedinenie_category
 		}
 	}
 	
@@ -1332,25 +1303,25 @@ focus_tree = {
 	    prerequisite = { focus = TIB_rerih }
 		x = 32
 		y = 7
-		cost = 7.2
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
 
 		available = {
-		country_exists = USA
+			country_exists = USA
 		}
 		
 		bypass = {
-		NOT = {		
-		country_exists = USA
-		}
+			NOT = {		
+			country_exists = USA
+			}
 		}
 
 		completion_reward = {
-		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_pact_usa"	
-		custom_effect_tooltip = TIB_esli_ne_porval_s_SSSR_to_ban
-		USA = { country_event = { days = 1 id = tibet.13 } }
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_pact_usa"	
+			custom_effect_tooltip = TIB_esli_ne_porval_s_SSSR_to_ban
+			USA = { country_event = { days = 1 id = tibet.13 } }
 		}
 	}
 	
@@ -1392,7 +1363,7 @@ focus_tree = {
 	
 	focus = {
 		id = TIB_borba_v_kitae
-		icon = GFX_focus_generic_red_army2
+		icon = GFX_z_goal_red_army3
 	    relative_position_id = TIB_chineese_army
 	    prerequisite = { focus = TIB_podderzhka_nationalistov }
 		mutually_exclusive = { focus = TIB_regent }
@@ -1881,7 +1852,7 @@ focus_tree = {
 	
 	focus = {
 		id = TIB_krassnie_monastiri
-		icon = GFX_z_goal_voluntary_creation_of_collective
+		icon = GFX_z_goal_red_monasteries
 	    relative_position_id = TIB_chineese_army
 	    prerequisite = { focus = TIB_borba_v_kitae focus = TIB_rerih }
 		x = 23

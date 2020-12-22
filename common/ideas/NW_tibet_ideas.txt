@@ -233,49 +233,49 @@ ideas = {
 				subversive_activites_upkeep = -0.33
 			}
 		}
-			
-		TIB_novaya_strana3 = {
-			
-			allowed = { always = no }
-			available = {
-			}
-			removal_cost = -1
-			picture = red_monarchism
-			
-			modifier = {
-				conscription = 0.03
-				justify_war_goal_time = -0.45
-			}
-		}
-			
-		TIB_novaya_strana2 = {
-			
-			allowed = { always = no }
-			available = {
-			}
-			removal_cost = -1
-			picture = red_monarchism
-			
-			modifier = {
-				conscription = 0.02
-				justify_war_goal_time = -0.30
-			}
-		}
-			
+
 		TIB_novaya_strana1 = {
 			
 			allowed = { always = no }
 			available = {
 			}
 			removal_cost = -1
-			picture = red_monarchism
+			picture = dzumsa
 			
 			modifier = {
 				conscription = 0.01
 				justify_war_goal_time = -0.15
 			}
 		}
+		
+		TIB_novaya_strana2 = {
+			name = TIB_novaya_strana1
+			allowed = { always = no }
+			available = {
+			}
+			removal_cost = -1
+			picture = dzumsa
 			
+			modifier = {
+				conscription = 0.02
+				justify_war_goal_time = -0.30
+			}
+		}
+		
+		TIB_novaya_strana3 = {
+			name = TIB_novaya_strana1
+			allowed = { always = no }
+			available = {
+			}
+			removal_cost = -1
+			picture = dzumsa
+			
+			modifier = {
+				conscription = 0.03
+				justify_war_goal_time = -0.45
+			}
+		}
+
 		TIB_buddist_economic_idea = {
 			
 			allowed = { always = no }
