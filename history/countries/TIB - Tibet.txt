@@ -2,8 +2,8 @@
 
 oob = "TIB_1936"
 
-set_stability = 0.2
-set_war_support = 0.1
+set_stability = 0
+set_war_support = 0
 
 # Starting tech
 set_technology = {
