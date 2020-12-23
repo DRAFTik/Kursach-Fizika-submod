@@ -454,6 +454,7 @@ focus_tree = {
 				remove_idea = TIB_conservatism3
 				add_idea = TIB_conservatism4
 			}
+			unlock_decision_category_tooltip = form_tibetan_empire_category
 		}
 	}
 
@@ -912,7 +913,7 @@ focus_tree = {
 	    prerequisite = { focus = TIB_novaya_strana }
 		x = 26
 		y = 8
-		cost = 7.2
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
@@ -924,36 +925,25 @@ focus_tree = {
 		}
 
 		completion_reward = {
-		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_doroga_na_yug"
-		if = {
-		limit = {
-		NOT = {
-		has_idea = TIB_novaya_strana1
-		}	
-		}
-		add_ideas = TIB_novaya_strana1
-		}		
-		
-		else_if = {
-		limit = {
-		has_idea = TIB_novaya_strana1
-		}
-		swap_ideas = {
-		remove_idea = TIB_novaya_strana1
-		add_idea = TIB_novaya_strana2
-		}
-		}
-		
-		else_if = {
-		limit = {
-		has_idea = TIB_novaya_strana2
-		}
-		swap_ideas = {
-		remove_idea = TIB_novaya_strana2
-		add_idea = TIB_novaya_strana3
-		}
-		}
-		
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_doroga_na_yug"
+			if = {
+				limit = {
+					has_idea = TIB_novaya_strana1
+				}
+				swap_ideas = {
+					remove_idea = TIB_novaya_strana1
+					add_idea = TIB_novaya_strana2
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = TIB_novaya_strana2
+				}
+				swap_ideas = {
+					remove_idea = TIB_novaya_strana2
+					add_idea = TIB_novaya_strana3
+				}
+			}
 		}
 	}
 	
@@ -964,36 +954,39 @@ focus_tree = {
 	    prerequisite = { focus = TIB_doroga_na_yug }
 		x = 25
 		y = 9
-		cost = 7.2
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
 
 		available = {
-		country_exists = NEP
+			is_subject = no
+			country_exists = NEP
 		}
 		
 		bypass = {
-		NOT = {
-		country_exists = NEP
-		}
+			OR = {
+				NOT = { country_exists = NEP }
+				has_war_with = NEP
+				NEP = { is_subject_of = ROOT }
+				is_in_faction_with = NEP
+			}
 		}
 
 		completion_reward = {
-		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_nepal_buddism"
-			833 = { add_claim_by = TIB }
-			323 = { add_claim_by = TIB }
-			
-		if = {
-		limit = {
-		country_exists = NEP
-		}		
-		create_wargoal = {
-								type = annex_everything
-								target = NEP
-							}
-		}
-		
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_nepal_buddism"
+			833 = { add_claim_by = ROOT }
+			323 = { add_claim_by = ROOT }
+			if = {
+				limit = {
+					country_exists = NEP
+					NOT = { has_war_with = NEP }
+				}		
+				create_wargoal = {
+					type = annex_everything
+					target = NEP
+				}
+			}
 		}
 	}
 	
@@ -1004,24 +997,30 @@ focus_tree = {
 	    prerequisite = { focus = TIB_doroga_na_yug }
 		x = 27
 		y = 9
-		cost = 7.2
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
 
 		available = {
-		country_exists = BHU
+			is_subject = no
+			country_exists = BHU
+			BHU = {
+				is_subject = no
+				NOT = { has_war_with = ROOT }
+			}
 		}
 		
 		bypass = {
-		NOT = {
-		country_exists = BHU
-		}
+			OR = {
+				NOT = { country_exists = BHU }
+				has_war_with = BHU
+			}
 		}
 		
 		completion_reward = {
-		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_bhutan_buddism"
-		BHU = { country_event = { days = 1 id = tibet.4 } }
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_bhutan_buddism"
+			BHU = { country_event = { days = 1 id = tibet.4 } }
 		}
 	}
 	
@@ -1033,7 +1032,7 @@ focus_tree = {
 	    prerequisite = { focus = TIB_nepal_buddism }
 		x = 25
 		y = 10
-		cost = 7.2
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
@@ -1045,15 +1044,15 @@ focus_tree = {
 		}
 
 		completion_reward = {
-		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_shambala"
-			898 = { add_claim_by = TIB }
-			844 = { add_claim_by = TIB }
-			1104 = { add_claim_by = TIB }
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_shambala"
+			add_state_claim = 898
+			add_state_claim = 844
+			add_state_claim = 1104
 			if = {
-			limit = {
-			country_exists = RAJ
-			}
-			create_wargoal = {
+				limit = {
+					country_exists = RAJ
+				}
+				create_wargoal = {
 					type = annex_everything
 					target = RAJ
 				}
@@ -1091,13 +1090,13 @@ focus_tree = {
 	}
 	
 	focus = {
-		id = TIB_soveti_lohi
+		id = TIB_distance_from_soviet_union
 		icon = GFX_z_goal_communist_discourse
 	    relative_position_id = TIB_chineese_army
 	    prerequisite = { focus = TIB_novaya_strana }
 		x = 28
 		y = 8
-		cost = 7.2
+		cost = 5
 		ai_will_do = {
 			factor = 1
 		}
@@ -1109,9 +1108,9 @@ focus_tree = {
 		}
 
 		completion_reward = {
-		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_soveti_lohi"		
-				SOV = { add_opinion_modifier = { target = TIB modifier = TIB_oborvannie_svyazi } }
-				TIB = { add_opinion_modifier = { target = SOV modifier = TIB_oborvannie_svyazi } }
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_distance_from_soviet_union"		
+			SOV = { add_opinion_modifier = { target = ROOT modifier = TIB_oborvannie_svyazi } }
+			add_opinion_modifier = { target = SOV modifier = TIB_oborvannie_svyazi }
 		}
 	}
 	
@@ -1122,7 +1121,7 @@ focus_tree = {
 	    prerequisite = { focus = TIB_novaya_strana }
 		x = 30
 		y = 8
-		cost = 7.2
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
@@ -1134,36 +1133,25 @@ focus_tree = {
 		}
 
 		completion_reward = {
-		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_doroga_na_sever"	
-		if = {
-		limit = {
-		NOT = {
-		has_idea = TIB_novaya_strana1
-		}	
-		}
-		add_ideas = TIB_novaya_strana1
-		}		
-		
-		else_if = {
-		limit = {
-		has_idea = TIB_novaya_strana1
-		}
-		swap_ideas = {
-		remove_idea = TIB_novaya_strana1
-		add_idea = TIB_novaya_strana2
-		}
-		}
-		
-		else_if = {
-		limit = {
-		has_idea = TIB_novaya_strana2
-		}
-		swap_ideas = {
-		remove_idea = TIB_novaya_strana2
-		add_idea = TIB_novaya_strana3
-		}
-		}
-		
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_doroga_na_sever"	
+			if = {
+				limit = {
+					has_idea = TIB_novaya_strana1
+				}
+				swap_ideas = {
+					remove_idea = TIB_novaya_strana1
+					add_idea = TIB_novaya_strana2
+				}
+			}
+			else_if = {
+				limit = {
+					has_idea = TIB_novaya_strana2
+				}
+				swap_ideas = {
+					remove_idea = TIB_novaya_strana2
+					add_idea = TIB_novaya_strana3
+				}
+			}		
 		}
 	}
 	
@@ -1309,18 +1297,20 @@ focus_tree = {
 		}
 
 		available = {
+			is_subject = no
 			country_exists = USA
+			NOT = { has_war_with = USA }
 		}
 		
 		bypass = {
 			NOT = {		
-			country_exists = USA
+				country_exists = USA
 			}
 		}
 
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_pact_usa"	
-			custom_effect_tooltip = TIB_esli_ne_porval_s_SSSR_to_ban
+			custom_effect_tooltip = TIB_pact_usa_tt
 			USA = { country_event = { days = 1 id = tibet.13 } }
 		}
 	}
@@ -1344,20 +1334,25 @@ focus_tree = {
 		}
 
 		completion_reward = {
-		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_beluha"			
-		random_owned_controlled_state = {		
-			add_building_construction = {
-				type = industrial_complex
-				level = 1
-				instant_build = yes
-			}	
-		}
-		
-		
-		add_resource = { type = oil amount = 8 state = 322 }
-		add_resource = { type = steel amount = 8 state = 601 }
-		add_resource = { type = tungsten amount = 8 state = 434 }
-		
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_beluha"			
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			add_resource = { type = oil amount = 8 state = 322 }
+			add_resource = { type = steel amount = 8 state = 601 }
+			add_resource = { type = tungsten amount = 8 state = 434 }
 		}
 	}
 	
@@ -1512,12 +1507,19 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_kollektivizacia"	
 			add_stability = -0.05
 			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = industrial_complex
 					level = 1
 					instant_build = yes
-				}
+				}	
 			}
 		}
 	}
@@ -2910,14 +2912,21 @@ focus_tree = {
 		}
 
 		completion_reward = {
-		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_england_help2"
-		random_owned_controlled_state = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_england_help2"
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 1
+						include_locked = yes
+					}
+				}
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = industrial_complex
 					level = 2
 					instant_build = yes
-				}
+				}	
 			}
 		}
 	}
@@ -2942,10 +2951,10 @@ focus_tree = {
 		}
 
 		completion_reward = {
-		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_england_help3"
-		add_resource = { type = oil amount = 8 state = 322 }
-        add_resource = { type = steel amount = 8 state = 601 }
-        add_resource = { type = steel tungsten = 8 state = 434 }
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_england_help3"
+			add_resource = { type = oil amount = 8 state = 322 }
+			add_resource = { type = steel amount = 8 state = 601 }
+			add_resource = { type = tungsten amount = 8 state = 434 }
 		}
 	}
 	
@@ -3332,21 +3341,37 @@ focus_tree = {
 		}
 
 		completion_reward = {
-		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_german_help2"	
-		random_owned_controlled_state = {		
-			add_building_construction = {
-				type = industrial_complex
-				level = 1
-				instant_build = yes
-			}	
-		}
-		random_owned_controlled_state = {		
-			add_building_construction = {
-				type = arms_factory
-				level = 1
-				instant_build = yes
-			}	
-		}
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_german_help2"	
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}	
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}	
+			}
 		}
 	}
 	

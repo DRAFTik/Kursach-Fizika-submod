@@ -12,5 +12,6 @@ opinion_modifiers = {
 	TIB_razriv_otnosheniy = { value = -20 }
 	TIB_mongolotib_komitet = { value = 20 }
 	disobeying_an_order_op = { value = -20 }
+	TIB_office_in_tibet = { value = 30 }
 
 }

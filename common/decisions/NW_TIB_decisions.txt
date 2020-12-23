@@ -501,7 +501,7 @@ TIB_rerih_obyedinenie_category = {
 		
 		complete_effect = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): complete decision TIB_shangri_la_proclaim"
-			set_cosmetic_tag = TIB_CHAD_SHANGRI_LA
+			set_cosmetic_tag = TIB_SHANGRI_LA
 			every_state = {
 				limit = {
 					NOT = { is_core_of = ROOT }
