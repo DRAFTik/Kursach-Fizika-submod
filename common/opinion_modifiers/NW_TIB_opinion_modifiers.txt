@@ -13,5 +13,6 @@ opinion_modifiers = {
 	TIB_mongolotib_komitet = { value = 20 }
 	disobeying_an_order_op = { value = -20 }
 	TIB_office_in_tibet = { value = 30 }
-
+	TIB_england_help3_op = { value = 30 trade = yes }
+	TIB_german_school_op = { value = 20 }
 }

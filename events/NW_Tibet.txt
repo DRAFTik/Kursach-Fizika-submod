@@ -28,7 +28,7 @@ country_event = {
 	id = tibet.1
 	title = tibet.1.t
 	desc = tibet.1.d
-	picture = GFX_report_event_generic_rally_3
+	picture = GFX_report_event_tib_1
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event tibet.1" }
@@ -63,7 +63,7 @@ country_event = {
 	id = tibet.2
 	title = tibet.2.t
 	desc = tibet.2.d
-	picture = GFX_report_event_generic_rally_3
+	picture = GFX_report_event_tib_2
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event tibet.2" }
@@ -174,10 +174,22 @@ country_event = {
 		create_wargoal = {
 			type = annex_everything
 			target = FROM
+			expire = 0
+		}
+		add_ai_strategy = {
+			type = antagonize
+			id = FROM
+			value = 200
+		}
+		add_ai_strategy = {
+			type = conquer
+			id = FROM
+			value = 200
 		}
 	}
 }
 
+# Тибет предлагает объединиться // XIK
 country_event = {
 	id = tibet.7
 	title = tibet.7.t
@@ -190,16 +202,17 @@ country_event = {
 	option = {
 		name = tibet.7.a		 
 		ai_chance = { factor = 60 }
-		TIB = { country_event = { days = 1 id = tibet.8 } }
+		FROM = { country_event = { days = 1 id = tibet.8 } }
 	}
 	
 	option = {
 		name = tibet.7.b		 
 		ai_chance = { factor = 40 }
-		TIB = { country_event = { days = 1 id = tibet.9 } }
+		FROM = { country_event = { days = 1 id = tibet.9 } }
 	}
 }
 
+# Сикан принял наше предложение // TIB
 country_event = {
 	id = tibet.8
 	title = tibet.8.t
@@ -212,20 +225,19 @@ country_event = {
 	option = {
 		name = tibet.8.a		 		
 		every_state = {
-			limit = { is_core_of = XIK }
-			add_claim_by = TIB
+			limit = { is_core_of = FROM }
+			add_core_of = ROOT
 		}
-		XIK = {
+		FROM = {
 			every_unit_leader = {
-				set_nationality = TIB
+				set_nationality = ROOT
 			}
 		}		
-		annex_country = { target = XIK transfer_troops = yes }
-		
+		annex_country = { target = FROM transfer_troops = yes }
 	}
-	
 }
-	
+
+# Сикан отказал // TIB
 country_event = {
 	id = tibet.9
 	title = tibet.9.t
@@ -238,20 +250,28 @@ country_event = {
 	option = {
 		name = tibet.9.a		 		
 		every_state = {
-			limit = { is_core_of = BHU }
-			add_claim_by = TIB
+			limit = { is_core_of = FROM }
+			add_claim_by = ROOT
 		}
-		
-				create_wargoal = {
-					type = annex_everything
-					target = XIK
-				}
-		
+		create_wargoal = {
+			type = annex_everything
+			target = FROM
+			expire = 0
+		}
+		add_ai_strategy = {
+			type = antagonize
+			id = FROM
+			value = 200
+		}
+		add_ai_strategy = {
+			type = conquer
+			id = FROM
+			value = 200
+		}
 	}
-	
 }
 
-
+# Тибет предлагает объединиться // MON
 country_event = {
 	id = tibet.10
 	title = tibet.10.t
@@ -262,18 +282,19 @@ country_event = {
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event tibet.10" }
 	
 	option = {
-		name = tibet.10.a		 
+		name = tibet.10.a
 		ai_chance = { factor = 50 }
-		TIB = { country_event = { days = 1 id = tibet.11 } }
+		FROM = { country_event = { days = 1 id = tibet.11 } }
 	}
 	
 	option = {
-		name = tibet.10.b		 
+		name = tibet.10.b
 		ai_chance = { factor = 50 }
-		TIB = { country_event = { days = 1 id = tibet.12 } }
+		FROM = { country_event = { days = 1 id = tibet.12 } }
 	}
 }
 
+# Монголия приняла наше предложение // TIB
 country_event = {
 	id = tibet.11
 	title = tibet.11.t
@@ -286,20 +307,19 @@ country_event = {
 	option = {
 		name = tibet.11.a		 		
 		every_state = {
-			limit = { is_core_of = MON }
-			add_claim_by = TIB
+			limit = { is_core_of = FROM }
+			add_core_of = ROOT
 		}
-		MON = {
+		FROM = {
 			every_unit_leader = {
-				set_nationality = TIB
+				set_nationality = ROOT
 			}
 		}		
-		annex_country = { target = MON transfer_troops = yes }
-		
+		annex_country = { target = FROM transfer_troops = yes }
 	}
-	
 }
-	
+
+# Монголия отказала // TIB
 country_event = {
 	id = tibet.12
 	title = tibet.12.t
@@ -312,17 +332,25 @@ country_event = {
 	option = {
 		name = tibet.12.a		 		
 		every_state = {
-			limit = { is_core_of = MON }
-			add_claim_by = TIB
+			limit = { is_core_of = FROM }
+			add_claim_by = ROOT
 		}
-		
-				create_wargoal = {
-					type = annex_everything
-					target = MON
-				}
-		
+		create_wargoal = {
+			type = annex_everything
+			target = FROM
+			expire = 0
+		}
+		add_ai_strategy = {
+			type = antagonize
+			id = FROM
+			value = 200
+		}
+		add_ai_strategy = {
+			type = conquer
+			id = FROM
+			value = 200
+		}
 	}
-	
 }
 
 # Обращение из Тибета // USA
@@ -330,7 +358,7 @@ country_event = {
 	id = tibet.13
 	title = tibet.13.t
 	desc = tibet.13.d
-	picture = GFX_report_event_generic_rally_3
+	picture = GFX_report_event_tib_13_14_15
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event tibet.13" }
@@ -367,7 +395,7 @@ country_event = {
 	id = tibet.14
 	title = tibet.14.t
 	desc = tibet.14.d
-	picture = GFX_report_event_generic_rally_3
+	picture = GFX_report_event_tib_13_14_15
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event tibet.14" }
@@ -384,7 +412,7 @@ country_event = {
 	id = tibet.15
 	title = tibet.15.t
 	desc = tibet.15.d
-	picture = GFX_report_event_generic_rally_3
+	picture = GFX_report_event_tib_13_14_15
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event tibet.15" }
@@ -403,7 +431,7 @@ country_event = {
 	id = tibet.16
 	title = tibet.16.t
 	desc = tibet.16.d
-	picture = GFX_report_event_generic_rally_3
+	picture = GFX_report_event_tib_16
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event tibet.16" }
@@ -532,7 +560,7 @@ country_event = {
 	}
 }
 
-# Запрос Тибета // 
+# Запрос Тибета // ENG
 country_event = {
 	id = tibet.19
 	title = tibet.19.t
@@ -545,33 +573,39 @@ country_event = {
 	option = {
 		name = tibet.19.a		
 		ai_chance = { factor = 30 }
-	add_equipment_to_stockpile = {
-							type = infantry_equipment
-							amount = -2500
-						}
-	add_political_power = 100	
-	TIB = { country_event = { days = 1 id = tibet.20 } }
+		effect_tooltip = {
+			send_equipment = {
+				equipment = infantry_equipment
+				amount = 2500
+				target = FROM
+			}
+		}
+		add_political_power = 200	
+		FROM = { country_event = { days = 1 id = tibet.20 } }
 	}
 	
 	option = {
 		name = tibet.19.b		
 		ai_chance = { factor = 40 }
-	add_equipment_to_stockpile = {
-							type = infantry_equipment
-							amount = -1000
-						}
-	add_political_power = 40
-	TIB = { country_event = { days = 1 id = tibet.21 } }
+		effect_tooltip = {
+			send_equipment = {
+				equipment = infantry_equipment
+				amount = 1000
+				target = FROM
+			}
+		}
+		add_political_power = 100
+		FROM = { country_event = { days = 1 id = tibet.21 } }
 	}
 	
 	option = {
 		name = tibet.19.c		
 		ai_chance = { factor = 30 }
-	TIB = { country_event = { days = 1 id = tibet.22 } }
+		FROM = { country_event = { days = 1 id = tibet.22 } }
 	}
-	
 }
-	
+
+# Британцы сделали щедрое предложение // TIB
 country_event = {
 	id = tibet.20
 	title = tibet.20.t
@@ -583,15 +617,18 @@ country_event = {
 	
 	option = {
 		name = tibet.20.a	
-	add_equipment_to_stockpile = {
-							type = infantry_equipment
-							amount = 2500
-						}	
-    add_political_power = -100						
+		FROM = {
+			send_equipment = {
+				equipment = infantry_equipment
+				amount = 2500
+				target = ROOT
+			}
+		}
+		add_political_power = -200						
 	}
-	
 }
-	
+
+# Британцы сделали предложение // TIB
 country_event = {
 	id = tibet.21
 	title = tibet.21.t
@@ -603,14 +640,17 @@ country_event = {
 	
 	option = {
 		name = tibet.21.a		
-	add_equipment_to_stockpile = {
-							type = infantry_equipment
-							amount = 1000
-						}	
-    add_political_power = -40	 
+		FROM = {
+			send_equipment = {
+				equipment = infantry_equipment
+				amount = 1000
+				target = ROOT
+			}
+		}
+		add_political_power = -100	 
 	}
-	
 }
+
 
 country_event = {
 	id = tibet.22
@@ -627,7 +667,7 @@ country_event = {
 	
 }
 
-	
+# Запрос Тибета // GER
 country_event = {
 	id = tibet.23
 	title = tibet.23.t
@@ -640,33 +680,39 @@ country_event = {
 	option = {
 		name = tibet.23.a		
 		ai_chance = { factor = 30 }
-	add_equipment_to_stockpile = {
-							type = infantry_equipment
-							amount = -2500
-						}
-	add_political_power = 100	
-	TIB = { country_event = { days = 1 id = tibet.24 } }
+		effect_tooltip = {
+			send_equipment = {
+				equipment = infantry_equipment
+				amount = 2500
+				target = FROM
+			}
+		}
+		add_political_power = 200	
+		FROM = { country_event = { days = 1 id = tibet.24 } }
 	}
 	
 	option = {
 		name = tibet.23.b		
 		ai_chance = { factor = 40 }
-	add_equipment_to_stockpile = {
-							type = infantry_equipment
-							amount = -1000
-						}
-	add_political_power = 40
-	TIB = { country_event = { days = 1 id = tibet.25 } }
+		effect_tooltip = {
+			send_equipment = {
+				equipment = infantry_equipment
+				amount = 1000
+				target = FROM
+			}
+		}
+		add_political_power = 100
+		FROM = { country_event = { days = 1 id = tibet.25 } }
 	}
 	
 	option = {
 		name = tibet.23.c		
 		ai_chance = { factor = 30 }
-	TIB = { country_event = { days = 1 id = tibet.26 } }
+		FROM = { country_event = { days = 1 id = tibet.26 } }
 	}
-	
 }
-	
+
+# Немцы сделали щедрое предложение // TIB
 country_event = {
 	id = tibet.24
 	title = tibet.24.t
@@ -678,15 +724,18 @@ country_event = {
 	
 	option = {
 		name = tibet.24.a	
-	add_equipment_to_stockpile = {
-							type = infantry_equipment
-							amount = 2500
-						}	
-    add_political_power = -100						
+		FROM = {
+			send_equipment = {
+				equipment = infantry_equipment
+				amount = 2500
+				target = ROOT
+			}
+		}	
+		add_political_power = -100						
 	}
-	
 }
-	
+
+# Немцы сделали предложение // TIB
 country_event = {
 	id = tibet.25
 	title = tibet.25.t
@@ -698,15 +747,18 @@ country_event = {
 	
 	option = {
 		name = tibet.25.a		
-	add_equipment_to_stockpile = {
-							type = infantry_equipment
-							amount = 1000
-						}	
-    add_political_power = -40	 
+		FROM = {
+			send_equipment = {
+				equipment = infantry_equipment
+				amount = 1000
+				target = ROOT
+			}
+		}
+		add_political_power = -40	 
 	}
-	
 }
 
+# Немцы сделали предложение // TIB
 country_event = {
 	id = tibet.26
 	title = tibet.26.t
@@ -719,60 +771,8 @@ country_event = {
 	option = {
 		name = tibet.26.a	 	 
 	}
-	
 }
 
-country_event = {
-	id = tibet.27
-	title = tibet.27.t
-	desc = tibet.27.d
-	picture = GFX_report_event_generic_rally_3
-	is_triggered_only = yes
-	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event tibet.27" }
-	
-	option = {
-		name = tibet.27.a		 
-		ai_chance = { factor = 100 }
-		ENG = {
-		add_to_faction = TIB
-		}
-		
-	}
-	
-	option = {
-		name = tibet.27.b
-		 
-		ai_chance = { factor = 0 }
-		
-	}
-}
-
-country_event = {
-	id = tibet.28
-	title = tibet.28.t
-	desc = tibet.28.d
-	picture = GFX_report_event_generic_rally_3
-	is_triggered_only = yes
-	
-	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event tibet.28" }
-	
-	option = {
-		name = tibet.28.a		 
-		ai_chance = { factor = 100 }
-		GER = {
-		add_to_faction = TIB
-		}
-		
-	}
-	
-	option = {
-		name = tibet.28.b
-		 
-		ai_chance = { factor = 0 }
-		
-	}
-}
 
 # Главный народный принцип // TIB
 country_event = {
@@ -907,7 +907,7 @@ country_event = {
 	id = tibet.36
 	title = tibet.36.t
 	desc = tibet.36.d
-	picture = GFX_report_event_generic_rally_3
+	picture = GFX_report_event_tib_36_37
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event tibet.36" }
@@ -923,7 +923,7 @@ country_event = {
 	id = tibet.37
 	title = tibet.37.t
 	desc = tibet.37.d
-	picture = GFX_report_event_generic_rally_3
+	picture = GFX_report_event_tib_36_37
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event tibet.37" }
@@ -947,7 +947,7 @@ country_event = {
 	id = tibet.38
 	title = tibet.38.t
 	desc = tibet.38.d
-	picture = GFX_report_event_generic_rally_3
+	picture = GFX_report_event_tib_38
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event tibet.38" }
@@ -973,7 +973,7 @@ country_event = {
 	id = tibet.39
 	title = tibet.39.t
 	desc = tibet.39.d
-	picture = GFX_report_event_generic_rally_3
+	picture = GFX_report_event_tib_39
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event tibet.39" }
@@ -995,7 +995,7 @@ country_event = {
 	id = tibet.40
 	title = tibet.40.t
 	desc = tibet.40.d
-	picture = GFX_report_event_generic_rally_3
+	picture = GFX_report_event_tib_40
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event tibet.40" }
@@ -1028,7 +1028,7 @@ country_event = {
 	id = tibet.41
 	title = tibet.41.t
 	desc = tibet.41.d
-	picture = GFX_report_event_eth_arms_of_ethiopians
+	picture = GFX_report_event_tib_41
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event tibet.41" }
@@ -1043,7 +1043,7 @@ country_event = {
 	id = tibet.42
 	title = tibet.42.t
 	desc = tibet.42.d
-	picture = GFX_report_event_generic_rally_3
+	picture = GFX_report_event_tib_42_43
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event tibet.42" }
@@ -1058,7 +1058,7 @@ country_event = {
 	id = tibet.43
 	title = tibet.43.t
 	desc = tibet.43.d
-	picture = GFX_report_event_generic_rally_3
+	picture = GFX_report_event_tib_42_43
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event tibet.43" }
@@ -1074,7 +1074,7 @@ country_event = {
 	id = tibet.44
 	title = tibet.44.t
 	desc = tibet.44.d
-	picture = GFX_report_event_generic_rally_3
+	picture = GFX_report_event_tib_44
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event tibet.44" }
@@ -1119,7 +1119,7 @@ country_event = {
 	id = tibet.45
 	title = tibet.45.t
 	desc = tibet.45.d
-	picture = GFX_report_event_generic_rally_3
+	picture = GFX_report_event_tib_45
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event tibet.45" }
@@ -1142,7 +1142,7 @@ country_event = {
 	id = tibet.46
 	title = tibet.46.t
 	desc = tibet.46.d
-	picture = GFX_report_event_generic_rally_3
+	picture = GFX_report_event_tib_46
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event tibet.46" }
@@ -1159,7 +1159,7 @@ country_event = {
 	id = tibet.47
 	title = tibet.47.t
 	desc = tibet.47.d
-	picture = GFX_report_event_generic_rally_3
+	picture = GFX_report_event_tib_47
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event tibet.47" }
@@ -1175,7 +1175,7 @@ country_event = {
 	id = tibet.48
 	title = tibet.48.t
 	desc = tibet.48.d
-	picture = GFX_report_event_generic_rally_3
+	picture = GFX_report_event_tib_48
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event tibet.48" }
@@ -1192,7 +1192,7 @@ country_event = {
 	id = tibet.49
 	title = tibet.49.t
 	desc = tibet.49.d
-	picture = GFX_report_event_generic_rally_3
+	picture = GFX_report_event_tib_49
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event tibet.49" }
@@ -1231,7 +1231,7 @@ country_event = {
 	id = tibet.50
 	title = tibet.50.t
 	desc = tibet.50.d
-	picture = GFX_report_event_generic_rally_3
+	picture = GFX_report_event_tib_50
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event tibet.50" }
@@ -1419,7 +1419,7 @@ country_event = {
 	id = tibet.58
 	title = tibet.58.t
 	desc = tibet.58.d
-	picture = GFX_report_event_generic_rally_3
+	picture = GFX_report_event_tib_58
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event tibet.58" }
@@ -1460,7 +1460,7 @@ country_event = {
 	id = tibet.59
 	title = tibet.59.t
 	desc = tibet.59.d
-	picture = GFX_report_event_generic_rally_3
+	picture = GFX_report_event_tib_59_60_61_62
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event tibet.59" }
@@ -1589,7 +1589,7 @@ country_event = {
 	id = tibet.60
 	title = tibet.60.t
 	desc = tibet.60.d
-	picture = GFX_report_event_generic_rally_3
+	picture = GFX_report_event_tib_59_60_61_62
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event tibet.60" }
@@ -1615,7 +1615,7 @@ country_event = {
 	id = tibet.61
 	title = tibet.61.t
 	desc = tibet.61.desc
-	picture = GFX_report_event_generic_rally_3
+	picture = GFX_report_event_tib_59_60_61_62
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event tibet.61" }
@@ -1657,7 +1657,7 @@ country_event = {
 	id = tibet.62
 	title = tibet.62.t
 	desc = tibet.62.desc
-	picture = GFX_report_event_generic_rally_3
+	picture = GFX_report_event_tib_59_60_61_62
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event tibet.62" }
@@ -1673,7 +1673,7 @@ country_event = {
 	id = tibet.63
 	title = tibet.63.t
 	desc = tibet.63.desc
-	picture = GFX_report_event_generic_rally_3
+	picture = GFX_report_event_tib_63
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event tibet.63" }
@@ -1690,7 +1690,7 @@ country_event = {
 	id = tibet.64
 	title = tibet.64.t
 	desc = tibet.64.desc
-	picture = GFX_report_event_generic_rally_3
+	picture = GFX_report_event_tib_64
 	is_triggered_only = yes
 	
 	immediate = { log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): event tibet.64" }

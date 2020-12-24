@@ -138,57 +138,32 @@ ideas = {
 		}
 		
 		TIB_inostr_consult = {
-			
 			allowed = { always = no }
 			available = {
 			}
 			removal_cost = -1
 			picture = generic_army_war_college
-			
 			modifier = {
 				political_power_factor = 0.1		
 				production_factory_max_efficiency_factor = 0.1
 				production_factory_efficiency_gain_factor = 0.1
 			}
 		}
-			
+
 		TIB_tibet_genshtab = {
-			
 			allowed = {
 				always = no
 			}
-			
 			available = {
 			}
-
 			removal_cost = -1
-					
 			picture = generic_army_war_college
-			
 			modifier = {
 				army_leader_start_level = 1
 				planning_speed = 0.15
 			}
 		}
 			
-		TIB_german_school = {
-			
-			allowed = {
-				always = no
-			}
-			
-			available = {
-			}
-
-			removal_cost = -1
-					
-			picture = jap_duplicate_research
-			
-			modifier = {
-				research_speed_factor = 0.02
-			}
-		}
-		
 		TIB_molodie_umi = {
 			
 			allowed = { always = no }
@@ -348,59 +323,18 @@ ideas = {
 		}
 		
 		TIB_two_schools = {
-			
 			allowed = {
 				always = no
 			}
-			
 			available = {
 			}
-
 			removal_cost = -1
-					
 			picture = generic_research_bonus
-			
-			modifier = {
-				research_speed_factor = 0.03
-			}
-		}
-			
-		TIB_english_school2 = {
-			
-			allowed = {
-				always = no
-			}
-			
-			available = {
-			}
-
-			removal_cost = -1
-					
-			picture = generic_research_bonus
-			
-			modifier = {
-				research_speed_factor = 0.05
-			}
-		}
-			
-		TIB_english_school = {
-			
-			allowed = {
-				always = no
-			}
-			
-			available = {
-			}
-
-			removal_cost = -1
-					
-			picture = generic_research_bonus
-			
 			modifier = {
 				research_speed_factor = 0.02
 			}
 		}
-			
+
 		TIB_dalay_lama_xiv = {
 			allowed = {
 				always = no
@@ -540,12 +474,14 @@ ideas = {
 			allowed = {
 				always = no
 			}
-			available = {
-				country_exists = NEP
-				NOT = { has_war_with = NEP }
+			cancel = {
+				OR = {
+					has_war_with = NEP
+					NOT = { country_exists = NEP }
+				}
 			}
 			removal_cost = -1
-			picture = FRA_matignon_agreements
+			picture = tibet_pay
 			modifier = {
 				political_power_gain = -0.2
 			}
@@ -761,7 +697,7 @@ ideas = {
 			available = {
 			}
 			removal_cost = -1
-			picture = economic_degradation
+			picture = backward_industry_1
 			modifier = {
 				production_factory_max_efficiency_factor = -0.3
 			}
@@ -775,7 +711,7 @@ ideas = {
 			available = {
 			}
 			removal_cost = -1
-			picture = economic_degradation
+			picture = backward_industry_2
 			modifier = {
 				production_factory_max_efficiency_factor = -0.2
 			}
@@ -789,9 +725,48 @@ ideas = {
 			available = {
 			}
 			removal_cost = -1
-			picture = economic_degradation
+			picture = backward_industry_3
 			modifier = {
 				production_factory_max_efficiency_factor = -0.1
+			}
+		}
+		
+		TIB_english_school_idea = {
+			allowed = {
+				always = no
+			}
+			available = {
+			}
+			removal_cost = -1
+			picture = science_base_good
+			modifier = {
+				research_speed_factor = 0.01
+			}
+		}
+		
+		TIB_english_school_idea_2 = {
+			allowed = {
+				always = no
+			}
+			available = {
+			}
+			removal_cost = -1
+			picture = science_base_good
+			modifier = {
+				research_speed_factor = 0.03
+			}
+		}
+		
+		TIB_german_school_idea = {
+			allowed = {
+				always = no
+			}
+			available = {
+			}
+			removal_cost = -1
+			picture = science_base_good
+			modifier = {
+				research_speed_factor = 0.01
 			}
 		}
 	}

@@ -682,6 +682,7 @@ focus_tree = {
 			create_wargoal = {
 				target = MON
 				type = puppet_wargoal_focus
+				expire = 0
 			}
 			add_ai_strategy = {
 				type = antagonize
@@ -985,6 +986,17 @@ focus_tree = {
 				create_wargoal = {
 					type = annex_everything
 					target = NEP
+					expire = 0
+				}
+				add_ai_strategy = {
+					type = antagonize
+					id = "NEP"
+					value = 200
+				}
+				add_ai_strategy = {
+					type = conquer
+					id = "NEP"
+					value = 200
 				}
 			}
 		}
@@ -1055,6 +1067,17 @@ focus_tree = {
 				create_wargoal = {
 					type = annex_everything
 					target = RAJ
+					expire = 0
+				}
+				add_ai_strategy = {
+					type = antagonize
+					id = "RAJ"
+					value = 200
+				}
+				add_ai_strategy = {
+					type = conquer
+					id = "RAJ"
+					value = 200
 				}
 			}
 		}
@@ -1068,24 +1091,23 @@ focus_tree = {
 	    prerequisite = { focus = TIB_nepal_buddism }
 		x = 27
 		y = 10
-		cost = 7.2
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
 
 		available = {
-		country_exists = XIK
+			country_exists = XIK
+			NOT = { has_war_with = XIK }
 		}
 		
 		bypass = {
-		NOT = {
-		country_exists = XIK
-		}
+			NOT = { country_exists = XIK }
 		}
 
 		completion_reward = {
-		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_sikan"
-		XIK = { country_event = { days = 1 id = tibet.7 } }
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_sikan"
+			XIK = { country_event = { days = 1 id = tibet.7 } }
 		}
 	}
 	
@@ -1162,27 +1184,55 @@ focus_tree = {
 	    prerequisite = { focus = TIB_doroga_na_sever }
 		x = 29
 		y = 9
-		cost = 7.2
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
 
 		available = {
+			is_subject = no
 		}
 		
 		bypass = {
 		}
 
 		completion_reward = {
-		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_kashgar"	
-			287 = { add_claim_by = TIB }
-			759 = { add_claim_by = TIB }
-			1046 = { add_claim_by = TIB }
-			617 = { add_claim_by = TIB }
-			618 = { add_claim_by = TIB }
-			760 = { add_claim_by = TIB }
-			619 = { add_claim_by = TIB }
-			1047 = { add_claim_by = TIB }
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_kashgar"	
+			287 = { add_claim_by = ROOT }
+			759 = { add_claim_by = ROOT }
+			1046 = { add_claim_by = ROOT }
+			617 = { add_claim_by = ROOT }
+			618 = { add_claim_by = ROOT }
+			760 = { add_claim_by = ROOT }
+			619 = { add_claim_by = ROOT }
+			1047 = { add_claim_by = ROOT }
+			every_other_country = {
+				limit = {
+					OR = {
+						original_tag = UYG
+						original_tag = DZH
+						original_tag = TNG
+						original_tag = SIK
+					}
+				}
+				ROOT = {
+					create_wargoal = {
+						type = annex_everything
+						target = PREV
+						expire = 0
+					}
+					add_ai_strategy = {
+						type = antagonize
+						id = PREV
+						value = 200
+					}
+					add_ai_strategy = {
+						type = conquer
+						id = PREV
+						value = 200
+					}
+				}
+			}
 		}
 	}
 	
@@ -1193,7 +1243,7 @@ focus_tree = {
 	    prerequisite = { focus = TIB_doroga_na_sever }
 		x = 31
 		y = 9
-		cost = 7.2
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
@@ -1205,19 +1255,29 @@ focus_tree = {
 		}
 
 		completion_reward = {
-		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_tibetskie_zemli"			
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_tibetskie_zemli"			
 			add_state_claim = 604
 			add_state_claim = 754
-			
-		if = {
-		limit = {
-		country_exists = XSM
-		}		
-		create_wargoal = {
-								type = annex_everything
-								target = XSM
-							}
-		}
+			if = {
+				limit = {
+					country_exists = XSM
+				}		
+				create_wargoal = {
+					type = annex_everything
+					target = XSM
+					expire = 0
+				}
+				add_ai_strategy = {
+					type = antagonize
+					id = "XSM"
+					value = 200
+				}
+				add_ai_strategy = {
+					type = conquer
+					id = "XSM"
+					value = 200
+				}
+			}
 		}
 	}
 	
@@ -1229,7 +1289,7 @@ focus_tree = {
 	    prerequisite = { focus = TIB_tibetskie_zemli }
 		x = 29
 		y = 10
-		cost = 7.2
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
@@ -1238,24 +1298,33 @@ focus_tree = {
 		}
 		
 		bypass = {
+			owns_state = 654
 		}
 
 		completion_reward = {
-		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_shambala_altai"	
-			add_state_claim = 654
-			
-		every_country = {
-			limit = {
-			controls_state = 657
-			}
-			FROM = {
-				create_wargoal = {
-					target = PREV
-					type = annex_everything
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_shambala_altai"	
+			654 = {
+				add_claim_by = ROOT
+				owner = {
+					ROOT = {
+						create_wargoal = {
+							target = PREV
+							type = annex_everything
+							expire = 0
+						}
+						add_ai_strategy = {
+							type = antagonize
+							id = PREV
+							value = 200
+						}
+						add_ai_strategy = {
+							type = conquer
+							id = PREV
+							value = 200
+						}
+					}
 				}
 			}
-		}
-		
 		}
 	}
 	
@@ -1267,20 +1336,26 @@ focus_tree = {
 	    prerequisite = { focus = TIB_tibetskie_zemli }
 		x = 31
 		y = 10
-		cost = 7.2
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
 
 		available = {
+			country_exists = MON
+			NOT = { has_war_with = MON }
 		}
 		
 		bypass = {
+			OR = {
+				NOT = { country_exists = MON }
+				has_war_with = MON
+			}
 		}
 
 		completion_reward = {		
-		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_mongolia_unite"	
-		MON = { country_event = { days = 1 id = tibet.10 } }
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_mongolia_unite"	
+			MON = { country_event = { days = 1 id = tibet.10 } }
 		}
 	}
 	
@@ -1625,7 +1700,7 @@ focus_tree = {
 	    prerequisite = { focus = TIB_tibet_sam }
 		x = 21
 		y = 11
-		cost = 7.2
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
@@ -1637,8 +1712,8 @@ focus_tree = {
 		}
 
 		completion_reward = {
-		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_bolshaya_voyna"
-		add_war_support = 0.25
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_bolshaya_voyna"
+			add_war_support = 0.25
 		}
 	}
 	
@@ -1649,24 +1724,26 @@ focus_tree = {
 	    prerequisite = { focus = TIB_bolshaya_voyna }
 		x = 19
 		y = 12
-		cost = 7.2
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
 
 		available = {
-		country_exists = BHU
+			is_subject = no
+			country_exists = BHU
+			NOT = { has_war_with = BHU }
 		}
 		
 		bypass = {
-		NOT = {
-		country_exists = BHU
-		}
+			NOT = {
+				country_exists = BHU
+			}
 		}
 
 		completion_reward = {
-		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_bhutan"
-		BHU = { country_event = { days = 1 id = tibet.4 } }
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_bhutan"
+			BHU = { country_event = { days = 1 id = tibet.4 } }
 		}
 	}
 	
@@ -1677,32 +1754,53 @@ focus_tree = {
 	    prerequisite = { focus = TIB_bolshaya_voyna }
 		x = 21
 		y = 12
-		cost = 7.2
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
 
 		available = {
+			is_subject = no
 		}
 		
 		bypass = {
 		}
 
 		completion_reward = {		
-		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_narodi_tibeta"
-		604 = { add_core_of = TIB }		
-		752 = { add_core_of = TIB }
-		751 = { add_core_of = TIB }
-		754 = { add_core_of = TIB }
-		every_state = {
-			limit = { is_core_of = BHU }
-			add_core_of = TIB
-		}
-		every_state = {
-			limit = { is_core_of = NEP }
-			add_core_of = TIB
-		}
-		
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_narodi_tibeta"
+			every_state = {
+				limit = {
+					OR = {
+						state = 604
+						state = 754
+						state = 752
+						state = 751
+					}
+				}
+				add_core_of = ROOT
+				if = {
+					limit = { NOT = { is_owned_by = ROOT } }
+					owner = {
+						ROOT = {
+							create_wargoal = {
+								target = PREV
+								type = annex_everything
+								expire = 0
+							}
+							add_ai_strategy = {
+								type = antagonize
+								id = PREV
+								value = 200
+							}
+							add_ai_strategy = {
+								type = conquer
+								id = PREV
+								value = 200
+							}
+						}
+					}
+				}
+			}
 		}
 	}
 	
@@ -1713,33 +1811,44 @@ focus_tree = {
 	    prerequisite = { focus = TIB_bolshaya_voyna }
 		x = 23
 		y = 12
-		cost = 7.2
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
 
 		available = {
-		country_exists = NEP
+			is_subject = no
+			country_exists = NEP
+			NOT = { is_in_faction_with = NEP }
 		}
 		
         bypass = {
-		OR = {
-		has_war_with = NEP
-		NOT = {
-		country_exists = NEP
-		}
-		}
+			OR = {
+				has_war_with = NEP
+				NOT = { country_exists = NEP }
+			}
 		}
 		
 
 		completion_reward = {
-		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_otomstit_nepalu"
-		833 = { add_core_of = TIB }
-		323 = { add_core_of = TIB }
-		create_wargoal = {
-								type = annex_everything
-								target = NEP
-							}
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_otomstit_nepalu"
+			833 = { add_core_of = TIB }
+			323 = { add_core_of = TIB }
+			create_wargoal = {
+				type = annex_everything
+				target = NEP
+				expire = 0
+			}
+			add_ai_strategy = {
+				type = antagonize
+				id = "NEP"
+				value = 200
+			}
+			add_ai_strategy = {
+				type = conquer
+				id = "NEP"
+				value = 200
+			}
 		}
 	}
 	
@@ -2383,6 +2492,17 @@ focus_tree = {
 					create_wargoal = {
 						target = ROOT
 						type = puppet_wargoal_focus
+						expire = 0
+					}
+					add_ai_strategy = {
+						type = antagonize
+						id = ROOT
+						value = 200
+					}
+					add_ai_strategy = {
+						type = conquer
+						id = ROOT
+						value = 200
 					}
 				}
 			}
@@ -2845,25 +2965,28 @@ focus_tree = {
 		mutually_exclusive = { focus = TIB_german }
 		x = 36
 		y = 6
-		cost = 7.2
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
 
 		available = {
-		country_exists = ENG
+			country_exists = ENG
+			NOT = { has_war_with = ENG }
 		}
 		
 		bypass = {
-		NOT = {		
-		country_exists = ENG
-		}
+			OR = {
+				NOT = { country_exists = ENG }
+				has_war_with = ENG
+			}
 		}
 
 		completion_reward = {
-		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_england"
-				ENG = { add_opinion_modifier = { target = TIB modifier = TIB_shkola } }
-				TIB = { add_opinion_modifier = { target = ENG modifier = TIB_shkola } }
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_england"
+			ENG = { add_opinion_modifier = { target = ROOT modifier = TIB_shkola } }
+			add_opinion_modifier = { target = ENG modifier = TIB_shkola }
+			add_ideas = TIB_english_school_idea
 		}
 	}
 	
@@ -2874,21 +2997,21 @@ focus_tree = {
 	    prerequisite = { focus = TIB_england }
 		x = 34
 		y = 7
-		cost = 7.2
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
 
 		available = {
-		is_in_faction_with = ENG
+			is_in_faction_with = ENG
 		}
 		
 		bypass = {
 		}
 
 		completion_reward = {
-		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_england_help1"
-	    ENG = { country_event = { days = 1 id = tibet.19 } }
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_england_help1"
+			ENG = { country_event = { days = 1 id = tibet.19 } }
 		}
 	}
 	
@@ -2899,13 +3022,13 @@ focus_tree = {
 	    prerequisite = { focus = TIB_england_help1 }
 		x = 34
 		y = 8
-		cost = 7.2
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
 
 		available = {
-		is_in_faction_with = ENG
+			is_in_faction_with = ENG
 		}
 		
 		bypass = {
@@ -2938,13 +3061,13 @@ focus_tree = {
 	    prerequisite = { focus = TIB_england_help2 }
 		x = 34
 		y = 9
-		cost = 7.2
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
 
 		available = {
-		is_in_faction_with = ENG
+			is_in_faction_with = ENG
 		}
 		
 		bypass = {
@@ -2955,6 +3078,7 @@ focus_tree = {
 			add_resource = { type = oil amount = 8 state = 322 }
 			add_resource = { type = steel amount = 8 state = 601 }
 			add_resource = { type = tungsten amount = 8 state = 434 }
+			add_opinion_modifier = { target = ENG modifier = TIB_england_help3_op }
 		}
 	}
 	
@@ -2967,21 +3091,26 @@ focus_tree = {
 		mutually_exclusive = { focus = TIB_england }
 		x = 40
 		y = 6
-		cost = 7.2
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
 
 		available = {
+			country_exists = GER
+			GER = {
+				has_government = fascism
+				NOT = { has_war_with = ROOT }
+			}
 		}
 		
 		bypass = {
 		}
 
 		completion_reward = {
-		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_german"
-		GER = { add_opinion_modifier = { target = TIB modifier = TIB_german_help } }
-		TIB = { add_opinion_modifier = { target = GER modifier = TIB_german_help } }
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_german"
+			GER = { add_opinion_modifier = { target = TIB modifier = TIB_german_help } }
+			TIB = { add_opinion_modifier = { target = GER modifier = TIB_german_help } }
 		}
 	}
 	
@@ -2994,42 +3123,29 @@ focus_tree = {
 	    mutually_exclusive = { focus = TIB_german_school }
 		x = 36
 		y = 8
-		cost = 7.2
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
 
 		available = {
-		country_exists = ENG
-		NOT = {
-		has_war_with = ENG
-		}
+			country_exists = ENG
+			NOT = { has_war_with = ENG }
 		}
 		
 		bypass = {
-		OR = {
-		NOT = {
-		country_exists = ENG
-		}
-		has_war_with = ENG
-		}
+			OR = {
+				NOT = { country_exists = ENG }
+				has_war_with = ENG
+			}
 		}
 
 		completion_reward = {
-		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_england_school"
-		if = {
-		limit = { has_idea = TIB_english_school }
-		swap_ideas = {
-				remove_idea = TIB_english_school
-				add_idea = TIB_english_school2
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_england_school"
+			swap_ideas = {
+				remove_idea = TIB_english_school_idea
+				add_idea = TIB_english_school_idea_2
 			}
-		}
-		
-		if = {
-		limit = { NOT = { has_idea = TIB_english_school } }
-		add_ideas = TIB_english_school
-		}
-		
 		}
 	}
 	
@@ -3042,7 +3158,7 @@ focus_tree = {
 	    mutually_exclusive = { focus = TIB_german_school }
 		x = 38
 		y = 8
-		cost = 7.2
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
@@ -3054,8 +3170,8 @@ focus_tree = {
 		}
 
 		completion_reward = {
-		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_two_schools"
-		add_ideas = TIB_two_schools
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_two_schools"
+			add_ideas = TIB_two_schools
 		}
 	}
 	
@@ -3068,7 +3184,7 @@ focus_tree = {
 	    mutually_exclusive = { focus = TIB_two_schools }
 		x = 40
 		y = 8
-		cost = 7.2
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
@@ -3080,8 +3196,10 @@ focus_tree = {
 		}
 
 		completion_reward = {
-		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_german_school"
-		add_ideas = TIB_german_school
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_german_school"
+			ENG = { add_opinion_modifier = { target = ROOT modifier = TIB_german_school_op } }
+			add_opinion_modifier = { target = ENG modifier = TIB_german_school_op }
+			add_ideas = TIB_german_school_idea
 		}
 	}
 	
@@ -3094,23 +3212,27 @@ focus_tree = {
 	    mutually_exclusive = { focus = TIB_join_axis }
 		x = 36
 		y = 10
-		cost = 7.2
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
 
 		available = {
-		ENG = {
-		is_faction_leader = yes
-		}
+			is_subject = no
+			is_in_faction = no
+			ENG = {
+				is_faction_leader = yes
+				NOT = { has_war_with = ROOT }
+			}
 		}
 		
 		bypass = {
+			is_in_faction_with = ENG
 		}
 
 		completion_reward = {
-		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_england_allaince"
-	    ENG = { country_event = { days = 1 id = tibet.27 } }
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_england_allaince"
+			ENG = { country_event = { days = 1 id = generic.2 } }
 		}
 	}
 	
@@ -3123,20 +3245,21 @@ focus_tree = {
 	    mutually_exclusive = { focus = TIB_join_axis }
 		x = 38
 		y = 10
-		cost = 7.2
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
 
 		available = {
+			has_war = no
 		}
 		
 		bypass = {
 		}
 
 		completion_reward = {
-		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_neutrality_position"
-		add_ideas = TIB_two_schools
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_neutrality_position"
+			add_ideas = neutrality_idea
 		}
 	}
 	
@@ -3149,23 +3272,27 @@ focus_tree = {
 	    mutually_exclusive = { focus = TIB_neutrality_position }
 		x = 40
 		y = 10
-		cost = 7.2
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
 
 		available = {
-		GER = {
-		is_faction_leader = yes
-		}
+			is_subject = no
+			is_in_faction = no
+			GER = {
+				is_faction_leader = yes
+				NOT = { has_war_with = ROOT }
+			}
 		}
 		
 		bypass = {
+			is_in_faction_with = ENG
 		}
 
-		completion_reward = {	
-		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_join_axis"	
-	    GER = { country_event = { days = 1 id = tibet.28 } }
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_join_axis"	
+			GER = { country_event = { days = 1 id = generic.2 } }
 		}
 	}
 	
@@ -3176,25 +3303,36 @@ focus_tree = {
 	    prerequisite = { focus = TIB_join_axis }
 		x = 40
 		y = 11
-		cost = 7.2
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
 
 		available = {
-		RAJ = {
-		is_in_faction_with = ENG
-		}
+			RAJ = {
+				is_in_faction_with = ENG
+			}
 		}
 		
 		bypass = {
 		}
 
 		completion_reward = {
-		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_attack_india"	
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_attack_india"	
 			create_wargoal = {
 				target = RAJ
 				type = puppet_wargoal_focus
+				expire = 0
+			}
+			add_ai_strategy = {
+				type = antagonize
+				id = "RAJ"
+				value = 200
+			}
+			add_ai_strategy = {
+				type = conquer
+				id = "RAJ"
+				value = 200
 			}
 		}
 	}
@@ -3206,20 +3344,24 @@ focus_tree = {
 	    prerequisite = { focus = TIB_join_axis focus = TIB_england_allaince focus = TIB_stalin focus = TIB_mao focus = TIB_ottolknut_ruku }
 		x = 38
 		y = 11
-		cost = 7.2
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
 
 		available = {
+			OR = {
+				is_in_faction_with = ENG
+				is_in_faction_with = GER
+			}
 		}
 		
 		bypass = {
 		}
 
 		completion_reward = {
-		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_consultanti"	
-		add_ideas = TIB_inostr_consult
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_consultanti"	
+			add_ideas = TIB_inostr_consult
 		}
 	}
 	
@@ -3230,35 +3372,33 @@ focus_tree = {
 	    prerequisite = { focus = TIB_consultanti }
 		x = 37
 		y = 12
-		cost = 7.2
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
 
 		available = {
-		OR = {
-		is_in_faction_with = GER
-		is_in_faction_with = ENG
-		}
+			OR = {
+				is_in_faction_with = GER
+				is_in_faction_with = ENG
+			}
 		}
 		
 		bypass = {
 		}
 
 		completion_reward = {
-		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_dorogi"	
-		every_state = {
-			limit = {
-				is_core_of = TIB
-				is_controlled_by = TIB
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_dorogi"	
+			every_controlled_state = {
+				limit = {
+					is_core_of = TIB
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
 			}
-			add_building_construction = {
-				type = infrastructure
-				level = 1
-				instant_build = yes
-			}
-		}
-		
 		}
 	}
 	
@@ -3269,32 +3409,31 @@ focus_tree = {
 	    prerequisite = { focus = TIB_consultanti }
 		x = 39
 		y = 12
-		cost = 7.2
+		cost = 5
 		ai_will_do = {
 			factor = 1
 		}
 
 		
 		available = {
-		OR = {
-		is_in_faction_with = GER
-		is_in_faction_with = ENG
-		}
+			OR = {
+				is_in_faction_with = GER
+				is_in_faction_with = ENG
+			}
 		}
 		
 		bypass = {
 		}
 
 		completion_reward = {
-		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_first_airport"	
-		757 = {
-			add_building_construction = {
-				type = air_base
-				level = 1
-				instant_build = yes
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_first_airport"	
+			capital_scope = {
+				add_building_construction = {
+					type = air_base
+					level = 1
+					instant_build = yes
+				}
 			}
-		}
-		
 		}
 	}
 	
@@ -3305,20 +3444,21 @@ focus_tree = {
 	    prerequisite = { focus = TIB_german }
 		x = 42
 		y = 7
-		cost = 7.2
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
 
 		available = {
+			is_in_faction_with = GER
 		}
 		
 		bypass = {
 		}
 
 		completion_reward = {
-		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_german_help1"	
-	    GER = { country_event = { days = 1 id = tibet.23 } }
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_german_help1"	
+			GER = { country_event = { days = 1 id = tibet.23 } }
 		}
 	}
 	
@@ -3329,12 +3469,13 @@ focus_tree = {
 	    prerequisite = { focus = TIB_german_help1 }
 		x = 42
 		y = 8
-		cost = 7.2
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
 
 		available = {
+			is_in_faction_with = GER
 		}
 		
 		bypass = {
@@ -3382,21 +3523,21 @@ focus_tree = {
 	    prerequisite = { focus = TIB_german_help2 }
 		x = 42
 		y = 9
-		cost = 7.2
+		cost = 10
 		ai_will_do = {
 			factor = 1
 		}
 
 		available = {
-		is_in_faction_with = GER
+			is_in_faction_with = GER
 		}
 		
 		bypass = {
 		}
 
 		completion_reward = {
-		log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_german_help3"	
-		add_ideas = TIB_tibet_genshtab
+			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_german_help3"	
+			add_ideas = TIB_tibet_genshtab
 		}
 	}
 	
@@ -3923,7 +4064,7 @@ focus_tree = {
 		x = 6
 		y = 2
 	    relative_position_id = TIB_british_commission
-	    prerequisite = { focus = TIB_electrica }
+	    prerequisite = { focus = TIB_lkhasa_electronic }
 		cost = 7.2
 		ai_will_do = {
 			factor = 1
