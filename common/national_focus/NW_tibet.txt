@@ -1,5 +1,5 @@
 focus_tree = {
-	id = tibet_focus
+	id = nw_tibet_focus
 	
 	country = {
 		factor = 0
@@ -2309,10 +2309,7 @@ focus_tree = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_vlast_kitaya"
 			save_party_popularity = yes
 			CHI = {
-				set_autonomy = {
-					target = ROOT
-					autonomy_state = autonomy_dominion
-				}
+				puppet = ROOT
 			}
 			load_party_popularity = yes
 		}
