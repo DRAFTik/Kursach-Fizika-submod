@@ -1469,7 +1469,7 @@ country_event = {
 		name = tibet.59.a
 		if = {
 			limit = { has_idea = TIB_dalay_lama_xiv }
-			remove_idea = TIB_dalay_lama_xiv
+			remove_ideas = TIB_dalay_lama_xiv
 		}
 		start_civil_war = {
 			ideology = neutrality
@@ -1503,7 +1503,7 @@ country_event = {
 						seriously_ill
 					}
 				}
-				load_focus_tree = nw_nepal_focus
+				load_focus_tree = nw_tibet_focus
 				unlock_national_focus = TIB_chineese_army
 				division_template = {
 					name = "Panchay-Lama army"
@@ -1528,58 +1528,70 @@ country_event = {
 	
 	option = {
 		name = tibet.59.b
+		trigger = { is_ai = no }
+		if = {
+			limit = { has_idea = TIB_dalay_lama_xiv }
+			remove_ideas = TIB_dalay_lama_xiv
+		}
 		start_civil_war = {
-			ruling_party = neutrality
-			ideology = monarchy
+			ideology = neutrality
 			army_ratio = 0
 			navy_ratio = 0
 			air_ratio = 0
 			size = 0.75
-			states = all
-			states_filter = {
-				state = 601
-			}
-		}
-		unlock_national_focus = TIB_chineese_army
-		create_country_leader = {
-			name = "Thubten Choekyi Nyima"
-			desc = "POLITICS_JAMPHEL_YESHE_GYALTSEN_DESC"
-			picture = "gfx/leaders/TIB/Portrait_Thubten_Choekyi_Nyima.dds"
-			expire = "1965.1.1"
-			ideology = despotism
-			traits = {
-				TIB_nine_lama
-				seriously_ill
-			}
-		}
-		if = {
-			limit = { NOT = { has_idea = TIB_dalay_lama_xiv } }
-			add_ideas = TIB_dalay_lama_xiv
+			states = { 601 }
 		}
 		hidden_effect = {
-			set_popularities = {
-				neutrality = 30
-				fascism = 30
-				monarchy = 30
-				democratic = 10
-			}
-			division_template = {
-				name = "Panchay-Lama army"
-				regiments = {
-					infantry = { x = 0 y = 0 }
-					infantry = { x = 0 y = 1 }
-					infantry = { x = 0 y = 2 }
-					infantry = { x = 0 y = 3 }
+			random_other_country = {
+				limit = {
+					original_tag = ROOT
+					NOT = { tag = ROOT }
+				}
+				add_ideas = TIB_dalay_lama_xiv
+				set_popularities = {
+					neutrality = 30
+					fascism = 30
+					monarchy = 30
+					democratic = 10
+				}
+				create_country_leader = {
+					name = "Thubten Choekyi Nyima"
+					desc = "POLITICS_JAMPHEL_YESHE_GYALTSEN_DESC"
+					picture = "gfx/leaders/TIB/Portrait_Thubten_Choekyi_Nyima.dds"
+					expire = "1965.1.1"
+					ideology = despotism
+					traits = {
+						TIB_nine_lama
+						seriously_ill
+					}
+				}
+				load_focus_tree = nw_tibet_focus
+				unlock_national_focus = TIB_chineese_army
+				division_template = {
+					name = "Panchay-Lama army"
+					regiments = {
+						infantry = { x = 0 y = 0 }
+						infantry = { x = 0 y = 1 }
+						infantry = { x = 0 y = 2 }
+						infantry = { x = 0 y = 3 }
+					}
+				}
+				601 = {
+					create_unit = {
+						division = "name = \"Panchay-Lama army\" division_template = \"Panchay-Lama army\" start_experience_factor = 0.2" 
+						owner = TIB
+						count = 5
+						allow_spawning_on_enemy_provs = yes
+					}
 				}
 			}
-			601 = {
-				create_unit = {
-					division = "name = \"Panchay-Lama army\" division_template = \"Panchay-Lama army\" start_experience_factor = 0.2" 
-					owner = TIB
-					count = 5
-					allow_spawning_on_enemy_provs = yes
-				}
+		}
+		random_other_country = {
+			limit = {
+				original_tag = ROOT
+				NOT = { tag = ROOT }
 			}
+			change_tag_from = ROOT
 		}
 	}
 }
