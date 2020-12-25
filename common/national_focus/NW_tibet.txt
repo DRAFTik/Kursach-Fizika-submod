@@ -300,7 +300,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_uravnat_nalogi"
-			add_stability = 0.2
+			add_ideas = TIB_equal_taxes_on_monasteries
 		}
 	}
 	
@@ -1601,7 +1601,7 @@ focus_tree = {
 	
 	focus = {
 		id = TIB_buddism_communism
-		icon = GFX_z_goal_buddism_for_all
+		icon = GFX_z_goal_buddism_communism
 	    relative_position_id = TIB_chineese_army
 	    prerequisite = { focus = TIB_molodie }
 	    prerequisite = { focus = TIB_iskri }
@@ -2076,7 +2076,7 @@ focus_tree = {
 	
 	focus = {
 		id = TIB_khama
-		icon = GFX_z_goal_trade_unions_for_white
+		icon = GFX_z_goal_support_traders
 	    relative_position_id = TIB_chineese_army
 	    prerequisite = { focus = TIB_poprosit_proshenia_u_allaha }
 		x = 5
@@ -2124,7 +2124,7 @@ focus_tree = {
 		
 	focus = {
 		id = TIB_reformi_tibeta
-		icon = GFX_z_goal_give_democracy
+		icon = GFX_z_goal_party_reform_tibet
 	    relative_position_id = TIB_chineese_army
 	    prerequisite = { focus = TIB_poprosit_proshenia_u_allaha }
 		x = 9
@@ -3566,10 +3566,16 @@ focus_tree = {
 			}
 		}
 
-		completion_reward = {	
+		completion_reward = {
 			log = "[GetDateText]: [Root.GetName] ([Root.GetTag]): Focus TIB_radio_missia"
 			add_opinion_modifier = { target = ENG modifier = TIB_rado_miss }
 			ENG = { add_opinion_modifier = { target = ROOT modifier = TIB_rado_miss } }
+			add_tech_bonus = {
+				name = TIB_radio_missia
+				bonus = 1.0
+				uses = 1
+				category = electronics
+			}
 		}
 	}
 	

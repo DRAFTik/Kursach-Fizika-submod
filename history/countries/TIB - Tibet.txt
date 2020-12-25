@@ -100,19 +100,20 @@ create_country_leader = {
 }
 
 create_country_leader = {
-	name = "Phuntsok Wangyal"
+	name = "Phuntsok Wangyal Goranga"
 	desc = "POLITICS_PHUNTSOK_WANGYAL_DESC"
-	picture = "gfx/leaders/Asia/Portrait_Asia_Generic_1.dds"
+	picture = "gfx/leaders/TIB/Portrait_Phuntsok_Wangyal.dds"
 	expire = "1965.1.1"
 	ideology = leninism
 	traits = {
+		TIB_red_buddist
 	}
 }
 
 create_country_leader = {
 	name = "Pandatsang Rapga" 
 	desc = "POLITICS_PANDATSANG_RAPGA_DESC"
-	picture = "gfx/leaders/Asia/Portrait_Asia_Generic_2.dds"
+	picture = "gfx/leaders/TIB/Portrait_Pandatsang_Rapga.dds"
 	expire = "1965.1.1"
 	ideology = national_liberalism
 	traits = {

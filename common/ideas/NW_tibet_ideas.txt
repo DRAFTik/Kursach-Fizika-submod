@@ -7,10 +7,21 @@ ideas = {
 			available = {
 			}
 			removal_cost = -1
-			picture = generic_economic_increase
+			picture = taxes_on_monasteries
 			modifier = {
 				consumer_goods_factor = -0.1
 				stability_factor = -0.1
+			}
+		}
+		
+		TIB_equal_taxes_on_monasteries = {
+			allowed = { always = no }
+			available = {
+			}
+			removal_cost = -1
+			picture = equal_taxes_on_monasteries
+			modifier = {
+				stability_factor = 0.2
 			}
 		}
 		
@@ -342,7 +353,7 @@ ideas = {
 			available = {
 			}
 			removal_cost = -1
-			picture = Leopard
+			picture = dalay_lama_xiv
 			modifier = {
 				stability_factor = 0.1
 			}
@@ -464,7 +475,7 @@ ideas = {
 			available = {
 			}
 			removal_cost = -1
-			picture = government_engineers
+			picture = rettingsang
 			modifier = {
 				consumer_goods_factor = -0.05		
 			}
@@ -494,7 +505,7 @@ ideas = {
 			available = {
 			}
 			removal_cost = -1
-			picture = MEX_politicised_army
+			picture = no_power
 			modifier = {
 				political_power_gain = -0.2
 			}
@@ -541,7 +552,7 @@ ideas = {
 			available = {
 			}
 			removal_cost = -1
-			picture = generic_defence_ideology
+			picture = conservatism_aristocracy
 			modifier = {
 				stability_factor = 0.1
 				trade_laws_cost_factor = 0.25
@@ -557,7 +568,7 @@ ideas = {
 			available = {
 			}
 			removal_cost = -1
-			picture = generic_defence_ideology
+			picture = power_of_aristocracy
 			modifier = {
 				stability_factor = 0.1
 				trade_laws_cost_factor = 0.25
@@ -575,7 +586,7 @@ ideas = {
 			available = {
 			}
 			removal_cost = -1
-			picture = generic_defence_ideology
+			picture = power_of_aristocracy
 			modifier = {
 				stability_factor = 0.1
 				political_power_factor = 0.35
@@ -590,7 +601,7 @@ ideas = {
 			available = {
 			}
 			removal_cost = -1
-			picture = generic_defence_ideology
+			picture = power_of_aristocracy
 			modifier = {
 				stability_factor = 0.1
 				political_power_factor = 0.35

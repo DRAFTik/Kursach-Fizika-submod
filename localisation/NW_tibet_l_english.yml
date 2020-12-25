@@ -559,27 +559,27 @@
  tibet_55_a_tt:0 "§RAt the time of the beginning of the uprising, the parties of §YTibet§! The §YChamdo§! will be handed over.§!\n"
  tibet.52.b:0 "Эти земли теперь наши"
  
- tibet.53.t:0 "The commander of the Qinghai Clique Ma is ready to provide support."
+ tibet.53.t:0 "The commander of the Qinghai Clique Ma is ready to provide support"
  tibet.53.d:0 "The central government has demanded that Qinghai Clique Warlord Ma surrender one of the regions to our party and provide support for our cause as much as he can. He was forced to agree to this and sent us confirmation of his intentions."
  tibet.53.a:0 "Excellent!"
  
- tibet.54.t:0 "The warlord of the Qinghai clique Ma refused to provide support."
+ tibet.54.t:0 "The warlord of the Qinghai clique Ma refused to provide support"
  tibet.54.d:0 "The central government demanded that the commander of the Qinghai Clique, Ma, give one of the regions to our party and provide support for our cause as much as he could. He refused us in an extremely rude manner."
  tibet.54.a:0 "This is sad news..."
  
- tibet.56.t:0 "The warlord of Sikan is ready to give his support."
+ tibet.56.t:0 "The warlord of Sikan is ready to give his support"
  tibet.56.d:0 "The central government has demanded that Warlord Sikana surrender one of the regions to our party and provide support for our cause as much as he can. He was forced to agree to this and sent us confirmation of his intentions."
  tibet.56.a:0 "Excellent!"
  
- tibet.57.t:0 "The warlord of Sikan has refused his support."
+ tibet.57.t:0 "The warlord of Sikan has refused his support"
  tibet.57.d:0 "The central government demanded that the warlord Sikana give one of the regions to our party and provide support for our cause as much as he could. He refused us in an extremely rude manner."
  tibet.57.a:0 "This is sad news..."
  
- tibet.58.t:0 "Speech of Phuntsok Wangyal."
+ tibet.58.t:0 "Speech of Phuntsok Wangyal"
  tibet.58.d:0 "Phuntsok Wangyal Goranangpa, accompanied by several supporters from Do Kham, arrived at the national assembly and proposed a whole course of reforms to improve the state. Despite his leftist views, he took a favorable view of some of the Lamas' interventions and seemed to have a generally positive view of Buddhism.\n\n\nAfter the speech, the national assembly and the Kashag gave him the authority to carry out these reforms. Perhaps the reasoning behind this was to move the regent, the annexation of Sikan lands, or maybe his armed men at the door? \n\nWho knows..."
  tibet.58.a:0 "This is the success of socialism!"
  
- tibet.59.t:0 "Invasion of the Panchen Lama."
+ tibet.59.t:0 "Invasion of the Panchen Lama"
  tibet.59.d:0 "From the Northeast, Chinese troops led by the Panchen Lama have passed through our borders. He claims to be supported by Tibetan soldiers who live within China. Now they want to unite the lands under the Panchen Lama."
  tibet.59.a:0 "We know very well who is pulling the strings..."
  tibet.59.b:0 "We will give Tibet back to China!"
@@ -604,8 +604,9 @@
  tibet.64.desc:0 "Nikolai Roerich arrived in the country at our invitation and declared his willingness to become the Dalai Lama's regent."
  tibet.64.a:0 "The Dalai Lama will be raised by a wise man"
  
- TIB_uvel_nalogi:0 "Высокие налоги"
- TIB_mongolotib_komitet:0 "Представительство монголо-тибетского комитета"
+ TIB_uvel_nalogi:0 "High taxes on monasteries"
+ TIB_equal_taxes_on_monasteries:0 "Equal taxes on monasteries"
+ TIB_mongolotib_komitet:0 "Representation of the Mongolian-Tibetan Committee"
  
  
  ### DECISIONS
@@ -691,5 +692,5 @@
  TIB_german_school_op:0 "Construction of the German School"
  
  
- pro_chinese_antiimperialist_mod_tt:0 "§YChina§!: согласие с дипломатическими действиями: §G+80§!\n§YGreat Britain§!: согласие с дипломатическими действиями: §G-80§!"
+ pro_chinese_antiimperialist_mod_tt:0 "Acceptance of §YChina§! Diplomacy: §G+80§!\nAcceptance of §YGreat Britain§! Diplomacy: §G-80§!"
  
